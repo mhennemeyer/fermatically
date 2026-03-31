@@ -2,7 +2,7 @@
 
 Erstellt: 2026-03-30
 Aktualisiert: 2026-03-31
-Status: Phase 1+2 abgeschlossen (v2 – Multi-Topic-Architektur)
+Status: Phase 1+2+3 abgeschlossen (v2 – Multi-Topic-Architektur)
 
 ## Vision
 
@@ -189,8 +189,8 @@ So wird klar, welche Grundlagen-Topics gelesen werden sollten, bevor man in den 
 8. [x] Abhängigkeitsgraph dokumentieren (welches Topic setzt welche voraus)
 
 ### Phase 3: Artikel schreiben (Grundlagen zuerst)
-9. [ ] `elementare-zahlentheorie` – 4 Artikel (DE)
-10. [ ] Werkzeug-Topics – je 1 Artikel (DE)
+9. [x] `elementare-zahlentheorie` – 4 Artikel (DE)
+10. [x] Werkzeug-Topics – je 1 Artikel (DE)
 11. [ ] Englische Versionen nachziehen
 
 ### Phase 4: Artikel schreiben (Fermat-Beweis)
