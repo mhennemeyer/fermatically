@@ -2,7 +2,7 @@
 
 Erstellt: 2026-03-30
 Aktualisiert: 2026-03-31
-Status: Phase 1+2+3 abgeschlossen (v2 – Multi-Topic-Architektur)
+Status: Phase 1+2+3+4 abgeschlossen (v2 – Multi-Topic-Architektur)
 
 ## Vision
 
@@ -194,7 +194,7 @@ So wird klar, welche Grundlagen-Topics gelesen werden sollten, bevor man in den 
 11. [ ] Englische Versionen nachziehen
 
 ### Phase 4: Artikel schreiben (Fermat-Beweis)
-12. [ ] `fermat-wiles` – 8 Artikel (DE) mit Querverweisen
+12. [x] `fermat-wiles` – 8 Artikel (DE) mit Querverweisen
 13. [ ] Englische Versionen nachziehen
 
 ### Phase 5: Website-Publikation
