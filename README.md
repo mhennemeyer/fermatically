@@ -63,18 +63,18 @@ Die Plattform ist in **eigenständige, querverweisbare Topics** gegliedert:
 
 ## Aktueller Stand
 
-**Phase 1+2 abgeschlossen** (März 2026):
+**Phase 1–4 abgeschlossen** (März 2026):
 
 - ✅ MkDocs-Plattform mit Material-Theme aufgesetzt (Port 8100)
-- ✅ 18 Artikel-Platzhalter in `docs/` für die Website
-- ✅ Vollständige `topics/`-Struktur mit 18 Topics (Multi-Topic-Architektur analog LambdaPy)
+- ✅ Vollständige `topics/`-Struktur mit 18 Topics (Multi-Topic-Architektur)
 - ✅ 18 detaillierte Outlines (`outline.md`) mit Gliederung, Kernaussagen und Querverweisen
-- ✅ 18 Artikel-Entwürfe (`article_de.md`) mit YAML-Frontmatter und Voraussetzungen
-- ✅ `topics/TEMPLATE.md` – Vorlage für neue Topics
-- ✅ `topics/DEPENDENCIES.md` – Abhängigkeitsgraph mit empfohlener Lesereihenfolge
-- ✅ Kategorien (5 × DE+EN) und Autoren-Profile angelegt
+- ✅ `topics/TEMPLATE.md`, `topics/DEPENDENCIES.md`, Kategorien (5 × DE+EN)
+- ✅ **4 Grundlagen-Artikel** geschrieben (elementare Zahlentheorie, ~700 Zeilen)
+- ✅ **6 Werkzeug-Artikel** geschrieben (Gruppen, Ringe/Körper, Galois, p-adisch, Ell. Kurven, Modulformen, ~1260 Zeilen)
+- ✅ **8 Beweis-Artikel** geschrieben (Fermat-Wiles, ~2060 Zeilen) – von Taniyama-Shimura bis zum Langlands-Programm
+- ✅ Insgesamt **18 deutsche Artikel** mit ~4020 Zeilen, LaTeX-Formeln, MkDocs-Admonitions und Querverweisen
 
-**Nächste Phase:** Artikel inhaltlich ausschreiben (Grundlagen → Werkzeuge → Beweis)
+**Nächste Phase:** Englische Versionen nachziehen, Website-Deployment (Coolify/Docker)
 
 ## Projektverzeichnis
 

@@ -1,7 +1,7 @@
 # Projektstatus: fermatically
 ## Meta
 - **Typ:** Content / Mathematik-Plattform
-- **Phase:** Phase 1+2 abgeschlossen (Grundstruktur + Outlines), Phase 3 (Artikel schreiben) steht an
+- **Phase:** Phase 1–4 abgeschlossen (Grundstruktur + Outlines + alle 18 Artikel DE geschrieben)
 - **Priorität:** Mittel
 - **Zuletzt aktualisiert:** 2026-03-31
 ## Beschreibung
@@ -20,14 +20,14 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 - ✅ **Topic-Überblicksseiten:** index.md für Elementare Zahlentheorie, Werkzeuge und Fermat-Wiles erstellt, Navigation in mkdocs.yml aktualisiert
 - ✅ **Namensfindung:** Domain **fermatically.com** gewählt und registriert (Plan archiviert: `.agent/plans/archive/namensfindung.md`)
 - ✅ **Umbenennung:** Projekt in „fermatically" umbenannt (site_name, site_url, README, docs, status)
-- ⬜ Noch keine Artikel inhaltlich ausgeschrieben (Outlines vorhanden, Volltext steht aus)
+- ✅ **Phase 3 – Grundlagen & Werkzeuge:** 4 Grundlagen-Artikel (elementare Zahlentheorie, ~700 Zeilen) + 6 Werkzeug-Artikel (Gruppen, Ringe/Körper, Galois, p-adisch, Ell. Kurven, Modulformen, ~1260 Zeilen)
+- ✅ **Phase 4 – Fermat-Wiles-Beweis:** 8 Beweis-Artikel (~2060 Zeilen) mit Querverweisen, LaTeX-Formeln, MkDocs-Admonitions
+- ✅ **Insgesamt 18 deutsche Artikel** mit ~4020 Zeilen inhaltlich ausgeschrieben
+- ✅ **`.gitignore`** erstellt, Git-Repository sauber initialisiert (84 Dateien)
 ## Nächste Schritte
-- [ ] Phase 3: Artikel schreiben – Grundlagen zuerst (`elementare-zahlentheorie` 4 Artikel DE)
-- [ ] Phase 3: Werkzeug-Topics – je 1 Artikel (DE)
-- [ ] Phase 3: Englische Versionen nachziehen
-- [ ] Phase 4: `fermat-wiles` – 8 Artikel (DE) mit Querverweisen
+- [ ] Phase 3/4: Englische Versionen nachziehen
 - [ ] Wiles-Transkription in KB aufnehmen (via pandoc → PDF → kb add)
-- [ ] `.gitignore` ergänzen (site/)
 - [ ] Coolify-Deployment konfigurieren und testen
+- [ ] Phase 5: Website-Publikation (Build-Pipeline, Navigation aus `requires`-Frontmatter)
 ## Blocker
 - Keine
