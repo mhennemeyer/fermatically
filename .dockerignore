@@ -1,0 +1,7 @@
+site/
+.git/
+.agent/
+resources/
+__pycache__/
+*.pyc
+.DS_Store

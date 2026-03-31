@@ -1,0 +1,25 @@
+# Build-Output (MkDocs)
+site/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Resources (große PDFs / geparste Dateien)
+resources/
+
+# Agent-Symlinks (zeigen auf lokale ~/.agent/)
+.agent/functional.md
+.agent/rules.md
