@@ -20,8 +20,7 @@ requires:
 
 !!! abstract "Zusammenfassung"
     Von Gruppen (eine Verknüpfung) zu Ringen (zwei Verknüpfungen) und Körpern (mit Division).
-    Warum die ganzen Zahlen nicht immer „genug" sind – und wie die Idealtheorie das Problem
-    der fehlenden eindeutigen Faktorisierung löst.
+    Idealtheorie als Antwort auf das Versagen der eindeutigen Faktorisierung.
 
 ## Voraussetzungen
 
@@ -31,9 +30,9 @@ requires:
 
 ## 1. Von Gruppen zu Ringen
 
-In einer Gruppe haben wir *eine* Verknüpfung. Doch schon die ganzen Zahlen $\mathbb{Z}$ haben *zwei*: Addition und Multiplikation. Um beide gleichzeitig zu erfassen, brauchen wir eine reichere Struktur – den **Ring**.
+In einer Gruppe gibt es *eine* Verknüpfung. Die ganzen Zahlen $\mathbb{Z}$ besitzen jedoch *zwei*: Addition und Multiplikation. Um beide gleichzeitig zu erfassen, ist eine reichere Struktur nötig – der **Ring**.
 
-Die Motivation kommt direkt aus der Zahlentheorie: Fermats letzter Satz handelt von der Gleichung $x^n + y^n = z^n$ in den ganzen Zahlen. Die Beweise für $n = 3$ und $n = 4$ zeigten, dass man manchmal den Zahlbereich erweitern muss – auf $\mathbb{Z}[\omega]$ oder $\mathbb{Z}[i]$. All diese Zahlbereiche sind Ringe.
+Die Motivation stammt direkt aus der Zahlentheorie: Die Beweise von FLT für $n = 3$ und $n = 4$ zeigten, dass der Zahlbereich erweitert werden muss – auf $\mathbb{Z}[\omega]$ oder $\mathbb{Z}[i]$. All diese Zahlbereiche sind Ringe.
 
 ## 2. Ringaxiome und Beispiele
 
@@ -60,7 +59,7 @@ Wenn zusätzlich $ab = ba$ für alle $a, b \in R$ gilt, heißt der Ring **kommut
 
 ### Nullteiler und Integritätsbereiche
 
-In $\mathbb{Z}$ gilt: Wenn $ab = 0$, dann $a = 0$ oder $b = 0$. Das ist nicht in allen Ringen so! In $\mathbb{Z}/6\mathbb{Z}$ ist $2 \cdot 3 = 6 \equiv 0$, obwohl weder $2$ noch $3$ null sind. Solche Elemente heißen **Nullteiler**.
+In $\mathbb{Z}$ gilt: Wenn $ab = 0$, dann $a = 0$ oder $b = 0$. Diese Eigenschaft gilt nicht in allen Ringen. In $\mathbb{Z}/6\mathbb{Z}$ ist $2 \cdot 3 = 6 \equiv 0$, obwohl weder $2$ noch $3$ null sind. Solche Elemente heißen **Nullteiler**.
 
 Ein kommutativer Ring ohne Nullteiler (außer $0$) heißt **Integritätsbereich**. Die Ringe $\mathbb{Z}$, $\mathbb{Z}[i]$, $\mathbb{Z}[\omega]$ und $K[x]$ sind Integritätsbereiche; $\mathbb{Z}/6\mathbb{Z}$ ist keiner.
 
@@ -77,7 +76,7 @@ Diese Eigenschaften definieren ein **Ideal**.
 1. $(I, +)$ ist eine Untergruppe von $(R, +)$
 2. Für alle $r \in R$ und $a \in I$ gilt $ra \in I$ und $ar \in I$
 
-Ideale spielen in Ringen dieselbe Rolle wie Normalteiler in Gruppen: Man kann **Faktorringe** bilden:
+Ideale spielen in Ringen dieselbe Rolle wie Normalteiler in Gruppen: Sie ermöglichen die Bildung von **Faktorrringen**:
 
 $$
 R/I = \{r + I \mid r \in R\}
@@ -91,16 +90,19 @@ Ein Ideal der Form $(a) = \{ra \mid r \in R\}$ (alle Vielfachen eines Elements) 
 
 **HIR-Beispiele:** $\mathbb{Z}$, $K[x]$ (Polynome über einem Körper), $\mathbb{Z}[i]$, $\mathbb{Z}[\omega]$
 
-**Kein HIR:** $\mathbb{Z}[\sqrt{-5}]$ – hier hat das Ideal $(2, 1 + \sqrt{-5})$ kein erzeugendes Element.
+**Kein HIR:** $\mathbb{Z}[\sqrt{-5}]$ – das Ideal $(2, 1 + \sqrt{-5})$ hat kein erzeugendes Element.
+
+> „The notion of an ideal [...] is the key to the whole of algebraic number theory."
+> — Serge Lang, *Algebra* (2002), Kapitel II
 
 !!! warning "Die Crux bei FLT"
-    In einem HIR gilt die eindeutige Primfaktorzerlegung. In $\mathbb{Z}[\zeta_p]$ für allgemeines $p$ ist das **nicht** der Fall – genau hier scheiterte Lamés Beweis und Kummer erfand die Idealtheorie.
+    In einem HIR gilt die eindeutige Primfaktorzerlegung. In $\mathbb{Z}[\zeta_p]$ für allgemeines $p$ ist das **nicht** der Fall – genau hier scheiterte Lamés Beweis und Kummer entwickelte die Idealtheorie.
 
 ## 4. Körper
 
 Ein **Körper** ist ein kommutativer Ring, in dem jedes Element $a \neq 0$ ein multiplikatives Inverses besitzt: Es gibt $a^{-1}$ mit $a \cdot a^{-1} = 1$.
 
-Anders gesagt: In einem Körper kann man addieren, subtrahieren, multiplizieren **und dividieren** (außer durch $0$).
+In einem Körper sind Addition, Subtraktion, Multiplikation **und Division** (außer durch $0$) möglich.
 
 ### Die wichtigsten Körper
 
@@ -116,20 +118,20 @@ Anders gesagt: In einem Körper kann man addieren, subtrahieren, multiplizieren 
 
 ## 5. Körpererweiterungen
 
-Ein **Körpererweiterung** ist ein Paar $K \subseteq L$ von Körpern. Man schreibt $L/K$ und nennt $L$ eine Erweiterung von $K$.
+Eine **Körpererweiterung** ist ein Paar $K \subseteq L$ von Körpern. Notation: $L/K$. $L$ heißt Erweiterung von $K$.
 
 ### Algebraische Erweiterungen
 
-Ein Element $\alpha \in L$ heißt **algebraisch** über $K$, wenn es ein Polynom $f \in K[x]$ mit $f(\alpha) = 0$ gibt. Die Erweiterung $L/K$ heißt algebraisch, wenn jedes Element von $L$ algebraisch über $K$ ist.
+Ein Element $\alpha \in L$ heißt **algebraisch** über $K$, wenn ein Polynom $f \in K[x]$ mit $f(\alpha) = 0$ existiert. Die Erweiterung $L/K$ heißt algebraisch, wenn jedes Element von $L$ algebraisch über $K$ ist.
 
 **Beispiele:**
-- $\mathbb{Q}(\sqrt{2}) = \{a + b\sqrt{2} \mid a, b \in \mathbb{Q}\}$ – eine Erweiterung vom Grad $2$
+- $\mathbb{Q}(\sqrt{2}) = \{a + b\sqrt{2} \mid a, b \in \mathbb{Q}\}$ – Erweiterung vom Grad $2$
 - $\mathbb{Q}(i) = \{a + bi \mid a, b \in \mathbb{Q}\}$ – ebenfalls Grad $2$
 - $\mathbb{Q}(\zeta_p)$ – der $p$-te **Kreisteilungskörper**, Grad $p - 1$
 
 ### Der Grad einer Erweiterung
 
-Der **Grad** $[L : K]$ ist die Dimension von $L$ als $K$-Vektorraum. Er misst, wie „viel größer" $L$ im Vergleich zu $K$ ist.
+Der **Grad** $[L : K]$ ist die Dimension von $L$ als $K$-Vektorraum. Er quantifiziert den „Abstand" zwischen $L$ und $K$.
 
 **Gradformel (Turmsatz).** Für $K \subseteq M \subseteq L$ gilt:
 
@@ -141,7 +143,7 @@ $$
 
 ### Der algebraische Abschluss
 
-Der **algebraische Abschluss** $\overline{K}$ von $K$ ist der kleinste algebraisch abgeschlossene Körper, der $K$ enthält. Zum Beispiel:
+Der **algebraische Abschluss** $\overline{K}$ von $K$ ist der kleinste algebraisch abgeschlossene Körper, der $K$ enthält:
 
 - $\overline{\mathbb{R}} = \mathbb{C}$ (Fundamentalsatz der Algebra)
 - $\overline{\mathbb{Q}}$ ist die Menge aller algebraischen Zahlen – abzählbar, aber nicht gleich $\mathbb{C}$
@@ -162,17 +164,17 @@ $$
 
 ### Wo die EPZ versagt
 
-In $\mathbb{Z}[\sqrt{-5}]$ hat man zwei wesentlich verschiedene Faktorisierungen:
+In $\mathbb{Z}[\sqrt{-5}]$ existieren zwei wesentlich verschiedene Faktorisierungen:
 
 $$
 6 = 2 \cdot 3 = (1 + \sqrt{-5})(1 - \sqrt{-5})
 $$
 
-Hier sind $2$, $3$, $1 + \sqrt{-5}$ und $1 - \sqrt{-5}$ alle irreduzibel, aber das Produkt hat zwei verschiedene Zerlegungen. Die EPZ versagt!
+Die Elemente $2$, $3$, $1 + \sqrt{-5}$ und $1 - \sqrt{-5}$ sind alle irreduzibel, aber das Produkt hat zwei verschiedene Zerlegungen. Die EPZ versagt.
 
-### Kummers Rettung: Ideale faktorisieren
+### Kummers Lösung: Ideale faktorisieren
 
-Kummers Einsicht: Auch wenn die EPZ auf **Elementebene** versagt, gilt sie auf **Idealebene** in jedem Dedekind-Ring. Das Ideal $(6) = (2)(3)$ hat eine eindeutige Zerlegung in Primideale:
+Kummers Einsicht: Auch wenn die EPZ auf **Elementebene** versagt, gilt sie auf **Idealebene** in jedem Dedekind-Ring. Das Ideal $(6)$ hat eine eindeutige Zerlegung in Primideale:
 
 $$
 (6) = (2, 1 + \sqrt{-5})^2 \cdot (3, 1 + \sqrt{-5}) \cdot (3, 1 - \sqrt{-5})
@@ -180,24 +182,28 @@ $$
 
 Die **Klassenzahl** $h$ misst, wie weit ein Ring von einem HIR entfernt ist: $h = 1$ genau dann, wenn der Ring ein HIR ist. Für $\mathbb{Z}[\sqrt{-5}]$ ist $h = 2$.
 
-## 7. Warum Ringe und Körper für FLT wichtig sind
+> „Kummer's theory of ideal numbers is rightly considered as one of the great achievements of nineteenth century mathematics."
+> — Harold M. Edwards, *Fermat's Last Theorem* (1977), S. 76
 
-Die algebraischen Strukturen dieses Artikels sind der Hintergrund für Wiles' Beweis:
+## 7. Ringe und Körper im Kontext von FLT
+
+Die algebraischen Strukturen dieses Artikels bilden den Hintergrund für Wiles' Beweis:
 
 1. **Kreisteilungsringe** $\mathbb{Z}[\zeta_p]$: Kummers Beweis für reguläre Primzahlen nutzt die Idealstruktur dieser Ringe.
 
-2. **Körpererweiterungen**: Die Galois-Theorie operiert auf Körpererweiterungen – sie ist die Brücke zwischen Gleichungen und Gruppen.
+2. **Körpererweiterungen**: Die Galois-Theorie operiert auf Körpererweiterungen – die Brücke zwischen Gleichungen und Gruppen.
 
-3. **Endliche Körper** $\mathbb{F}_p$: Die Reduktion elliptischer Kurven modulo $p$ – das heißt, das Arbeiten über $\mathbb{F}_p$ statt über $\mathbb{Q}$ – liefert die $a_p$-Koeffizienten, die in der $L$-Reihe auftauchen.
+3. **Endliche Körper** $\mathbb{F}_p$: Die Reduktion elliptischer Kurven modulo $p$ – das Arbeiten über $\mathbb{F}_p$ statt über $\mathbb{Q}$ – liefert die $a_p$-Koeffizienten der $L$-Reihe.
 
-4. **Lokale Ringe** und **Deformationsringe**: In Wiles' Beweis sind die Ringe $R$ und $T$ im „$R = T$"-Theorem lokale Ringe, die Familien von Galois-Darstellungen parametrisieren.
+4. **Lokale Ringe** und **Deformationsringe**: Die Ringe $R$ und $T$ im „$R = T$"-Theorem sind lokale Ringe, die Familien von Galois-Darstellungen parametrisieren.
 
 Die Ringtheorie liefert die algebraische Infrastruktur, auf der der gesamte Beweis aufbaut.
 
 ---
 
-## Weiterführende Quellen
+## Quellen
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem*, Kap. 3–4
-- **Michael Artin**: *Algebra* – Ringe und Körper umfassend behandelt
-- **Serge Lang**: *Algebra* – das Standardwerk für Graduierte
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 3–4
+- **Harold M. Edwards**: *Fermat's Last Theorem: A Genetic Introduction to Algebraic Number Theory*, Springer (1977)
+- **Michael Artin**: *Algebra*, Prentice Hall (1991)
+- **Serge Lang**: *Algebra*, Springer (2002)

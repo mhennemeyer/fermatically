@@ -9,15 +9,15 @@
 
 ## Worum geht es?
 
-Diese Plattform nimmt dich mit auf eine Reise durch die Mathematik – vom pythagoräischen Satz bis zum Beweis von **Fermats letztem Satz** durch Andrew Wiles (1995).
+Diese Plattform erschließt die Mathematik schrittweise – vom pythagoräischen Satz bis zum Beweis von **Fermats letztem Satz** durch Andrew Wiles (1995).
 
-Das Ziel: **Höhere Mathematik zugänglich machen**, ohne zu vereinfachen. Jedes Thema baut auf dem vorherigen auf, sodass du mit Schulmathematik starten und Schritt für Schritt bis zu den tiefsten Ergebnissen der modernen Zahlentheorie vordringen kannst.
+Ziel ist es, höhere Mathematik zugänglich zu machen, ohne sie zu vereinfachen. Jedes Thema baut auf dem vorherigen auf: Ausgangspunkt ist die Schulmathematik, Endpunkt sind die Kernresultate der modernen Zahlentheorie.
 
-## Die Reise
+## Artikelübersicht
 
 ### 🔢 Grundlagen – Elementare Zahlentheorie
 
-Hier beginnt alles: Was ist Fermats letzter Satz? Warum hat er 350 Jahre lang der Mathematik widerstanden? Und welche Spezialfälle konnte man schon früh beweisen?
+Ausgangspunkt der Serie: Was besagt Fermats letzter Satz? Warum widerstand er 350 Jahre lang jedem Beweisversuch? Welche Spezialfälle wurden früh bewiesen?
 
 - [Was ist Fermats letzter Satz?](grundlagen/elementare-zahlentheorie/01-was-ist-flt.md) – Geschichte, Fermat, 350 Jahre Suche
 - [Der Beweis für \(n=4\)](grundlagen/elementare-zahlentheorie/02-beweis-n4.md) – Fermats eigener Beweis (Infinite Descent)
@@ -26,7 +26,7 @@ Hier beginnt alles: Was ist Fermats letzter Satz? Warum hat er 350 Jahre lang de
 
 ### 🔧 Werkzeuge – Die Sprache der modernen Mathematik
 
-Bevor wir Wiles' Beweis verstehen können, brauchen wir die richtigen Werkzeuge. Jedes dieser Themen ist eigenständig lesbar und wird in mehreren Beweis-Themen referenziert.
+Vor dem Beweis stehen die Werkzeuge. Jedes dieser Themen ist eigenständig lesbar und wird in mehreren Beweis-Artikeln vorausgesetzt.
 
 - [Gruppen](werkzeuge/gruppen.md) – Symmetrie als Sprache der Mathematik
 - [Ringe und Körper](werkzeuge/ringe-koerper.md) – Die Welt jenseits der rationalen Zahlen
@@ -37,7 +37,7 @@ Bevor wir Wiles' Beweis verstehen können, brauchen wir die richtigen Werkzeuge.
 
 ### 🏔️ Der Beweis – Fermats letzter Satz (Wiles, 1995)
 
-Das Herzstück: Von der Taniyama-Shimura-Vermutung über Galois-Darstellungen bis zum berühmten \(R = T\)-Theorem.
+Von der Taniyama-Shimura-Vermutung über Galois-Darstellungen bis zum \(R = T\)-Theorem.
 
 - [Die Taniyama-Shimura-Vermutung](fermat-wiles/01-taniyama-shimura.md) – Jede elliptische Kurve ist modular
 - [Freys Idee und Ribets Theorem](fermat-wiles/02-frey-ribet.md) – TSV ⟹ FLT
@@ -56,7 +56,7 @@ Das Herzstück: Von der Taniyama-Shimura-Vermutung über Galois-Darstellungen bi
 !!! note "KI-generierte Inhalte"
     Die Inhalte dieser Plattform werden mit Unterstützung von Künstlicher Intelligenz (KI) erstellt. Alle Artikel werden sorgfältig geprüft, können aber Fehler enthalten. Bei Fragen oder Korrekturen freuen wir uns über Rückmeldungen.
 
-## Fermats letzter Satz – kurz erklärt
+## Fermats letzter Satz
 
 **Fermats letzter Satz** besagt:
 
@@ -66,4 +66,4 @@ x^n + y^n = z^n
 
 hat für \(n \geq 3\) **keine** Lösung in positiven ganzen Zahlen \(x, y, z\).
 
-Pierre de Fermat notierte 1637 am Rand seines Exemplars der *Arithmetica* von Diophant, er habe einen „wahrhaft wunderbaren Beweis" gefunden, der aber auf dem Rand keinen Platz hätte. 358 Jahre später gelang Andrew Wiles der Beweis – auf 109 Seiten, mit Methoden, die Fermat sich nicht hätte vorstellen können.
+Pierre de Fermat notierte 1637 am Rand seines Exemplars der *Arithmetica* von Diophant, er habe einen „wahrhaft wunderbaren Beweis" gefunden, der aber auf dem Rand keinen Platz hätte. 358 Jahre später erschien Andrew Wiles' Beweis in den *Annals of Mathematics* – auf 109 Seiten, mit Methoden aus der algebraischen Geometrie und Zahlentheorie, die zu Fermats Zeit nicht existierten.

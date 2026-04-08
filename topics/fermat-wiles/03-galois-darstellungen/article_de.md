@@ -269,7 +269,7 @@ Diese Perspektive – Modularität als Eigenschaft von Galois-Darstellungen – 
 
 ## Ausblick
 
-Mit den Galois-Darstellungen haben wir die Sprache, in der Wiles' Beweis formuliert ist. Der nächste Schritt ist die zentrale Frage: Wie zeigt man, dass eine residuale modulare Darstellung zu einer vollen modularen Darstellung geliftet werden kann?
+Galois-Darstellungen bilden die Sprache, in der Wiles' Beweis formuliert ist. Die zentrale Frage des nächsten Schritts: Wie lässt sich zeigen, dass eine residuale modulare Darstellung zu einer vollen modularen Darstellung geliftet werden kann?
 
 | Artikel | Thema |
 |---------|-------|

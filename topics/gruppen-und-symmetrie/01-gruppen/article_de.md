@@ -17,29 +17,29 @@ requires: []
 # Gruppen – Symmetrie als Sprache der Mathematik
 
 !!! abstract "Zusammenfassung"
-    Was haben Drehungen eines Quadrats, Addition ganzer Zahlen und die Symmetrien von Gleichungen gemeinsam?
-    Sie alle sind **Gruppen** – die fundamentalste algebraische Struktur der modernen Mathematik.
+    Gruppen als fundamentale algebraische Struktur: Von Drehungen regelmäßiger Polygone
+    über Restklassen bis zu den Symmetrien, die Wiles' Beweis durchziehen.
 
 ## Voraussetzungen
 
-Keine – dieser Artikel ist der Einstieg in die abstrakte Algebra.
+Keine – dieser Artikel bildet den Einstieg in die abstrakte Algebra.
 
 ---
 
-## 1. Symmetrie im Alltag
+## 1. Symmetrie als mathematische Struktur
 
-Ein Quadrat kann man drehen (um 90°, 180°, 270°) und spiegeln (an vier Achsen) – das sind insgesamt **acht Symmetrien**. Jede einzelne Symmetrie bildet das Quadrat auf sich selbst ab, und zwei Symmetrien nacheinander ausgeführt ergeben wieder eine Symmetrie.
+Ein Quadrat besitzt acht Symmetrien: vier Drehungen (um 0°, 90°, 180°, 270°) und vier Spiegelungen. Jede Symmetrie bildet das Quadrat auf sich selbst ab, und die Hintereinanderausführung zweier Symmetrien ergibt wieder eine Symmetrie.
 
-Diese Beobachtung lässt sich verallgemeinern: Überall, wo es Symmetrien gibt – in der Geometrie, in der Physik, in der Zahlentheorie –, steckt eine mathematische Struktur dahinter, die immer denselben Regeln gehorcht. Diese Struktur heißt **Gruppe**.
+Diese Beobachtung verallgemeinert sich: Überall, wo Symmetrien auftreten – in der Geometrie, der Physik, der Zahlentheorie –, gehorcht die zugrunde liegende Struktur denselben Regeln. Diese Struktur heißt **Gruppe**.
 
-Einige Beispiele, die auf den ersten Blick nichts miteinander zu tun haben:
+Beispiele, die auf den ersten Blick nichts miteinander verbindet:
 
 - Die **Drehungen und Spiegelungen** eines regelmäßigen $n$-Ecks
 - Die **Addition** ganzer Zahlen: $3 + 5 = 8$, $7 + (-7) = 0$
 - Die **Permutationen** einer Menge: Umordnungen von $\{1, 2, 3\}$
 - Die **Symmetrien der Nullstellen** eines Polynoms (→ Galois-Theorie)
 
-All diese Beispiele erfüllen dieselben vier Regeln.
+All diese Beispiele erfüllen dieselben vier Axiome.
 
 ## 2. Die Gruppenaxiome
 
@@ -56,13 +56,13 @@ Eine **Gruppe** ist ein Paar $(G, \cdot)$ aus einer Menge $G$ und einer Verknüp
 Wenn zusätzlich $a \cdot b = b \cdot a$ für alle $a, b \in G$ gilt, heißt die Gruppe **abelsch** (oder kommutativ) – benannt nach Niels Henrik Abel.
 
 !!! note "Notation"
-    Für abelsche Gruppen schreibt man die Verknüpfung oft als $+$ statt $\cdot$ und das neutrale Element als $0$ statt $e$. Das Inverse von $a$ ist dann $-a$.
+    Für abelsche Gruppen wird die Verknüpfung oft als $+$ statt $\cdot$ geschrieben und das neutrale Element als $0$ statt $e$. Das Inverse von $a$ ist dann $-a$.
 
 ## 3. Erste Beispiele
 
 ### Die ganzen Zahlen $(\mathbb{Z}, +)$
 
-Die einfachste unendliche Gruppe: Die ganzen Zahlen mit der Addition.
+Die ganzen Zahlen mit der Addition bilden die einfachste unendliche Gruppe:
 
 - **Abgeschlossen**: $a + b \in \mathbb{Z}$ für alle $a, b \in \mathbb{Z}$ ✓
 - **Assoziativ**: $(a + b) + c = a + (b + c)$ ✓
@@ -72,7 +72,7 @@ Die einfachste unendliche Gruppe: Die ganzen Zahlen mit der Addition.
 
 ### Restklassen $(\mathbb{Z}/n\mathbb{Z}, +)$
 
-Für $n \geq 1$ bilden die Restklassen modulo $n$ eine endliche abelsche Gruppe. Zum Beispiel $\mathbb{Z}/4\mathbb{Z} = \{0, 1, 2, 3\}$ mit der Addition modulo $4$:
+Für $n \geq 1$ bilden die Restklassen modulo $n$ eine endliche abelsche Gruppe. Beispiel: $\mathbb{Z}/4\mathbb{Z} = \{0, 1, 2, 3\}$ mit der Addition modulo $4$:
 
 | $+$   | $0$ | $1$ | $2$ | $3$ |
 |-------|-----|-----|-----|-----|
@@ -95,7 +95,7 @@ $$
 
 Dabei bedeutet $(12)$: „vertausche $1$ und $2$", und $(123)$: „sende $1 \to 2 \to 3 \to 1$".
 
-**Achtung:** $S_3$ ist **nicht** abelsch! Es gilt $(12) \circ (13) = (132)$, aber $(13) \circ (12) = (123)$.
+$S_3$ ist **nicht** abelsch: $(12) \circ (13) = (132)$, aber $(13) \circ (12) = (123)$.
 
 ### Die Diedergruppe $D_n$
 
@@ -103,7 +103,7 @@ Die Symmetriegruppe eines regelmäßigen $n$-Ecks heißt **Diedergruppe** $D_n$.
 
 ## 4. Untergruppen und Ordnung
 
-Eine Teilmenge $H \subseteq G$ heißt **Untergruppe** von $G$, wenn $H$ selbst mit der eingeschränkten Verknüpfung eine Gruppe bildet. Man schreibt $H \leq G$.
+Eine Teilmenge $H \subseteq G$ heißt **Untergruppe** von $G$, wenn $H$ selbst mit der eingeschränkten Verknüpfung eine Gruppe bildet. Notation: $H \leq G$.
 
 **Beispiele:**
 - $2\mathbb{Z} = \{\ldots, -4, -2, 0, 2, 4, \ldots\} \leq \mathbb{Z}$ (die geraden Zahlen)
@@ -114,6 +114,9 @@ Die **Ordnung** $|G|$ einer Gruppe ist die Anzahl ihrer Elemente. Die **Ordnung*
 **Satz von Lagrange.** Ist $H \leq G$ mit $|G| < \infty$, dann teilt $|H|$ die Zahl $|G|$.
 
 Konsequenz: In einer Gruppe mit $12$ Elementen kann eine Untergruppe nur $1$, $2$, $3$, $4$, $6$ oder $12$ Elemente haben. Die Ordnung jedes Elements teilt $|G|$.
+
+> „The notion of a group is one of the great simplifying and unifying ideas in modern mathematics."
+> — Michael Artin, *Algebra* (1991), S. 42
 
 !!! tip "Lagrange in Aktion"
     Sei $G$ eine Gruppe mit $|G| = p$ (Primzahl). Dann hat $G$ keine echten Untergruppen außer $\{e\}$ und $G$ selbst. Also ist $G$ zyklisch: $G \cong \mathbb{Z}/p\mathbb{Z}$.
@@ -138,7 +141,7 @@ $$
 \ker(\varphi) = \{a \in G \mid \varphi(a) = e_H\}
 $$
 
-Der Kern ist immer eine Untergruppe von $G$ – und sogar eine besondere Art von Untergruppe: ein **Normalteiler**.
+Der Kern ist immer eine Untergruppe von $G$ – und sogar ein **Normalteiler**.
 
 ## 6. Normalteiler und Faktorgruppen
 
@@ -146,7 +149,7 @@ Eine Untergruppe $N \leq G$ heißt **Normalteiler** (geschrieben $N \trianglelef
 
 In abelschen Gruppen ist jede Untergruppe ein Normalteiler (weil $gng^{-1} = n$ für alle $g, n$).
 
-Normalteiler sind wichtig, weil man mit ihnen **Faktorgruppen** (Quotientengruppen) bilden kann:
+Normalteiler ermöglichen die Bildung von **Faktorgruppen** (Quotientengruppen):
 
 $$
 G/N = \{gN \mid g \in G\}
@@ -154,7 +157,7 @@ $$
 
 Die Elemente von $G/N$ sind die **Nebenklassen** $gN = \{gn \mid n \in N\}$, und die Verknüpfung ist $(gN)(hN) = (gh)N$.
 
-**Beispiel:** $\mathbb{Z}/n\mathbb{Z}$ ist genau die Faktorgruppe von $\mathbb{Z}$ nach dem Normalteiler $n\mathbb{Z}$.
+**Beispiel:** $\mathbb{Z}/n\mathbb{Z}$ ist die Faktorgruppe von $\mathbb{Z}$ nach dem Normalteiler $n\mathbb{Z}$.
 
 **Der Homomorphiesatz.** Für jeden Homomorphismus $\varphi: G \to H$ gilt:
 
@@ -162,32 +165,33 @@ $$
 G / \ker(\varphi) \cong \text{Bild}(\varphi)
 $$
 
-Das heißt: Die Faktorgruppe nach dem Kern ist isomorph zum Bild. Dieser Satz verbindet Homomorphismen, Normalteiler und Faktorgruppen zu einem einheitlichen Bild.
+Die Faktorgruppe nach dem Kern ist isomorph zum Bild. Dieser Satz verbindet Homomorphismen, Normalteiler und Faktorgruppen.
 
 ### Einfache Gruppen
 
-Eine Gruppe $G \neq \{e\}$ heißt **einfach**, wenn sie keine Normalteiler außer $\{e\}$ und $G$ selbst besitzt. Einfache Gruppen sind die „Atome" der Gruppentheorie – jede endliche Gruppe lässt sich aus einfachen Gruppen zusammensetzen (Jordan-Hölder-Satz).
+Eine Gruppe $G \neq \{e\}$ heißt **einfach**, wenn sie keine Normalteiler außer $\{e\}$ und $G$ selbst besitzt. Einfache Gruppen sind die Grundbausteine der Gruppentheorie – jede endliche Gruppe lässt sich aus einfachen Gruppen zusammensetzen (Jordan-Hölder-Satz).
 
-Die Klassifikation aller endlichen einfachen Gruppen ist eines der monumentalsten Ergebnisse der Mathematik: Sie besteht aus den zyklischen Gruppen $\mathbb{Z}/p\mathbb{Z}$, den alternierenden Gruppen $A_n$ ($n \geq 5$), 16 Familien von „Lie-Typ"-Gruppen und 26 sporadischen Gruppen.
+Die Klassifikation aller endlichen einfachen Gruppen ist eines der umfangreichsten Ergebnisse der Mathematik: Sie umfasst die zyklischen Gruppen $\mathbb{Z}/p\mathbb{Z}$, die alternierenden Gruppen $A_n$ ($n \geq 5$), 16 Familien von „Lie-Typ"-Gruppen und 26 sporadische Gruppen.
 
-## 7. Warum Gruppen für FLT wichtig sind
+## 7. Gruppen im Kontext von FLT
 
-Für Fermats letzten Satz spielen Gruppen eine Schlüsselrolle über die **Galois-Theorie**: Die Symmetrien der Nullstellen eines Polynoms bilden eine Gruppe – die **Galois-Gruppe**. Diese Gruppe kontrolliert die algebraische Struktur der zugehörigen Körpererweiterung.
+Für Fermats letzten Satz sind Gruppen über die **Galois-Theorie** zentral: Die Symmetrien der Nullstellen eines Polynoms bilden eine Gruppe – die **Galois-Gruppe**. Diese Gruppe kontrolliert die algebraische Struktur der zugehörigen Körpererweiterung.
 
-In Wiles' Beweis tauchen Gruppen in mehreren Gestalten auf:
+In Wiles' Beweis treten Gruppen in mehreren Formen auf:
 
 1. **Die absolute Galois-Gruppe** $G_{\mathbb{Q}} = \text{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})$ – das zentrale Symmetrieobjekt der algebraischen Zahlentheorie. Sie wirkt auf den Teilungspunkten elliptischer Kurven.
 
-2. **Matrizengruppen** $\text{GL}_2(\mathbb{F}_p)$ und $\text{GL}_2(\mathbb{Z}_p)$ – als Zielgruppen der Galois-Darstellungen, die elliptische Kurven mit linearer Algebra verbinden.
+2. **Matrizengruppen** $\text{GL}_2(\mathbb{F}_p)$ und $\text{GL}_2(\mathbb{Z}_p)$ – Zielgruppen der Galois-Darstellungen, die elliptische Kurven mit linearer Algebra verbinden.
 
 3. **Hecke-Algebren** – Symmetrien im Raum der Modulformen, die algebraische Strukturen auf den Fourier-Koeffizienten erzeugen.
 
-Der Gruppenabegriff ist die gemeinsame Sprache, in der all diese Objekte kommunizieren. Ohne Gruppen wäre Wiles' Beweis nicht einmal formulierbar.
+> „Groups, as men, will be known by their actions."
+> — Guillermo Moreno, zitiert in Joseph Rotman, *An Introduction to the Theory of Groups* (1995)
 
 ---
 
-## Weiterführende Quellen
+## Quellen
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem*, Kap. 3
-- **Joseph Gallian**: *Contemporary Abstract Algebra* – zugängliches Lehrbuch
-- **Michael Artin**: *Algebra* – umfassend und tiefgehend
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 3
+- **Michael Artin**: *Algebra*, Prentice Hall (1991)
+- **Joseph Gallian**: *Contemporary Abstract Algebra*, Cengage (2020)

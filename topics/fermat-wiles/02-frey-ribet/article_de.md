@@ -165,7 +165,7 @@ $$
 
 ## 5. Die logische Kette
 
-Fassen wir die gesamte Argumentationskette zusammen. Sie besteht aus einer Kette von Implikationen:
+Die gesamte Argumentationskette im Überblick – eine Kette von Implikationen:
 
 ### Schritt 1: Hypothetische FLT-Lösung → Frey-Kurve
 

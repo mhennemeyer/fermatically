@@ -19,9 +19,8 @@ requires:
 # Elliptische Kurven
 
 !!! abstract "Zusammenfassung"
-    Elliptische Kurven sind algebraische Kurven mit einer natürlichen Gruppenstruktur.
-    Sie stehen im Zentrum von Wiles' Beweis – die Frey-Kurve, die Taniyama-Shimura-Vermutung
-    und die Galois-Darstellungen handeln alle von elliptischen Kurven.
+    Algebraische Kurven mit natürlicher Gruppenstruktur. Frey-Kurve, Taniyama-Shimura-Vermutung
+    und Galois-Darstellungen – alle zentralen Objekte in Wiles' Beweis basieren auf elliptischen Kurven.
 
 ## Voraussetzungen
 
@@ -30,24 +29,24 @@ requires:
 
 ---
 
-## 1. Was ist eine elliptische Kurve?
+## 1. Definition
 
-Eine **elliptische Kurve** über einem Körper $K$ ist eine glatte, projektive Kurve vom Geschlecht $1$ mit einem ausgezeichneten Punkt. In der Praxis arbeitet man mit der **Weierstraß-Form**:
+Eine **elliptische Kurve** über einem Körper $K$ ist eine glatte, projektive Kurve vom Geschlecht $1$ mit einem ausgezeichneten Punkt. In der Praxis die **Weierstraß-Form**:
 
 $$
 E: \quad y^2 = x^3 + ax + b \qquad (a, b \in K)
 $$
 
-Damit die Kurve „glatt" ist (keine Spitzen oder Selbstüberschneidungen), muss die **Diskriminante** ungleich null sein:
+Die Glattheitsbedingung (keine Spitzen oder Selbstüberschneidungen) erfordert eine nichtverschwindende **Diskriminante**:
 
 $$
 \Delta = -16(4a^3 + 27b^2) \neq 0
 $$
 
-Geometrisch ist eine elliptische Kurve über $\mathbb{R}$ eine glatte Kurve in der Ebene, die entweder aus einer Komponente (wenn $x^3 + ax + b$ eine reelle Nullstelle hat) oder aus zwei Komponenten besteht.
+Geometrisch über $\mathbb{R}$: eine glatte Kurve in der Ebene, bestehend aus einer oder zwei Komponenten.
 
 !!! note "Warum „elliptisch"?"
-    Der Name hat nichts mit Ellipsen zu tun. Er stammt historisch von den **elliptischen Integralen** – Integralen der Form $\int \frac{dx}{\sqrt{x^3 + ax + b}}$, die bei der Berechnung des Umfangs einer Ellipse auftreten.
+    Der Name hat nichts mit Ellipsen zu tun. Er stammt von den **elliptischen Integralen** – Integralen der Form $\int \frac{dx}{\sqrt{x^3 + ax + b}}$, die bei der Berechnung des Umfangs einer Ellipse auftreten.
 
 ### Beispiele
 
@@ -63,21 +62,24 @@ Technisch lebt eine elliptische Kurve im **projektiven Raum** $\mathbb{P}^2$. Ne
 
 ## 2. Die Gruppenoperation
 
-Das Bemerkenswerteste an elliptischen Kurven: Ihre Punkte bilden eine **abelsche Gruppe**. Die Verknüpfung ist geometrisch definiert durch die **Sekanten-Tangenten-Methode**:
+Die Punkte einer elliptischen Kurve bilden eine **abelsche Gruppe**. Die Verknüpfung ist geometrisch über die **Sekanten-Tangenten-Methode** definiert:
 
 **Addition zweier Punkte $P + Q$:**
-1. Ziehe die Gerade durch $P$ und $Q$
+1. Gerade durch $P$ und $Q$ legen
 2. Diese Gerade schneidet die Kurve in genau einem dritten Punkt $R'$
-3. Spiegle $R'$ an der $x$-Achse: Das Ergebnis ist $P + Q$
+3. $R'$ an der $x$-Achse spiegeln: Das Ergebnis ist $P + Q$
 
 **Verdopplung $2P = P + P$:**
-1. Lege die Tangente an die Kurve in $P$
+1. Tangente an die Kurve in $P$ legen
 2. Diese Tangente schneidet die Kurve in einem zweiten Punkt $R'$
-3. Spiegle: Das Ergebnis ist $2P$
+3. Spiegeln: Das Ergebnis ist $2P$
 
 **Neutrales Element:** Der Punkt $\mathcal{O}$ im Unendlichen. Es gilt $P + \mathcal{O} = P$ für alle $P$.
 
 **Inverses:** Das Inverse von $P = (x, y)$ ist $-P = (x, -y)$ (Spiegelung an der $x$-Achse).
+
+> „It is a wonderful fact that this geometric construction gives a group law on the points of an elliptic curve."
+> — Joseph Silverman, *The Arithmetic of Elliptic Curves* (1986), S. 51
 
 !!! tip "Algebraische Formeln"
     Für $P = (x_1, y_1)$ und $Q = (x_2, y_2)$ mit $P \neq \pm Q$:
@@ -92,7 +94,7 @@ Das Bemerkenswerteste an elliptischen Kurven: Ihre Punkte bilden eine **abelsche
     \lambda = \frac{3x_1^2 + a}{2y_1}
     $$
 
-    Diese Formeln funktionieren über **jedem** Körper – auch über $\mathbb{F}_p$ oder $\mathbb{Q}_p$.
+    Diese Formeln gelten über **jedem** Körper – auch über $\mathbb{F}_p$ oder $\mathbb{Q}_p$.
 
 ## 3. Rationale Punkte und der Satz von Mordell
 
@@ -107,7 +109,7 @@ E(\mathbb{Q}) \cong \mathbb{Z}^r \oplus E(\mathbb{Q})_{\text{tors}}
 $$
 
 wobei:
-- $r = \text{rang}(E)$ der **Rang** der Kurve ist (die Anzahl unabhängiger Punkte unendlicher Ordnung)
+- $r = \text{rang}(E)$ der **Rang** der Kurve ist (Anzahl unabhängiger Punkte unendlicher Ordnung)
 - $E(\mathbb{Q})_{\text{tors}}$ die endliche **Torsionsuntergruppe** ist (Punkte endlicher Ordnung)
 
 **Satz (Mazur, 1977).** Die Torsionsuntergruppe $E(\mathbb{Q})_{\text{tors}}$ ist isomorph zu einer der folgenden Gruppen:
@@ -119,7 +121,7 @@ $$
 \text{oder } \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2n\mathbb{Z} \text{ für } n \in \{1, 2, 3, 4\}
 $$
 
-Der Rang $r$ dagegen ist schwer zu berechnen, und es ist bis heute unbekannt, ob es elliptische Kurven mit beliebig großem Rang gibt.
+Der Rang $r$ ist schwer zu berechnen. Ob elliptische Kurven mit beliebig großem Rang existieren, ist eine offene Frage.
 
 ## 4. Reduktion modulo $p$
 
@@ -129,11 +131,11 @@ $$
 \tilde{E}: \quad y^2 \equiv x^3 + ax + b \pmod{p}
 $$
 
-Wenn $p \nmid \Delta$ (die Diskriminante), ist $\tilde{E}$ eine glatte Kurve über $\mathbb{F}_p$ – man sagt, $E$ hat **gute Reduktion** bei $p$. Andernfalls hat $E$ **schlechte Reduktion**.
+Wenn $p \nmid \Delta$, ist $\tilde{E}$ eine glatte Kurve über $\mathbb{F}_p$ – $E$ hat **gute Reduktion** bei $p$. Andernfalls liegt **schlechte Reduktion** vor.
 
 ### Die $a_p$-Koeffizienten
 
-Für Primzahlen $p$ guter Reduktion definieren wir:
+Für Primzahlen $p$ guter Reduktion:
 
 $$
 a_p = p + 1 - \#\tilde{E}(\mathbb{F}_p)
@@ -143,7 +145,7 @@ wobei $\#\tilde{E}(\mathbb{F}_p)$ die Anzahl der Punkte von $\tilde{E}$ über $\
 
 **Satz (Hasse, 1933).** Es gilt $|a_p| \leq 2\sqrt{p}$.
 
-Die $a_p$-Koeffizienten kodieren, wie die Kurve „Primzahl für Primzahl" aussieht. Sie sind die Bausteine der $L$-Reihe.
+Die $a_p$-Koeffizienten kodieren das Verhalten der Kurve Primzahl für Primzahl. Sie bilden die Bausteine der $L$-Reihe.
 
 **Beispiel:** Für $E: y^2 = x^3 - x$ und $p = 5$:
 
@@ -174,7 +176,7 @@ $$
 L(E, s) \stackrel{?}{=} L(f, s) = \sum_{n=1}^{\infty} a_n n^{-s}
 $$
 
-Wenn ja, heißt $E$ **modular**. Die **Taniyama-Shimura-Vermutung** (jetzt ein Theorem) besagt: **Jede** elliptische Kurve über $\mathbb{Q}$ ist modular. Dieser Satz – genauer: der semistabile Fall, bewiesen von Wiles – impliziert Fermats letzten Satz.
+Wenn ja, heißt $E$ **modular**. Die **Taniyama-Shimura-Vermutung** (jetzt Theorem) besagt: **Jede** elliptische Kurve über $\mathbb{Q}$ ist modular. Dieser Satz – genauer: der semistabile Fall, bewiesen von Wiles – impliziert Fermats letzten Satz.
 
 ## 6. Torsionspunkte und Galois-Darstellungen
 
@@ -184,7 +186,7 @@ $$
 E[\ell] = \{P \in E(\overline{\mathbb{Q}}) \mid \ell P = \mathcal{O}\}
 $$
 
-Es gilt $E[\ell] \cong (\mathbb{Z}/\ell\mathbb{Z})^2$ – eine zweidimensionale Gruppe über $\mathbb{F}_\ell$.
+Es gilt $E[\ell] \cong (\mathbb{Z}/\ell\mathbb{Z})^2$ – ein zweidimensionaler Vektorraum über $\mathbb{F}_\ell$.
 
 Die **absolute Galois-Gruppe** $G_{\mathbb{Q}}$ wirkt auf $E[\ell]$ durch Permutation der Koordinaten. Dies definiert eine **Galois-Darstellung**:
 
@@ -192,21 +194,21 @@ $$
 \bar{\rho}_{E,\ell}: G_{\mathbb{Q}} \to \text{Aut}(E[\ell]) \cong \text{GL}_2(\mathbb{F}_\ell)
 $$
 
-Für die **$\ell$-adische Tate-Moduln** (den projektiven Limes über alle $\ell^n$-Teilungspunkte) erhält man eine $\ell$-adische Darstellung:
+Für die **$\ell$-adischen Tate-Moduln** (den projektiven Limes über alle $\ell^n$-Teilungspunkte) ergibt sich eine $\ell$-adische Darstellung:
 
 $$
 \rho_{E,\ell}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_\ell) \hookrightarrow \text{GL}_2(\mathbb{Q}_\ell)
 $$
 
-Diese Darstellungen sind das Bindeglied zwischen elliptischen Kurven und der Galois-Theorie – und das zentrale Objekt in Wiles' Beweis.
+Diese Darstellungen bilden das Bindeglied zwischen elliptischen Kurven und der Galois-Theorie – das zentrale Objekt in Wiles' Beweis.
 
-## 7. Elliptische Kurven und Kryptographie
+## 7. Elliptische Kurven in der Kryptographie
 
-Ein kurzer Ausflug in die Anwendung: Elliptische Kurven über endlichen Körpern $\mathbb{F}_p$ bilden die Grundlage moderner **kryptographischer Verfahren** (ECC – Elliptic Curve Cryptography).
+Elliptische Kurven über endlichen Körpern $\mathbb{F}_p$ bilden die Grundlage moderner **kryptographischer Verfahren** (ECC – Elliptic Curve Cryptography).
 
-Die Sicherheit beruht auf dem **diskreten Logarithmusproblem**: Gegeben $P$ und $Q = nP$ auf $E(\mathbb{F}_p)$, ist es rechnerisch extrem schwierig, $n$ zu finden – obwohl die Berechnung von $nP$ aus $n$ und $P$ effizient möglich ist (durch wiederholtes Verdoppeln und Addieren).
+Die Sicherheit beruht auf dem **diskreten Logarithmusproblem**: Gegeben $P$ und $Q = nP$ auf $E(\mathbb{F}_p)$, ist es rechnerisch extrem schwierig, $n$ zu bestimmen – obwohl die Berechnung von $nP$ aus $n$ und $P$ effizient möglich ist (durch wiederholtes Verdoppeln und Addieren).
 
-ECC bietet dasselbe Sicherheitsniveau wie RSA, aber mit deutlich kürzeren Schlüsseln:
+ECC bietet dasselbe Sicherheitsniveau wie RSA, aber mit kürzeren Schlüsseln:
 
 | Sicherheitsniveau | RSA-Schlüssel | ECC-Schlüssel |
 |-------------------|---------------|---------------|
@@ -215,7 +217,7 @@ ECC bietet dasselbe Sicherheitsniveau wie RSA, aber mit deutlich kürzeren Schl�
 
 ## 8. Ausblick: Modularität
 
-Dieser Artikel hat elliptische Kurven als eigenständige algebraische Objekte vorgestellt. Ihre wahre Kraft entfalten sie im Zusammenspiel mit **Modulformen** – dem Thema des nächsten Werkzeug-Artikels.
+Dieser Artikel hat elliptische Kurven als eigenständige algebraische Objekte vorgestellt. Ihre Verbindung zu **Modulformen** ist Thema des nächsten Werkzeug-Artikels.
 
 Die Kette der Verbindungen:
 
@@ -223,13 +225,13 @@ $$
 \text{Elliptische Kurve } E \xrightarrow{a_p} \text{$L$-Reihe } L(E,s) \xleftarrow{?} L(f,s) \xleftarrow{a_n} \text{Modulform } f
 $$
 
-Die Taniyama-Shimura-Vermutung behauptet, dass der Pfeil in der Mitte immer existiert – dass jede elliptische Kurve ihre „Zwillingsseele" im Reich der Modulformen hat. Wiles' Beweis dieser Vermutung (für semistabile Kurven) ist der Schlüssel zu Fermats letztem Satz.
+Die Taniyama-Shimura-Vermutung behauptet, dass der mittlere Pfeil immer existiert – dass jede elliptische Kurve ein Gegenstück im Raum der Modulformen hat. Wiles' Beweis dieser Vermutung (für semistabile Kurven) ist der Schlüssel zu Fermats letztem Satz.
 
 ---
 
-## Weiterführende Quellen
+## Quellen
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem*, Kap. 6
-- **Joseph Silverman**: *The Arithmetic of Elliptic Curves* – das Standardwerk
-- **Joseph Silverman, John Tate**: *Rational Points on Elliptic Curves* – zugängliche Einführung
-- **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, §1
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 6
+- **Joseph Silverman**: *The Arithmetic of Elliptic Curves*, Springer (1986)
+- **Joseph Silverman, John Tate**: *Rational Points on Elliptic Curves*, Springer (1992)
+- **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), §1

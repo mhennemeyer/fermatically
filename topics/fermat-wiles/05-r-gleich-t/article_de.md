@@ -165,7 +165,7 @@ $$
 
 ### Das Kongruenzideal
 
-Das **Kongruenzideal** $\eta_T$ misst, wie viele solche Kongruenzen es gibt. Genauer: Sei $\pi: T \to \mathbb{Z}_p$ der Homomorphismus, der der Neuform $f_0$ (die zu unserer elliptischen Kurve gehört) entspricht. Dann ist
+Das **Kongruenzideal** $\eta_T$ misst, wie viele solche Kongruenzen es gibt. Genauer: Sei $\pi: T \to \mathbb{Z}_p$ der Homomorphismus, der der Neuform $f_0$ (zugehörig zur elliptischen Kurve $E$) entspricht. Dann ist
 
 $$
 \eta_T = \pi(\text{Ann}_T(\ker \pi)) \subset \mathbb{Z}_p

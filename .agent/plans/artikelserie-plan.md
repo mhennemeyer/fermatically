@@ -1,8 +1,8 @@
 # Plan: Mathematik-Plattform – Große Beweise verstehen
 
 Erstellt: 2026-03-30
-Aktualisiert: 2026-03-31
-Status: Phase 1+2+3+4 abgeschlossen (v2 – Multi-Topic-Architektur)
+Aktualisiert: 2026-04-08
+Status: Phase 1–4 abgeschlossen, Phase 5 in Arbeit (docs/ befüllt, MkDocs build clean). Stilüberarbeitung aller 18 Artikel abgeschlossen. Vorwissen-Bereich (16 Themen DE+EN) fertiggestellt. Offen: Referenzierung (Popup/Sidebar), Deployment (Coolify).
 
 ## Vision
 
@@ -191,17 +191,17 @@ So wird klar, welche Grundlagen-Topics gelesen werden sollten, bevor man in den 
 ### Phase 3: Artikel schreiben (Grundlagen zuerst)
 9. [x] `elementare-zahlentheorie` – 4 Artikel (DE)
 10. [x] Werkzeug-Topics – je 1 Artikel (DE)
-11. [ ] Englische Versionen nachziehen
+11. [x] Englische Versionen nachziehen
 
 ### Phase 4: Artikel schreiben (Fermat-Beweis)
 12. [x] `fermat-wiles` – 8 Artikel (DE) mit Querverweisen
-13. [ ] Englische Versionen nachziehen
+13. [x] Englische Versionen nachziehen
 
 ### Phase 5: Website-Publikation
-14. [ ] Entscheidung: Django (wie LambdaPy) vs. SSG (Hugo/Jekyll)
-15. [ ] Build-Pipeline für Markdown → HTML (mit LaTeX-Rendering via KaTeX)
+14. [x] Entscheidung: MkDocs mit Material-Theme (bereits aufgesetzt)
+15. [x] Build-Pipeline: 18 Artikel aus `topics/` nach `docs/` synchronisiert, Links umgeschrieben, MkDocs build mit 0 Warnings (`scripts/sync_topics_to_docs.sh` + `scripts/fix_docs_links.py`)
 16. [ ] Automatische Navigation aus `requires`-Frontmatter generieren
-17. [ ] Deployment-Setup
+17. [ ] Deployment-Setup (Coolify/Docker)
 
 ### Phase 6: Medium-Synchronisation
 18. [ ] Medium.com API-Integration

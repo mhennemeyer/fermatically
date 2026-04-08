@@ -117,13 +117,14 @@ dann stimmen die $L$-Reihen überein: $L(E, s) = L(f, s)$. In diesem Fall sagt m
 
 ### Das Symposium von Tokio (1955)
 
-Im September 1955 fand in Tokio ein internationales Symposium über algebraische Zahlentheorie statt. Dort formulierte der junge japanische Mathematiker **Yutaka Taniyama** (1927–1958) eine Reihe von Problemen, die eine Verbindung zwischen elliptischen Kurven und Modulformen andeuteten. Seine Fragen waren etwas vage formuliert, aber der Kern war revolutionär: Die $L$-Reihen elliptischer Kurven sollten mit denen von Modulformen übereinstimmen.
+Im September 1955 fand in Tokio ein internationales Symposium über algebraische Zahlentheorie statt. Dort formulierte **Yutaka Taniyama** (1927–1958) eine Reihe von Problemen, die eine Verbindung zwischen elliptischen Kurven und Modulformen andeuteten. Die Fragen waren zunächst vage formuliert, aber der Kern war klar: Die $L$-Reihen elliptischer Kurven sollten mit denen von Modulformen übereinstimmen.
 
 Taniyamas Kollege **Goro Shimura** (1930–2019) präzisierte die Vermutung in den folgenden Jahren und untermauerte sie mit Berechnungen und theoretischen Argumenten. In der westlichen Literatur wurde die Vermutung daher oft als **Taniyama-Shimura-Vermutung** (TSV) bezeichnet, manchmal auch als Taniyama-Shimura-Weil-Vermutung, da André Weil einen wichtigen Beitrag zur Präzisierung leistete.
 
-### Die tragische Geschichte
+Taniyama starb 1958 im Alter von 31 Jahren. Seine mathematische Vision überlebte ihn und wurde zu einer der einflussreichsten Vermutungen des 20. Jahrhunderts.
 
-Taniyama nahm sich 1958 im Alter von nur 31 Jahren das Leben – aus Gründen, die bis heute nicht vollständig geklärt sind. Seine mathematische Vision überlebte ihn jedoch und wurde zu einer der einflussreichsten Vermutungen des 20. Jahrhunderts.
+> „I do not deny that there is an element of mystery in the conjecture [...] but I think, at the time, it was just a guess."
+> — Goro Shimura, zitiert in Singh, *Fermat's Last Theorem* (1997), S. 174
 
 ### Die Vermutung, präzise formuliert
 
@@ -147,13 +148,13 @@ Schließlich gab es die **philosophische Überzeugung**, die dem Langlands-Progr
 
 ## 4. Was „modular" bedeutet – Ein Beispiel
 
-Betrachten wir die elliptische Kurve
+Gegeben die elliptische Kurve
 
 $$
 E: \quad y^2 = x^3 - x.
 $$
 
-Dies ist eine Kurve mit **Konduktor** $N_E = 32$. Wir berechnen die Koeffizienten $a_p$ durch Punktezählung modulo kleiner Primzahlen:
+Diese Kurve hat **Konduktor** $N_E = 32$. Die Koeffizienten $a_p$ ergeben sich durch Punktezählung modulo kleiner Primzahlen:
 
 | $p$ | $\#E(\mathbb{F}_p)$ | $a_p = p - \#E(\mathbb{F}_p)$ |
 |-----|---------------------|-------------------------------|
@@ -163,7 +164,7 @@ Dies ist eine Kurve mit **Konduktor** $N_E = 32$. Wir berechnen die Koeffiziente
 | 11  | 12                  | $-1$                          |
 | 13  | 12                  | $1$                           |
 
-Nun suchen wir eine Modulform $f$ vom Gewicht 2 und Stufe 32 mit denselben Koeffizienten. Tatsächlich gibt es genau eine solche Neuform, und ihre $q$-Entwicklung beginnt mit:
+Die zugehörige Modulform $f$ vom Gewicht 2 und Stufe 32 ist eindeutig bestimmt. Ihre $q$-Entwicklung beginnt mit:
 
 $$
 f(q) = q - q^3 + q^5 - q^7 - q^{11} + q^{13} + \cdots
@@ -181,7 +182,7 @@ Die Taniyama-Shimura-Vermutung ist nicht einfach eine Beobachtung über einzelne
 
 ### Unendlich viele Kurven, eine Vermutung
 
-Es gibt unendlich viele nicht-isomorphe elliptische Kurven über $\mathbb{Q}$, parametrisiert durch die Koeffizienten $a$ und $b$. Für **jede einzelne** behauptet die TSV die Existenz einer passenden Modulform. Das ist eine atemberaubend starke Aussage.
+Es gibt unendlich viele nicht-isomorphe elliptische Kurven über $\mathbb{Q}$, parametrisiert durch die Koeffizienten $a$ und $b$. Für **jede einzelne** behauptet die TSV die Existenz einer passenden Modulform.
 
 ### Von Geometrie zu Analysis
 
@@ -238,13 +239,13 @@ $$
 \boxed{\text{FLT-Lösung} \xrightarrow{\text{Frey}} E \xrightarrow{\text{Ribet}} \text{nicht modular} \xleftarrow{\text{Widerspruch}} \xrightarrow{\text{Wiles}} \text{modular}}
 $$
 
-Dieser wunderschöne Widerspruchsbeweis – der eine Vermutung aus der Zahlentheorie über einen Umweg durch algebraische Geometrie und komplexe Analysis beweist – ist eines der großen intellektuellen Meisterwerke der Mathematik.
+Dieser Widerspruchsbeweis – der eine Vermutung aus der Zahlentheorie über algebraische Geometrie und komplexe Analysis beweist – verbindet drei zentrale Gebiete der modernen Mathematik.
 
 ---
 
 ## Ausblick
 
-Dieser Artikel hat die Taniyama-Shimura-Vermutung als Brücke zwischen elliptischen Kurven und Modulformen vorgestellt. Im nächsten Artikel tauchen wir tiefer ein:
+Dieser Artikel hat die Taniyama-Shimura-Vermutung als Verbindung zwischen elliptischen Kurven und Modulformen dargestellt. Die folgenden Artikel vertiefen die einzelnen Schritte:
 
 | Artikel | Thema |
 |---------|-------|

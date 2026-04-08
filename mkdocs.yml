@@ -26,6 +26,7 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.footer
     - toc.integrate
     - search.highlight
     - content.code.copy
@@ -50,6 +51,29 @@ extra_javascript:
 nav:
   - Startseite: index.md
   - Über das Projekt: about.md
+  - Vorwissen:
+    - Übersicht: vorwissen/index.md
+    - Logik und Beweistechniken:
+      - "Aussagenlogik": vorwissen/aussagenlogik.md
+      - "Implikation und Äquivalenz": vorwissen/implikation-aequivalenz.md
+      - "Beweisarten": vorwissen/beweisarten.md
+      - "Was ist ein Beweis?": vorwissen/was-ist-ein-beweis.md
+    - Arithmetik und Zahlen:
+      - "Bruchrechnung": vorwissen/bruchrechnung.md
+      - "Gleichungen und äquivalente Umformungen": vorwissen/gleichungen.md
+      - "Ungleichungen": vorwissen/ungleichungen.md
+      - "Teilbarkeit und ggT": vorwissen/teilbarkeit-ggt.md
+      - "Modulare Arithmetik": vorwissen/modulare-arithmetik.md
+    - Mengen und Strukturen:
+      - "Mengen und Mengenoperationen": vorwissen/mengen.md
+      - "Abbildungen (Funktionen)": vorwissen/abbildungen.md
+      - "Zahlenbereiche": vorwissen/zahlenbereiche.md
+    - Geometrie:
+      - "Pythagoras und pythagoräische Tripel": vorwissen/pythagoras.md
+      - "Koordinatengeometrie": vorwissen/koordinatengeometrie.md
+    - Algebra:
+      - "Potenzen und Polynome": vorwissen/potenzen-polynome.md
+      - "Binomische Formeln und Faktorisierung": vorwissen/binomische-formeln.md
   - Grundlagen:
     - Elementare Zahlentheorie:
       - Überblick: grundlagen/elementare-zahlentheorie/index.md

@@ -19,9 +19,8 @@ requires:
 # Modulformen
 
 !!! abstract "Zusammenfassung"
-    Modulformen sind holomorphe Funktionen mit extremer Symmetrie – sie transformieren
-    sich vorhersagbar unter der Wirkung von $\text{SL}_2(\mathbb{Z})$. Ihre Fourier-Koeffizienten
-    enthalten tiefe zahlentheoretische Information, und ihre $L$-Reihen sind die „Zwillingsseelen"
+    Holomorphe Funktionen mit Symmetrie unter $\text{SL}_2(\mathbb{Z})$. Ihre Fourier-Koeffizienten
+    tragen zahlentheoretische Information, und ihre $L$-Reihen sind die Gegenstücke
     der $L$-Reihen elliptischer Kurven.
 
 ## Voraussetzungen
@@ -42,7 +41,7 @@ $$
 \mathbb{H} = \{z \in \mathbb{C} \mid \text{Im}(z) > 0\}
 $$
 
-Auf $\mathbb{H}$ wirkt die Gruppe $\text{SL}_2(\mathbb{Z})$ – die Menge der $2 \times 2$-Matrizen mit ganzzahligen Einträgen und Determinante $1$:
+Auf $\mathbb{H}$ wirkt die Gruppe $\text{SL}_2(\mathbb{Z})$ – die $2 \times 2$-Matrizen mit ganzzahligen Einträgen und Determinante $1$:
 
 $$
 \text{SL}_2(\mathbb{Z}) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \mid a, b, c, d \in \mathbb{Z}, \, ad - bc = 1 \right\}
@@ -54,7 +53,7 @@ $$
 \gamma \cdot z = \frac{az + b}{cz + d} \qquad \text{für } \gamma = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
 $$
 
-Man kann nachrechnen: Wenn $z \in \mathbb{H}$, dann auch $\gamma \cdot z \in \mathbb{H}$. Die obere Halbebene ist also unter dieser Wirkung abgeschlossen.
+Für $z \in \mathbb{H}$ gilt auch $\gamma \cdot z \in \mathbb{H}$ – die obere Halbebene ist unter dieser Wirkung abgeschlossen.
 
 $\text{SL}_2(\mathbb{Z})$ wird von zwei Matrizen erzeugt:
 
@@ -76,15 +75,18 @@ $$
 f\left(\frac{az + b}{cz + d}\right) = (cz + d)^k f(z)
 $$
 
-**(M2) Holomorphie am Rand.** $f$ ist auch „bei $z \to i\infty$" holomorph (d.h. die Fourier-Entwicklung hat keine negativen Potenzen).
+**(M2) Holomorphie am Rand.** $f$ ist auch „bei $z \to i\infty$" holomorph (die Fourier-Entwicklung hat keine negativen Potenzen).
 
-Insbesondere folgt aus der Translation $T: z \mapsto z + 1$:
+Aus der Translation $T: z \mapsto z + 1$ folgt:
 
 $$
 f(z + 1) = f(z)
 $$
 
-Also ist $f$ periodisch mit Periode $1$ – und hat damit eine **Fourier-Entwicklung**.
+$f$ ist also periodisch mit Periode $1$ und besitzt eine **Fourier-Entwicklung**.
+
+> „Modular forms are functions on the upper half plane which are inordinately symmetric."
+> — Fred Diamond, Jerry Shurman, *A First Course in Modular Forms* (2005), S. 1
 
 !!! note "Das Gewicht"
     Das Gewicht $k$ muss eine gerade natürliche Zahl sein (für $\text{SL}_2(\mathbb{Z})$). Der Faktor $(cz + d)^k$ ist der „Preis" der Symmetrie: $f$ ist nicht invariant unter $\text{SL}_2(\mathbb{Z})$, sondern transformiert sich mit einem Korrekturfaktor.
@@ -93,7 +95,7 @@ Eine Modulform heißt **Spitzenform** (cusp form), wenn zusätzlich $f(z) \to 0$
 
 ## 3. Fourier-Entwicklung
 
-Da $f(z + 1) = f(z)$, können wir die Variable $q = e^{2\pi i z}$ einführen. Für $z \in \mathbb{H}$ ist $|q| < 1$, und $f$ hat eine Entwicklung:
+Da $f(z + 1) = f(z)$, lässt sich die Variable $q = e^{2\pi i z}$ einführen. Für $z \in \mathbb{H}$ ist $|q| < 1$, und $f$ hat eine Entwicklung:
 
 $$
 f(z) = \sum_{n=0}^{\infty} a_n q^n = a_0 + a_1 q + a_2 q^2 + a_3 q^3 + \cdots
@@ -101,7 +103,7 @@ $$
 
 Die Koeffizienten $a_n$ heißen **Fourier-Koeffizienten** der Modulform. Für Spitzenformen gilt $a_0 = 0$.
 
-Die Fourier-Koeffizienten sind das Herzstück: Sie tragen die gesamte arithmetische Information der Modulform. Dass diese Koeffizienten tiefe zahlentheoretische Bedeutung haben, ist eines der großen Wunder der Mathematik.
+Die Fourier-Koeffizienten tragen die gesamte arithmetische Information der Modulform. Dass diese Koeffizienten zahlentheoretische Bedeutung besitzen, zählt zu den tiefsten Phänomenen der Mathematik.
 
 ## 4. Beispiele
 
@@ -125,13 +127,13 @@ wobei $B_k$ die $k$-te Bernoulli-Zahl und $\sigma_{k-1}(n) = \sum_{d \mid n} d^{
 
 ### Die Diskriminante $\Delta$
 
-Die berühmteste Spitzenform ist die **Ramanujan-Diskriminante**:
+Die bekannteste Spitzenform ist die **Ramanujan-Diskriminante**:
 
 $$
 \Delta(z) = q \prod_{n=1}^{\infty} (1 - q^n)^{24} = \sum_{n=1}^{\infty} \tau(n) q^n
 $$
 
-Sie hat Gewicht $12$ und ist die (bis auf Skalierung) einzige Spitzenform vom Gewicht $12$ für $\text{SL}_2(\mathbb{Z})$.
+Gewicht $12$, und (bis auf Skalierung) die einzige Spitzenform vom Gewicht $12$ für $\text{SL}_2(\mathbb{Z})$.
 
 Die Koeffizienten $\tau(n)$ sind die **Ramanujan-$\tau$-Funktion**:
 
@@ -139,15 +141,18 @@ $$
 \tau(1) = 1, \quad \tau(2) = -24, \quad \tau(3) = 252, \quad \tau(4) = -1472, \quad \ldots
 $$
 
-Ramanujan vermutete 1916, dass $|\tau(p)| \leq 2p^{11/2}$ für alle Primzahlen $p$ – dies wurde erst 1974 von Deligne bewiesen (als Konsequenz der Weil-Vermutungen).
+Ramanujan vermutete 1916, dass $|\tau(p)| \leq 2p^{11/2}$ für alle Primzahlen $p$ gilt. Der Beweis gelang erst 1974 durch Deligne (als Konsequenz der Weil-Vermutungen).
+
+> „The Ramanujan $\tau$-function is perhaps the most important single example in the theory of modular forms."
+> — Jean-Pierre Serre, *A Course in Arithmetic* (1973), S. 98
 
 ### Die $j$-Invariante
 
-Die $j$-Invariante $j(z) = E_4(z)^3 / \Delta(z)$ ist keine Modulform (sie hat Gewicht $0$ und einen Pol bei $i\infty$), aber eine **modulare Funktion**. Sie klassifiziert elliptische Kurven: Zwei Kurven sind genau dann isomorph (über $\overline{K}$), wenn sie dieselbe $j$-Invariante haben.
+Die $j$-Invariante $j(z) = E_4(z)^3 / \Delta(z)$ ist keine Modulform (Gewicht $0$ und Pol bei $i\infty$), aber eine **modulare Funktion**. Sie klassifiziert elliptische Kurven: Zwei Kurven sind genau dann isomorph (über $\overline{K}$), wenn sie dieselbe $j$-Invariante haben.
 
 ## 5. Hecke-Operatoren
 
-Die Räume der Modulformen tragen zusätzliche Symmetrien – die **Hecke-Operatoren** $T_n$. Für eine Modulform $f(z) = \sum a_m q^m$ und eine Primzahl $p$ ist:
+Die Räume der Modulformen tragen zusätzliche Symmetrien – die **Hecke-Operatoren** $T_n$. Für eine Modulform $f(z) = \sum a_m q^m$ und eine Primzahl $p$:
 
 $$
 (T_p f)(z) = \sum_{m=0}^{\infty} (a_{mp} + p^{k-1} a_{m/p}) \, q^m
@@ -161,14 +166,14 @@ $$
 T_n f = \lambda_n f \quad \text{für alle } n
 $$
 
-Für normierte Hecke-Eigenformen ($a_1 = 1$) gilt ein bemerkenswertes Resultat: Die Eigenwerte *sind* die Fourier-Koeffizienten: $\lambda_n = a_n$.
+Für normierte Hecke-Eigenformen ($a_1 = 1$) gilt: Die Eigenwerte *sind* die Fourier-Koeffizienten: $\lambda_n = a_n$.
 
 !!! tip "Multiplikativität"
-    Die Fourier-Koeffizienten einer Hecke-Eigenform sind **multiplikativ**: $a_{mn} = a_m a_n$ für $\gcd(m, n) = 1$. Außerdem gilt $a_{p^{r+1}} = a_p a_{p^r} - p^{k-1} a_{p^{r-1}}$. Damit bestimmen die $a_p$ (für Primzahlen $p$) die gesamte Fourier-Entwicklung.
+    Die Fourier-Koeffizienten einer Hecke-Eigenform sind **multiplikativ**: $a_{mn} = a_m a_n$ für $\gcd(m, n) = 1$. Außerdem gilt $a_{p^{r+1}} = a_p a_{p^r} - p^{k-1} a_{p^{r-1}}$. Die $a_p$ (für Primzahlen $p$) bestimmen damit die gesamte Fourier-Entwicklung.
 
 ## 6. $L$-Reihen von Modulformen
 
-Jede Modulform $f(z) = \sum_{n=1}^{\infty} a_n q^n$ (Spitzenform) definiert eine **$L$-Reihe**:
+Jede Spitzenform $f(z) = \sum_{n=1}^{\infty} a_n q^n$ definiert eine **$L$-Reihe**:
 
 $$
 L(f, s) = \sum_{n=1}^{\infty} a_n n^{-s}
@@ -184,7 +189,7 @@ Die $L$-Reihe konvergiert für $\text{Re}(s) > (k+1)/2$ und lässt sich analytis
 
 ### Vergleich mit elliptischen Kurven
 
-Für eine Hecke-Eigenform $f$ vom Gewicht $2$ und eine elliptische Kurve $E$ vergleiche man die $L$-Reihen:
+Für eine Hecke-Eigenform $f$ vom Gewicht $2$ und eine elliptische Kurve $E$:
 
 $$
 L(f, s) = \prod_p \frac{1}{1 - a_p(f) p^{-s} + p^{1-2s}}
@@ -194,23 +199,23 @@ $$
 L(E, s) = \prod_p \frac{1}{1 - a_p(E) p^{-s} + p^{1-2s}}
 $$
 
-Die Strukturen sind **identisch**! Die Taniyama-Shimura-Vermutung besagt: Zu jeder elliptischen Kurve $E$ gibt es eine Hecke-Eigenform $f$ vom Gewicht $2$ mit $a_p(E) = a_p(f)$ für alle (bis auf endlich viele) Primzahlen $p$.
+Die Strukturen sind **identisch**. Die Taniyama-Shimura-Vermutung besagt: Zu jeder elliptischen Kurve $E$ gibt es eine Hecke-Eigenform $f$ vom Gewicht $2$ mit $a_p(E) = a_p(f)$ für alle (bis auf endlich viele) Primzahlen $p$.
 
 ## 7. Kongruenzuntergruppen
 
-Für Wiles' Beweis reichen Modulformen für $\text{SL}_2(\mathbb{Z})$ nicht aus – man braucht Modulformen für **Kongruenzuntergruppen**. Die wichtigste ist:
+Für Wiles' Beweis reichen Modulformen für $\text{SL}_2(\mathbb{Z})$ nicht aus – nötig sind Modulformen für **Kongruenzuntergruppen**. Die wichtigste:
 
 $$
 \Gamma_0(N) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \text{SL}_2(\mathbb{Z}) \mid N \mid c \right\}
 $$
 
-Das **Niveau** $N$ bestimmt, wie viel Symmetrie die Modulform hat – weniger Symmetrie (größeres $N$) erlaubt mehr Modulformen.
+Das **Niveau** $N$ bestimmt den Grad der Symmetrie – geringere Symmetrie (größeres $N$) erlaubt mehr Modulformen.
 
-Eine elliptische Kurve $E$ mit **Führer** $N_E$ (ein Maß für die „Kompliziertheit" der schlechten Reduktion) entspricht einer Hecke-Eigenform vom Gewicht $2$ und Niveau $N_E$.
+Eine elliptische Kurve $E$ mit **Führer** $N_E$ (ein Maß für die schlechte Reduktion) entspricht einer Hecke-Eigenform vom Gewicht $2$ und Niveau $N_E$.
 
 ## 8. Die Brücke zu elliptischen Kurven
 
-Die Verbindung zwischen Modulformen und elliptischen Kurven ist einer der tiefsten Zusammenhänge in der Mathematik:
+Die Verbindung zwischen Modulformen und elliptischen Kurven ist einer der tiefsten Zusammenhänge der Mathematik:
 
 | Elliptische Kurve $E$ | Modulform $f$ |
 |------------------------|---------------|
@@ -226,19 +231,19 @@ Wiles bewies 1995 den Fall semistabiler Kurven – ausreichend für FLT. Die vol
 
 ### Die Implikation für FLT
 
-Warum impliziert Modularität Fermats letzten Satz? Der Beweis verläuft durch Widerspruch:
+Modularität impliziert Fermats letzten Satz durch Widerspruch:
 
 1. **Annahme:** Es gibt eine Lösung $a^p + b^p = c^p$.
-2. **Frey:** Konstruiere die elliptische Kurve $E: y^2 = x(x - a^p)(x + b^p)$.
+2. **Frey:** Konstruktion der elliptischen Kurve $E: y^2 = x(x - a^p)(x + b^p)$.
 3. **Ribet:** Diese Frey-Kurve kann **nicht** modular sein (ihr Führer wäre „zu klein").
 4. **Wiles:** Aber jede semistabile elliptische Kurve **ist** modular.
-5. **Widerspruch:** Die Frey-Kurve existiert nicht → es gibt keine Lösung → FLT ist wahr.
+5. **Widerspruch:** Die Frey-Kurve existiert nicht → keine Lösung → FLT ist wahr.
 
 ---
 
-## Weiterführende Quellen
+## Quellen
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem*, Kap. 7
-- **Fred Diamond, Jerry Shurman**: *A First Course in Modular Forms* – das moderne Standardwerk
-- **Jean-Pierre Serre**: *A Course in Arithmetic*, Kap. VII – elegante Einführung in Modulformen
-- **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, §1
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 7
+- **Fred Diamond, Jerry Shurman**: *A First Course in Modular Forms*, Springer (2005)
+- **Jean-Pierre Serre**: *A Course in Arithmetic*, Springer (1973), Kapitel VII
+- **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), §1

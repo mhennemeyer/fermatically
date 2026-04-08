@@ -19,9 +19,8 @@ requires:
 # Galois-Theorie
 
 !!! abstract "Zusammenfassung"
-    Évariste Galois entdeckte mit 19 Jahren, dass die Lösbarkeit einer Gleichung durch
-    die Symmetrien ihrer Nullstellen bestimmt wird. Seine Theorie verbindet Körpererweiterungen
-    mit Gruppen – und liefert den konzeptuellen Rahmen für Wiles' Beweis.
+    Die Lösbarkeit einer Polynomgleichung wird durch die Symmetrien ihrer Nullstellen bestimmt.
+    Galois' Theorie verbindet Körpererweiterungen mit Gruppen – konzeptueller Rahmen für Wiles' Beweis.
 
 ## Voraussetzungen
 
@@ -32,7 +31,7 @@ requires:
 
 ## 1. Das Problem der Lösungsformeln
 
-Jeder kennt die **Lösungsformel für quadratische Gleichungen**:
+Die **Lösungsformel für quadratische Gleichungen** ist allgemein bekannt:
 
 $$
 x^2 + bx + c = 0 \implies x = \frac{-b \pm \sqrt{b^2 - 4c}}{2}
@@ -40,29 +39,30 @@ $$
 
 Die Nullstellen lassen sich durch die Koeffizienten ausdrücken – mithilfe von Addition, Subtraktion, Multiplikation, Division und Wurzelziehen.
 
-Für Gleichungen dritten und vierten Grades gibt es ebenfalls (kompliziertere) Lösungsformeln, die Cardano (1545) und Ferrari entdeckten. Natürlich stellt sich die Frage: Gibt es auch für Grad $5$ und höher solche Formeln?
+Für Gleichungen dritten und vierten Grades existieren ebenfalls (kompliziertere) Lösungsformeln, entdeckt von Cardano (1545) und Ferrari. Die Frage: Gibt es auch für Grad $5$ und höher solche Formeln?
 
 Die Antwort ist **nein** – und die Begründung führt direkt zur Galois-Theorie.
 
 ## 2. Abels Unmöglichkeitsbeweis
 
-**Niels Henrik Abel** bewies 1824, dass es **keine** allgemeine Lösungsformel für Polynome vom Grad $\geq 5$ in Radikalen gibt. Das heißt: Es gibt Polynome fünften Grades, deren Nullstellen sich nicht durch endlich viele Wurzeln aus den Koeffizienten ausdrücken lassen.
+**Niels Henrik Abel** bewies 1824, dass **keine** allgemeine Lösungsformel für Polynome vom Grad $\geq 5$ in Radikalen existiert. Es gibt Polynome fünften Grades, deren Nullstellen sich nicht durch endlich viele Wurzeln aus den Koeffizienten ausdrücken lassen.
 
-Abels Beweis war ein Meilenstein, ließ aber eine entscheidende Frage offen: **Welche** Polynome lassen sich durch Radikale lösen und welche nicht? Ein konkretes Polynom fünften Grades kann durchaus eine Lösung in Radikalen haben – etwa $x^5 - 2 = 0$ mit $x = \sqrt[5]{2}$. Abels Theorem sagt nur, dass es kein *allgemeines* Verfahren gibt.
+Abels Beweis ließ eine entscheidende Frage offen: **Welche** Polynome lassen sich durch Radikale lösen und welche nicht? Ein konkretes Polynom fünften Grades kann durchaus eine Lösung in Radikalen haben – etwa $x^5 - 2 = 0$ mit $x = \sqrt[5]{2}$. Abels Theorem besagt nur, dass kein *allgemeines* Verfahren existiert.
 
-## 3. Galois' Idee
+## 3. Galois' Einsicht
 
-**Évariste Galois** (1811–1832) löste dieses Problem vollständig – mit einer Idee, die ihrer Zeit um Jahrzehnte voraus war. Er starb mit 20 Jahren bei einem Duell; in der Nacht davor schrieb er seine mathematischen Erkenntnisse fieberhaft nieder.
+**Évariste Galois** (1811–1832) löste dieses Problem vollständig. Seine zentrale Einsicht: **Die Lösbarkeit einer Gleichung wird durch die Symmetrien ihrer Nullstellen bestimmt.**
 
-Galois' zentrale Einsicht: **Die Lösbarkeit einer Gleichung wird durch die Symmetrien ihrer Nullstellen bestimmt.**
+> „Since the beginning of this century, computational procedures have become so complicated that any progress by those means has become impossible."
+> — Évariste Galois, Vorwort zum Mémoire (1831)
 
-Betrachte ein Polynom $f \in \mathbb{Q}[x]$ mit Nullstellen $\alpha_1, \ldots, \alpha_n \in \overline{\mathbb{Q}}$. Der **Zerfällungskörper** ist der kleinste Körper, der $\mathbb{Q}$ und alle Nullstellen enthält:
+Gegeben ein Polynom $f \in \mathbb{Q}[x]$ mit Nullstellen $\alpha_1, \ldots, \alpha_n \in \overline{\mathbb{Q}}$. Der **Zerfällungskörper** ist der kleinste Körper, der $\mathbb{Q}$ und alle Nullstellen enthält:
 
 $$
 L = \mathbb{Q}(\alpha_1, \ldots, \alpha_n)
 $$
 
-Eine **Symmetrie** dieses Körpers ist ein Automorphismus $\sigma: L \to L$, der $\mathbb{Q}$ elementweise festhält. Jeder solche Automorphismus permutiert die Nullstellen $\alpha_1, \ldots, \alpha_n$ – denn er muss die Gleichung $f(\alpha_i) = 0$ erhalten.
+Eine **Symmetrie** dieses Körpers ist ein Automorphismus $\sigma: L \to L$, der $\mathbb{Q}$ elementweise festhält. Jeder solche Automorphismus permutiert die Nullstellen $\alpha_1, \ldots, \alpha_n$ – er muss die Gleichung $f(\alpha_i) = 0$ erhalten.
 
 ## 4. Die Galois-Gruppe
 
@@ -87,7 +87,7 @@ Also $\text{Gal}(\mathbb{Q}(\sqrt{2})/\mathbb{Q}) \cong \mathbb{Z}/2\mathbb{Z}$.
 
 Die Nullstellen von $x^3 - 2$ sind $\sqrt[3]{2}$, $\omega\sqrt[3]{2}$ und $\omega^2\sqrt[3]{2}$ (mit $\omega = e^{2\pi i/3}$). Der Zerfällungskörper ist $L = \mathbb{Q}(\sqrt[3]{2}, \omega)$ mit $[L:\mathbb{Q}] = 6$.
 
-Die Galois-Gruppe ist $\text{Gal}(L/\mathbb{Q}) \cong S_3$ – die symmetrische Gruppe auf $3$ Elementen. Das liegt daran, dass die Automorphismen die drei Nullstellen beliebig permutieren können (unter der Einschränkung, dass $\omega \mapsto \omega$ oder $\omega \mapsto \omega^2$).
+Die Galois-Gruppe ist $\text{Gal}(L/\mathbb{Q}) \cong S_3$ – die symmetrische Gruppe auf $3$ Elementen. Die Automorphismen permutieren die drei Nullstellen (unter der Einschränkung, dass $\omega \mapsto \omega$ oder $\omega \mapsto \omega^2$).
 
 ### Beispiel: Kreisteilungskörper
 
@@ -97,11 +97,11 @@ $$
 \text{Gal}(\mathbb{Q}(\zeta_p)/\mathbb{Q}) \cong (\mathbb{Z}/p\mathbb{Z})^*
 $$
 
-Das ist die Gruppe der Einheiten modulo $p$ – eine abelsche Gruppe der Ordnung $p - 1$. Jeder Automorphismus $\sigma_a$ sendet $\zeta_p \mapsto \zeta_p^a$ für ein $a \in \{1, \ldots, p-1\}$.
+Die Gruppe der Einheiten modulo $p$ – abelsch, der Ordnung $p - 1$. Jeder Automorphismus $\sigma_a$ sendet $\zeta_p \mapsto \zeta_p^a$ für ein $a \in \{1, \ldots, p-1\}$.
 
 ## 5. Der Hauptsatz der Galois-Theorie
 
-Der **Hauptsatz** ist das Herzstück der Theorie. Er stellt eine perfekte Korrespondenz zwischen der algebraischen Struktur der Körpererweiterung und der Gruppenstruktur der Galois-Gruppe her.
+Der **Hauptsatz** stellt eine Bijektion zwischen der algebraischen Struktur der Körpererweiterung und der Gruppenstruktur der Galois-Gruppe her.
 
 **Satz (Galois-Korrespondenz).** Sei $L/K$ eine endliche Galois-Erweiterung mit Galois-Gruppe $G = \text{Gal}(L/K)$. Dann gibt es eine inklusionsumkehrende Bijektion:
 
@@ -135,9 +135,9 @@ Dabei gilt:
 
 ## 6. Auflösbarkeit
 
-Galois' ursprüngliche Frage war: Wann lässt sich eine Gleichung durch Radikale lösen? Der Hauptsatz liefert die Antwort.
+Galois' ursprüngliche Frage: Wann lässt sich eine Gleichung durch Radikale lösen? Der Hauptsatz liefert die Antwort.
 
-**Definition.** Eine Gruppe $G$ heißt **auflösbar**, wenn sie eine Kette von Untergruppen besitzt:
+**Definition.** Eine Gruppe $G$ heißt **auflösbar**, wenn eine Kette von Untergruppen existiert:
 
 $$
 \{e\} = G_0 \trianglelefteq G_1 \trianglelefteq \cdots \trianglelefteq G_n = G
@@ -147,7 +147,7 @@ wobei jeder Faktor $G_{i+1}/G_i$ abelsch (zyklisch von Primordnung) ist.
 
 **Satz (Galois).** Ein Polynom $f \in K[x]$ ist genau dann durch Radikale auflösbar, wenn seine Galois-Gruppe auflösbar ist.
 
-**Konsequenz für Grad $\geq 5$:** Die symmetrische Gruppe $S_n$ ist für $n \geq 5$ **nicht** auflösbar (weil die alternierende Gruppe $A_n$ für $n \geq 5$ einfach und nicht abelsch ist). Da es Polynome mit Galois-Gruppe $S_5$ gibt, sind diese nicht durch Radikale auflösbar.
+**Konsequenz für Grad $\geq 5$:** Die symmetrische Gruppe $S_n$ ist für $n \geq 5$ **nicht** auflösbar (weil die alternierende Gruppe $A_n$ für $n \geq 5$ einfach und nicht abelsch ist). Da Polynome mit Galois-Gruppe $S_5$ existieren, sind diese nicht durch Radikale auflösbar.
 
 **Konsequenz für Grad $\leq 4$:** Die Gruppen $S_1, S_2, S_3, S_4$ sind alle auflösbar – daher existieren Lösungsformeln für Polynome bis Grad $4$.
 
@@ -159,9 +159,12 @@ $$
 G_{\mathbb{Q}} = \text{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})
 $$
 
-Dies ist die Galois-Gruppe der Erweiterung aller algebraischen Zahlen über $\mathbb{Q}$. Sie ist eine unendliche, proendliche Gruppe – der projektive Limes aller endlichen Galois-Gruppen $\text{Gal}(L/\mathbb{Q})$.
+Die Galois-Gruppe der Erweiterung aller algebraischen Zahlen über $\mathbb{Q}$. Sie ist eine unendliche, proendliche Gruppe – der projektive Limes aller endlichen Galois-Gruppen $\text{Gal}(L/\mathbb{Q})$.
 
-$G_{\mathbb{Q}}$ ist eines der geheimnisvollsten Objekte der Mathematik. Trotz intensiver Forschung ist ihre vollständige Struktur unbekannt. Was wir kennen, sind ihre **Darstellungen** – Homomorphismen von $G_{\mathbb{Q}}$ in Matrizengruppen.
+$G_{\mathbb{Q}}$ zählt zu den am intensivsten untersuchten und zugleich am wenigsten verstandenen Objekten der Mathematik. Bekannt sind vor allem ihre **Darstellungen** – Homomorphismen von $G_{\mathbb{Q}}$ in Matrizengruppen.
+
+> „The Galois group of the algebraic closure of the rationals is an extraordinarily rich and mysterious group."
+> — Barry Mazur, *Number Theory as Gadfly*, The American Mathematical Monthly 98 (1991)
 
 ### Galois-Darstellungen
 
@@ -177,7 +180,7 @@ $$
 \rho: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p) \quad \text{oder} \quad \rho: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_p)
 $$
 
-Jede elliptische Kurve $E$ über $\mathbb{Q}$ liefert solche Darstellungen – über die Wirkung von $G_{\mathbb{Q}}$ auf den $p$-Teilungspunkten $E[p]$. Und jede Modulform liefert ebenfalls eine Galois-Darstellung. Die **Taniyama-Shimura-Vermutung** besagt im Kern: Die Darstellung der elliptischen Kurve *ist* die Darstellung einer Modulform.
+Jede elliptische Kurve $E$ über $\mathbb{Q}$ liefert solche Darstellungen – über die Wirkung von $G_{\mathbb{Q}}$ auf den $p$-Teilungspunkten $E[p]$. Ebenso liefert jede Modulform eine Galois-Darstellung. Die **Taniyama-Shimura-Vermutung** besagt im Kern: Die Darstellung der elliptischen Kurve *ist* die Darstellung einer Modulform.
 
 ### Lokale Galois-Gruppen
 
@@ -187,12 +190,13 @@ $$
 \rho|_{G_{\mathbb{Q}_p}}: G_{\mathbb{Q}_p} \to \text{GL}_n(K)
 $$
 
-Das **Lokal-Global-Prinzip** fragt: Wann bestimmen die lokalen Darstellungen die globale? Diese Frage steht im Zentrum von Wiles' Beweis.
+Das **Lokal-Global-Prinzip**: Wann bestimmen die lokalen Darstellungen die globale? Diese Frage steht im Zentrum von Wiles' Beweis.
 
 ---
 
-## Weiterführende Quellen
+## Quellen
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem*, Kap. 4
-- **Ian Stewart**: *Galois Theory* – zugängliche Einführung
-- **Emil Artin**: *Galois Theory* – der klassische Zugang
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 4
+- **Ian Stewart**: *Galois Theory*, Chapman & Hall (2003)
+- **Emil Artin**: *Galois Theory*, Dover (1998)
+- **Barry Mazur**: *Number Theory as Gadfly*, The American Mathematical Monthly 98 (1991), 593–610

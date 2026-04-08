@@ -56,7 +56,7 @@ Langlands bewies 1980 die Modulformen-Korrespondenz für auflösbare Galois-Dars
 
 ### Vom Gewicht 1 zum Gewicht 2
 
-Langlands-Tunnell liefert eine Modulform vom **Gewicht 1**, aber wir brauchen Gewicht 2 (für den Zusammenhang mit elliptischen Kurven). Wiles löst das durch eine Liftungsargument:
+Langlands-Tunnell liefert eine Modulform vom **Gewicht 1**, benötigt wird aber Gewicht 2 (für den Zusammenhang mit elliptischen Kurven). Wiles löst das durch ein Liftungsargument:
 
 Aus der Gewicht-1-Form $f$ konstruiert man eine Gewicht-2-Form $g$ mit $\bar{\rho}_g \cong \bar{\rho}_{E,3}$. Dies nutzt Hidas Theorie ordinärer $p$-adischer Modulformen.
 
@@ -102,7 +102,7 @@ Für eine **semistabile** Kurve kann man die Möglichkeiten weiter einschränken
 
 ### Das neue Problem
 
-Jetzt haben wir $\bar{\rho}_{E,5}$ irreduzibel – aber woher kommt die **residuale Modularität**? Langlands-Tunnell funktioniert nur für $p = 3$, nicht für $p = 5$ (denn $\text{GL}_2(\mathbb{F}_5)$ ist **nicht auflösbar**).
+$\bar{\rho}_{E,5}$ ist nun irreduzibel – aber woher kommt die **residuale Modularität**? Langlands-Tunnell funktioniert nur für $p = 3$, nicht für $p = 5$ (denn $\text{GL}_2(\mathbb{F}_5)$ ist **nicht auflösbar**).
 
 Hier kommt der geniale Trick.
 
@@ -138,7 +138,7 @@ Konkret: Über dem Funktionenkörper $\mathbb{Q}(t)$ gibt es eine „universelle
 
 ### Schritt 1: $E'$ ist modular (via $p = 3$)
 
-Da $\bar{\rho}_{E',3}$ irreduzibel ist, können wir den gesamten Beweisapparat für $p = 3$ anwenden:
+Da $\bar{\rho}_{E',3}$ irreduzibel ist, lässt sich der gesamte Beweisapparat für $p = 3$ anwenden:
 
 $$
 \bar{\rho}_{E',3} \text{ irreduzibel} \xrightarrow{\text{Langlands-Tunnell}} \bar{\rho}_{E',3} \text{ modular} \xrightarrow{R = T} \rho_{E',3} \text{ modular} \implies E' \text{ modular.}
@@ -154,7 +154,7 @@ $$
 
 ### Schritt 3: $E$ ist modular (via $p = 5$)
 
-Jetzt haben wir den Einstieg für $p = 5$: $\bar{\rho}_{E,5}$ ist modular und irreduzibel. Der Taylor-Wiles-Trick liefert $R = T$ für $p = 5$:
+Damit ist der Einstieg für $p = 5$ gesichert: $\bar{\rho}_{E,5}$ ist modular und irreduzibel. Der Taylor-Wiles-Trick liefert $R = T$ für $p = 5$:
 
 $$
 \bar{\rho}_{E,5} \text{ modular + irreduzibel} \xrightarrow{R = T} \rho_{E,5} \text{ modular} \implies E \text{ modular.}

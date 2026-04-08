@@ -33,7 +33,7 @@ requires:
 
 ## 1. Die Ausgangslage
 
-### Was wir haben
+### Ausgangspunkt
 
 Nach den Ergebnissen von Langlands-Tunnell (für $p = 3$) oder durch den 3-5-Switch (für $p = 5$) wissen wir: Für eine semistabile elliptische Kurve $E/\mathbb{Q}$ ist die **residuale Darstellung**
 
@@ -43,9 +43,9 @@ $$
 
 **modular** – sie kommt von einer Neuform.
 
-### Was wir zeigen wollen
+### Ziel
 
-Wir müssen beweisen, dass auch die **volle $p$-adische Darstellung**
+Zu beweisen ist, dass auch die **volle $p$-adische Darstellung**
 
 $$
 \rho = \rho_{E,p}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_p)
@@ -167,7 +167,7 @@ $$
 R \twoheadrightarrow R_{\mathcal{D}},
 $$
 
-der nur diejenigen Deformationen parametrisiert, die die Bedingungen $\mathcal{D}$ erfüllen. Im Folgenden schreiben wir einfach $R$ für den eingeschränkten Ring $R_{\mathcal{D}}$.
+der nur diejenigen Deformationen parametrisiert, die die Bedingungen $\mathcal{D}$ erfüllen. Im Folgenden steht $R$ für den eingeschränkten Ring $R_{\mathcal{D}}$.
 
 ---
 
