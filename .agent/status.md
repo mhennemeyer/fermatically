@@ -29,6 +29,7 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 - ✅ **Sync-Script:** `scripts/sync_topics_to_docs.sh` + `scripts/fix_docs_links.py` für wiederholbare Synchronisation
 - ✅ **Stilüberarbeitung:** Alle 18 Artikel + Startseite (index.md) nach guideline.md überarbeitet – keine „Wir"-Formulierungen, keine Metaphern, Fachzitate ergänzt. Plan archiviert: `.agent/plans/archive/stilueberarbeitung-plan.md`
 - ✅ **Vorwissen-Bereich:** 16 Themen (DE+EN) vollständig in `topics/vorwissen/` und `docs/vorwissen/`. Phase 1–2 und 4 abgeschlossen. Offen: Phase 2b (Hauptartikel-Review) und Phase 3 (Referenzierung/Popup).
+- ✅ **Rechtsprüfung:** Keine urheberrechtlich geschützten Dateien im MkDocs-Output. `quellen.md` bereinigt (interne Ressource-Pfade → DOI/externe Links). `about.md` Guideline-Verstöße behoben. Alle 50 Zitate korrekt mit Quellenangabe.
 ## Nächste Schritte
 - [ ] Phase 2b: Alle 18 Hauptartikel auf Vorwissen-Lücken prüfen und Referenzen notieren
 - [ ] Phase 3: Popup/Sidebar-Referenzierung implementieren (MkDocs Material tooltips/abbreviations prüfen, Prototyp bauen)

@@ -14,13 +14,13 @@ Die Plattform ist in **eigenständige, querverweisbare Topics** gegliedert:
 
 1. **Grundlagen-Topics** – Elementare Mathematik, die für mehrere Beweise wiederverwendet wird
 2. **Werkzeug-Topics** – Galois-Theorie, Elliptische Kurven, Modulformen, … – jeweils eigenständig, aber Voraussetzung für bestimmte Beweis-Topics
-3. **Beweis-Topics** – Das Herzstück: ausführliche Darstellungen der großen Beweise
+3. **Beweis-Topics** – Ausführliche Darstellungen der großen Beweise
 4. **Meta-Topics** – Moderne Methoden (HoTT, formale Verifikation in Lean/Coq) – *Zukunft*
 
 ## Prinzipien
 
-- **Kein Vorwissen nötig**: Jede Reise beginnt bei Schulmathematik
-- **Keine Vereinfachung**: Wir lassen nichts weg, wir erklären es nur besser
+- **Kein Vorwissen nötig**: Die Darstellung setzt bei Schulmathematik an
+- **Keine Vereinfachung**: Alle mathematischen Details werden behandelt – klar und präzise formuliert
 - **Eigenständige Topics**: Jedes Thema ist in sich abgeschlossen verständlich
 - **Querverweise**: Ein Abhängigkeitsgraph zeigt, welche Grundlagen für welchen Beweis nötig sind
 - **Zweisprachig**: Artikel erscheinen auf Deutsch und Englisch (DE zuerst)
