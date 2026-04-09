@@ -13,7 +13,13 @@ tags:
   - algebra
   - idealtheorie
 requires:
-  - gruppen-und-symmetrie/01-gruppen
+  - mengen
+  - abbildungen
+  - gleichungen
+  - teilbarkeit-ggt
+  - primfaktorzerlegung
+  - komplexe-zahlen
+  - relationen-aequivalenzklassen
 ---
 
 # Ringe und Körper
@@ -25,6 +31,16 @@ requires:
 ## Voraussetzungen
 
 - [Gruppen – Symmetrie als Sprache der Mathematik](gruppen.md)
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Mengen und Mengenoperationen](../vorwissen/mengen.md) | Mengennotation, $\cup, \cap, \setminus, \times$ |
+| [Abbildungen (Funktionen)](../vorwissen/abbildungen.md) | $f: A \to B$, injektiv, surjektiv, bijektiv |
+| [Gleichungen](../vorwissen/gleichungen.md) | Äquivalente Umformungen und Lösungsstrategien |
+| [Teilbarkeit und ggT](../vorwissen/teilbarkeit-ggt.md) | Teilerfremdheit, $\gcd$, Euklidischer Algorithmus |
+| [Primfaktorzerlegung](../vorwissen/primfaktorzerlegung.md) | Eindeutige Zerlegung in Primfaktoren (Fundamentalsatz der Arithmetik) |
+| [Komplexe Zahlen](../vorwissen/komplexe-zahlen.md) | Zahlen $a + bi$ mit $i^2 = -1$, Polarform, Einheitswurzeln |
+| [Relationen und Äquivalenzklassen](../vorwissen/relationen-aequivalenzklassen.md) | Äquivalenzrelationen, Restklassen, Quotientenmengen |
 
 ---
 

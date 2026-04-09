@@ -28,11 +28,11 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 - ✅ **Phase 5a – docs/ befüllt:** 18 Artikel aus `topics/` nach `docs/` synchronisiert, interne Links auf docs/-Pfade umgeschrieben, MkDocs build mit 0 Warnings/Errors
 - ✅ **Sync-Script:** `scripts/sync_topics_to_docs.sh` + `scripts/fix_docs_links.py` für wiederholbare Synchronisation
 - ✅ **Stilüberarbeitung:** Alle 18 Artikel + Startseite (index.md) nach guideline.md überarbeitet – keine „Wir"-Formulierungen, keine Metaphern, Fachzitate ergänzt. Plan archiviert: `.agent/plans/archive/stilueberarbeitung-plan.md`
-- ✅ **Vorwissen-Bereich:** 22 Themen (DE+EN) vollständig in `topics/vorwissen/` und `docs/vorwissen/`. Phase 1–2d und 4 abgeschlossen. Alle Vorwissen-Lücken geschlossen (6 neue Artikel in Phase 2d: Komplexe Zahlen, Summennotation, Primfaktorzerlegung, Grenzwerte/Konvergenz, Relationen, Kombinatorik). Offen: Phase 3 (Referenzierung/Popup).
+- ✅ **Vorwissen-Bereich:** 22 Themen (DE+EN) vollständig in `topics/vorwissen/` und `docs/vorwissen/`. Alle Phasen 1–4 abgeschlossen. Phase 3: Glossar-Tooltips (`abbr`+`pymdownx.snippets`), Vorwissen-Tabellen in allen 18 Hauptartikeln, `requires:`-Frontmatter, Inline-Links bei Erstnennung. MkDocs build: 0 Warnings, 0 Errors.
 - ✅ **Rechtsprüfung:** Keine urheberrechtlich geschützten Dateien im MkDocs-Output. `quellen.md` bereinigt (interne Ressource-Pfade → DOI/externe Links). `about.md` Guideline-Verstöße behoben. Alle 50 Zitate korrekt mit Quellenangabe.
 ## Nächste Schritte
-- [x] Phase 2d: 6 neue Vorwissen-Artikel erstellt (Komplexe Zahlen, Summennotation, Primfaktorzerlegung, Grenzwerte/Konvergenz, Relationen, Kombinatorik) – DE + EN, in docs/ synchronisiert, mkdocs.yml erweitert
-- [ ] Phase 3: Popup/Sidebar-Referenzierung implementieren (MkDocs Material tooltips/abbreviations prüfen, Prototyp bauen)
+- [x] Phase 2d: 6 neue Vorwissen-Artikel erstellt – DE + EN, in docs/ synchronisiert, mkdocs.yml erweitert
+- [x] Phase 3: Vorwissen-Referenzierung implementiert (Glossar-Tooltips, Vorwissen-Tabellen, Inline-Links, 0 Warnings)
 - [ ] Coolify-Deployment konfigurieren und testen
 - [ ] Navigation aus `requires`-Frontmatter automatisch generieren
 - [ ] Wiles-Transkription in KB aufnehmen (via pandoc → PDF → kb add)

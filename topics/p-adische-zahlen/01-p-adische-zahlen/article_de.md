@@ -12,7 +12,11 @@ tags:
   - bewertung
   - lokal-global
 requires:
-  - ringe-und-koerper/01-ringe-koerper
+  - teilbarkeit-ggt
+  - modulare-arithmetik
+  - grenzwerte-konvergenz
+  - summen-produktnotation
+  - potenzen-polynome
 ---
 
 # $p$-adische Zahlen
@@ -25,6 +29,14 @@ requires:
 ## Voraussetzungen
 
 - [Ringe und Körper](../../ringe-und-koerper/01-ringe-koerper/article_de.md)
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Teilbarkeit und ggT](../../vorwissen/teilbarkeit-ggt/article_de.md) | Teilerfremdheit, $\gcd$, Euklidischer Algorithmus |
+| [Modulare Arithmetik](../../vorwissen/modulare-arithmetik/article_de.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
+| [Grenzwerte und Konvergenz](../../vorwissen/grenzwerte-konvergenz/article_de.md) | $\lim_{n \to \infty} a_n = L$, Cauchy-Folgen, Reihen |
+| [Summen- und Produktnotation](../../vorwissen/summen-produktnotation/article_de.md) | $\sum$- und $\prod$-Notation |
+| [Potenzen und Polynome](../../vorwissen/potenzen-polynome/article_de.md) | Potenzschreibweise $a^n$ und Polynomrechnung |
 
 ---
 

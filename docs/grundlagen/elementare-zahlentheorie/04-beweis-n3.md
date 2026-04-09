@@ -12,7 +12,13 @@ tags:
   - euler
   - gauss
   - algebraische-zahlen
-requires: []
+requires:
+  - komplexe-zahlen
+  - teilbarkeit-ggt
+  - modulare-arithmetik
+  - beweisarten
+  - zahlenbereiche
+  - primfaktorzerlegung
 ---
 
 # Der Beweis für $n = 3$
@@ -26,6 +32,15 @@ requires: []
 - [Was ist Fermats letzter Satz?](01-was-ist-flt.md)
 - [Der Beweis für $n = 4$](02-beweis-n4.md)
 - [Primzahlen und warum sie reichen](03-primzahlen-reduktion.md)
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Komplexe Zahlen](../../vorwissen/komplexe-zahlen.md) | Zahlen $a + bi$ mit $i^2 = -1$, Polarform, Einheitswurzeln |
+| [Teilbarkeit und ggT](../../vorwissen/teilbarkeit-ggt.md) | Teilerfremdheit, $\gcd$, Euklidischer Algorithmus |
+| [Modulare Arithmetik](../../vorwissen/modulare-arithmetik.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
+| [Beweisarten](../../vorwissen/beweisarten.md) | Direkter Beweis, Widerspruch, Induktion, Abstieg |
+| [Zahlenbereiche](../../vorwissen/zahlenbereiche.md) | $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ und ihre Beziehungen |
+| [Primfaktorzerlegung](../../vorwissen/primfaktorzerlegung.md) | Eindeutige Zerlegung in Primfaktoren (Fundamentalsatz der Arithmetik) |
 
 ---
 

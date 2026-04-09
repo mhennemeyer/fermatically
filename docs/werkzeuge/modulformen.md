@@ -12,8 +12,10 @@ tags:
   - fourier
   - hecke-operatoren
 requires:
-  - gruppen-und-symmetrie/01-gruppen
-  - ringe-und-koerper/01-ringe-koerper
+  - komplexe-zahlen
+  - summen-produktnotation
+  - grenzwerte-konvergenz
+  - abbildungen
 ---
 
 # Modulformen
@@ -27,6 +29,13 @@ requires:
 
 - [Gruppen – Symmetrie als Sprache der Mathematik](gruppen.md)
 - [Ringe und Körper](ringe-koerper.md)
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Komplexe Zahlen](../vorwissen/komplexe-zahlen.md) | Zahlen $a + bi$ mit $i^2 = -1$, Polarform, Einheitswurzeln |
+| [Summen- und Produktnotation](../vorwissen/summen-produktnotation.md) | $\sum$- und $\prod$-Notation |
+| [Grenzwerte und Konvergenz](../vorwissen/grenzwerte-konvergenz.md) | $\lim_{n \to \infty} a_n = L$, Cauchy-Folgen, Reihen |
+| [Abbildungen (Funktionen)](../vorwissen/abbildungen.md) | $f: A \to B$, injektiv, surjektiv, bijektiv |
 
 Hilfreich, aber nicht zwingend:
 - [Elliptische Kurven](elliptische-kurven.md)

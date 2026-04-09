@@ -11,7 +11,13 @@ tags:
   - gruppen
   - symmetrie
   - algebra
-requires: []
+requires:
+  - mengen
+  - abbildungen
+  - zahlenbereiche
+  - modulare-arithmetik
+  - kombinatorik
+  - relationen-aequivalenzklassen
 ---
 
 # Gruppen – Symmetrie als Sprache der Mathematik
@@ -22,6 +28,15 @@ requires: []
 
 ## Voraussetzungen
 
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Mengen und Mengenoperationen](../../vorwissen/mengen/article_de.md) | Mengennotation, $\cup, \cap, \setminus, \times$ |
+| [Abbildungen (Funktionen)](../../vorwissen/abbildungen/article_de.md) | $f: A \to B$, injektiv, surjektiv, bijektiv |
+| [Zahlenbereiche](../../vorwissen/zahlenbereiche/article_de.md) | $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ und ihre Beziehungen |
+| [Modulare Arithmetik](../../vorwissen/modulare-arithmetik/article_de.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
+| [Kombinatorik](../../vorwissen/kombinatorik/article_de.md) | Permutationen, Kombinationen, Binomialkoeffizienten |
+| [Relationen und Äquivalenzklassen](../../vorwissen/relationen-aequivalenzklassen/article_de.md) | Äquivalenzrelationen, Restklassen, Quotientenmengen |
 Keine – dieser Artikel bildet den Einstieg in die abstrakte Algebra.
 
 ---

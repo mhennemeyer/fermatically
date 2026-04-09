@@ -12,7 +12,7 @@ tags:
   - selmer-gruppen
   - numerisches-kriterium
 requires:
-  - fermat-wiles/04-deformationstheorie
+  - summen-produktnotation
 ---
 # R = T – Das Herz des Beweises
 
@@ -27,6 +27,10 @@ requires:
 ## Voraussetzungen
 
 - [Deformationstheorie](04-deformationstheorie.md) – Universeller Deformationsring $R$, Hecke-Algebra $T$, Surjektion $R \twoheadrightarrow T$
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Summen- und Produktnotation](../vorwissen/summen-produktnotation.md) | $\sum$- und $\prod$-Notation |
 
 ---
 

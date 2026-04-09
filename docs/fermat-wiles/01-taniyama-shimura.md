@@ -12,8 +12,9 @@ tags:
   - modularitaet
   - vermutung
 requires:
-  - elliptische-kurven/01-elliptische-kurven
-  - modulformen/01-modulformen
+  - summen-produktnotation
+  - modulare-arithmetik
+  - komplexe-zahlen
 ---
 # Die Taniyama-Shimura-Vermutung
 
@@ -28,6 +29,12 @@ requires:
 
 - [Elliptische Kurven](../werkzeuge/elliptische-kurven.md) – Grundbegriffe: Weierstraß-Gleichung, Gruppenstruktur, Reduktion modulo $p$
 - [Modulformen](../werkzeuge/modulformen.md) – Modulformen, Neuformen, $q$-Entwicklung, Hecke-Operatoren
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Summen- und Produktnotation](../vorwissen/summen-produktnotation.md) | $\sum$- und $\prod$-Notation |
+| [Modulare Arithmetik](../vorwissen/modulare-arithmetik.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
+| [Komplexe Zahlen](../vorwissen/komplexe-zahlen.md) | Zahlen $a + bi$ mit $i^2 = -1$, Polarform, Einheitswurzeln |
 
 ---
 

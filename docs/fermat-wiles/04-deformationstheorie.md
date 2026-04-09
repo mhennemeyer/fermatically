@@ -12,8 +12,8 @@ tags:
   - mazur
   - deformationsring
 requires:
-  - fermat-wiles/03-galois-darstellungen
-  - p-adische-zahlen/01-p-adische-zahlen
+  - grenzwerte-konvergenz
+  - relationen-aequivalenzklassen
 ---
 # Deformationstheorie
 
@@ -28,6 +28,11 @@ requires:
 
 - [Galois-Darstellungen](03-galois-darstellungen.md) – Residuale und $p$-adische Darstellungen, Modularität
 - [p-adische Zahlen](../werkzeuge/p-adische-zahlen.md) – Lokale Ringe, $\mathbb{Z}_p$, $p$-adische Topologie
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Grenzwerte und Konvergenz](../vorwissen/grenzwerte-konvergenz.md) | $\lim_{n \to \infty} a_n = L$, Cauchy-Folgen, Reihen |
+| [Relationen und Äquivalenzklassen](../vorwissen/relationen-aequivalenzklassen.md) | Äquivalenzrelationen, Restklassen, Quotientenmengen |
 
 ---
 

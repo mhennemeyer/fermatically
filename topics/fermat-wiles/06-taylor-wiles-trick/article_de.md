@@ -12,7 +12,8 @@ tags:
   - patching
   - modularer-beweis
 requires:
-  - fermat-wiles/05-r-gleich-t
+  - grenzwerte-konvergenz
+  - modulare-arithmetik
 ---
 # Der Taylor-Wiles-Trick
 
@@ -26,6 +27,11 @@ requires:
 ## Voraussetzungen
 
 - [R = T – Das Herz des Beweises](../05-r-gleich-t/article_de.md) – Numerisches Kriterium, Selmer-Gruppen, Kongruenzideale
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Grenzwerte und Konvergenz](../../vorwissen/grenzwerte-konvergenz/article_de.md) | $\lim_{n \to \infty} a_n = L$, Cauchy-Folgen, Reihen |
+| [Modulare Arithmetik](../../vorwissen/modulare-arithmetik/article_de.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
 
 ---
 

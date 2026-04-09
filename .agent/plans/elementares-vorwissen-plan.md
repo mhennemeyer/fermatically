@@ -150,12 +150,15 @@ Der Leser bleibt an der aktuellen Stelle und kann Grundlagen-Begriffe **inline n
 - [x] `mkdocs.yml` Navigation erweitert (6 neue Einträge)
 - [x] MkDocs build: 0 Warnings, 0 Errors
 
-### Phase 3: Referenzierung implementieren
-- [ ] MkDocs Material Theme auf vorhandene Popup-/Tooltip-Features prüfen (`abbreviations`, `tooltips`)
-- [ ] Prototyp mit einer Referenz bauen und testen
-- [ ] In den Hauptartikeln Referenzen einfügen
-- [ ] Entscheidung über finale Variante nach Prototyp-Review
-- [ ] Test und Iteration
+### Phase 3: Referenzierung implementieren ✅
+- [x] MkDocs Material Theme geprüft: `abbr` + `pymdownx.snippets` (Glossar-Tooltips) + `content.tooltips` (verbesserte Darstellung)
+- [x] `mkdocs.yml` erweitert: `abbr`, `pymdownx.snippets` mit auto_append, `content.tooltips`
+- [x] Glossar-Datei `docs/includes/glossary.md` mit 35 Einträgen für alle 22 Vorwissen-Themen
+- [x] Prototyp: Artikel 01 (Was ist FLT) mit Vorwissen-Tabelle + Inline-Links
+- [x] Script `scripts/add_vorwissen_refs.py`: Alle 18 Hauptartikel mit `requires:`-Frontmatter + Vorwissen-Tabellen
+- [x] `scripts/fix_docs_links.py` um 22 Vorwissen-Mappings erweitert
+- [x] `scripts/fix_remaining_links.py` für Inline-Link-Korrekturen in docs/
+- [x] Sync nach docs/, MkDocs build: 0 Warnings, 0 Errors
 
 ### Phase 4: Sync & Build ✅
 - [x] `sync_topics_to_docs.sh` für Vorwissen-Ordner erweitert
@@ -241,5 +244,5 @@ Der Leser bleibt an der aktuellen Stelle und kann Grundlagen-Begriffe **inline n
 - [x] Phase 2b: Hauptartikel-Review (Vorwissen-Lücken identifizieren)
 - [x] Phase 2c: Restliche Artikel (alle 16 Themen DE, EN in topics/)
 - [x] Phase 2d: Neue Vorwissen-Artikel erstellen (6 Themen: 17–22)
-- [ ] Phase 3: Referenzierung (Popup/Sidebar)
+- [x] Phase 3: Referenzierung (Tooltips + Vorwissen-Tabellen + Inline-Links)
 - [x] Phase 4: Build & Deploy (0 Warnings, 0 Errors)

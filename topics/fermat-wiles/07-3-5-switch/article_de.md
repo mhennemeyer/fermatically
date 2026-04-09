@@ -12,7 +12,7 @@ tags:
   - langlands-tunnell
   - modularitaet
 requires:
-  - fermat-wiles/06-taylor-wiles-trick
+  - beweisarten
 ---
 # Der 3-5-Switch und der Abschluss
 
@@ -27,6 +27,10 @@ requires:
 ## Voraussetzungen
 
 - [Der Taylor-Wiles-Trick](../06-taylor-wiles-trick/article_de.md) – Patching-Argument und $R = T$
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Beweisarten](../../vorwissen/beweisarten/article_de.md) | Direkter Beweis, Widerspruch, Induktion, Abstieg |
 
 ---
 

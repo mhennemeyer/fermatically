@@ -12,10 +12,9 @@ tags:
   - darstellungstheorie
   - modularitaet
 requires:
-  - gruppen-und-symmetrie/01-gruppen
-  - ringe-und-koerper/01-ringe-koerper
-  - galois-theorie/01-galois-theorie
-  - elliptische-kurven/01-elliptische-kurven
+  - abbildungen
+  - mengen
+  - modulare-arithmetik
 ---
 # Galois-Darstellungen
 
@@ -31,6 +30,12 @@ requires:
 - [Ringe und Körper](../werkzeuge/ringe-koerper.md) – Körpererweiterungen, endliche Körper $\mathbb{F}_p$, $p$-adische Zahlen $\mathbb{Z}_p$
 - [Galois-Theorie](../werkzeuge/galois-theorie.md) – Galois-Gruppen, Frobenius-Elemente, Verzweigung
 - [Elliptische Kurven](../werkzeuge/elliptische-kurven.md) – Gruppenstruktur, Torsionspunkte, Reduktion modulo $p$
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Abbildungen (Funktionen)](../vorwissen/abbildungen.md) | $f: A \to B$, injektiv, surjektiv, bijektiv |
+| [Mengen und Mengenoperationen](../vorwissen/mengen.md) | Mengennotation, $\cup, \cap, \setminus, \times$ |
+| [Modulare Arithmetik](../vorwissen/modulare-arithmetik.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
 
 ---
 

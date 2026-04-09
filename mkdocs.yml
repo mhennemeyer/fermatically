@@ -30,6 +30,7 @@ theme:
     - toc.integrate
     - search.highlight
     - content.code.copy
+    - content.tooltips
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -43,6 +44,13 @@ markdown_extensions:
   - attr_list
   - def_list
   - meta
+  - abbr
+  - pymdownx.snippets:
+      auto_append:
+        - docs/includes/glossary.md
+
+not_in_nav: |
+  includes/
 
 extra_javascript:
   - javascripts/mathjax.js

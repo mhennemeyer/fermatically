@@ -12,8 +12,10 @@ tags:
   - koerpererweiterungen
   - symmetrie
 requires:
-  - gruppen-und-symmetrie/01-gruppen
-  - ringe-und-koerper/01-ringe-koerper
+  - potenzen-polynome
+  - abbildungen
+  - komplexe-zahlen
+  - zahlenbereiche
 ---
 
 # Galois-Theorie
@@ -26,6 +28,13 @@ requires:
 
 - [Gruppen – Symmetrie als Sprache der Mathematik](../../gruppen-und-symmetrie/01-gruppen/article_de.md)
 - [Ringe und Körper](../../ringe-und-koerper/01-ringe-koerper/article_de.md)
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Potenzen und Polynome](../../vorwissen/potenzen-polynome/article_de.md) | Potenzschreibweise $a^n$ und Polynomrechnung |
+| [Abbildungen (Funktionen)](../../vorwissen/abbildungen/article_de.md) | $f: A \to B$, injektiv, surjektiv, bijektiv |
+| [Komplexe Zahlen](../../vorwissen/komplexe-zahlen/article_de.md) | Zahlen $a + bi$ mit $i^2 = -1$, Polarform, Einheitswurzeln |
+| [Zahlenbereiche](../../vorwissen/zahlenbereiche/article_de.md) | $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ und ihre Beziehungen |
 
 ---
 

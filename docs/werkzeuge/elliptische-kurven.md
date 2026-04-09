@@ -12,8 +12,11 @@ tags:
   - gruppengesetz
   - l-reihen
 requires:
-  - gruppen-und-symmetrie/01-gruppen
-  - ringe-und-koerper/01-ringe-koerper
+  - koordinatengeometrie
+  - bruchrechnung
+  - modulare-arithmetik
+  - abbildungen
+  - summen-produktnotation
 ---
 
 # Elliptische Kurven
@@ -26,6 +29,14 @@ requires:
 
 - [Gruppen – Symmetrie als Sprache der Mathematik](gruppen.md)
 - [Ringe und Körper](ringe-koerper.md)
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Koordinatengeometrie](../vorwissen/koordinatengeometrie.md) | Punkte, Geraden, Kurven als Gleichungen |
+| [Bruchrechnung](../vorwissen/bruchrechnung.md) | Rechnen mit Brüchen $a/b$ |
+| [Modulare Arithmetik](../vorwissen/modulare-arithmetik.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
+| [Abbildungen (Funktionen)](../vorwissen/abbildungen.md) | $f: A \to B$, injektiv, surjektiv, bijektiv |
+| [Summen- und Produktnotation](../vorwissen/summen-produktnotation.md) | $\sum$- und $\prod$-Notation |
 
 ---
 

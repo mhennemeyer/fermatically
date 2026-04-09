@@ -11,7 +11,12 @@ tags:
   - fermat
   - primzahlen
   - reduktion
-requires: []
+requires:
+  - teilbarkeit-ggt
+  - beweisarten
+  - modulare-arithmetik
+  - primfaktorzerlegung
+  - kombinatorik
 ---
 
 # Primzahlen und warum sie reichen
@@ -24,6 +29,14 @@ requires: []
 
 - [Was ist Fermats letzter Satz?](../01-was-ist-flt/article_de.md)
 - [Der Beweis für $n = 4$](../02-beweis-n4/article_de.md)
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Teilbarkeit und ggT](../../vorwissen/teilbarkeit-ggt/article_de.md) | Teilerfremdheit, $\gcd$, Euklidischer Algorithmus |
+| [Beweisarten](../../vorwissen/beweisarten/article_de.md) | Direkter Beweis, Widerspruch, Induktion, Abstieg |
+| [Modulare Arithmetik](../../vorwissen/modulare-arithmetik/article_de.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
+| [Primfaktorzerlegung](../../vorwissen/primfaktorzerlegung/article_de.md) | Eindeutige Zerlegung in Primfaktoren (Fundamentalsatz der Arithmetik) |
+| [Kombinatorik](../../vorwissen/kombinatorik/article_de.md) | Permutationen, Kombinationen, Binomialkoeffizienten |
 
 ---
 

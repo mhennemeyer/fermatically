@@ -12,7 +12,13 @@ tags:
   - euler
   - gauss
   - algebraische-zahlen
-requires: []
+requires:
+  - komplexe-zahlen
+  - teilbarkeit-ggt
+  - modulare-arithmetik
+  - beweisarten
+  - zahlenbereiche
+  - primfaktorzerlegung
 ---
 
 # Der Beweis für $n = 3$
@@ -26,6 +32,15 @@ requires: []
 - [Was ist Fermats letzter Satz?](../01-was-ist-flt/article_de.md)
 - [Der Beweis für $n = 4$](../02-beweis-n4/article_de.md)
 - [Primzahlen und warum sie reichen](../03-primzahlen-reduktion/article_de.md)
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Komplexe Zahlen](../../vorwissen/komplexe-zahlen/article_de.md) | Zahlen $a + bi$ mit $i^2 = -1$, Polarform, Einheitswurzeln |
+| [Teilbarkeit und ggT](../../vorwissen/teilbarkeit-ggt/article_de.md) | Teilerfremdheit, $\gcd$, Euklidischer Algorithmus |
+| [Modulare Arithmetik](../../vorwissen/modulare-arithmetik/article_de.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
+| [Beweisarten](../../vorwissen/beweisarten/article_de.md) | Direkter Beweis, Widerspruch, Induktion, Abstieg |
+| [Zahlenbereiche](../../vorwissen/zahlenbereiche/article_de.md) | $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ und ihre Beziehungen |
+| [Primfaktorzerlegung](../../vorwissen/primfaktorzerlegung/article_de.md) | Eindeutige Zerlegung in Primfaktoren (Fundamentalsatz der Arithmetik) |
 
 ---
 

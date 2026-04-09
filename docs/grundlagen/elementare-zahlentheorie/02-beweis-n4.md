@@ -11,7 +11,12 @@ tags:
   - fermat
   - infinite-descent
   - beweis
-requires: []
+requires:
+  - teilbarkeit-ggt
+  - beweisarten
+  - gleichungen
+  - pythagoras
+  - modulare-arithmetik
 ---
 
 # Der Beweis für $n = 4$
@@ -24,11 +29,19 @@ requires: []
 
 - [Was ist Fermats letzter Satz?](01-was-ist-flt.md)
 
+| Thema | Beschreibung |
+|-------|-------------|
+| [Teilbarkeit und ggT](../../vorwissen/teilbarkeit-ggt.md) | Teilerfremdheit, $\gcd$, Euklidischer Algorithmus |
+| [Beweisarten](../../vorwissen/beweisarten.md) | Widerspruchsbeweis und vollständige Induktion |
+| [Gleichungen](../../vorwissen/gleichungen.md) | Äquivalente Umformungen |
+| [Pythagoras und pythagoräische Tripel](../../vorwissen/pythagoras.md) | $a^2 + b^2 = c^2$ und ganzzahlige Lösungen |
+| [Modulare Arithmetik](../../vorwissen/modulare-arithmetik.md) | Kongruenzen und Paritätsargumente |
+
 ---
 
 ## 1. Die Methode des unendlichen Abstiegs
 
-Der **unendliche Abstieg** (*descente infinie*) ist eine Beweistechnik, die Fermat selbst entwickelte. Die Grundidee:
+Der **unendliche Abstieg** (*descente infinie*) ist eine [Beweistechnik](../../vorwissen/beweisarten.md), die Fermat selbst entwickelte. Die Grundidee:
 
 **Angenommen**, eine Gleichung hätte eine Lösung in positiven ganzen Zahlen. Dann lässt sich aus dieser Lösung eine *kleinere* Lösung konstruieren – eine Lösung, bei der die beteiligten Zahlen echt kleiner sind. Aus der kleineren Lösung ergibt sich eine noch kleinere, und so weiter – *ad infinitum*.
 
@@ -44,15 +57,15 @@ Formal nutzt der Abstieg das **Wohlordnungsprinzip**: Jede nichtleere Teilmenge 
 
 ## 2. Pythagoreische Tripel
 
-Für den Beweis des Falls $n = 4$ ist ein klassisches Ergebnis erforderlich: die vollständige Beschreibung aller Lösungen von $x^2 + y^2 = z^2$.
+Für den Beweis des Falls $n = 4$ ist ein klassisches Ergebnis erforderlich: die vollständige Beschreibung aller Lösungen von $x^2 + y^2 = z^2$ (siehe [Pythagoras und pythagoräische Tripel](../../vorwissen/pythagoras.md)).
 
-**Satz (Parametrisierung der pythagoreischen Tripel).** Alle *primitiven* pythagoreischen Tripel $(x, y, z)$ mit $\gcd(x, y) = 1$ und $x$ gerade haben die Form:
+**Satz (Parametrisierung der pythagoreischen Tripel).** Alle *primitiven* pythagoreischen Tripel $(x, y, z)$ mit $\gcd(x, y) = 1$ ([teilerfremd](../../vorwissen/teilbarkeit-ggt.md)) und $x$ gerade haben die Form:
 
 $$
 x = 2st, \quad y = s^2 - t^2, \quad z = s^2 + t^2
 $$
 
-wobei $s > t > 0$, $\gcd(s, t) = 1$ und $s \not\equiv t \pmod{2}$ (also $s$ und $t$ verschiedener Parität).
+wobei $s > t > 0$, $\gcd(s, t) = 1$ und $s \not\equiv t \pmod{2}$ (also $s$ und $t$ verschiedener [Parität](../../vorwissen/modulare-arithmetik.md)).
 
 **Beweisskizze.** Es gilt $x^2 = z^2 - y^2 = (z-y)(z+y)$. Da $(x, y, z)$ primitiv ist, sind $z - y$ und $z + y$ teilerfremd (bis auf den Faktor 2). Da $x$ gerade ist, sind $z$ und $y$ beide ungerade, also $z - y$ und $z + y$ beide gerade. Mit $z - y = 2u$ und $z + y = 2v$ folgt $x^2 = 4uv$ mit $\gcd(u, v) = 1$. Da das Produkt $uv$ ein Quadrat und die Faktoren teilerfremd sind, müssen $u$ und $v$ selbst Quadrate sein: $u = t^2$, $v = s^2$. Einsetzen liefert die Parametrisierung. $\square$
 

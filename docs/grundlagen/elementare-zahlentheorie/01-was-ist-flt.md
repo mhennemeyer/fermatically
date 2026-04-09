@@ -11,7 +11,11 @@ tags:
   - fermat
   - zahlentheorie
   - geschichte
-requires: []
+requires:
+  - potenzen-polynome
+  - zahlenbereiche
+  - pythagoras
+  - gleichungen
 ---
 
 # Was ist Fermats letzter Satz?
@@ -22,7 +26,12 @@ requires: []
 
 ## Voraussetzungen
 
-Keine – dieser Artikel bildet den Einstieg in die Serie.
+| Thema | Beschreibung |
+|-------|-------------|
+| [Potenzen und Polynome](../../vorwissen/potenzen-polynome.md) | Potenzschreibweise $a^n$ und Rechenregeln |
+| [Zahlenbereiche](../../vorwissen/zahlenbereiche.md) | $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ und ihre Beziehungen |
+| [Pythagoras und pythagoräische Tripel](../../vorwissen/pythagoras.md) | Der Satz von Pythagoras und ganzzahlige Lösungen von $a^2 + b^2 = c^2$ |
+| [Gleichungen](../../vorwissen/gleichungen.md) | Äquivalente Umformungen und Lösungsstrategien |
 
 ---
 
@@ -51,15 +60,15 @@ $$
 x^n + y^n = z^n \quad \text{hat für } n \geq 3 \text{ keine Lösung in } x, y, z \in \mathbb{Z}^+
 $$
 
-Es gibt keine drei positiven ganzen Zahlen $x$, $y$ und $z$, die diese Gleichung für einen ganzzahligen Exponenten $n \geq 3$ erfüllen.
+Es gibt keine drei positiven [ganzen Zahlen](../../vorwissen/zahlenbereiche.md) $x$, $y$ und $z$, die diese [Gleichung](../../vorwissen/gleichungen.md) für einen ganzzahligen [Exponenten](../../vorwissen/potenzen-polynome.md) $n \geq 3$ erfüllen.
 
-Für $n = 2$ existieren dagegen unendlich viele Lösungen – die **pythagoreischen Tripel**:
+Für $n = 2$ existieren dagegen unendlich viele Lösungen – die **[pythagoräische Tripel](../../vorwissen/pythagoras.md)**:
 
 $$
 3^2 + 4^2 = 5^2, \quad 5^2 + 12^2 = 13^2, \quad 8^2 + 15^2 = 17^2, \quad \ldots
 $$
 
-Der Satz von Pythagoras garantiert unendlich viele solcher Tripel, und sie lassen sich vollständig parametrisieren. Beim Übergang von Exponent $2$ zu $3$ verschwinden sämtliche Lösungen.
+Der [Satz von Pythagoras](../../vorwissen/pythagoras.md) garantiert unendlich viele solcher Tripel, und sie lassen sich vollständig parametrisieren. Beim Übergang von Exponent $2$ zu $3$ verschwinden sämtliche Lösungen.
 
 ## 3. Die Schwierigkeit des Problems
 

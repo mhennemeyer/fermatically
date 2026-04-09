@@ -12,8 +12,9 @@ tags:
   - ribet
   - level-lowering
 requires:
-  - fermat-wiles/01-taniyama-shimura
-  - elliptische-kurven/01-elliptische-kurven
+  - teilbarkeit-ggt
+  - primfaktorzerlegung
+  - beweisarten
 ---
 # Freys Idee und Ribets Theorem
 
@@ -28,6 +29,12 @@ requires:
 
 - [Die Taniyama-Shimura-Vermutung](01-taniyama-shimura.md) – Modularität, $L$-Reihen, semistabile Kurven
 - [Elliptische Kurven](../werkzeuge/elliptische-kurven.md) – Weierstraß-Form, Diskriminante, Konduktor
+
+| Thema | Beschreibung |
+|-------|-------------|
+| [Teilbarkeit und ggT](../vorwissen/teilbarkeit-ggt.md) | Teilerfremdheit, $\gcd$, Euklidischer Algorithmus |
+| [Primfaktorzerlegung](../vorwissen/primfaktorzerlegung.md) | Eindeutige Zerlegung in Primfaktoren (Fundamentalsatz der Arithmetik) |
+| [Beweisarten](../vorwissen/beweisarten.md) | Direkter Beweis, Widerspruch, Induktion, Abstieg |
 
 ---
 
