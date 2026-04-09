@@ -28,10 +28,10 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 - ✅ **Phase 5a – docs/ befüllt:** 18 Artikel aus `topics/` nach `docs/` synchronisiert, interne Links auf docs/-Pfade umgeschrieben, MkDocs build mit 0 Warnings/Errors
 - ✅ **Sync-Script:** `scripts/sync_topics_to_docs.sh` + `scripts/fix_docs_links.py` für wiederholbare Synchronisation
 - ✅ **Stilüberarbeitung:** Alle 18 Artikel + Startseite (index.md) nach guideline.md überarbeitet – keine „Wir"-Formulierungen, keine Metaphern, Fachzitate ergänzt. Plan archiviert: `.agent/plans/archive/stilueberarbeitung-plan.md`
-- ✅ **Vorwissen-Bereich:** 16 Themen (DE+EN) vollständig in `topics/vorwissen/` und `docs/vorwissen/`. Phase 1–2 und 4 abgeschlossen. Offen: Phase 2b (Hauptartikel-Review) und Phase 3 (Referenzierung/Popup).
+- ✅ **Vorwissen-Bereich:** 16 Themen (DE+EN) vollständig in `topics/vorwissen/` und `docs/vorwissen/`. Phase 1–2c und 4 abgeschlossen. Phase 2b (Hauptartikel-Review) abgeschlossen: 6 neue Themen identifiziert (Komplexe Zahlen, Summennotation, Primfaktorzerlegung, Grenzwerte/Konvergenz, Relationen, Kombinatorik). Offen: Phase 2d (neue Artikel erstellen) und Phase 3 (Referenzierung/Popup).
 - ✅ **Rechtsprüfung:** Keine urheberrechtlich geschützten Dateien im MkDocs-Output. `quellen.md` bereinigt (interne Ressource-Pfade → DOI/externe Links). `about.md` Guideline-Verstöße behoben. Alle 50 Zitate korrekt mit Quellenangabe.
 ## Nächste Schritte
-- [ ] Phase 2b: Alle 18 Hauptartikel auf Vorwissen-Lücken prüfen und Referenzen notieren
+- [ ] Phase 2d: 6 neue Vorwissen-Artikel erstellen (Komplexe Zahlen, Summennotation, Primfaktorzerlegung, Grenzwerte/Konvergenz, Relationen, Kombinatorik) – DE + EN
 - [ ] Phase 3: Popup/Sidebar-Referenzierung implementieren (MkDocs Material tooltips/abbreviations prüfen, Prototyp bauen)
 - [ ] Coolify-Deployment konfigurieren und testen
 - [ ] Navigation aus `requires`-Frontmatter automatisch generieren

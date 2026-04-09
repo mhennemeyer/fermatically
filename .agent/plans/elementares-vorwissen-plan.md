@@ -45,17 +45,37 @@ Leser ohne mathematische Vorbildung, die beim Lesen der Hauptartikel auf unbekan
 15. **Potenzen und Polynome** – Potenzgesetze, Polynomausdruck, Grad eines Polynoms
 16. **Binomische Formeln und Faktorisierung** – (a+b)², (a-b)², a²-b²; Anwendung beim Umformen
 
-### F. Weitere Themen (nach Artikel-Review zu ergänzen)
-*Dieser Abschnitt wird in Phase 2b systematisch erweitert: Alle 18 Hauptartikel werden durchgelesen und jede Stelle, an der Vorwissen vorausgesetzt wird, wird notiert. Daraus ergeben sich ggf. weitere Themen.*
+### F. Weitere Themen (Ergebnis Phase 2b – Hauptartikel-Review)
+*Alle 18 Hauptartikel wurden systematisch durchgelesen (2026-04-09). Die folgenden Themen werden in den Artikeln vorausgesetzt, sind aber noch nicht als Vorwissen-Artikel vorhanden.*
 
-Mögliche Kandidaten (vorab):
-- Kombinatorik (Binomialkoeffizient, n!)
-- Grenzwerte und Konvergenz (für p-adische Zahlen, Modulformen)
-- Stetigkeit (Grundbegriff für Analysis-Kontexte)
-- Primfaktorzerlegung und Fundamentalsatz der Arithmetik
-- Komplexe Zahlen (Grundlagen für Modulformen)
-- Relationen und Äquivalenzklassen
-- Summen- und Produktnotation (Σ, Π)
+**Neue Themen (priorisiert nach Häufigkeit):**
+
+17. **Komplexe Zahlen** – imaginäre Einheit $i$, Darstellung $a + bi$, Betrag, konjugiert; Einheitswurzeln $e^{2\pi i/n}$; obere Halbebene $\mathbb{H}$
+    - *Benötigt in:* Artikel 04 (Eisenstein-Zahlen $\mathbb{Z}[\omega]$), Modulformen (obere Halbebene, holomorphe Funktionen), Galois-Theorie (Zerfällungskörper), Ringe/Körper (Kreisteilungsringe $\mathbb{Z}[\zeta_p]$)
+    - *Priorität:* **Hoch** – wird ab Artikel 04 durchgängig verwendet
+
+18. **Summen- und Produktnotation (Σ, Π)** – Summenzeichen, Produktzeichen, Indexmengen, Doppelsummen
+    - *Benötigt in:* Fast allen Artikeln ab Werkzeuge (Fourier-Entwicklungen, Euler-Produkte, L-Reihen, Parametrisierungen)
+    - *Priorität:* **Hoch** – allgegenwärtig
+
+19. **Primfaktorzerlegung und Fundamentalsatz der Arithmetik** – Existenz und Eindeutigkeit der Zerlegung; warum sie in erweiterten Ringen versagen kann
+    - *Benötigt in:* Artikel 01–04 (Lamé, Kummer), Ringe/Körper (EPZ, HIR, Dedekind-Ringe), p-adische Zahlen
+    - *Priorität:* **Hoch** – zentral für das Verständnis von Kummers Idealtheorie
+
+20. **Grenzwerte und Konvergenz** – Folgen, Reihen, Cauchy-Folgen, Vervollständigung; geometrische Reihe
+    - *Benötigt in:* p-adische Zahlen (Cauchy-Folgen, Vervollständigung, $p$-adische Reihen), Modulformen (Fourier-Reihen, $q$-Entwicklung), L-Reihen (Konvergenz)
+    - *Priorität:* **Hoch** – ohne Konvergenzbegriff sind p-adische Zahlen und Modulformen nicht verständlich
+
+21. **Relationen und Äquivalenzklassen** – Äquivalenzrelation, Partition, Restklassen als Beispiel
+    - *Benötigt in:* Ringe/Körper (Faktorringe, Ideale), Gruppen (Nebenklassen, Faktorgruppen), Deformationstheorie (Äquivalenz von Liftungen)
+    - *Priorität:* **Mittel** – wird implizit über Restklassen eingeführt, aber ein eigener Artikel wäre hilfreich
+
+22. **Kombinatorik (Binomialkoeffizient, n!)** – Fakultät, Binomialkoeffizient, Binomialsatz
+    - *Benötigt in:* Artikel 03 (symmetrische Gruppe $S_n$, $n! = 6$ Elemente), Gruppen (Ordnung von $S_n$)
+    - *Priorität:* **Mittel** – punktuell benötigt
+
+**Nicht benötigt (gestrichen):**
+- ~~Stetigkeit~~ – wird in den Artikeln nur als Fachbegriff erwähnt ("stetige Darstellung"), aber nicht als Vorwissen vorausgesetzt. Kein eigener Artikel nötig.
 
 ---
 
@@ -109,11 +129,11 @@ Der Leser bleibt an der aktuellen Stelle und kann Grundlagen-Begriffe **inline n
 - [x] Build testen
 - [x] **→ Review-Feedback vom User einholen**
 
-### Phase 2b: Hauptartikel-Review (Vorwissen-Lücken identifizieren)
-- [ ] Alle 18 Hauptartikel systematisch durchgehen
-- [ ] Jede Stelle notieren, an der Grundwissen vorausgesetzt wird
-- [ ] Themen-Gliederung (oben) ggf. erweitern
-- [ ] Ergebnis dokumentieren: Welcher Artikel braucht welche Vorwissen-Referenzen
+### Phase 2b: Hauptartikel-Review (Vorwissen-Lücken identifizieren) ✅
+- [x] Alle 18 Hauptartikel systematisch durchgehen
+- [x] Jede Stelle notieren, an der Grundwissen vorausgesetzt wird
+- [x] Themen-Gliederung erweitert: 6 neue Themen (17–22), 1 gestrichen (Stetigkeit)
+- [x] Ergebnis dokumentieren: Artikel-Vorwissen-Matrix (siehe unten)
 
 ### Phase 2c: Restliche Artikel schreiben ✅
 - [x] Alle weiteren Vorwissen-Artikel erstellt (alle 16 Themen DE + EN in `topics/vorwissen/`)
@@ -134,10 +154,81 @@ Der Leser bleibt an der aktuellen Stelle und kann Grundlagen-Begriffe **inline n
 
 ---
 
+## Ergebnis Phase 2b: Artikel-Vorwissen-Matrix
+
+*Erstellt 2026-04-09. Zeigt für jeden Hauptartikel die benötigten Vorwissen-Themen.*
+
+### Grundlagen-Artikel
+
+| Artikel | Benötigtes Vorwissen |
+|---------|---------------------|
+| 01 – Was ist FLT | Potenzen (15), Zahlenbereiche (12), Pythagoras (13), Gleichungen (6) |
+| 02 – Beweis n=4 | Teilbarkeit/ggT (8), Beweisarten (3), Gleichungen (6), Pythagoras (13), Modulare Arithmetik (9) |
+| 03 – Primzahlen/Reduktion | Teilbarkeit/ggT (8), Beweisarten (3), Modulare Arithmetik (9), **Primfaktorzerlegung (19)**, **Kombinatorik (22)** |
+| 04 – Beweis n=3 | **Komplexe Zahlen (17)**, Teilbarkeit/ggT (8), Modulare Arithmetik (9), Beweisarten (3), Zahlenbereiche (12), **Primfaktorzerlegung (19)** |
+
+### Werkzeug-Artikel
+
+| Artikel | Benötigtes Vorwissen |
+|---------|---------------------|
+| Gruppen | Mengen (10), Abbildungen (11), Zahlenbereiche (12), Modulare Arithmetik (9), **Kombinatorik (22)**, **Relationen (21)** |
+| Ringe/Körper | Mengen (10), Abbildungen (11), Gleichungen (6), Teilbarkeit/ggT (8), **Primfaktorzerlegung (19)**, **Komplexe Zahlen (17)**, **Relationen (21)** |
+| Galois-Theorie | Potenzen/Polynome (15), Abbildungen (11), **Komplexe Zahlen (17)**, Zahlenbereiche (12) |
+| p-adische Zahlen | Teilbarkeit/ggT (8), Modulare Arithmetik (9), **Grenzwerte/Konvergenz (20)**, **Summennotation (18)**, Potenzen (15) |
+| Elliptische Kurven | Koordinatengeometrie (14), Bruchrechnung (5), Modulare Arithmetik (9), Abbildungen (11), **Summennotation (18)** |
+| Modulformen | **Komplexe Zahlen (17)**, **Summennotation (18)**, **Grenzwerte/Konvergenz (20)**, Abbildungen (11) |
+
+### Beweis-Artikel (Fermat-Wiles)
+
+| Artikel | Benötigtes Vorwissen |
+|---------|---------------------|
+| 01 – Taniyama-Shimura | **Summennotation (18)**, Modulare Arithmetik (9), **Komplexe Zahlen (17)** |
+| 02 – Frey-Ribet | Teilbarkeit/ggT (8), **Primfaktorzerlegung (19)**, Beweisarten (3) |
+| 03 – Galois-Darstellungen | Abbildungen (11), Mengen (10), Modulare Arithmetik (9) |
+| 04 – Deformationstheorie | **Grenzwerte/Konvergenz (20)**, **Relationen (21)** |
+| 05 – R=T | **Summennotation (18)** |
+| 06 – Taylor-Wiles-Trick | **Grenzwerte/Konvergenz (20)**, Modulare Arithmetik (9) |
+| 07 – 3-5-Switch | Beweisarten (3) |
+| 08 – Was danach kam | (keine zusätzlichen) |
+
+### Zusammenfassung: Häufigkeit der Vorwissen-Themen
+
+| Rang | Thema | Artikelzahl | Status |
+|------|-------|-------------|--------|
+| 1 | Modulare Arithmetik (9) | 10 | ✅ vorhanden |
+| 2 | Teilbarkeit/ggT (8) | 8 | ✅ vorhanden |
+| 3 | Abbildungen (11) | 7 | ✅ vorhanden |
+| 4 | Beweisarten (3) | 7 | ✅ vorhanden |
+| 5 | **Komplexe Zahlen (17)** | 7 | ❌ **neu zu erstellen** |
+| 6 | **Summennotation (18)** | 6 | ❌ **neu zu erstellen** |
+| 7 | Zahlenbereiche (12) | 5 | ✅ vorhanden |
+| 8 | **Primfaktorzerlegung (19)** | 5 | ❌ **neu zu erstellen** |
+| 9 | Mengen (10) | 4 | ✅ vorhanden |
+| 10 | Potenzen/Polynome (15) | 4 | ✅ vorhanden |
+| 11 | Gleichungen (6) | 4 | ✅ vorhanden |
+| 12 | **Grenzwerte/Konvergenz (20)** | 4 | ❌ **neu zu erstellen** |
+| 13 | Pythagoras (13) | 2 | ✅ vorhanden |
+| 14 | Koordinatengeometrie (14) | 2 | ✅ vorhanden |
+| 15 | Bruchrechnung (5) | 2 | ✅ vorhanden |
+| 16 | **Relationen (21)** | 3 | ❌ **neu zu erstellen** |
+| 17 | **Kombinatorik (22)** | 2 | ❌ **neu zu erstellen** |
+
+### Empfehlung: Priorität für neue Artikel
+
+1. **Komplexe Zahlen** (17) – Hoch, ab Artikel 04 durchgängig
+2. **Summen- und Produktnotation** (18) – Hoch, allgegenwärtig in Werkzeug- und Beweis-Artikeln
+3. **Primfaktorzerlegung** (19) – Hoch, zentral für Kummers Idealtheorie
+4. **Grenzwerte und Konvergenz** (20) – Hoch, ohne diesen Begriff kein Verständnis von p-adisch/Modulformen
+5. **Relationen und Äquivalenzklassen** (21) – Mittel
+6. **Kombinatorik** (22) – Mittel
+
+---
+
 ## Status
 - [x] Phase 1: Struktur anlegen
 - [x] Phase 2a: Pilot-Artikel (Teilbarkeit und ggT)
-- [ ] Phase 2b: Hauptartikel-Review (Vorwissen-Lücken identifizieren)
+- [x] Phase 2b: Hauptartikel-Review (Vorwissen-Lücken identifizieren)
 - [x] Phase 2c: Restliche Artikel (alle 16 Themen DE, EN in topics/)
+- [ ] Phase 2d: Neue Vorwissen-Artikel erstellen (6 Themen: 17–22)
 - [ ] Phase 3: Referenzierung (Popup/Sidebar)
 - [x] Phase 4: Build & Deploy (0 Warnings, 0 Errors)
