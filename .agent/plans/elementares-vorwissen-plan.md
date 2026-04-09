@@ -139,6 +139,17 @@ Der Leser bleibt an der aktuellen Stelle und kann Grundlagen-Begriffe **inline n
 - [x] Alle weiteren Vorwissen-Artikel erstellt (alle 16 Themen DE + EN in `topics/vorwissen/`)
 - [x] Jeweils nach `docs/vorwissen/` synchronisiert
 
+### Phase 2d: Neue Vorwissen-Artikel erstellen (6 Themen: 17–22) ✅
+- [x] Komplexe Zahlen (17) – DE + EN
+- [x] Summen- und Produktnotation (18) – DE + EN
+- [x] Primfaktorzerlegung (19) – DE + EN
+- [x] Grenzwerte und Konvergenz (20) – DE + EN
+- [x] Relationen und Äquivalenzklassen (21) – DE + EN
+- [x] Kombinatorik (22) – DE + EN
+- [x] Nach `docs/vorwissen/` synchronisiert
+- [x] `mkdocs.yml` Navigation erweitert (6 neue Einträge)
+- [x] MkDocs build: 0 Warnings, 0 Errors
+
 ### Phase 3: Referenzierung implementieren
 - [ ] MkDocs Material Theme auf vorhandene Popup-/Tooltip-Features prüfen (`abbreviations`, `tooltips`)
 - [ ] Prototyp mit einer Referenz bauen und testen
@@ -199,19 +210,19 @@ Der Leser bleibt an der aktuellen Stelle und kann Grundlagen-Begriffe **inline n
 | 2 | Teilbarkeit/ggT (8) | 8 | ✅ vorhanden |
 | 3 | Abbildungen (11) | 7 | ✅ vorhanden |
 | 4 | Beweisarten (3) | 7 | ✅ vorhanden |
-| 5 | **Komplexe Zahlen (17)** | 7 | ❌ **neu zu erstellen** |
-| 6 | **Summennotation (18)** | 6 | ❌ **neu zu erstellen** |
+| 5 | Komplexe Zahlen (17) | 7 | ✅ vorhanden |
+| 6 | Summennotation (18) | 6 | ✅ vorhanden |
 | 7 | Zahlenbereiche (12) | 5 | ✅ vorhanden |
-| 8 | **Primfaktorzerlegung (19)** | 5 | ❌ **neu zu erstellen** |
+| 8 | Primfaktorzerlegung (19) | 5 | ✅ vorhanden |
 | 9 | Mengen (10) | 4 | ✅ vorhanden |
 | 10 | Potenzen/Polynome (15) | 4 | ✅ vorhanden |
 | 11 | Gleichungen (6) | 4 | ✅ vorhanden |
-| 12 | **Grenzwerte/Konvergenz (20)** | 4 | ❌ **neu zu erstellen** |
+| 12 | Grenzwerte/Konvergenz (20) | 4 | ✅ vorhanden |
 | 13 | Pythagoras (13) | 2 | ✅ vorhanden |
 | 14 | Koordinatengeometrie (14) | 2 | ✅ vorhanden |
 | 15 | Bruchrechnung (5) | 2 | ✅ vorhanden |
-| 16 | **Relationen (21)** | 3 | ❌ **neu zu erstellen** |
-| 17 | **Kombinatorik (22)** | 2 | ❌ **neu zu erstellen** |
+| 16 | Relationen (21) | 3 | ✅ vorhanden |
+| 17 | Kombinatorik (22) | 2 | ✅ vorhanden |
 
 ### Empfehlung: Priorität für neue Artikel
 
@@ -229,6 +240,6 @@ Der Leser bleibt an der aktuellen Stelle und kann Grundlagen-Begriffe **inline n
 - [x] Phase 2a: Pilot-Artikel (Teilbarkeit und ggT)
 - [x] Phase 2b: Hauptartikel-Review (Vorwissen-Lücken identifizieren)
 - [x] Phase 2c: Restliche Artikel (alle 16 Themen DE, EN in topics/)
-- [ ] Phase 2d: Neue Vorwissen-Artikel erstellen (6 Themen: 17–22)
+- [x] Phase 2d: Neue Vorwissen-Artikel erstellen (6 Themen: 17–22)
 - [ ] Phase 3: Referenzierung (Popup/Sidebar)
 - [x] Phase 4: Build & Deploy (0 Warnings, 0 Errors)

@@ -63,10 +63,13 @@ nav:
       - "Gleichungen und äquivalente Umformungen": vorwissen/gleichungen.md
       - "Ungleichungen": vorwissen/ungleichungen.md
       - "Teilbarkeit und ggT": vorwissen/teilbarkeit-ggt.md
+      - "Primfaktorzerlegung": vorwissen/primfaktorzerlegung.md
       - "Modulare Arithmetik": vorwissen/modulare-arithmetik.md
+      - "Komplexe Zahlen": vorwissen/komplexe-zahlen.md
     - Mengen und Strukturen:
       - "Mengen und Mengenoperationen": vorwissen/mengen.md
       - "Abbildungen (Funktionen)": vorwissen/abbildungen.md
+      - "Relationen und Äquivalenzklassen": vorwissen/relationen-aequivalenzklassen.md
       - "Zahlenbereiche": vorwissen/zahlenbereiche.md
     - Geometrie:
       - "Pythagoras und pythagoräische Tripel": vorwissen/pythagoras.md
@@ -74,6 +77,10 @@ nav:
     - Algebra:
       - "Potenzen und Polynome": vorwissen/potenzen-polynome.md
       - "Binomische Formeln und Faktorisierung": vorwissen/binomische-formeln.md
+      - "Summen- und Produktnotation": vorwissen/summen-produktnotation.md
+      - "Kombinatorik": vorwissen/kombinatorik.md
+    - Analysis:
+      - "Grenzwerte und Konvergenz": vorwissen/grenzwerte-konvergenz.md
   - Grundlagen:
     - Elementare Zahlentheorie:
       - Überblick: grundlagen/elementare-zahlentheorie/index.md
