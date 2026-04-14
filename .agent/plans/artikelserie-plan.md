@@ -2,7 +2,7 @@
 
 Erstellt: 2026-03-30
 Aktualisiert: 2026-04-08
-Status: Phase 1–4 abgeschlossen, Phase 5 in Arbeit (docs/ befüllt, MkDocs build clean). Stilüberarbeitung aller 18 Artikel abgeschlossen. Vorwissen-Bereich (16 Themen DE+EN) fertiggestellt. Offen: Referenzierung (Popup/Sidebar), Deployment (Coolify).
+Status: Phase 1–4 abgeschlossen, Phase 5 in Arbeit (docs/ befüllt, MkDocs build clean). Stilüberarbeitung aller 18 Artikel abgeschlossen. Vorwissen-Bereich (16 Themen DE+EN) fertiggestellt. Offen: Referenzierung (Popup/Sidebar), statisches Deployment (→ `deployment-plan.md`).
 
 ## Vision
 
@@ -201,7 +201,11 @@ So wird klar, welche Grundlagen-Topics gelesen werden sollten, bevor man in den 
 14. [x] Entscheidung: MkDocs mit Material-Theme (bereits aufgesetzt)
 15. [x] Build-Pipeline: 18 Artikel aus `topics/` nach `docs/` synchronisiert, Links umgeschrieben, MkDocs build mit 0 Warnings (`scripts/sync_topics_to_docs.sh` + `scripts/fix_docs_links.py`)
 16. [ ] Automatische Navigation aus `requires`-Frontmatter generieren
-17. [ ] Deployment-Setup (Coolify/Docker)
+17. [ ] Deployment-Setup → **GitHub Pages** empfohlen (Details: `deployment-plan.md`)
+    - [ ] GitHub-Repo erstellen + Remote pushen
+    - [ ] GitHub Actions Workflow (Build + Deploy)
+    - [ ] Custom Domain `fermatically.com` konfigurieren (CNAME + DNS)
+    - [ ] Dockerfile + .dockerignore entfernen
 
 ### Phase 6: Medium-Synchronisation
 18. [ ] Medium.com API-Integration

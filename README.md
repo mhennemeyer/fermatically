@@ -74,7 +74,7 @@ Die Plattform ist in **eigenständige, querverweisbare Topics** gegliedert:
 - ✅ **8 Beweis-Artikel** geschrieben (Fermat-Wiles, ~2060 Zeilen) – von Taniyama-Shimura bis zum Langlands-Programm
 - ✅ Insgesamt **18 deutsche Artikel** mit ~4020 Zeilen, LaTeX-Formeln, MkDocs-Admonitions und Querverweisen
 
-**Nächste Phase:** Englische Versionen nachziehen, Website-Deployment (Coolify/Docker)
+**Nächste Phase:** Statisches Deployment einrichten (z.B. GitHub Pages, Cloudflare Pages, Netlify), Navigation aus `requires`-Frontmatter generieren
 
 ## Projektverzeichnis
 
