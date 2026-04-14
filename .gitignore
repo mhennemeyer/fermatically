@@ -20,6 +20,12 @@ Thumbs.db
 # Resources (große PDFs / geparste Dateien)
 resources/
 
+# Node.js / Playwright
+node_modules/
+test-results/
+playwright-report/
+playwright/.cache/
+
 # Agent-Symlinks (zeigen auf lokale ~/.agent/)
 .agent/functional.md
 .agent/rules.md

@@ -1,0 +1,16 @@
+{
+  "name": "fermatically",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UI-Tests für die fermatically Mathematik-Plattform",
+  "scripts": {
+    "test:ui": "npx playwright test --headed",
+    "test:ui:headless": "npx playwright test",
+    "test:ui:debug": "npx playwright test --ui",
+    "serve": "npx serve site -p 8100"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "serve": "^14.2.6"
+  }
+}
