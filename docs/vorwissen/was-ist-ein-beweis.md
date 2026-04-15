@@ -1,99 +1,99 @@
 ---
-title: "Was ist ein Beweis?"
-description: "Axiome, Definitionen, Sätze und Lemmata – die Bausteine mathematischer Argumentation"
-lang: de
+title: "What Is a Proof?"
+description: "Axioms, definitions, theorems, and lemmas – the building blocks of mathematical reasoning"
+lang: en
 type: vorwissen
 ---
 
-# Was ist ein Beweis?
+# What Is a Proof?
 
 ## Definition
 
-Ein **mathematischer Beweis** ist eine lückenlose Kette logischer Schlüsse, die eine Behauptung aus bereits akzeptierten Aussagen (Axiomen, Definitionen, zuvor bewiesenen Sätzen) herleitet.
+A **mathematical proof** is a complete chain of logical deductions that derives a claim from already accepted statements (axioms, definitions, previously proven theorems).
 
-Ein Beweis ist keine empirische Überprüfung. Dass eine Aussage für tausend Beispiele gilt, beweist sie nicht. Ein Beweis zeigt, dass sie für **alle** zulässigen Fälle gilt.
+A proof is not an empirical verification. The fact that a statement holds for a thousand examples does not prove it. A proof shows that it holds for **all** admissible cases.
 
-## Die Bausteine
+## The Building Blocks
 
-### Axiome
+### Axioms
 
-**Axiome** sind Grundannahmen, die ohne Beweis akzeptiert werden. Sie bilden das Fundament eines mathematischen Systems.
+**Axioms** are foundational assumptions accepted without proof. They form the basis of a mathematical system.
 
-**Beispiel.** Peano-Axiome für die natürlichen Zahlen:
-- $0$ ist eine natürliche Zahl.
-- Jede natürliche Zahl $n$ hat einen Nachfolger $S(n)$.
-- $0$ ist kein Nachfolger einer natürlichen Zahl.
+**Example.** Peano axioms for the natural numbers:
+- $0$ is a natural number.
+- Every natural number $n$ has a successor $S(n)$.
+- $0$ is not the successor of any natural number.
 
-### Definitionen
+### Definitions
 
-**Definitionen** legen die Bedeutung eines Begriffs fest. Sie sind weder wahr noch falsch – sie sind Festlegungen.
+**Definitions** establish the meaning of a term. They are neither true nor false — they are conventions.
 
-**Beispiel.** *Definition:* Eine natürliche Zahl $p > 1$ heißt **Primzahl**, wenn ihre einzigen positiven Teiler $1$ und $p$ sind.
+**Example.** *Definition:* A natural number $p > 1$ is called a **prime number** if its only positive divisors are $1$ and $p$.
 
-### Sätze (Theoreme)
+### Theorems
 
-Ein **Satz** (oder **Theorem**) ist eine mathematische Aussage, die bewiesen wurde.
+A **theorem** is a mathematical statement that has been proved.
 
-**Beispiel.** *Fundamentalsatz der Arithmetik:* Jede natürliche Zahl $n > 1$ lässt sich eindeutig als Produkt von Primzahlen darstellen (bis auf die Reihenfolge der Faktoren).
+**Example.** *Fundamental Theorem of Arithmetic:* Every natural number $n > 1$ can be uniquely represented as a product of prime numbers (up to the order of factors).
 
-### Lemmata
+### Lemmas
 
-Ein **Lemma** ist ein Hilfssatz – ein bewiesener Satz, der primär als Zwischenschritt für einen größeren Beweis dient.
+A **lemma** is an auxiliary result — a proven statement that primarily serves as a stepping stone for a larger proof.
 
-**Beispiel.** *Lemma von Bézout:* Für $a, b \in \mathbb{Z}$ existieren $x, y \in \mathbb{Z}$ mit $\gcd(a, b) = xa + yb$.
+**Example.** *Bézout's Lemma:* For $a, b \in \mathbb{Z}$, there exist $x, y \in \mathbb{Z}$ with $\gcd(a, b) = xa + yb$.
 
-### Korollare
+### Corollaries
 
-Ein **Korollar** ist eine direkte Folgerung aus einem bereits bewiesenen Satz.
+A **corollary** is a direct consequence of an already proven theorem.
 
-**Beispiel.** *Korollar:* Sind $a$ und $b$ teilerfremd und $a \mid bc$, dann $a \mid c$. (Folgt aus dem Lemma von Bézout.)
+**Example.** *Corollary:* If $a$ and $b$ are coprime and $a \mid bc$, then $a \mid c$. (Follows from Bézout's Lemma.)
 
-## Vermutung vs. Satz
+## Conjecture vs. Theorem
 
-| Begriff | Status | Beispiel |
-|---------|--------|----------|
-| **Vermutung** | Unbewiesene Aussage, für die es Evidenz gibt | Goldbachsche Vermutung (1742, offen) |
-| **Satz** | Bewiesene Aussage | Fermats letzter Satz (1637 formuliert, 1995 bewiesen) |
+| Term | Status | Example |
+|------|--------|---------|
+| **Conjecture** | Unproven statement with supporting evidence | Goldbach's conjecture (1742, open) |
+| **Theorem** | Proven statement | Fermat's Last Theorem (stated 1637, proved 1995) |
 
-Eine Vermutung wird zum Satz, sobald ein gültiger Beweis vorliegt. „Fermats letzter Satz" heißt historisch „Satz", obwohl er 358 Jahre lang eine Vermutung war.
+A conjecture becomes a theorem once a valid proof is provided. "Fermat's Last Theorem" is historically called a "theorem" despite being a conjecture for 358 years.
 
-## Struktur eines Beweises
+## Structure of a Proof
 
-Ein typischer Beweis folgt diesem Schema:
+A typical proof follows this pattern:
 
-1. **Voraussetzung:** Was wird angenommen?
-2. **Behauptung:** Was soll gezeigt werden?
-3. **Beweis:** Logische Kette von der Voraussetzung zur Behauptung.
-4. **QED / $\square$:** Markierung des Beweisendes.
+1. **Hypothesis:** What is assumed?
+2. **Claim:** What is to be shown?
+3. **Proof:** Logical chain from hypothesis to claim.
+4. **QED / $\square$:** Marks the end of the proof.
 
-**Beispiel.**
+**Example.**
 
-*Voraussetzung:* $a$ und $b$ sind gerade Zahlen.
+*Hypothesis:* $a$ and $b$ are even numbers.
 
-*Behauptung:* $a \cdot b$ ist durch 4 teilbar.
+*Claim:* $a \cdot b$ is divisible by 4.
 
-*Beweis.* Da $a$ gerade ist, existiert $m \in \mathbb{Z}$ mit $a = 2m$. Da $b$ gerade ist, existiert $n \in \mathbb{Z}$ mit $b = 2n$. Dann:
+*Proof.* Since $a$ is even, there exists $m \in \mathbb{Z}$ with $a = 2m$. Since $b$ is even, there exists $n \in \mathbb{Z}$ with $b = 2n$. Then:
 
 $$
 a \cdot b = 2m \cdot 2n = 4mn
 $$
 
-Da $mn \in \mathbb{Z}$, ist $a \cdot b$ durch 4 teilbar. $\square$
+Since $mn \in \mathbb{Z}$, the product $a \cdot b$ is divisible by 4. $\square$
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Baustein | Rolle |
-|----------|-------|
-| Axiom | Grundannahme ohne Beweis |
-| Definition | Festlegung eines Begriffs |
-| Satz/Theorem | Bewiesene Aussage |
-| Lemma | Hilfssatz für größeren Beweis |
-| Korollar | Direkte Folgerung aus einem Satz |
-| Vermutung | Unbewiesene Aussage mit Evidenz |
+| Building Block | Role |
+|---------------|------|
+| Axiom | Foundational assumption without proof |
+| Definition | Convention establishing a term's meaning |
+| Theorem | Proven statement |
+| Lemma | Auxiliary result for a larger proof |
+| Corollary | Direct consequence of a theorem |
+| Conjecture | Unproven statement with evidence |
 
-## Quellen
+## References
 
-- Velleman, Daniel J.: *How to Prove It.* Cambridge University Press, 3. Auflage, 2019. Kapitel 1.
-- Hammack, Richard: *Book of Proof.* 3. Auflage, 2018. Kapitel 1.
+- Velleman, Daniel J.: *How to Prove It.* Cambridge University Press, 3rd edition, 2019. Chapter 1.
+- Hammack, Richard: *Book of Proof.* 3rd edition, 2018. Chapter 1.

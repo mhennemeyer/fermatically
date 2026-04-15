@@ -1,29 +1,29 @@
-# Fermats letzter Satz – Der Beweis (Wiles, 1995)
+# Fermat's Last Theorem – The Proof (Wiles, 1995)
 
-!!! abstract "Überblick"
-    Das Herzstück dieser Plattform: Andrew Wiles' Beweis von Fermats letztem Satz, Schritt für Schritt aufbereitet. Von der Taniyama-Shimura-Vermutung über Galois-Darstellungen und Deformationstheorie bis zum berühmten \(R = T\)-Theorem.
+!!! abstract "Overview"
+    The centerpiece of this platform: Andrew Wiles' proof of Fermat's Last Theorem, presented step by step. From the Taniyama-Shimura Conjecture through Galois representations and deformation theory to the famous \(R = T\) theorem.
 
-## Worum geht es?
+## What Is This About?
 
-1995 veröffentlichte Andrew Wiles einen 109-seitigen Beweis, der eine 358 Jahre alte Vermutung löste. Die zentrale Idee: Zeige, dass **jede semistabile elliptische Kurve modular ist** (ein Spezialfall der Taniyama-Shimura-Vermutung). Zusammen mit dem Theorem von Ribet folgt daraus, dass Fermats letzter Satz wahr ist.
+In 1995, Andrew Wiles published a 109-page proof that resolved a 358-year-old conjecture. The central idea: show that **every semistable elliptic curve is modular** (a special case of the Taniyama-Shimura Conjecture). Together with Ribet's theorem, this implies that Fermat's Last Theorem is true.
 
-Der Beweis verbindet auf beeindruckende Weise Zahlentheorie, algebraische Geometrie und Analysis – und nutzt dabei Werkzeuge, die erst im 20. Jahrhundert entwickelt wurden.
+The proof impressively connects number theory, algebraic geometry, and analysis – using tools that were only developed in the 20th century.
 
-## Artikel in dieser Serie
+## Articles in This Series
 
-| # | Artikel | Thema |
+| # | Article | Topic |
 |---|---------|-------|
-| 1 | [Die Taniyama-Shimura-Vermutung](01-taniyama-shimura.md) | Jede elliptische Kurve ist modular |
-| 2 | [Freys Idee und Ribets Theorem](02-frey-ribet.md) | TSV ⟹ FLT |
-| 3 | [Galois-Darstellungen](03-galois-darstellungen.md) | Elliptische Kurven als Matrizen |
-| 4 | [Deformationstheorie](04-deformationstheorie.md) | Wie man Darstellungen verbiegt |
-| 5 | [\(R = T\) – Das Herz des Beweises](05-r-gleich-t.md) | Wiles' zentrales Theorem |
-| 6 | [Der Taylor-Wiles-Trick](06-taylor-wiles-trick.md) | Der minimale Fall |
-| 7 | [Der 3-5-Switch und der Abschluss](07-3-5-switch.md) | Das Finale |
-| 8 | [Was danach kam](08-was-danach-kam.md) | Vollständige TSV, Langlands-Programm |
+| 1 | [The Taniyama-Shimura Conjecture](01-taniyama-shimura.md) | Every elliptic curve is modular |
+| 2 | [Frey's Idea and Ribet's Theorem](02-frey-ribet.md) | TSC ⟹ FLT |
+| 3 | [Galois Representations](03-galois-darstellungen.md) | Elliptic curves as matrices |
+| 4 | [Deformation Theory](04-deformationstheorie.md) | How to deform representations |
+| 5 | [\(R = T\) – The Heart of the Proof](05-r-gleich-t.md) | Wiles' central theorem |
+| 6 | [The Taylor-Wiles Trick](06-taylor-wiles-trick.md) | The minimal case |
+| 7 | [The 3-5 Switch and the Conclusion](07-3-5-switch.md) | The finale |
+| 8 | [What Came After](08-was-danach-kam.md) | Full TSC, Langlands program |
 
-## Empfohlene Reihenfolge
+## Recommended Order
 
-Die Artikel bauen streng aufeinander auf und sollten in der angegebenen Reihenfolge gelesen werden.
+The articles build strictly on each other and should be read in the order listed.
 
-**Voraussetzungen:** [Elementare Zahlentheorie](../grundlagen/elementare-zahlentheorie/index.md) und [Werkzeuge](../werkzeuge/index.md)
+**Prerequisites:** [Elementary Number Theory](../grundlagen/elementare-zahlentheorie/index.md) and [Tools](../werkzeuge/index.md)

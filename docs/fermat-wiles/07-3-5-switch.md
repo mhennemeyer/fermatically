@@ -1,170 +1,166 @@
 ---
-title: "Der 3-5-Switch und der Abschluss"
+title: "The 3-5 Switch and the Conclusion"
 slug: fermat-wiles/07-3-5-switch
 series: fermat-wiles
 part: 7
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: zahlentheorie
 tags:
   - 3-5-switch
   - langlands-tunnell
-  - modularitaet
+  - modularity
 requires:
-  - beweisarten
+  - fermat-wiles/06-taylor-wiles-trick
 ---
-# Der 3-5-Switch und der Abschluss
+# The 3-5 Switch and the Conclusion
 
-!!! abstract "Zusammenfassung"
-    Der 3-5-Switch ist der elegante letzte Baustein in Wiles' Beweis.
-    Das Theorem von Langlands-Tunnell liefert die residuale Modularität
-    für $p = 3$. Wenn die 3-Darstellung reduzibel ist, wechselt Wiles
-    zu $p = 5$ und konstruiert eine Hilfs-Kurve, die den Einstieg
-    ermöglicht. So wird jede semistabile elliptische Kurve als modular
-    erkannt – und Fermats letzter Satz ist bewiesen.
+!!! abstract "Summary"
+    The 3-5 switch is the elegant final building block in Wiles' proof.
+    The Langlands–Tunnell theorem provides residual modularity
+    for $p = 3$. When the 3-representation is reducible, Wiles switches
+    to $p = 5$ and constructs an auxiliary curve that provides the entry
+    point. In this way, every semistable elliptic curve is recognised as modular
+    – and Fermat's Last Theorem is proved.
 
-## Voraussetzungen
+## Prerequisites
 
-- [Der Taylor-Wiles-Trick](06-taylor-wiles-trick.md) – Patching-Argument und $R = T$
-
-| Thema | Beschreibung |
-|-------|-------------|
-| [Beweisarten](../vorwissen/beweisarten.md) | Direkter Beweis, Widerspruch, Induktion, Abstieg |
+- [The Taylor–Wiles Trick](06-taylor-wiles-trick.md) – patching argument and $R = T$
 
 ---
 
-## 1. Das Problem mit $p = 3$
+## 1. The Problem with $p = 3$
 
-### Erinnerung: Die Beweisstrategie
+### Recall: The proof strategy
 
-Wiles' Beweis der Modularität semistabiler Kurven hat zwei Stufen:
+Wiles' proof of the modularity of semistable curves has two stages:
 
-1. **Residuale Modularität**: Zeige, dass $\bar{\rho}_{E,p}$ modular ist.
-2. **Liftung**: Beweise $R = T$, um von residualer zu voller Modularität zu gelangen.
+1. **Residual modularity**: Show that $\bar{\rho}_{E,p}$ is modular.
+2. **Lifting**: Prove $R = T$ to pass from residual to full modularity.
 
-Stufe 2 ist erledigt (Taylor-Wiles-Trick). Bleibt Stufe 1: Woher kommt die residuale Modularität?
+Stage 2 is done (Taylor–Wiles trick). Stage 1 remains: where does residual modularity come from?
 
-### Langlands-Tunnell
+### Langlands–Tunnell
 
-Für $p = 3$ gibt es ein mächtiges Ergebnis:
+For $p = 3$ there is a powerful result:
 
-!!! note "Theorem (Langlands-Tunnell)"
-    Sei $\bar{\rho}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_3)$ eine stetige,
-    ungerade Darstellung. Dann ist $\bar{\rho}$ modular – es existiert eine
-    Modulform $f$ vom Gewicht 1 mit $\bar{\rho} \cong \bar{\rho}_f$.
+!!! note "Theorem (Langlands–Tunnell)"
+    Let $\bar{\rho}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_3)$ be a continuous,
+    odd representation. Then $\bar{\rho}$ is modular – there exists a
+    modular form $f$ of weight 1 with $\bar{\rho} \cong \bar{\rho}_f$.
 
-Der Beweis nutzt eine besondere Eigenschaft von $\text{GL}_2(\mathbb{F}_3)$: Diese Gruppe ist **auflösbar** (sie hat Ordnung 48 und ist isomorph zu einer Erweiterung von $S_3$ durch $\mathbb{Z}/2\mathbb{Z}$). Für auflösbare Gruppen stehen die Werkzeuge des **Langlands-Programms** zur Verfügung – insbesondere der Basiswechsel (base change) für $\text{GL}_2$.
+The proof uses a special property of $\text{GL}_2(\mathbb{F}_3)$: this group is **solvable** (it has order 48 and is isomorphic to an extension of $S_3$ by $\mathbb{Z}/2\mathbb{Z}$). For solvable groups, the tools of the **Langlands programme** are available – in particular base change for $\text{GL}_2$.
 
-Langlands bewies 1980 die Modulformen-Korrespondenz für auflösbare Galois-Darstellungen, und Tunnell verfeinerte das Ergebnis 1981.
+Langlands proved the modular forms correspondence for solvable Galois representations in 1980, and Tunnell refined the result in 1981.
 
-### Vom Gewicht 1 zum Gewicht 2
+### From weight 1 to weight 2
 
-Langlands-Tunnell liefert eine Modulform vom **Gewicht 1**, benötigt wird aber Gewicht 2 (für den Zusammenhang mit elliptischen Kurven). Wiles löst das durch ein Liftungsargument:
+Langlands–Tunnell provides a modular form of **weight 1**, but we need weight 2 (for the connection with elliptic curves). Wiles solves this via a lifting argument:
 
-Aus der Gewicht-1-Form $f$ konstruiert man eine Gewicht-2-Form $g$ mit $\bar{\rho}_g \cong \bar{\rho}_{E,3}$. Dies nutzt Hidas Theorie ordinärer $p$-adischer Modulformen.
+From the weight-1 form $f$, one constructs a weight-2 form $g$ with $\bar{\rho}_g \cong \bar{\rho}_{E,3}$. This uses Hida's theory of ordinary $p$-adic modular forms.
 
 ---
 
-## 2. Warum reicht $p = 3$ nicht?
+## 2. Why $p = 3$ Is Not Enough
 
-### Die Irreduzibilitätsbedingung
+### The irreducibility condition
 
-Wiles' Beweis von $R = T$ (und das Taylor-Wiles-Patching) erfordert, dass $\bar{\rho}_{E,p}$ **irreduzibel** ist. Für die Frey-Kurve ist das für $p \geq 5$ automatisch erfüllt (nach Mazur). Aber für eine allgemeine semistabile Kurve $E$ kann $\bar{\rho}_{E,3}$ **reduzibel** sein.
+Wiles' proof of $R = T$ (and the Taylor–Wiles patching) requires that $\bar{\rho}_{E,p}$ be **irreducible**. For the Frey curve, this is automatically satisfied for $p \geq 5$ (by Mazur). But for a general semistable curve $E$, $\bar{\rho}_{E,3}$ can be **reducible**.
 
-### Wann ist $\bar{\rho}_{E,3}$ reduzibel?
+### When is $\bar{\rho}_{E,3}$ reducible?
 
-Die Darstellung $\bar{\rho}_{E,3}$ ist reduzibel genau dann, wenn $E$ einen rationalen **3-Isogenie-Kern** hat – einen $G_{\mathbb{Q}}$-stabilen Untervektorraum von $E[3]$ der Dimension 1 über $\mathbb{F}_3$. Geometrisch bedeutet das: Es gibt eine Isogenie $E \to E'$ vom Grad 3 mit rationalem Kern.
+The representation $\bar{\rho}_{E,3}$ is reducible if and only if $E$ has a rational **3-isogeny kernel** – a $G_{\mathbb{Q}}$-stable subspace of $E[3]$ of dimension 1 over $\mathbb{F}_3$. Geometrically, this means: there is an isogeny $E \to E'$ of degree 3 with rational kernel.
 
-Dies kommt durchaus vor – es gibt unendlich viele solcher Kurven. Für diese Kurven scheitert der Beweis mit $p = 3$.
+This does occur – there are infinitely many such curves. For these curves, the proof with $p = 3$ fails.
 
-### Die Situation
+### The situation
 
-| $\bar{\rho}_{E,3}$ | Modular? | Irreduzibel? | $R = T$ möglich? |
+| $\bar{\rho}_{E,3}$ | Modular? | Irreducible? | $R = T$ possible? |
 |---------------------|----------|--------------|-------------------|
-| irreduzibel | Ja (Langlands-Tunnell) | Ja | ✓ Beweis funktioniert |
-| reduzibel | Ja (Langlands-Tunnell) | **Nein** | ✗ Irreduzibilität fehlt |
+| irreducible | Yes (Langlands–Tunnell) | Yes | ✓ Proof works |
+| reducible | Yes (Langlands–Tunnell) | **No** | ✗ Irreducibility missing |
 
 ---
 
-## 3. Der Switch zu $p = 5$
+## 3. The Switch to $p = 5$
 
-### Die Idee
+### The idea
 
-Wenn $\bar{\rho}_{E,3}$ reduzibel ist, betrachte stattdessen $\bar{\rho}_{E,5}$. Die 5-Darstellung hat gute Chancen, irreduzibel zu sein – denn eine Kurve, die sowohl einen 3-Isogenie-Kern als auch einen 5-Isogenie-Kern hat, wäre sehr speziell.
+When $\bar{\rho}_{E,3}$ is reducible, consider $\bar{\rho}_{E,5}$ instead. The 5-representation has a good chance of being irreducible – because a curve having both a 3-isogeny kernel and a 5-isogeny kernel would be very special.
 
-### Irreduzibilität von $\bar{\rho}_{E,5}$
+### Irreducibility of $\bar{\rho}_{E,5}$
 
-Wiles zeigt: Wenn $E$ semistabil ist und $\bar{\rho}_{E,3}$ reduzibel, dann ist $\bar{\rho}_{E,5}$ **irreduzibel**. Dies folgt aus Mazurs Klassifikation der möglichen Torsionsstrukturen rationaler elliptischer Kurven:
+Wiles shows: if $E$ is semistable and $\bar{\rho}_{E,3}$ is reducible, then $\bar{\rho}_{E,5}$ is **irreducible**. This follows from Mazur's classification of possible torsion structures of rational elliptic curves:
 
 !!! note "Theorem (Mazur, 1978)"
-    Sei $E/\mathbb{Q}$ eine elliptische Kurve. Wenn $E$ eine rationale Isogenie
-    vom Grad $\ell$ hat (für eine Primzahl $\ell$), dann $\ell \leq 19$ oder
+    Let $E/\mathbb{Q}$ be an elliptic curve. If $E$ has a rational isogeny
+    of degree $\ell$ (for a prime $\ell$), then $\ell \leq 19$ or
     $\ell \in \{37, 43, 67, 163\}$.
 
-Für eine **semistabile** Kurve kann man die Möglichkeiten weiter einschränken. Insbesondere gibt es keine semistabile Kurve mit gleichzeitig rationalem 3- und 5-Isogenie-Kern (dies würde eine rationale 15-Isogenie implizieren, die Mazur ausschließt).
+For a **semistable** curve, the possibilities can be further restricted. In particular, there is no semistable curve with a simultaneous rational 3- and 5-isogeny kernel (this would imply a rational 15-isogeny, which Mazur excludes).
 
-### Das neue Problem
+### The new problem
 
-$\bar{\rho}_{E,5}$ ist nun irreduzibel – aber woher kommt die **residuale Modularität**? Langlands-Tunnell funktioniert nur für $p = 3$, nicht für $p = 5$ (denn $\text{GL}_2(\mathbb{F}_5)$ ist **nicht auflösbar**).
+Now we have $\bar{\rho}_{E,5}$ irreducible – but where does **residual modularity** come from? Langlands–Tunnell works only for $p = 3$, not for $p = 5$ (because $\text{GL}_2(\mathbb{F}_5)$ is **not solvable**).
 
-Hier kommt der geniale Trick.
-
----
-
-## 4. Eine Hilfs-Kurve konstruieren
-
-### Die Strategie
-
-Wiles sucht eine **zweite elliptische Kurve** $E'$ mit folgenden Eigenschaften:
-
-1. $E'[5] \cong E[5]$ als Galois-Modul (die 5-Torsion stimmt überein)
-2. $\bar{\rho}_{E',3}$ ist **irreduzibel** (damit $p = 3$ für $E'$ funktioniert)
-3. $E'$ ist semistabil
-
-### Warum eine solche Kurve existiert
-
-Die Menge der elliptischen Kurven $E'$ mit $E'[5] \cong E[5]$ wird durch eine **modulare Kurve** $X(5)$ parametrisiert – eine Kurve vom Geschlecht 0 (also rational!). Es gibt daher unendlich viele solche Kurven $E'$.
-
-Unter diesen unendlich vielen Kandidaten muss Wiles eine finden, die:
-- semistabil ist (an allen Primzahlen), und
-- $\bar{\rho}_{E',3}$ irreduzibel hat.
-
-Da die Bedingung „$\bar{\rho}_{E',3}$ reduzibel" eine echte Teilmenge ausschließt und die Parametrisierung über eine rationale Kurve verläuft, existiert eine solche Kurve $E'$.
-
-### Die Konstruktion
-
-Konkret: Über dem Funktionenkörper $\mathbb{Q}(t)$ gibt es eine „universelle" Kurve mit der richtigen 5-Torsion. Durch Spezialisierung bei geeigneten rationalen Werten $t = t_0$ erhält man die gewünschte Hilfs-Kurve $E'$.
+Here comes the ingenious trick.
 
 ---
 
-## 5. Die Kette schließen
+## 4. Constructing an Auxiliary Curve
 
-### Schritt 1: $E'$ ist modular (via $p = 3$)
+### The strategy
 
-Da $\bar{\rho}_{E',3}$ irreduzibel ist, lässt sich der gesamte Beweisapparat für $p = 3$ anwenden:
+Wiles seeks a **second elliptic curve** $E'$ with the following properties:
+
+1. $E'[5] \cong E[5]$ as a Galois module (the 5-torsion agrees)
+2. $\bar{\rho}_{E',3}$ is **irreducible** (so that $p = 3$ works for $E'$)
+3. $E'$ is semistable
+
+### Why such a curve exists
+
+The set of elliptic curves $E'$ with $E'[5] \cong E[5]$ is parametrised by a **modular curve** $X(5)$ – a curve of genus 0 (hence rational!). There are therefore infinitely many such curves $E'$.
+
+Among these infinitely many candidates, Wiles needs to find one that:
+- is semistable (at all primes), and
+- has $\bar{\rho}_{E',3}$ irreducible.
+
+Since the condition "$\bar{\rho}_{E',3}$ reducible" excludes a proper subset and the parametrisation runs over a rational curve, such a curve $E'$ exists.
+
+### The construction
+
+Concretely: over the function field $\mathbb{Q}(t)$ there is a "universal" curve with the correct 5-torsion. By specialising at suitable rational values $t = t_0$, one obtains the desired auxiliary curve $E'$.
+
+---
+
+## 5. Closing the Chain
+
+### Step 1: $E'$ is modular (via $p = 3$)
+
+Since $\bar{\rho}_{E',3}$ is irreducible, we can apply the entire proof apparatus for $p = 3$:
 
 $$
-\bar{\rho}_{E',3} \text{ irreduzibel} \xrightarrow{\text{Langlands-Tunnell}} \bar{\rho}_{E',3} \text{ modular} \xrightarrow{R = T} \rho_{E',3} \text{ modular} \implies E' \text{ modular.}
+\bar{\rho}_{E',3} \text{ irreducible} \xrightarrow{\text{Langlands–Tunnell}} \bar{\rho}_{E',3} \text{ modular} \xrightarrow{R = T} \rho_{E',3} \text{ modular} \implies E' \text{ modular.}
 $$
 
-### Schritt 2: $E[5]$ ist modular
+### Step 2: $E[5]$ is modular
 
-Da $E'$ modular ist, gilt insbesondere: $\bar{\rho}_{E',5}$ ist modular (die 5-residuale Darstellung kommt von einer Modulform). Da $E'[5] \cong E[5]$, folgt:
-
-$$
-\bar{\rho}_{E,5} \cong \bar{\rho}_{E',5} \quad \text{ist modular.}
-$$
-
-### Schritt 3: $E$ ist modular (via $p = 5$)
-
-Damit ist der Einstieg für $p = 5$ gesichert: $\bar{\rho}_{E,5}$ ist modular und irreduzibel. Der Taylor-Wiles-Trick liefert $R = T$ für $p = 5$:
+Since $E'$ is modular, in particular: $\bar{\rho}_{E',5}$ is modular (the 5-residual representation comes from a modular form). Since $E'[5] \cong E[5]$, it follows:
 
 $$
-\bar{\rho}_{E,5} \text{ modular + irreduzibel} \xrightarrow{R = T} \rho_{E,5} \text{ modular} \implies E \text{ modular.}
+\bar{\rho}_{E,5} \cong \bar{\rho}_{E',5} \quad \text{is modular.}
 $$
 
-### Die gesamte Kette
+### Step 3: $E$ is modular (via $p = 5$)
+
+Now we have the entry point for $p = 5$: $\bar{\rho}_{E,5}$ is modular and irreducible. The Taylor–Wiles trick gives $R = T$ for $p = 5$:
+
+$$
+\bar{\rho}_{E,5} \text{ modular + irreducible} \xrightarrow{R = T} \rho_{E,5} \text{ modular} \implies E \text{ modular.}
+$$
+
+### The complete chain
 
 $$
 \boxed{E'[5] \cong E[5]} \quad + \quad \boxed{E' \text{ modular (via } p=3\text{)}} \implies \boxed{\bar{\rho}_{E,5} \text{ modular}} \xrightarrow{R=T} \boxed{E \text{ modular}}
@@ -172,88 +168,88 @@ $$
 
 ---
 
-## 6. FLT ist bewiesen
+## 6. FLT Is Proved
 
-### Die Fallunterscheidung
+### The case distinction
 
-Für jede semistabile elliptische Kurve $E/\mathbb{Q}$:
+For every semistable elliptic curve $E/\mathbb{Q}$:
 
-**Fall 1: $\bar{\rho}_{E,3}$ irreduzibel.** Langlands-Tunnell + Taylor-Wiles ($p = 3$) → $E$ modular. ✓
+**Case 1: $\bar{\rho}_{E,3}$ irreducible.** Langlands–Tunnell + Taylor–Wiles ($p = 3$) → $E$ modular. ✓
 
-**Fall 2: $\bar{\rho}_{E,3}$ reduzibel.** Dann $\bar{\rho}_{E,5}$ irreduzibel. Konstruiere Hilfs-Kurve $E'$ mit $E'[5] \cong E[5]$ und $\bar{\rho}_{E',3}$ irreduzibel. Dann: $E'$ modular (Fall 1) → $\bar{\rho}_{E,5}$ modular → Taylor-Wiles ($p = 5$) → $E$ modular. ✓
+**Case 2: $\bar{\rho}_{E,3}$ reducible.** Then $\bar{\rho}_{E,5}$ is irreducible. Construct auxiliary curve $E'$ with $E'[5] \cong E[5]$ and $\bar{\rho}_{E',3}$ irreducible. Then: $E'$ modular (Case 1) → $\bar{\rho}_{E,5}$ modular → Taylor–Wiles ($p = 5$) → $E$ modular. ✓
 
-**In beiden Fällen ist $E$ modular.** Da die Frey-Kurve semistabil ist, folgt Fermats letzter Satz.
+**In both cases, $E$ is modular.** Since the Frey curve is semistable, Fermat's Last Theorem follows.
 
-### Das vollständige Beweisdiagramm
+### The complete proof diagram
 
 $$
-\text{FLT-Lösung} \xrightarrow{\text{Frey}} E_{\text{Frey}} \xrightarrow{\text{Wiles (3 oder 3-5)}} \text{modular} \xrightarrow{\text{Ribet}} \text{Widerspruch}
+\text{FLT solution} \xrightarrow{\text{Frey}} E_{\text{Frey}} \xrightarrow{\text{Wiles (3 or 3-5)}} \text{modular} \xrightarrow{\text{Ribet}} \text{contradiction}
 $$
 
-!!! note "Theorem (Wiles, Taylor-Wiles, 1995)"
-    Jede semistabile elliptische Kurve über $\mathbb{Q}$ ist modular.
+!!! note "Theorem (Wiles, Taylor–Wiles, 1995)"
+    Every semistable elliptic curve over $\mathbb{Q}$ is modular.
 
-!!! note "Korollar (Fermats letzter Satz)"
-    Die Gleichung $x^n + y^n = z^n$ hat für $n \geq 3$ keine Lösung in positiven ganzen Zahlen.
+!!! note "Corollary (Fermat's Last Theorem)"
+    The equation $x^n + y^n = z^n$ has no solution in positive integers for $n \geq 3$.
 
 ---
 
-## 7. Rückblick: Die gesamte Beweisstruktur
+## 7. Retrospective: The Complete Proof Structure
 
-### Von Fermat zu Wiles
+### From Fermat to Wiles
 
-Der vollständige Beweis verbindet Ideen aus über vier Jahrhunderten Mathematik:
+The complete proof connects ideas from over four centuries of mathematics:
 
-| Jahr | Mathematiker | Beitrag |
-|------|-------------|---------|
-| 1637 | Fermat | Die Vermutung |
-| 1640 | Fermat | Beweis für $n = 4$ (Infinite Descent) |
-| 1770 | Euler | Beweis für $n = 3$ |
-| 1955 | Taniyama, Shimura | TSV: Elliptische Kurven ↔ Modulformen |
-| 1980 | Langlands, Tunnell | Modularität auflösbarer Darstellungen |
-| 1985 | Frey | FLT-Lösung → „unmögliche" elliptische Kurve |
-| 1986 | Ribet | Level-Lowering: TSV ⟹ FLT |
-| 1989 | Mazur | Universelle Deformationsringe |
-| 1995 | Wiles | $R = T$ für semistabile Kurven |
-| 1995 | Taylor-Wiles | Patching-Argument (Lückenschluss) |
+| Year | Mathematician | Contribution |
+|------|--------------|-------------|
+| 1637 | Fermat | The conjecture |
+| 1640 | Fermat | Proof for $n = 4$ (infinite descent) |
+| 1770 | Euler | Proof for $n = 3$ |
+| 1955 | Taniyama, Shimura | TSC: elliptic curves ↔ modular forms |
+| 1980 | Langlands, Tunnell | Modularity of solvable representations |
+| 1985 | Frey | FLT solution → "impossible" elliptic curve |
+| 1986 | Ribet | Level-lowering: TSC ⟹ FLT |
+| 1989 | Mazur | Universal deformation rings |
+| 1995 | Wiles | $R = T$ for semistable curves |
+| 1995 | Taylor–Wiles | Patching argument (closing the gap) |
 
-### Die logische Struktur
+### The logical structure
 
 ```
-FLT-Lösung (hypothetisch)
+FLT solution (hypothetical)
   ↓  [Frey 1985]
-Frey-Kurve E (semistabil, extreme Diskriminante)
-  ↓  [Wiles 1995: 3-5-Switch + R=T + Taylor-Wiles]
-E ist modular
-  ↓  [Ribet 1986: Level-Lowering]
-ρ̄(E,p) kommt von Neuform der Stufe 2
+Frey curve E (semistable, extreme discriminant)
+  ↓  [Wiles 1995: 3-5 switch + R=T + Taylor–Wiles]
+E is modular
+  ↓  [Ribet 1986: level-lowering]
+ρ̄(E,p) comes from newform of level 2
   ↓  [S₂(Γ₀(2)) = 0]
-Widerspruch → FLT-Lösung existiert nicht   □
+Contradiction → FLT solution does not exist   □
 ```
 
-### Was den Beweis so bemerkenswert macht
+### What makes the proof so remarkable
 
-1. **Indirektheit**: FLT wird nicht direkt bewiesen, sondern durch Widerspruch – über den Umweg elliptischer Kurven, Modulformen und Galois-Darstellungen.
-2. **Vereinigung**: Der Beweis vereint Zahlentheorie, algebraische Geometrie, komplexe Analysis und Darstellungstheorie.
-3. **Tiefe**: Die Methoden (Deformationstheorie, Patching) sind nicht speziell für FLT, sondern Werkzeuge von allgemeiner Bedeutung.
-4. **Menschlichkeit**: Die Geschichte von Wiles' siebenjährigem Geheimprojekt, der Lücke und ihrer Schließung ist einzigartig in der Mathematikgeschichte.
+1. **Indirectness**: FLT is not proved directly but by contradiction – via the detour of elliptic curves, modular forms, and Galois representations.
+2. **Unification**: The proof unifies number theory, algebraic geometry, complex analysis, and representation theory.
+3. **Depth**: The methods (deformation theory, patching) are not specific to FLT but tools of general significance.
+4. **Humanity**: The story of Wiles' seven-year secret project, the gap, and its closure is unique in the history of mathematics.
 
 ---
 
-## Ausblick
+## Outlook
 
-Der nächste und letzte Artikel blickt über Wiles' Beweis hinaus:
+The next and final article looks beyond Wiles' proof:
 
-| Artikel | Thema |
+| Article | Topic |
 |---------|-------|
-| [08 – Was danach kam](08-was-danach-kam.md) | BCDT, Serres Vermutung, Langlands-Programm |
+| [08 – What Came After](08-was-danach-kam.md) | BCDT, Serre's conjecture, the Langlands programme |
 
 ---
 
-## Quellen
+## Sources
 
 - **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), §5
 - **Robert Langlands**: *Base change for GL(2)*, Annals of Mathematics Studies 96 (1980)
 - **Jerrold Tunnell**: *Artin's conjecture for representations of octahedral type*, Bulletin of the AMS 5 (1981)
 - **Barry Mazur**: *Rational isogenies of prime degree*, Inventiones Mathematicae 44 (1978)
-- **Gary Cornell, Joseph Silverman, Glenn Stevens** (Hrsg.): *Modular Forms and Fermat's Last Theorem*, Springer (1997), Kapitel XV–XVI
+- **Gary Cornell, Joseph Silverman, Glenn Stevens** (eds.): *Modular Forms and Fermat's Last Theorem*, Springer (1997), Chapters XV–XVI

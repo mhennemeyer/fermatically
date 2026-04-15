@@ -1,35 +1,35 @@
-*[Aussagenlogik]: Verknüpfung von Aussagen durch UND, ODER, NICHT und deren Wahrheitswerte. → Vorwissen: Aussagenlogik
-*[Implikation]: Logische Folgerung „Wenn A, dann B" (A ⇒ B). → Vorwissen: Implikation und Äquivalenz
-*[Äquivalenz]: Logische Gleichwertigkeit „A genau dann, wenn B" (A ⇔ B). → Vorwissen: Implikation und Äquivalenz
-*[direkter Beweis]: Beweisart, bei der die Aussage durch eine Kette logischer Schlüsse direkt hergeleitet wird. → Vorwissen: Beweisarten
-*[Widerspruchsbeweis]: Beweisart, bei der die Negation der Aussage zu einem Widerspruch geführt wird. → Vorwissen: Beweisarten
-*[vollständige Induktion]: Beweismethode für Aussagen über natürliche Zahlen: Induktionsanfang + Induktionsschritt. → Vorwissen: Beweisarten
-*[Bruchrechnung]: Rechnen mit Brüchen a/b – Erweitern, Kürzen, Addition, Multiplikation, Division. → Vorwissen: Bruchrechnung
-*[Gleichungen]: Aussagen der Form Term₁ = Term₂, lösbar durch äquivalente Umformungen. → Vorwissen: Gleichungen
-*[Ungleichungen]: Aussagen mit <, >, ≤, ≥ – Achtung bei Multiplikation mit negativen Zahlen. → Vorwissen: Ungleichungen
-*[Teilbarkeit]: a teilt b (a | b), wenn b = k·a für ein ganzes k. → Vorwissen: Teilbarkeit und ggT
-*[ggT]: Größter gemeinsamer Teiler – berechenbar mit dem Euklidischen Algorithmus. → Vorwissen: Teilbarkeit und ggT
-*[kgV]: Kleinstes gemeinsames Vielfaches zweier Zahlen. → Vorwissen: Teilbarkeit und ggT
-*[Modulare Arithmetik]: Rechnen mit Resten: a ≡ b (mod n), wenn n | (a−b). → Vorwissen: Modulare Arithmetik
-*[Kongruenz]: a ≡ b (mod n) bedeutet: a und b haben denselben Rest bei Division durch n. → Vorwissen: Modulare Arithmetik
-*[Mengen]: Zusammenfassung von Objekten – mit Operationen ∪, ∩, \, ×. → Vorwissen: Mengen
-*[Abbildungen]: Zuordnung f: A → B, die jedem Element aus A genau ein Element aus B zuweist. → Vorwissen: Abbildungen
-*[injektiv]: Eine Abbildung f heißt injektiv, wenn verschiedene Eingaben verschiedene Ausgaben liefern. → Vorwissen: Abbildungen
-*[surjektiv]: Eine Abbildung f heißt surjektiv, wenn jedes Element der Zielmenge getroffen wird. → Vorwissen: Abbildungen
-*[bijektiv]: Eine Abbildung ist bijektiv, wenn sie injektiv und surjektiv ist (umkehrbare Zuordnung). → Vorwissen: Abbildungen
-*[Zahlenbereiche]: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ – jede Erweiterung löst neue Gleichungen. → Vorwissen: Zahlenbereiche
-*[pythagoräische Tripel]: Ganzzahlige Lösungen (a, b, c) von a² + b² = c². → Vorwissen: Pythagoras
-*[Koordinatengeometrie]: Punkte als Zahlenpaare (x, y), Geraden als Gleichungen, Kurven als Polynomgleichungen. → Vorwissen: Koordinatengeometrie
-*[Potenzen]: aⁿ = a · a · … · a (n Faktoren) – mit Rechenregeln für Multiplikation, Division, Verschachtelung. → Vorwissen: Potenzen und Polynome
-*[Polynome]: Ausdrücke der Form aₙxⁿ + … + a₁x + a₀ mit Grad n. → Vorwissen: Potenzen und Polynome
-*[Binomische Formeln]: (a+b)² = a²+2ab+b², (a−b)² = a²−2ab+b², (a+b)(a−b) = a²−b². → Vorwissen: Binomische Formeln
-*[komplexe Zahlen]: Zahlen der Form a + bi mit i² = −1; erweitern ℝ und ermöglichen Lösung aller Polynomgleichungen. → Vorwissen: Komplexe Zahlen
-*[Summennotation]: ∑-Notation: kompakte Schreibweise für Summen, z. B. ∑_{k=1}^{n} k = n(n+1)/2. → Vorwissen: Summen- und Produktnotation
-*[Produktnotation]: ∏-Notation: kompakte Schreibweise für Produkte, z. B. n! = ∏_{k=1}^{n} k. → Vorwissen: Summen- und Produktnotation
-*[Primfaktorzerlegung]: Jede natürliche Zahl n ≥ 2 ist eindeutig als Produkt von Primzahlen darstellbar. → Vorwissen: Primfaktorzerlegung
-*[Grenzwert]: Wert, dem sich eine Folge oder Funktion beliebig annähert: lim_{n→∞} aₙ = L. → Vorwissen: Grenzwerte und Konvergenz
-*[Konvergenz]: Eine Folge konvergiert, wenn sie einen Grenzwert besitzt. → Vorwissen: Grenzwerte und Konvergenz
-*[Äquivalenzrelation]: Reflexive, symmetrische und transitive Relation – zerlegt eine Menge in disjunkte Klassen. → Vorwissen: Relationen und Äquivalenzklassen
-*[Äquivalenzklassen]: Die durch eine Äquivalenzrelation entstehenden disjunkten Teilmengen einer Menge. → Vorwissen: Relationen und Äquivalenzklassen
-*[Kombinatorik]: Zählen von Anordnungen und Auswahlen: Permutationen, Variationen, Kombinationen, Binomialkoeffizienten. → Vorwissen: Kombinatorik
-*[Binomialkoeffizienten]: „n über k" = n!/(k!(n−k)!) – Anzahl der k-elementigen Teilmengen einer n-elementigen Menge. → Vorwissen: Kombinatorik
+*[propositional logic]: Combining propositions using AND, OR, NOT and their truth values. → Prerequisites: Propositional Logic
+*[implication]: Logical inference "if A, then B" (A ⇒ B). → Prerequisites: Implication and Equivalence
+*[equivalence]: Logical biconditional "A if and only if B" (A ⇔ B). → Prerequisites: Implication and Equivalence
+*[direct proof]: A proof where the statement is derived through a chain of logical deductions. → Prerequisites: Types of Proof
+*[proof by contradiction]: A proof where the negation of the statement leads to a contradiction. → Prerequisites: Types of Proof
+*[mathematical induction]: Proof method for statements about natural numbers: base case + inductive step. → Prerequisites: Types of Proof
+*[fractions]: Computing with fractions a/b – expanding, reducing, addition, multiplication, division. → Prerequisites: Fractions
+*[equations]: Statements of the form term₁ = term₂, solvable by equivalent transformations. → Prerequisites: Equations
+*[inequalities]: Statements with <, >, ≤, ≥ – caution when multiplying by negative numbers. → Prerequisites: Inequalities
+*[divisibility]: a divides b (a | b) if b = k·a for some integer k. → Prerequisites: Divisibility and GCD
+*[GCD]: Greatest common divisor – computable with the Euclidean algorithm. → Prerequisites: Divisibility and GCD
+*[LCM]: Least common multiple of two numbers. → Prerequisites: Divisibility and GCD
+*[modular arithmetic]: Computing with remainders: a ≡ b (mod n) if n | (a−b). → Prerequisites: Modular Arithmetic
+*[congruence]: a ≡ b (mod n) means: a and b have the same remainder when divided by n. → Prerequisites: Modular Arithmetic
+*[sets]: Collections of objects – with operations ∪, ∩, \, ×. → Prerequisites: Sets
+*[mappings]: Assignment f: A → B that maps each element of A to exactly one element of B. → Prerequisites: Mappings
+*[injective]: A mapping f is injective if different inputs yield different outputs. → Prerequisites: Mappings
+*[surjective]: A mapping f is surjective if every element of the codomain is hit. → Prerequisites: Mappings
+*[bijective]: A mapping is bijective if it is injective and surjective (invertible assignment). → Prerequisites: Mappings
+*[number systems]: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ – each extension solves new equations. → Prerequisites: Number Systems
+*[Pythagorean triples]: Integer solutions (a, b, c) of a² + b² = c². → Prerequisites: Pythagoras
+*[coordinate geometry]: Points as number pairs (x, y), lines as equations, curves as polynomial equations. → Prerequisites: Coordinate Geometry
+*[exponents]: aⁿ = a · a · … · a (n factors) – with rules for multiplication, division, nesting. → Prerequisites: Powers and Polynomials
+*[polynomials]: Expressions of the form aₙxⁿ + … + a₁x + a₀ with degree n. → Prerequisites: Powers and Polynomials
+*[binomial formulas]: (a+b)² = a²+2ab+b², (a−b)² = a²−2ab+b², (a+b)(a−b) = a²−b². → Prerequisites: Binomial Formulas
+*[complex numbers]: Numbers of the form a + bi with i² = −1; extend ℝ and enable solving all polynomial equations. → Prerequisites: Complex Numbers
+*[summation notation]: ∑ notation: compact way to write sums, e.g. ∑_{k=1}^{n} k = n(n+1)/2. → Prerequisites: Summation and Product Notation
+*[product notation]: ∏ notation: compact way to write products, e.g. n! = ∏_{k=1}^{n} k. → Prerequisites: Summation and Product Notation
+*[prime factorization]: Every natural number n ≥ 2 is uniquely representable as a product of primes. → Prerequisites: Prime Factorization
+*[limit]: Value that a sequence or function approaches arbitrarily closely: lim_{n→∞} aₙ = L. → Prerequisites: Limits and Convergence
+*[convergence]: A sequence converges if it has a limit. → Prerequisites: Limits and Convergence
+*[equivalence relation]: Reflexive, symmetric, and transitive relation – partitions a set into disjoint classes. → Prerequisites: Relations and Equivalence Classes
+*[equivalence classes]: The disjoint subsets of a set induced by an equivalence relation. → Prerequisites: Relations and Equivalence Classes
+*[combinatorics]: Counting arrangements and selections: permutations, variations, combinations, binomial coefficients. → Prerequisites: Combinatorics
+*[binomial coefficients]: "n choose k" = n!/(k!(n−k)!) – number of k-element subsets of an n-element set. → Prerequisites: Combinatorics

@@ -1,101 +1,101 @@
 ---
-title: "Relationen und Äquivalenzklassen"
-description: "Äquivalenzrelation, Partition, Restklassen als Beispiel, Faktorstrukturen"
-lang: de
+title: "Relations and Equivalence Classes"
+description: "Equivalence relations, partitions, residue classes as example, quotient structures"
+lang: en
 type: vorwissen
 ---
 
-# Relationen und Äquivalenzklassen
+# Relations and Equivalence Classes
 
-## Relationen
+## Relations
 
-Eine **(binäre) Relation** auf einer Menge $M$ ist eine Teilmenge $R \subseteq M \times M$. Für $(a, b) \in R$ schreibt man $a \sim b$ (oder $aRb$).
+A **(binary) relation** on a set $M$ is a subset $R \subseteq M \times M$. For $(a, b) \in R$, one writes $a \sim b$ (or $aRb$).
 
-**Beispiel.** Auf $\mathbb{Z}$ definiert „$a$ teilt $b$" eine Relation: $a \mid b$ genau dann, wenn $(a, b)$ in der Relation liegt.
+**Example.** On $\mathbb{Z}$, "$a$ divides $b$" defines a relation: $a \mid b$ precisely when $(a, b)$ belongs to the relation.
 
-## Äquivalenzrelationen
+## Equivalence Relations
 
-Eine Relation $\sim$ auf $M$ heißt **Äquivalenzrelation**, wenn sie drei Eigenschaften erfüllt:
+A relation $\sim$ on $M$ is an **equivalence relation** if it satisfies three properties:
 
-| Eigenschaft | Bedingung |
-|-------------|-----------|
-| **Reflexivität** | $a \sim a$ für alle $a \in M$ |
-| **Symmetrie** | $a \sim b \implies b \sim a$ |
-| **Transitivität** | $a \sim b$ und $b \sim c \implies a \sim c$ |
+| Property | Condition |
+|----------|-----------|
+| **Reflexivity** | $a \sim a$ for all $a \in M$ |
+| **Symmetry** | $a \sim b \implies b \sim a$ |
+| **Transitivity** | $a \sim b$ and $b \sim c \implies a \sim c$ |
 
-**Beispiel.** „Gleicher Rest bei Division durch $n$" ist eine Äquivalenzrelation auf $\mathbb{Z}$:
+**Example.** "Same remainder upon division by $n$" is an equivalence relation on $\mathbb{Z}$:
 
 $$
 a \sim b \iff n \mid (a - b)
 $$
 
-Diese Relation heißt **Kongruenz modulo $n$** und wird als $a \equiv b \pmod{n}$ geschrieben.
+This relation is called **congruence modulo $n$** and is written $a \equiv b \pmod{n}$.
 
-## Äquivalenzklassen
+## Equivalence Classes
 
-Die **Äquivalenzklasse** eines Elements $a \in M$ bezüglich $\sim$ ist die Menge aller zu $a$ äquivalenten Elemente:
+The **equivalence class** of an element $a \in M$ with respect to $\sim$ is the set of all elements equivalent to $a$:
 
 $$
 [a] = \{x \in M : x \sim a\}
 $$
 
-> „Equivalence relations are ubiquitous in mathematics. They provide the mechanism by which we identify objects that are 'essentially the same'."
+> "Equivalence relations are ubiquitous in mathematics. They provide the mechanism by which we identify objects that are 'essentially the same'."
 > — Serge Lang, *Algebra*, Springer, 2002.
 
-**Beispiel.** Für die Kongruenz modulo $3$ auf $\mathbb{Z}$:
+**Example.** For congruence modulo $3$ on $\mathbb{Z}$:
 
 $$
 [0] = \{\ldots, -6, -3, 0, 3, 6, \ldots\}, \quad [1] = \{\ldots, -5, -2, 1, 4, 7, \ldots\}, \quad [2] = \{\ldots, -4, -1, 2, 5, 8, \ldots\}
 $$
 
-Diese drei Klassen sind die **Restklassen modulo 3**.
+These three classes are the **residue classes modulo 3**.
 
-### Eigenschaften
+### Properties
 
-- Jedes Element gehört zu genau einer Äquivalenzklasse.
-- Zwei Äquivalenzklassen sind entweder identisch oder disjunkt: $[a] = [b]$ oder $[a] \cap [b] = \emptyset$.
-- $[a] = [b]$ genau dann, wenn $a \sim b$.
+- Every element belongs to exactly one equivalence class.
+- Two equivalence classes are either identical or disjoint: $[a] = [b]$ or $[a] \cap [b] = \emptyset$.
+- $[a] = [b]$ if and only if $a \sim b$.
 
-## Partition
+## Partitions
 
-Eine **Partition** einer Menge $M$ ist eine Zerlegung von $M$ in nichtleere, paarweise disjunkte Teilmengen, deren Vereinigung ganz $M$ ergibt.
+A **partition** of a set $M$ is a decomposition of $M$ into nonempty, pairwise disjoint subsets whose union is all of $M$.
 
-**Fundamentaler Zusammenhang:** Jede Äquivalenzrelation auf $M$ erzeugt eine Partition von $M$ (die Menge der Äquivalenzklassen), und umgekehrt definiert jede Partition eine Äquivalenzrelation.
+**Fundamental connection:** Every equivalence relation on $M$ produces a partition of $M$ (the set of equivalence classes), and conversely every partition defines an equivalence relation.
 
-Die Menge aller Äquivalenzklassen heißt **Quotientenmenge** (oder Faktormenge):
+The set of all equivalence classes is called the **quotient set** (or factor set):
 
 $$
 M / {\sim} = \{[a] : a \in M\}
 $$
 
-**Beispiel.** $\mathbb{Z}/{\equiv_n} = \{[0], [1], \ldots, [n-1]\}$ ist die Menge der Restklassen modulo $n$, gewöhnlich als $\mathbb{Z}/n\mathbb{Z}$ geschrieben.
+**Example.** $\mathbb{Z}/{\equiv_n} = \{[0], [1], \ldots, [n-1]\}$ is the set of residue classes modulo $n$, usually written $\mathbb{Z}/n\mathbb{Z}$.
 
-## Faktorstrukturen in der Algebra
+## Quotient Structures in Algebra
 
-Äquivalenzklassen ermöglichen die Konstruktion neuer algebraischer Strukturen:
+Equivalence classes enable the construction of new algebraic structures:
 
-- **Restklassenringe:** $\mathbb{Z}/n\mathbb{Z}$ entsteht durch die Kongruenzrelation modulo $n$. Addition und Multiplikation werden auf den Klassen definiert: $[a] + [b] = [a+b]$ und $[a] \cdot [b] = [a \cdot b]$.
+- **Residue class rings:** $\mathbb{Z}/n\mathbb{Z}$ arises from the congruence relation modulo $n$. Addition and multiplication are defined on the classes: $[a] + [b] = [a+b]$ and $[a] \cdot [b] = [a \cdot b]$.
 
-- **Faktorgruppen:** In einer Gruppe $G$ mit Normalteiler $N$ bilden die Nebenklassen $gN$ eine Gruppe $G/N$.
+- **Quotient groups:** In a group $G$ with normal subgroup $N$, the cosets $gN$ form a group $G/N$.
 
-- **Faktorringe:** In einem Ring $R$ mit Ideal $I$ bilden die Nebenklassen $a + I$ einen Ring $R/I$.
+- **Quotient rings:** In a ring $R$ with ideal $I$, the cosets $a + I$ form a ring $R/I$.
 
-Diese Konstruktionen durchziehen die gesamte abstrakte Algebra und sind zentral für die Theorie der Ringe und Körper, die im Beweis von Fermats Letztem Satz eine Rolle spielen.
+These constructions pervade abstract algebra and are central to the theory of rings and fields that plays a role in the proof of Fermat's Last Theorem.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Begriff | Definition |
+| Concept | Definition |
 |---------|-----------|
 | Relation | $R \subseteq M \times M$ |
-| Äquivalenzrelation | Reflexiv, symmetrisch, transitiv |
-| Äquivalenzklasse | $[a] = \{x \in M : x \sim a\}$ |
-| Partition | Zerlegung in disjunkte, nichtleere Teilmengen |
-| Quotientenmenge | $M/{\sim} = \{[a] : a \in M\}$ |
-| Restklassen | $\mathbb{Z}/n\mathbb{Z} = \{[0], [1], \ldots, [n-1]\}$ |
+| Equivalence relation | Reflexive, symmetric, transitive |
+| Equivalence class | $[a] = \{x \in M : x \sim a\}$ |
+| Partition | Decomposition into disjoint, nonempty subsets |
+| Quotient set | $M/{\sim} = \{[a] : a \in M\}$ |
+| Residue classes | $\mathbb{Z}/n\mathbb{Z} = \{[0], [1], \ldots, [n-1]\}$ |
 
-## Quellen
+## References
 
-- Lang, Serge: *Algebra.* Springer, 3. Auflage, 2002. Kapitel I.
-- Bourbaki, Nicolas: *Éléments de mathématique: Théorie des ensembles.* Springer, 2006. Kapitel II, § 6.
+- Lang, Serge: *Algebra.* Springer, 3rd edition, 2002. Chapter I.
+- Bourbaki, Nicolas: *Éléments de mathématique: Theory of Sets.* Springer, 2006. Chapter II, § 6.

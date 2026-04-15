@@ -1,82 +1,82 @@
 ---
-title: "Beweisarten"
-description: "Direkter Beweis, Widerspruchsbeweis, vollständige Induktion und Beweis durch Gegenbeispiel"
-lang: de
+title: "Proof Techniques"
+description: "Direct proof, proof by contradiction, mathematical induction, and counterexample"
+lang: en
 type: vorwissen
 ---
 
-# Beweisarten
+# Proof Techniques
 
-## Direkter Beweis
+## Direct Proof
 
-Ein **direkter Beweis** zeigt eine Aussage $A \Rightarrow B$, indem aus der Annahme $A$ durch logische Schlüsse $B$ abgeleitet wird.
+A **direct proof** establishes a statement $A \Rightarrow B$ by deriving $B$ from the assumption $A$ through logical steps.
 
-**Beispiel.** *Behauptung:* Die Summe zweier gerader Zahlen ist gerade.
+**Example.** *Claim:* The sum of two even numbers is even.
 
-*Beweis.* Seien $a = 2m$ und $b = 2n$ mit $m, n \in \mathbb{Z}$. Dann gilt:
+*Proof.* Let $a = 2m$ and $b = 2n$ with $m, n \in \mathbb{Z}$. Then:
 
 $$
 a + b = 2m + 2n = 2(m + n)
 $$
 
-Da $m + n \in \mathbb{Z}$, ist $a + b$ gerade. $\square$
+Since $m + n \in \mathbb{Z}$, the sum $a + b$ is even. $\square$
 
-## Widerspruchsbeweis (Reductio ad Absurdum)
+## Proof by Contradiction (Reductio ad Absurdum)
 
-Ein **Widerspruchsbeweis** nimmt das Gegenteil der zu zeigenden Aussage an und leitet daraus einen Widerspruch ab. Formal: Um $A$ zu beweisen, wird $\neg A$ angenommen und gezeigt, dass dies zu einem logischen Widerspruch führt.
+A **proof by contradiction** assumes the negation of the statement to be proved and derives a logical contradiction. Formally: to prove $A$, assume $\neg A$ and show that this leads to a contradiction.
 
-**Beispiel.** *Behauptung:* $\sqrt{2}$ ist irrational.
+**Example.** *Claim:* $\sqrt{2}$ is irrational.
 
-*Beweis.* Annahme: $\sqrt{2} = \frac{p}{q}$ mit $p, q \in \mathbb{Z}$, $q \neq 0$, $\gcd(p, q) = 1$ (vollständig gekürzt). Dann $2 = \frac{p^2}{q^2}$, also $p^2 = 2q^2$. Damit ist $p^2$ gerade, also $p$ gerade, also $p = 2k$. Einsetzen: $(2k)^2 = 2q^2$, also $4k^2 = 2q^2$, also $q^2 = 2k^2$. Damit ist auch $q$ gerade. Widerspruch zu $\gcd(p, q) = 1$. $\square$
+*Proof.* Assume $\sqrt{2} = \frac{p}{q}$ with $p, q \in \mathbb{Z}$, $q \neq 0$, $\gcd(p, q) = 1$ (fully reduced). Then $2 = \frac{p^2}{q^2}$, so $p^2 = 2q^2$. Thus $p^2$ is even, so $p$ is even, so $p = 2k$. Substituting: $(2k)^2 = 2q^2$, so $4k^2 = 2q^2$, so $q^2 = 2k^2$. Thus $q$ is also even. Contradiction to $\gcd(p, q) = 1$. $\square$
 
-## Beweis durch Kontraposition
+## Proof by Contrapositive
 
-Der **Beweis durch Kontraposition** nutzt die logische Äquivalenz $(A \Rightarrow B) \iff (\neg B \Rightarrow \neg A)$. Statt $A \Rightarrow B$ direkt zu zeigen, wird $\neg B \Rightarrow \neg A$ bewiesen.
+**Proof by contrapositive** uses the logical equivalence $(A \Rightarrow B) \iff (\neg B \Rightarrow \neg A)$. Instead of proving $A \Rightarrow B$ directly, one proves $\neg B \Rightarrow \neg A$.
 
-**Beispiel.** *Behauptung:* Wenn $n^2$ gerade ist, dann ist $n$ gerade.
+**Example.** *Claim:* If $n^2$ is even, then $n$ is even.
 
-*Beweis (Kontraposition).* Zu zeigen: Wenn $n$ ungerade ist, dann ist $n^2$ ungerade. Sei $n = 2k + 1$. Dann $n^2 = (2k+1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$, also ungerade. $\square$
+*Proof (contrapositive).* To show: if $n$ is odd, then $n^2$ is odd. Let $n = 2k + 1$. Then $n^2 = (2k+1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$, which is odd. $\square$
 
-## Vollständige Induktion
+## Mathematical Induction
 
-Die **vollständige Induktion** beweist Aussagen der Form „für alle $n \geq n_0$ gilt $P(n)$" in zwei Schritten:
+**Mathematical induction** proves statements of the form "for all $n \geq n_0$, $P(n)$ holds" in two steps:
 
-1. **Induktionsanfang (IA):** $P(n_0)$ ist wahr.
-2. **Induktionsschritt (IS):** Für beliebiges $n \geq n_0$ gilt: Wenn $P(n)$ wahr ist (**Induktionsvoraussetzung**, IV), dann ist auch $P(n+1)$ wahr.
+1. **Base case:** $P(n_0)$ is true.
+2. **Inductive step:** For arbitrary $n \geq n_0$: if $P(n)$ is true (**inductive hypothesis**), then $P(n+1)$ is true.
 
-**Beispiel.** *Behauptung:* $\displaystyle\sum_{k=1}^{n} k = \frac{n(n+1)}{2}$ für alle $n \geq 1$.
+**Example.** *Claim:* $\displaystyle\sum_{k=1}^{n} k = \frac{n(n+1)}{2}$ for all $n \geq 1$.
 
-*IA:* $n = 1$: $\sum_{k=1}^{1} k = 1 = \frac{1 \cdot 2}{2}$. ✓
+*Base case:* $n = 1$: $\sum_{k=1}^{1} k = 1 = \frac{1 \cdot 2}{2}$. ✓
 
-*IS:* Angenommen, die Formel gilt für $n$ (IV). Dann:
+*Inductive step:* Assume the formula holds for $n$ (inductive hypothesis). Then:
 
 $$
-\sum_{k=1}^{n+1} k = \underbrace{\sum_{k=1}^{n} k}_{\text{IV: } \frac{n(n+1)}{2}} + (n+1) = \frac{n(n+1)}{2} + (n+1) = \frac{(n+1)(n+2)}{2}
+\sum_{k=1}^{n+1} k = \underbrace{\sum_{k=1}^{n} k}_{\frac{n(n+1)}{2}} + (n+1) = \frac{n(n+1)}{2} + (n+1) = \frac{(n+1)(n+2)}{2}
 $$
 
-Das ist die Formel für $n+1$. $\square$
+This is the formula for $n+1$. $\square$
 
-## Beweis durch Gegenbeispiel
+## Proof by Counterexample
 
-Ein **Beweis durch Gegenbeispiel** widerlegt eine Allaussage „für alle $x$ gilt $P(x)$", indem ein konkretes $x_0$ angegeben wird, für das $P(x_0)$ falsch ist.
+A **proof by counterexample** refutes a universal statement "for all $x$, $P(x)$ holds" by exhibiting a specific $x_0$ for which $P(x_0)$ is false.
 
-**Beispiel.** *Behauptung:* „Alle Primzahlen sind ungerade." *Gegenbeispiel:* $2$ ist eine Primzahl und gerade. $\square$
+**Example.** *Claim:* "All prime numbers are odd." *Counterexample:* $2$ is prime and even. $\square$
 
-Ein einziges Gegenbeispiel genügt, um eine Allaussage zu widerlegen.
+A single counterexample suffices to refute a universal statement.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Beweisart | Vorgehen |
-|-----------|----------|
-| Direkter Beweis | Aus $A$ wird $B$ direkt abgeleitet |
-| Widerspruchsbeweis | $\neg A$ annehmen → Widerspruch |
-| Kontraposition | $\neg B \Rightarrow \neg A$ zeigen |
-| Vollständige Induktion | IA + IS (von $n$ auf $n+1$) |
-| Gegenbeispiel | Ein $x_0$ mit $\neg P(x_0)$ angeben |
+| Proof Technique | Approach |
+|----------------|----------|
+| Direct proof | Derive $B$ from $A$ directly |
+| Contradiction | Assume $\neg A$ → derive contradiction |
+| Contrapositive | Show $\neg B \Rightarrow \neg A$ |
+| Induction | Base case + inductive step ($n$ to $n+1$) |
+| Counterexample | Exhibit $x_0$ with $\neg P(x_0)$ |
 
-## Quellen
+## References
 
-- Velleman, Daniel J.: *How to Prove It.* Cambridge University Press, 3. Auflage, 2019.
-- Hammack, Richard: *Book of Proof.* 3. Auflage, 2018. (frei verfügbar)
+- Velleman, Daniel J.: *How to Prove It.* Cambridge University Press, 3rd edition, 2019.
+- Hammack, Richard: *Book of Proof.* 3rd edition, 2018. (freely available)

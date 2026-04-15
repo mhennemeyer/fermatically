@@ -1,116 +1,114 @@
 ---
-title: "Ungleichungen"
-description: "Ordnung auf den reellen Zahlen, Rechenregeln und Betrag"
-lang: de
+title: "Inequalities"
+description: "Order on the real numbers, computation rules, and absolute value"
+lang: en
 type: vorwissen
 ---
 
-# Ungleichungen
+# Inequalities
 
-## Ordnung auf ℝ
+## Order on ℝ
 
-Die reellen Zahlen $\mathbb{R}$ tragen eine **totale Ordnung**: Für je zwei Zahlen $a, b \in \mathbb{R}$ gilt genau eine der Aussagen $a < b$, $a = b$ oder $a > b$.
+The real numbers $\mathbb{R}$ carry a **total order**: for any two numbers $a, b \in \mathbb{R}$, exactly one of $a < b$, $a = b$, or $a > b$ holds.
 
-Die Symbole im Überblick:
+| Symbol | Meaning |
+|--------|---------|
+| $a < b$ | $a$ is strictly less than $b$ |
+| $a \leq b$ | $a$ is less than or equal to $b$ |
+| $a > b$ | $a$ is strictly greater than $b$ |
+| $a \geq b$ | $a$ is greater than or equal to $b$ |
 
-| Symbol | Bedeutung |
-|--------|-----------|
-| $a < b$ | $a$ ist echt kleiner als $b$ |
-| $a \leq b$ | $a$ ist kleiner oder gleich $b$ |
-| $a > b$ | $a$ ist echt größer als $b$ |
-| $a \geq b$ | $a$ ist größer oder gleich $b$ |
+## Computation Rules
 
-## Rechenregeln
+### Addition and Subtraction
 
-### Addition und Subtraktion
-
-Die Ordnung bleibt erhalten:
+The order is preserved:
 
 $$
-a < b \implies a + c < b + c \quad \text{für alle } c \in \mathbb{R}
+a < b \implies a + c < b + c \quad \text{for all } c \in \mathbb{R}
 $$
 
-### Multiplikation mit positiver Zahl
+### Multiplication by a Positive Number
 
-Die Ordnung bleibt erhalten:
-
-$$
-a < b \text{ und } c > 0 \implies a \cdot c < b \cdot c
-$$
-
-### Multiplikation mit negativer Zahl
-
-Die Ordnung **kehrt sich um**:
+The order is preserved:
 
 $$
-a < b \text{ und } c < 0 \implies a \cdot c > b \cdot c
+a < b \text{ and } c > 0 \implies a \cdot c < b \cdot c
 $$
 
-**Beispiel.** $2 < 5$. Multiplikation mit $-3$: $-6 > -15$. Das Ungleichheitszeichen dreht sich.
+### Multiplication by a Negative Number
 
-### Kehrwert
+The order **reverses**:
 
-Für $a, b > 0$:
+$$
+a < b \text{ and } c < 0 \implies a \cdot c > b \cdot c
+$$
+
+**Example.** $2 < 5$. Multiplying by $-3$: $-6 > -15$. The inequality sign flips.
+
+### Reciprocal
+
+For $a, b > 0$:
 
 $$
 a < b \implies \frac{1}{a} > \frac{1}{b}
 $$
 
-**Beispiel.** $2 < 5 \implies \frac{1}{2} > \frac{1}{5}$.
+**Example.** $2 < 5 \implies \frac{1}{2} > \frac{1}{5}$.
 
-## Beispiel: Lösung einer Ungleichung
+## Example: Solving an Inequality
 
 $-3x + 6 \leq 12$
 
-| Schritt | Ungleichung | Operation |
-|---------|-------------|-----------|
-| 1 | $-3x + 6 \leq 12$ | Ausgangsungleichung |
-| 2 | $-3x \leq 6$ | $-6$ auf beiden Seiten |
-| 3 | $x \geq -2$ | $\div (-3)$, Zeichen dreht sich |
+| Step | Inequality | Operation |
+|------|-----------|-----------|
+| 1 | $-3x + 6 \leq 12$ | Starting inequality |
+| 2 | $-3x \leq 6$ | $-6$ on both sides |
+| 3 | $x \geq -2$ | $\div (-3)$, sign flips |
 
-Lösungsmenge: $[-2, \infty)$.
+Solution set: $[-2, \infty)$.
 
-## Betrag
+## Absolute Value
 
-Der **Betrag** (Absolutwert) einer reellen Zahl $a$ ist definiert als:
+The **absolute value** of a real number $a$ is defined as:
 
 $$
-|a| = \begin{cases} a & \text{falls } a \geq 0 \\ -a & \text{falls } a < 0 \end{cases}
+|a| = \begin{cases} a & \text{if } a \geq 0 \\ -a & \text{if } a < 0 \end{cases}
 $$
 
-Geometrisch: $|a|$ ist der Abstand von $a$ zum Nullpunkt auf der Zahlengeraden.
+Geometrically: $|a|$ is the distance from $a$ to zero on the number line.
 
-### Dreiecksungleichung
+### Triangle Inequality
 
-Für alle $a, b \in \mathbb{R}$:
+For all $a, b \in \mathbb{R}$:
 
 $$
 |a + b| \leq |a| + |b|
 $$
 
-**Beispiel.** $|3 + (-5)| = |-2| = 2 \leq |3| + |-5| = 3 + 5 = 8$. ✓
+**Example.** $|3 + (-5)| = |-2| = 2 \leq |3| + |-5| = 3 + 5 = 8$. ✓
 
-### Betragsungleichungen
+### Absolute Value Inequalities
 
 $$
 |x| < c \iff -c < x < c \quad (c > 0)
 $$
 
 $$
-|x| > c \iff x < -c \text{ oder } x > c \quad (c > 0)
+|x| > c \iff x < -c \text{ or } x > c \quad (c > 0)
 $$
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Regel | Bedingung |
-|-------|-----------|
-| $a < b \implies a + c < b + c$ | Immer |
+| Rule | Condition |
+|------|-----------|
+| $a < b \implies a + c < b + c$ | Always |
 | $a < b \implies ac < bc$ | $c > 0$ |
-| $a < b \implies ac > bc$ | $c < 0$ (Zeichen dreht sich) |
-| $\|a + b\| \leq \|a\| + \|b\|$ | Dreiecksungleichung |
+| $a < b \implies ac > bc$ | $c < 0$ (sign flips) |
+| $\|a + b\| \leq \|a\| + \|b\|$ | Triangle inequality |
 
-## Quellen
+## References
 
-- Courant, Richard; Robbins, Herbert: *What Is Mathematics?* Oxford University Press, 2. Auflage, 1996.
+- Courant, Richard; Robbins, Herbert: *What Is Mathematics?* Oxford University Press, 2nd edition, 1996.

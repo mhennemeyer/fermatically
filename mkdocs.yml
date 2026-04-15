@@ -8,7 +8,8 @@ docs_dir: docs
 
 theme:
   name: material
-  language: de
+  custom_dir: docs/overrides
+  language: en
   palette:
     - scheme: default
       primary: deep purple
@@ -40,10 +41,10 @@ plugins:
         - locale: de
           name: Deutsch
           build: true
-          default: true
         - locale: en
           name: English
           build: true
+          default: true
           site_name: "fermatically"
           site_description: "From elementary school mathematics to the great proofs: Fermat, Poincaré and more."
           nav_translations:

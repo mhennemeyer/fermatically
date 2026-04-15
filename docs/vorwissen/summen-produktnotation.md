@@ -1,145 +1,145 @@
 ---
-title: "Summen- und Produktnotation"
-description: "Summenzeichen Σ, Produktzeichen Π, Indexmengen, Doppelsummen und wichtige Formeln"
-lang: de
+title: "Summation and Product Notation"
+description: "Summation sign Σ, product sign Π, index sets, double sums, and important formulas"
+lang: en
 type: vorwissen
 ---
 
-# Summen- und Produktnotation
+# Summation and Product Notation
 
-## Das Summenzeichen Σ
+## The Summation Sign Σ
 
-Das **Summenzeichen** $\Sigma$ (griechisch: Sigma) fasst die Addition mehrerer Terme in kompakter Form zusammen:
+The **summation sign** $\Sigma$ (Greek: Sigma) expresses the addition of multiple terms in compact form:
 
 $$
 \sum_{k=1}^{n} a_k = a_1 + a_2 + \cdots + a_n
 $$
 
-Dabei heißt $k$ der **Laufindex**, $1$ die **untere Grenze** und $n$ die **obere Grenze**. Der Ausdruck $a_k$ ist der **Summand**.
+Here $k$ is the **index of summation**, $1$ is the **lower bound**, and $n$ is the **upper bound**. The expression $a_k$ is the **summand**.
 
-**Beispiel.**
+**Example.**
 $$
 \sum_{k=1}^{4} k^2 = 1^2 + 2^2 + 3^2 + 4^2 = 1 + 4 + 9 + 16 = 30
 $$
 
-### Rechenregeln
+### Rules of Computation
 
-- **Linearität:**
+- **Linearity:**
 $$
 \sum_{k=1}^{n} (c \cdot a_k + b_k) = c \cdot \sum_{k=1}^{n} a_k + \sum_{k=1}^{n} b_k
 $$
 
-- **Konstante Summanden:**
+- **Constant summands:**
 $$
 \sum_{k=1}^{n} c = n \cdot c
 $$
 
-- **Indexverschiebung:** Bei Substitution $j = k - 1$ wird aus $\sum_{k=1}^{n} a_k$ die Summe $\sum_{j=0}^{n-1} a_{j+1}$. Der Wert ändert sich nicht.
+- **Index shift:** Under the substitution $j = k - 1$, the sum $\sum_{k=1}^{n} a_k$ becomes $\sum_{j=0}^{n-1} a_{j+1}$. The value does not change.
 
-## Das Produktzeichen Π
+## The Product Sign Π
 
-Das **Produktzeichen** $\Pi$ (griechisch: Pi) fasst die Multiplikation mehrerer Faktoren zusammen:
+The **product sign** $\Pi$ (Greek: Pi) expresses the multiplication of multiple factors:
 
 $$
 \prod_{k=1}^{n} a_k = a_1 \cdot a_2 \cdots a_n
 $$
 
-**Beispiel.** Die Fakultät lässt sich als Produkt schreiben:
+**Example.** The factorial can be written as a product:
 $$
 n! = \prod_{k=1}^{n} k = 1 \cdot 2 \cdot 3 \cdots n
 $$
 
-### Rechenregeln
+### Rules of Computation
 
-- **Potenzierung:**
+- **Exponentiation:**
 $$
 \prod_{k=1}^{n} c = c^n
 $$
 
-- **Produkt von Potenzen:**
+- **Product of powers:**
 $$
 \prod_{k=1}^{n} a_k^{m} = \left(\prod_{k=1}^{n} a_k\right)^{m}
 $$
 
-## Summen über allgemeine Indexmengen
+## Sums over General Index Sets
 
-Der Laufindex muss nicht bei $1$ beginnen oder ganzzahlig fortschreiten. Die allgemeine Form lautet:
+The index need not start at $1$ or increase in integer steps. The general form is:
 
 $$
 \sum_{k \in I} a_k
 $$
 
-Dabei ist $I$ eine endliche **Indexmenge**.
+Here $I$ is a finite **index set**.
 
-**Beispiel.** Summe über alle Primzahlen bis $10$:
+**Example.** Sum over all primes up to $10$:
 $$
 \sum_{p \in \{2,3,5,7\}} \frac{1}{p} = \frac{1}{2} + \frac{1}{3} + \frac{1}{5} + \frac{1}{7}
 $$
 
-## Doppelsummen
+## Double Sums
 
-Bei zwei Laufindizes entsteht eine **Doppelsumme**:
+With two running indices, a **double sum** arises:
 
 $$
 \sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}
 $$
 
-Die Reihenfolge der Summation ist bei endlichen Summen vertauschbar:
+For finite sums, the order of summation is interchangeable:
 
 $$
 \sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij} = \sum_{j=1}^{n} \sum_{i=1}^{m} a_{ij}
 $$
 
-**Beispiel.**
+**Example.**
 $$
 \sum_{i=1}^{2} \sum_{j=1}^{3} ij = \sum_{i=1}^{2} (i \cdot 1 + i \cdot 2 + i \cdot 3) = \sum_{i=1}^{2} 6i = 6 + 12 = 18
 $$
 
-## Wichtige Summenformeln
+## Important Summation Formulas
 
-Die folgenden Formeln treten in der Zahlentheorie häufig auf:
+The following formulas appear frequently in number theory:
 
-**Arithmetische Summe (Gauß):**
+**Arithmetic sum (Gauss):**
 $$
 \sum_{k=1}^{n} k = \frac{n(n+1)}{2}
 $$
 
-**Geometrische Summe** (für $q \neq 1$):
+**Geometric sum** (for $q \neq 1$):
 $$
 \sum_{k=0}^{n} q^k = \frac{q^{n+1} - 1}{q - 1}
 $$
 
-**Geometrische Reihe** (für $|q| < 1$):
+**Geometric series** (for $|q| < 1$):
 $$
 \sum_{k=0}^{\infty} q^k = \frac{1}{1-q}
 $$
 
-> „The notation $\sum$ for summation was introduced by Euler in 1755."
+> "The notation $\sum$ for summation was introduced by Euler in 1755."
 > — Florian Cajori, *A History of Mathematical Notations*, Dover, 1993.
 
-## Anwendung: Euler-Produkt
+## Application: Euler Product
 
-Ein zentrales Beispiel aus der Zahlentheorie verbindet Summen- und Produktnotation. Euler zeigte:
+A central example from number theory connects summation and product notation. Euler showed:
 
 $$
-\sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_{p \text{ prim}} \frac{1}{1 - p^{-s}} \quad (s > 1)
+\sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_{p \text{ prime}} \frac{1}{1 - p^{-s}} \quad (s > 1)
 $$
 
-Die linke Seite ist eine unendliche Reihe (die Riemannsche Zetafunktion), die rechte Seite ein unendliches Produkt über alle Primzahlen.
+The left side is an infinite series (the Riemann zeta function), the right side an infinite product over all primes.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Notation | Bedeutung |
-|----------|-----------|
+| Notation | Meaning |
+|----------|---------|
 | $\sum_{k=1}^{n} a_k$ | $a_1 + a_2 + \cdots + a_n$ |
 | $\prod_{k=1}^{n} a_k$ | $a_1 \cdot a_2 \cdots a_n$ |
-| $\sum_{k \in I} a_k$ | Summe über Indexmenge $I$ |
-| $\sum_{i}\sum_{j} a_{ij}$ | Doppelsumme |
-| $\sum_{k=0}^{\infty} q^k$ | Geometrische Reihe ($|q|<1$): $\frac{1}{1-q}$ |
+| $\sum_{k \in I} a_k$ | Sum over index set $I$ |
+| $\sum_{i}\sum_{j} a_{ij}$ | Double sum |
+| $\sum_{k=0}^{\infty} q^k$ | Geometric series ($|q|<1$): $\frac{1}{1-q}$ |
 
-## Quellen
+## References
 
-- Cajori, Florian: *A History of Mathematical Notations.* Dover, 1993. Band 2, §§ 438–439.
-- Graham, Ronald L.; Knuth, Donald E.; Patashnik, Oren: *Concrete Mathematics.* Addison-Wesley, 2. Auflage, 1994. Kapitel 2.
+- Cajori, Florian: *A History of Mathematical Notations.* Dover, 1993. Volume 2, §§ 438–439.
+- Graham, Ronald L.; Knuth, Donald E.; Patashnik, Oren: *Concrete Mathematics.* Addison-Wesley, 2nd edition, 1994. Chapter 2.

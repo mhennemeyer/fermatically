@@ -1,79 +1,79 @@
 ---
-title: "Abbildungen (Funktionen)"
-description: "Definitions- und Wertebereich, injektiv, surjektiv, bijektiv"
-lang: de
+title: "Maps (Functions)"
+description: "Domain, codomain, injective, surjective, bijective"
+lang: en
 type: vorwissen
 ---
 
-# Abbildungen (Funktionen)
+# Maps (Functions)
 
 ## Definition
 
-Eine **Abbildung** (oder **Funktion**) $f: A \to B$ ordnet jedem Element $a \in A$ genau ein Element $f(a) \in B$ zu.
+A **map** (or **function**) $f: A \to B$ assigns to each element $a \in A$ exactly one element $f(a) \in B$.
 
-- $A$ heißt **Definitionsbereich** (Domain).
-- $B$ heißt **Wertebereich** (Codomain).
-- $f(A) = \{f(a) : a \in A\} \subseteq B$ heißt **Bild** (Image).
+- $A$ is the **domain**.
+- $B$ is the **codomain**.
+- $f(A) = \{f(a) : a \in A\} \subseteq B$ is the **image**.
 
-**Beispiel.** $f: \mathbb{Z} \to \mathbb{Z}$ mit $f(x) = x^2$. Hier ist $f(3) = 9$ und $f(-3) = 9$.
+**Example.** $f: \mathbb{Z} \to \mathbb{Z}$ with $f(x) = x^2$. Here $f(3) = 9$ and $f(-3) = 9$.
 
-## Injektivität
+## Injectivity
 
-Eine Abbildung $f$ ist **injektiv** (eineindeutig), wenn verschiedene Eingaben verschiedene Ausgaben liefern:
+A map $f$ is **injective** (one-to-one) if distinct inputs produce distinct outputs:
 
 $$
 f(a_1) = f(a_2) \implies a_1 = a_2
 $$
 
-**Beispiel.** $f(x) = 2x$ ist injektiv: Aus $2a = 2b$ folgt $a = b$.
+**Example.** $f(x) = 2x$ is injective: from $2a = 2b$ it follows that $a = b$.
 
-**Gegenbeispiel.** $f(x) = x^2$ auf $\mathbb{Z}$ ist nicht injektiv: $f(3) = f(-3) = 9$, aber $3 \neq -3$.
+**Counterexample.** $f(x) = x^2$ on $\mathbb{Z}$ is not injective: $f(3) = f(-3) = 9$, but $3 \neq -3$.
 
-## Surjektivität
+## Surjectivity
 
-Eine Abbildung $f: A \to B$ ist **surjektiv**, wenn jedes Element in $B$ mindestens ein Urbild hat:
+A map $f: A \to B$ is **surjective** (onto) if every element in $B$ has at least one preimage:
 
 $$
 \forall b \in B\; \exists a \in A: f(a) = b
 $$
 
-Äquivalent: $f(A) = B$.
+Equivalently: $f(A) = B$.
 
-**Beispiel.** $f: \mathbb{Z} \to \mathbb{Z}$ mit $f(x) = x + 1$ ist surjektiv: Für jedes $b \in \mathbb{Z}$ ist $a = b - 1$ ein Urbild.
+**Example.** $f: \mathbb{Z} \to \mathbb{Z}$ with $f(x) = x + 1$ is surjective: for every $b \in \mathbb{Z}$, $a = b - 1$ is a preimage.
 
-**Gegenbeispiel.** $f: \mathbb{Z} \to \mathbb{Z}$ mit $f(x) = x^2$ ist nicht surjektiv: $-1$ hat kein Urbild, da $x^2 \geq 0$ für alle $x$.
+**Counterexample.** $f: \mathbb{Z} \to \mathbb{Z}$ with $f(x) = x^2$ is not surjective: $-1$ has no preimage, since $x^2 \geq 0$ for all $x$.
 
-## Bijektivität
+## Bijectivity
 
-Eine Abbildung ist **bijektiv**, wenn sie sowohl injektiv als auch surjektiv ist. Jedes Element in $B$ hat dann genau ein Urbild.
+A map is **bijective** if it is both injective and surjective. Every element in $B$ then has exactly one preimage.
 
-Bijektive Abbildungen besitzen eine **Umkehrabbildung** $f^{-1}: B \to A$ mit $f^{-1}(f(a)) = a$ und $f(f^{-1}(b)) = b$.
+Bijective maps possess an **inverse map** $f^{-1}: B \to A$ with $f^{-1}(f(a)) = a$ and $f(f^{-1}(b)) = b$.
 
-**Beispiel.** $f: \mathbb{R} \to \mathbb{R}$ mit $f(x) = 2x + 1$ ist bijektiv. Die Umkehrfunktion ist $f^{-1}(y) = \frac{y - 1}{2}$.
+**Example.** $f: \mathbb{R} \to \mathbb{R}$ with $f(x) = 2x + 1$ is bijective. The inverse is $f^{-1}(y) = \frac{y - 1}{2}$.
 
-## Komposition
+## Composition
 
-Die **Komposition** zweier Abbildungen $f: A \to B$ und $g: B \to C$ ist die Abbildung $g \circ f: A \to C$ mit:
+The **composition** of two maps $f: A \to B$ and $g: B \to C$ is the map $g \circ f: A \to C$ with:
 
 $$
 (g \circ f)(a) = g(f(a))
 $$
 
-**Beispiel.** $f(x) = x + 1$ und $g(x) = x^2$. Dann $(g \circ f)(3) = g(f(3)) = g(4) = 16$.
+**Example.** $f(x) = x + 1$ and $g(x) = x^2$. Then $(g \circ f)(3) = g(f(3)) = g(4) = 16$.
 
-Die Reihenfolge ist relevant: $(f \circ g)(3) = f(g(3)) = f(9) = 10 \neq 16$.
+Order matters: $(f \circ g)(3) = f(g(3)) = f(9) = 10 \neq 16$.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Eigenschaft | Bedeutung |
-|-------------|-----------|
-| Injektiv | Verschiedene Eingaben → verschiedene Ausgaben |
-| Surjektiv | Jedes $b \in B$ hat ein Urbild |
-| Bijektiv | Injektiv und surjektiv; Umkehrabbildung existiert |
-| $g \circ f$ | Komposition: erst $f$, dann $g$ |
+| Property | Meaning |
+|----------|---------|
+| Injective | Distinct inputs → distinct outputs |
+| Surjective | Every $b \in B$ has a preimage |
+| Bijective | Injective and surjective; inverse exists |
+| $g \circ f$ | Composition: first $f$, then $g$ |
 
-## Quellen
+## References
 
-- Hammack, Richard: *Book of Proof.* 3. Auflage, 2018. Kapitel 12.
+- Hammack, Richard: *Book of Proof.* 3rd edition, 2018. Chapter 12.

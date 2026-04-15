@@ -1,137 +1,128 @@
 ---
-title: "Galois-Theorie – Warum Gleichungen keine Lösungsformeln haben"
+title: "Galois Theory – Why Equations Have No Solution Formulas"
 slug: galois-theorie/01-galois-theorie
 series: galois-theorie
 part: 1
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: algebra
 tags:
   - galois
-  - koerpererweiterungen
-  - symmetrie
+  - field-extensions
+  - symmetry
 requires:
-  - potenzen-polynome
-  - abbildungen
-  - komplexe-zahlen
-  - zahlenbereiche
+  - gruppen-und-symmetrie/01-gruppen
+  - ringe-und-koerper/01-ringe-koerper
 ---
 
-# Galois-Theorie
+# Galois Theory
 
-!!! abstract "Zusammenfassung"
-    Die Lösbarkeit einer Polynomgleichung wird durch die Symmetrien ihrer Nullstellen bestimmt.
-    Galois' Theorie verbindet Körpererweiterungen mit Gruppen – konzeptueller Rahmen für Wiles' Beweis.
+!!! abstract "Summary"
+    At the age of 19, Évariste Galois discovered that the solvability of an equation is determined
+    by the symmetries of its roots. His theory connects field extensions
+    with groups – and provides the conceptual framework for Wiles' proof.
 
-## Voraussetzungen
+## Prerequisites
 
-- [Gruppen – Symmetrie als Sprache der Mathematik](gruppen.md)
-- [Ringe und Körper](ringe-koerper.md)
-
-| Thema | Beschreibung |
-|-------|-------------|
-| [Potenzen und Polynome](../vorwissen/potenzen-polynome.md) | Potenzschreibweise $a^n$ und Polynomrechnung |
-| [Abbildungen (Funktionen)](../vorwissen/abbildungen.md) | $f: A \to B$, injektiv, surjektiv, bijektiv |
-| [Komplexe Zahlen](../vorwissen/komplexe-zahlen.md) | Zahlen $a + bi$ mit $i^2 = -1$, Polarform, Einheitswurzeln |
-| [Zahlenbereiche](../vorwissen/zahlenbereiche.md) | $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ und ihre Beziehungen |
+- [Groups – Symmetry as the Language of Mathematics](gruppen.md)
+- [Rings and Fields](ringe-koerper.md)
 
 ---
 
-## 1. Das Problem der Lösungsformeln
+## 1. The Problem of Solution Formulas
 
-Die **Lösungsformel für quadratische Gleichungen** ist allgemein bekannt:
+Everyone knows the **quadratic formula**:
 
 $$
 x^2 + bx + c = 0 \implies x = \frac{-b \pm \sqrt{b^2 - 4c}}{2}
 $$
 
-Die Nullstellen lassen sich durch die Koeffizienten ausdrücken – mithilfe von Addition, Subtraktion, Multiplikation, Division und Wurzelziehen.
+The roots can be expressed in terms of the coefficients – using addition, subtraction, multiplication, division, and root extraction.
 
-Für Gleichungen dritten und vierten Grades existieren ebenfalls (kompliziertere) Lösungsformeln, entdeckt von Cardano (1545) und Ferrari. Die Frage: Gibt es auch für Grad $5$ und höher solche Formeln?
+For equations of degree three and four, there likewise exist (more complicated) solution formulas, discovered by Cardano (1545) and Ferrari. Naturally the question arises: do such formulas also exist for degree $5$ and higher?
 
-Die Antwort ist **nein** – und die Begründung führt direkt zur Galois-Theorie.
+The answer is **no** – and the justification leads directly to Galois theory.
 
-## 2. Abels Unmöglichkeitsbeweis
+## 2. Abel's Impossibility Proof
 
-**Niels Henrik Abel** bewies 1824, dass **keine** allgemeine Lösungsformel für Polynome vom Grad $\geq 5$ in Radikalen existiert. Es gibt Polynome fünften Grades, deren Nullstellen sich nicht durch endlich viele Wurzeln aus den Koeffizienten ausdrücken lassen.
+**Niels Henrik Abel** proved in 1824 that there is **no** general solution formula for polynomials of degree $\geq 5$ in radicals. That is: there exist fifth-degree polynomials whose roots cannot be expressed by finitely many root extractions from the coefficients.
 
-Abels Beweis ließ eine entscheidende Frage offen: **Welche** Polynome lassen sich durch Radikale lösen und welche nicht? Ein konkretes Polynom fünften Grades kann durchaus eine Lösung in Radikalen haben – etwa $x^5 - 2 = 0$ mit $x = \sqrt[5]{2}$. Abels Theorem besagt nur, dass kein *allgemeines* Verfahren existiert.
+Abel's proof was a milestone, but left a decisive question open: **which** polynomials can be solved by radicals and which cannot? A specific fifth-degree polynomial may well have a solution in radicals – for instance $x^5 - 2 = 0$ with $x = \sqrt[5]{2}$. Abel's theorem only says that no *general* procedure exists.
 
-## 3. Galois' Einsicht
+## 3. Galois' Idea
 
-**Évariste Galois** (1811–1832) löste dieses Problem vollständig. Seine zentrale Einsicht: **Die Lösbarkeit einer Gleichung wird durch die Symmetrien ihrer Nullstellen bestimmt.**
+**Évariste Galois** (1811–1832) solved this problem completely – with an idea decades ahead of its time. He died at 20 in a duel; the night before, he feverishly wrote down his mathematical insights.
 
-> „Since the beginning of this century, computational procedures have become so complicated that any progress by those means has become impossible."
-> — Évariste Galois, Vorwort zum Mémoire (1831)
+Galois' central insight: **The solvability of an equation is determined by the symmetries of its roots.**
 
-Gegeben ein Polynom $f \in \mathbb{Q}[x]$ mit Nullstellen $\alpha_1, \ldots, \alpha_n \in \overline{\mathbb{Q}}$. Der **Zerfällungskörper** ist der kleinste Körper, der $\mathbb{Q}$ und alle Nullstellen enthält:
+Consider a polynomial $f \in \mathbb{Q}[x]$ with roots $\alpha_1, \ldots, \alpha_n \in \overline{\mathbb{Q}}$. The **splitting field** is the smallest field containing $\mathbb{Q}$ and all roots:
 
 $$
 L = \mathbb{Q}(\alpha_1, \ldots, \alpha_n)
 $$
 
-Eine **Symmetrie** dieses Körpers ist ein Automorphismus $\sigma: L \to L$, der $\mathbb{Q}$ elementweise festhält. Jeder solche Automorphismus permutiert die Nullstellen $\alpha_1, \ldots, \alpha_n$ – er muss die Gleichung $f(\alpha_i) = 0$ erhalten.
+A **symmetry** of this field is an automorphism $\sigma: L \to L$ that fixes $\mathbb{Q}$ element-wise. Every such automorphism permutes the roots $\alpha_1, \ldots, \alpha_n$ – since it must preserve the equation $f(\alpha_i) = 0$.
 
-## 4. Die Galois-Gruppe
+## 4. The Galois Group
 
-Die **Galois-Gruppe** einer Körpererweiterung $L/K$ ist die Gruppe aller $K$-Automorphismen von $L$:
+The **Galois group** of a field extension $L/K$ is the group of all $K$-automorphisms of $L$:
 
 $$
-\text{Gal}(L/K) = \{\sigma: L \to L \mid \sigma \text{ ist Automorphismus mit } \sigma|_K = \text{id}\}
+\text{Gal}(L/K) = \{\sigma: L \to L \mid \sigma \text{ is an automorphism with } \sigma|_K = \text{id}\}
 $$
 
-Die Verknüpfung ist die Komposition von Abbildungen.
+The operation is composition of maps.
 
-### Beispiel: $\mathbb{Q}(\sqrt{2})/\mathbb{Q}$
+### Example: $\mathbb{Q}(\sqrt{2})/\mathbb{Q}$
 
-Die Erweiterung $\mathbb{Q}(\sqrt{2}) = \{a + b\sqrt{2} \mid a, b \in \mathbb{Q}\}$ hat Grad $2$. Die einzigen $\mathbb{Q}$-Automorphismen sind:
+The extension $\mathbb{Q}(\sqrt{2}) = \{a + b\sqrt{2} \mid a, b \in \mathbb{Q}\}$ has degree $2$. The only $\mathbb{Q}$-automorphisms are:
 
 - $\text{id}: \sqrt{2} \mapsto \sqrt{2}$
 - $\sigma: \sqrt{2} \mapsto -\sqrt{2}$
 
-Also $\text{Gal}(\mathbb{Q}(\sqrt{2})/\mathbb{Q}) \cong \mathbb{Z}/2\mathbb{Z}$.
+Hence $\text{Gal}(\mathbb{Q}(\sqrt{2})/\mathbb{Q}) \cong \mathbb{Z}/2\mathbb{Z}$.
 
-### Beispiel: Zerfällungskörper von $x^3 - 2$
+### Example: Splitting field of $x^3 - 2$
 
-Die Nullstellen von $x^3 - 2$ sind $\sqrt[3]{2}$, $\omega\sqrt[3]{2}$ und $\omega^2\sqrt[3]{2}$ (mit $\omega = e^{2\pi i/3}$). Der Zerfällungskörper ist $L = \mathbb{Q}(\sqrt[3]{2}, \omega)$ mit $[L:\mathbb{Q}] = 6$.
+The roots of $x^3 - 2$ are $\sqrt[3]{2}$, $\omega\sqrt[3]{2}$, and $\omega^2\sqrt[3]{2}$ (with $\omega = e^{2\pi i/3}$). The splitting field is $L = \mathbb{Q}(\sqrt[3]{2}, \omega)$ with $[L:\mathbb{Q}] = 6$.
 
-Die Galois-Gruppe ist $\text{Gal}(L/\mathbb{Q}) \cong S_3$ – die symmetrische Gruppe auf $3$ Elementen. Die Automorphismen permutieren die drei Nullstellen (unter der Einschränkung, dass $\omega \mapsto \omega$ oder $\omega \mapsto \omega^2$).
+The Galois group is $\text{Gal}(L/\mathbb{Q}) \cong S_3$ – the symmetric group on $3$ elements. This is because the automorphisms can arbitrarily permute the three roots (subject to the constraint that $\omega \mapsto \omega$ or $\omega \mapsto \omega^2$).
 
-### Beispiel: Kreisteilungskörper
+### Example: Cyclotomic fields
 
-Der $p$-te Kreisteilungskörper $\mathbb{Q}(\zeta_p)$ (mit $\zeta_p = e^{2\pi i/p}$) hat die Galois-Gruppe:
+The $p$-th cyclotomic field $\mathbb{Q}(\zeta_p)$ (with $\zeta_p = e^{2\pi i/p}$) has the Galois group:
 
 $$
 \text{Gal}(\mathbb{Q}(\zeta_p)/\mathbb{Q}) \cong (\mathbb{Z}/p\mathbb{Z})^*
 $$
 
-Die Gruppe der Einheiten modulo $p$ – abelsch, der Ordnung $p - 1$. Jeder Automorphismus $\sigma_a$ sendet $\zeta_p \mapsto \zeta_p^a$ für ein $a \in \{1, \ldots, p-1\}$.
+This is the group of units modulo $p$ – an abelian group of order $p - 1$. Each automorphism $\sigma_a$ sends $\zeta_p \mapsto \zeta_p^a$ for some $a \in \{1, \ldots, p-1\}$.
 
-## 5. Der Hauptsatz der Galois-Theorie
+## 5. The Fundamental Theorem of Galois Theory
 
-Der **Hauptsatz** stellt eine Bijektion zwischen der algebraischen Struktur der Körpererweiterung und der Gruppenstruktur der Galois-Gruppe her.
+The **fundamental theorem** is the heart of the theory. It establishes a perfect correspondence between the algebraic structure of the field extension and the group structure of the Galois group.
 
-**Satz (Galois-Korrespondenz).** Sei $L/K$ eine endliche Galois-Erweiterung mit Galois-Gruppe $G = \text{Gal}(L/K)$. Dann gibt es eine inklusionsumkehrende Bijektion:
-
-$$
-\{\text{Zwischenkörper } K \subseteq M \subseteq L\} \longleftrightarrow \{\text{Untergruppen } H \leq G\}
-$$
-
-gegeben durch:
+**Theorem (Galois correspondence).** Let $L/K$ be a finite Galois extension with Galois group $G = \text{Gal}(L/K)$. Then there is an inclusion-reversing bijection:
 
 $$
-M \longmapsto \text{Gal}(L/M), \qquad H \longmapsto L^H = \{x \in L \mid \sigma(x) = x \text{ für alle } \sigma \in H\}
+\{\text{intermediate fields } K \subseteq M \subseteq L\} \longleftrightarrow \{\text{subgroups } H \leq G\}
 $$
 
-Dabei gilt:
-- $[M : K] = [G : H]$ (Index der Untergruppe = Grad der Erweiterung)
-- $M/K$ ist genau dann eine Galois-Erweiterung, wenn $H \trianglelefteq G$ (Normalteiler)
-- In diesem Fall ist $\text{Gal}(M/K) \cong G/H$
+given by:
 
-!!! tip "Die Korrespondenz visualisiert"
+$$
+M \longmapsto \text{Gal}(L/M), \qquad H \longmapsto L^H = \{x \in L \mid \sigma(x) = x \text{ for all } \sigma \in H\}
+$$
+
+Moreover:
+- $[M : K] = [G : H]$ (index of the subgroup = degree of the extension)
+- $M/K$ is a Galois extension if and only if $H \trianglelefteq G$ (normal subgroup)
+- In that case, $\text{Gal}(M/K) \cong G/H$
+
+!!! tip "The correspondence visualised"
     ```
-    Körper                  Gruppen
+    Fields                  Groups
     L                       {e}
     |                        |
     M₂                     H₂
@@ -140,72 +131,68 @@ Dabei gilt:
     |    /                 \    |
     K                       G
     ```
-    Größere Körper entsprechen *kleineren* Untergruppen (und umgekehrt).
+    Larger fields correspond to *smaller* subgroups (and vice versa).
 
-## 6. Auflösbarkeit
+## 6. Solvability
 
-Galois' ursprüngliche Frage: Wann lässt sich eine Gleichung durch Radikale lösen? Der Hauptsatz liefert die Antwort.
+Galois' original question was: when can an equation be solved by radicals? The fundamental theorem provides the answer.
 
-**Definition.** Eine Gruppe $G$ heißt **auflösbar**, wenn eine Kette von Untergruppen existiert:
+**Definition.** A group $G$ is called **solvable** if it possesses a chain of subgroups:
 
 $$
 \{e\} = G_0 \trianglelefteq G_1 \trianglelefteq \cdots \trianglelefteq G_n = G
 $$
 
-wobei jeder Faktor $G_{i+1}/G_i$ abelsch (zyklisch von Primordnung) ist.
+where each factor $G_{i+1}/G_i$ is abelian (cyclic of prime order).
 
-**Satz (Galois).** Ein Polynom $f \in K[x]$ ist genau dann durch Radikale auflösbar, wenn seine Galois-Gruppe auflösbar ist.
+**Theorem (Galois).** A polynomial $f \in K[x]$ is solvable by radicals if and only if its Galois group is solvable.
 
-**Konsequenz für Grad $\geq 5$:** Die symmetrische Gruppe $S_n$ ist für $n \geq 5$ **nicht** auflösbar (weil die alternierende Gruppe $A_n$ für $n \geq 5$ einfach und nicht abelsch ist). Da Polynome mit Galois-Gruppe $S_5$ existieren, sind diese nicht durch Radikale auflösbar.
+**Consequence for degree $\geq 5$:** The symmetric group $S_n$ is **not** solvable for $n \geq 5$ (because the alternating group $A_n$ is simple and non-abelian for $n \geq 5$). Since there exist polynomials with Galois group $S_5$, these are not solvable by radicals.
 
-**Konsequenz für Grad $\leq 4$:** Die Gruppen $S_1, S_2, S_3, S_4$ sind alle auflösbar – daher existieren Lösungsformeln für Polynome bis Grad $4$.
+**Consequence for degree $\leq 4$:** The groups $S_1, S_2, S_3, S_4$ are all solvable – hence solution formulas exist for polynomials up to degree $4$.
 
-## 7. Die absolute Galois-Gruppe
+## 7. The Absolute Galois Group
 
-Für die Zahlentheorie – und insbesondere für Wiles' Beweis – ist nicht die Galois-Gruppe einer einzelnen Erweiterung entscheidend, sondern die **absolute Galois-Gruppe**:
+For number theory – and in particular for Wiles' proof – it is not the Galois group of a single extension that matters, but the **absolute Galois group**:
 
 $$
 G_{\mathbb{Q}} = \text{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})
 $$
 
-Die Galois-Gruppe der Erweiterung aller algebraischen Zahlen über $\mathbb{Q}$. Sie ist eine unendliche, proendliche Gruppe – der projektive Limes aller endlichen Galois-Gruppen $\text{Gal}(L/\mathbb{Q})$.
+This is the Galois group of the extension of all algebraic numbers over $\mathbb{Q}$. It is an infinite, profinite group – the projective limit of all finite Galois groups $\text{Gal}(L/\mathbb{Q})$.
 
-$G_{\mathbb{Q}}$ zählt zu den am intensivsten untersuchten und zugleich am wenigsten verstandenen Objekten der Mathematik. Bekannt sind vor allem ihre **Darstellungen** – Homomorphismen von $G_{\mathbb{Q}}$ in Matrizengruppen.
+$G_{\mathbb{Q}}$ is one of the most mysterious objects in mathematics. Despite intensive research, its complete structure is unknown. What we do know are its **representations** – homomorphisms from $G_{\mathbb{Q}}$ into matrix groups.
 
-> „The Galois group of the algebraic closure of the rationals is an extraordinarily rich and mysterious group."
-> — Barry Mazur, *Number Theory as Gadfly*, The American Mathematical Monthly 98 (1991)
+### Galois Representations
 
-### Galois-Darstellungen
-
-Eine **(stetige) Galois-Darstellung** ist ein Homomorphismus:
+A **(continuous) Galois representation** is a homomorphism:
 
 $$
 \rho: G_{\mathbb{Q}} \to \text{GL}_n(K)
 $$
 
-für einen geeigneten Körper oder Ring $K$. Für Wiles' Beweis sind die **zweidimensionalen** Darstellungen ($n = 2$) zentral:
+for a suitable field or ring $K$. For Wiles' proof, the **two-dimensional** representations ($n = 2$) are central:
 
 $$
-\rho: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p) \quad \text{oder} \quad \rho: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_p)
+\rho: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p) \quad \text{or} \quad \rho: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_p)
 $$
 
-Jede elliptische Kurve $E$ über $\mathbb{Q}$ liefert solche Darstellungen – über die Wirkung von $G_{\mathbb{Q}}$ auf den $p$-Teilungspunkten $E[p]$. Ebenso liefert jede Modulform eine Galois-Darstellung. Die **Taniyama-Shimura-Vermutung** besagt im Kern: Die Darstellung der elliptischen Kurve *ist* die Darstellung einer Modulform.
+Every elliptic curve $E$ over $\mathbb{Q}$ yields such representations – via the action of $G_{\mathbb{Q}}$ on the $p$-division points $E[p]$. And every modular form likewise yields a Galois representation. The **Taniyama–Shimura conjecture** states in essence: the representation of the elliptic curve *is* the representation of a modular form.
 
-### Lokale Galois-Gruppen
+### Local Galois Groups
 
-Für jede Primzahl $p$ gibt es eine **lokale Galois-Gruppe** $G_{\mathbb{Q}_p} = \text{Gal}(\overline{\mathbb{Q}_p}/\mathbb{Q}_p)$. Sie kontrolliert das Verhalten algebraischer Objekte „an der Stelle $p$". Jede globale Darstellung $\rho: G_{\mathbb{Q}} \to \text{GL}_n(K)$ induziert durch Einschränkung lokale Darstellungen:
+For every prime $p$ there is a **local Galois group** $G_{\mathbb{Q}_p} = \text{Gal}(\overline{\mathbb{Q}_p}/\mathbb{Q}_p)$. It controls the behaviour of algebraic objects "at the place $p$". Every global representation $\rho: G_{\mathbb{Q}} \to \text{GL}_n(K)$ induces by restriction local representations:
 
 $$
 \rho|_{G_{\mathbb{Q}_p}}: G_{\mathbb{Q}_p} \to \text{GL}_n(K)
 $$
 
-Das **Lokal-Global-Prinzip**: Wann bestimmen die lokalen Darstellungen die globale? Diese Frage steht im Zentrum von Wiles' Beweis.
+The **local-global principle** asks: when do the local representations determine the global one? This question lies at the centre of Wiles' proof.
 
 ---
 
-## Quellen
+## Further Reading
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 4
-- **Ian Stewart**: *Galois Theory*, Chapman & Hall (2003)
-- **Emil Artin**: *Galois Theory*, Dover (1998)
-- **Barry Mazur**: *Number Theory as Gadfly*, The American Mathematical Monthly 98 (1991), 593–610
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem*, Ch. 4
+- **Ian Stewart**: *Galois Theory* – accessible introduction
+- **Emil Artin**: *Galois Theory* – the classical approach

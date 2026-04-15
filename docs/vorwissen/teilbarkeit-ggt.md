@@ -1,114 +1,114 @@
 ---
-title: "Teilbarkeit und ggT"
-description: "Division mit Rest, größter gemeinsamer Teiler und der Euklidische Algorithmus"
-lang: de
+title: "Divisibility and GCD"
+description: "Division with remainder, greatest common divisor, and the Euclidean algorithm"
+lang: en
 type: vorwissen
 ---
 
-# Teilbarkeit und ggT
+# Divisibility and GCD
 
-## Teilbarkeit
+## Divisibility
 
-Eine ganze Zahl $a$ **teilt** eine ganze Zahl $b$, wenn ein $k \in \mathbb{Z}$ existiert mit $b = k \cdot a$. Notation: $a \mid b$.
+An integer $a$ **divides** an integer $b$ if there exists a $k \in \mathbb{Z}$ with $b = k \cdot a$. Notation: $a \mid b$.
 
 $$
 a \mid b \iff \exists\, k \in \mathbb{Z}: b = k \cdot a
 $$
 
-**Beispiel.** $3 \mid 12$, denn $12 = 4 \cdot 3$. Dagegen $3 \nmid 7$, denn es gibt kein ganzzahliges $k$ mit $7 = k \cdot 3$.
+**Example.** $3 \mid 12$, since $12 = 4 \cdot 3$. However, $3 \nmid 7$, since no integer $k$ satisfies $7 = k \cdot 3$.
 
-### Grundlegende Eigenschaften
+### Basic Properties
 
-- **Reflexivität:** $a \mid a$ für alle $a \neq 0$.
-- **Transitivität:** Aus $a \mid b$ und $b \mid c$ folgt $a \mid c$.
-- **Linearität:** Aus $a \mid b$ und $a \mid c$ folgt $a \mid (b + c)$ und $a \mid (b - c)$.
+- **Reflexivity:** $a \mid a$ for all $a \neq 0$.
+- **Transitivity:** If $a \mid b$ and $b \mid c$, then $a \mid c$.
+- **Linearity:** If $a \mid b$ and $a \mid c$, then $a \mid (b + c)$ and $a \mid (b - c)$.
 
-## Division mit Rest
+## Division with Remainder
 
-Für beliebige ganze Zahlen $a$ und $b$ mit $b > 0$ existieren eindeutige ganze Zahlen $q$ (Quotient) und $r$ (Rest) mit:
+For any integers $a$ and $b$ with $b > 0$, there exist unique integers $q$ (quotient) and $r$ (remainder) such that:
 
 $$
 a = q \cdot b + r, \quad 0 \leq r < b
 $$
 
-**Beispiel.** $17 = 2 \cdot 7 + 3$. Hier ist $q = 2$ und $r = 3$.
+**Example.** $17 = 2 \cdot 7 + 3$. Here $q = 2$ and $r = 3$.
 
-Die Division mit Rest ist die Grundlage der modularen Arithmetik und des Euklidischen Algorithmus.
+Division with remainder is the foundation of modular arithmetic and the Euclidean algorithm.
 
-## Größter gemeinsamer Teiler (ggT)
+## Greatest Common Divisor (GCD)
 
-Der **größte gemeinsame Teiler** zweier ganzer Zahlen $a$ und $b$ (nicht beide $0$) ist die größte positive ganze Zahl, die sowohl $a$ als auch $b$ teilt:
+The **greatest common divisor** of two integers $a$ and $b$ (not both $0$) is the largest positive integer that divides both $a$ and $b$:
 
 $$
-\gcd(a, b) = \max\{d \in \mathbb{N} : d \mid a \text{ und } d \mid b\}
+\gcd(a, b) = \max\{d \in \mathbb{N} : d \mid a \text{ and } d \mid b\}
 $$
 
-**Beispiel.** Die Teiler von $12$ sind $\{1, 2, 3, 4, 6, 12\}$, die Teiler von $18$ sind $\{1, 2, 3, 6, 9, 18\}$. Gemeinsame Teiler: $\{1, 2, 3, 6\}$. Also $\gcd(12, 18) = 6$.
+**Example.** The divisors of $12$ are $\{1, 2, 3, 4, 6, 12\}$, the divisors of $18$ are $\{1, 2, 3, 6, 9, 18\}$. Common divisors: $\{1, 2, 3, 6\}$. Thus $\gcd(12, 18) = 6$.
 
-### Teilerfremdheit
+### Coprimality
 
-Zwei Zahlen $a$ und $b$ heißen **teilerfremd**, wenn $\gcd(a, b) = 1$.
+Two numbers $a$ and $b$ are **coprime** if $\gcd(a, b) = 1$.
 
-**Beispiel.** $\gcd(8, 15) = 1$, also sind $8$ und $15$ teilerfremd.
+**Example.** $\gcd(8, 15) = 1$, so $8$ and $15$ are coprime.
 
-## Der Euklidische Algorithmus
+## The Euclidean Algorithm
 
-Der Euklidische Algorithmus berechnet $\gcd(a, b)$ durch wiederholte Division mit Rest. Die zentrale Eigenschaft:
+The Euclidean algorithm computes $\gcd(a, b)$ through repeated division with remainder. The key property:
 
 $$
 \gcd(a, b) = \gcd(b, a \bmod b)
 $$
 
-### Ablauf
+### Procedure
 
-Gegeben: $a, b \in \mathbb{Z}$ mit $a \geq b > 0$.
+Given: $a, b \in \mathbb{Z}$ with $a \geq b > 0$.
 
-1. Berechne $r = a \bmod b$.
-2. Falls $r = 0$: $\gcd(a, b) = b$. Fertig.
-3. Sonst: Setze $a \leftarrow b$, $b \leftarrow r$ und wiederhole ab Schritt 1.
+1. Compute $r = a \bmod b$.
+2. If $r = 0$: $\gcd(a, b) = b$. Done.
+3. Otherwise: Set $a \leftarrow b$, $b \leftarrow r$ and repeat from step 1.
 
-### Beispiel: $\gcd(252, 105)$
+### Example: $\gcd(252, 105)$
 
-| Schritt | $a$   | $b$   | $r = a \bmod b$ |
-|---------|-------|-------|------------------|
-| 1       | 252   | 105   | 42               |
-| 2       | 105   | 42    | 21               |
-| 3       | 42    | 21    | 0                |
+| Step | $a$   | $b$   | $r = a \bmod b$ |
+|------|-------|-------|------------------|
+| 1    | 252   | 105   | 42               |
+| 2    | 105   | 42    | 21               |
+| 3    | 42    | 21    | 0                |
 
-Ergebnis: $\gcd(252, 105) = 21$.
+Result: $\gcd(252, 105) = 21$.
 
-### Korrektheit
+### Correctness
 
-Der Algorithmus terminiert, weil die Reste streng monoton fallen ($r < b$ in jedem Schritt). Er ist korrekt, weil $\gcd(a, b) = \gcd(b, r)$ gilt: Jeder gemeinsame Teiler von $a$ und $b$ teilt auch $r = a - q \cdot b$, und umgekehrt.
+The algorithm terminates because the remainders are strictly decreasing ($r < b$ at each step). It is correct because $\gcd(a, b) = \gcd(b, r)$ holds: every common divisor of $a$ and $b$ also divides $r = a - q \cdot b$, and conversely.
 
-## Lemma von Bézout
+## Bézout's Lemma
 
-Für alle $a, b \in \mathbb{Z}$ (nicht beide $0$) existieren $x, y \in \mathbb{Z}$ mit:
+For all $a, b \in \mathbb{Z}$ (not both $0$), there exist $x, y \in \mathbb{Z}$ with:
 
 $$
 \gcd(a, b) = x \cdot a + y \cdot b
 $$
 
-Die Koeffizienten $x, y$ lassen sich durch den **erweiterten Euklidischen Algorithmus** berechnen.
+The coefficients $x, y$ can be computed using the **extended Euclidean algorithm**.
 
-**Beispiel.** $\gcd(252, 105) = 21$. Es gilt $21 = 1 \cdot 252 + (-2) \cdot 105$, also $x = 1, y = -2$.
+**Example.** $\gcd(252, 105) = 21$. We have $21 = 1 \cdot 252 + (-2) \cdot 105$, so $x = 1, y = -2$.
 
-Das Lemma von Bézout ist ein zentrales Werkzeug in der Zahlentheorie. Es impliziert unter anderem: Sind $a$ und $b$ teilerfremd und $a \mid bc$, dann $a \mid c$.
+Bézout's lemma is a central tool in number theory. Among other things, it implies: if $a$ and $b$ are coprime and $a \mid bc$, then $a \mid c$.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Begriff | Definition |
+| Concept | Definition |
 |---------|-----------|
-| $a \mid b$ | Es existiert $k \in \mathbb{Z}$ mit $b = ka$ |
-| Division mit Rest | $a = qb + r$ mit $0 \leq r < b$ |
-| $\gcd(a,b)$ | Größter gemeinsamer Teiler |
-| Teilerfremd | $\gcd(a,b) = 1$ |
-| Euklidischer Algorithmus | $\gcd(a,b) = \gcd(b, a \bmod b)$ |
-| Bézout | $\gcd(a,b) = xa + yb$ für geeignete $x, y \in \mathbb{Z}$ |
+| $a \mid b$ | There exists $k \in \mathbb{Z}$ with $b = ka$ |
+| Division with remainder | $a = qb + r$ with $0 \leq r < b$ |
+| $\gcd(a,b)$ | Greatest common divisor |
+| Coprime | $\gcd(a,b) = 1$ |
+| Euclidean algorithm | $\gcd(a,b) = \gcd(b, a \bmod b)$ |
+| Bézout | $\gcd(a,b) = xa + yb$ for suitable $x, y \in \mathbb{Z}$ |
 
-## Quellen
+## References
 
-- Hardy, G.H.; Wright, E.M.: *An Introduction to the Theory of Numbers.* Oxford University Press, 6. Auflage, 2008. Kapitel 1–2.
-- Burton, David M.: *Elementary Number Theory.* McGraw-Hill, 7. Auflage, 2010. Kapitel 2.
+- Hardy, G.H.; Wright, E.M.: *An Introduction to the Theory of Numbers.* Oxford University Press, 6th edition, 2008. Chapters 1–2.
+- Burton, David M.: *Elementary Number Theory.* McGraw-Hill, 7th edition, 2010. Chapter 2.

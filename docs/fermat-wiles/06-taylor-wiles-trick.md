@@ -1,247 +1,241 @@
 ---
-title: "Der Taylor-Wiles-Trick"
+title: "The Taylor–Wiles Trick"
 slug: fermat-wiles/06-taylor-wiles-trick
 series: fermat-wiles
 part: 6
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: zahlentheorie
 tags:
   - taylor-wiles
   - patching
-  - modularer-beweis
+  - modularity-proof
 requires:
-  - grenzwerte-konvergenz
-  - modulare-arithmetik
+  - fermat-wiles/05-r-gleich-t
 ---
-# Der Taylor-Wiles-Trick
+# The Taylor–Wiles Trick
 
-!!! abstract "Zusammenfassung"
-    Das Patching-Argument von Taylor und Wiles schloss die Lücke im
-    ursprünglichen Beweis von 1993. Durch Hinzufügen sorgfältig gewählter
-    Hilfs-Primzahlen werden die Deformationsringe „einfacher", und im
-    inversen Limes wird $R = T$ beweisbar. Dieses Argument revolutionierte
-    die Methodik der algebraischen Zahlentheorie.
+!!! abstract "Summary"
+    The patching argument of Taylor and Wiles closed the gap in the
+    original proof of 1993. By adding carefully chosen auxiliary
+    primes, the deformation rings become "simpler", and in the
+    inverse limit $R = T$ becomes provable. This argument revolutionised
+    the methodology of algebraic number theory.
 
-## Voraussetzungen
+## Prerequisites
 
-- [R = T – Das Herz des Beweises](05-r-gleich-t.md) – Numerisches Kriterium, Selmer-Gruppen, Kongruenzideale
-
-| Thema | Beschreibung |
-|-------|-------------|
-| [Grenzwerte und Konvergenz](../vorwissen/grenzwerte-konvergenz.md) | $\lim_{n \to \infty} a_n = L$, Cauchy-Folgen, Reihen |
-| [Modulare Arithmetik](../vorwissen/modulare-arithmetik.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
+- [R = T – The Heart of the Proof](05-r-gleich-t.md) – numerical criterion, Selmer groups, congruence ideals
 
 ---
 
-## 1. Die Lücke (1993)
+## 1. The Gap (1993)
 
-### Wiles' Ankündigung
+### Wiles' announcement
 
-Am 23. Juni 1993 beendete Andrew Wiles seine dritte Vorlesung am Newton Institute in Cambridge mit den Worten: *„I think I'll stop here."* Das Publikum brach in Applaus aus – Wiles hatte soeben die Modularität semistabiler elliptischer Kurven angekündigt, woraus Fermats letzter Satz folgt.
+On 23 June 1993, Andrew Wiles ended his third lecture at the Newton Institute in Cambridge with the words: *"I think I'll stop here."* The audience burst into applause – Wiles had just announced the modularity of semistable elliptic curves, from which Fermat's Last Theorem follows.
 
-Die Nachricht ging um die Welt. Zeitungen titelten: „350 Jahre altes Rätsel gelöst." Doch der Beweis musste noch die Begutachtung durch Fachkollegen überstehen.
+The news went around the world. Newspapers headlined: "350-year-old puzzle solved." But the proof still had to survive peer review.
 
-### Das Problem
+### The problem
 
-Während der Begutachtung im Herbst 1993 fand **Nick Katz** (Princeton) einen Fehler in Kapitel 3 des Manuskripts. Die Lücke betraf den entscheidenden Schritt: die obere Schranke für die Selmer-Gruppe.
+During the review in autumn 1993, **Nick Katz** (Princeton) found an error in Chapter 3 of the manuscript. The gap concerned the decisive step: the upper bound for the Selmer group.
 
-Wiles hatte versucht, ein **Euler-System** zu konstruieren – eine Familie kohärenter Kohomologieklassen, die nach Kolyvagins Methode obere Schranken für Selmer-Gruppen liefern. Doch die Konstruktion war in einem wesentlichen Punkt unvollständig: Die benötigte Kompatibilitätseigenschaft ließ sich nicht verifizieren.
+Wiles had tried to construct an **Euler system** – a family of coherent cohomology classes that, by Kolyvagin's method, yield upper bounds for Selmer groups. But the construction was incomplete at an essential point: the required compatibility property could not be verified.
 
-### Die dunklen Monate
+### The dark months
 
-Von Oktober 1993 bis September 1994 versuchte Wiles verzweifelt, die Lücke zu schließen – zunächst allein, dann mit verschiedenen Ansätzen. Er stand kurz davor aufzugeben:
+From October 1993 to September 1994, Wiles tried desperately to close the gap – at first alone, then with various approaches. He was on the verge of giving up:
 
-> *„I was sitting at my desk examining the Kolyvagin-Flach method. It wasn't working, it wasn't working, and I sat there thinking. [...] Suddenly, totally unexpectedly, I had this incredible revelation."*
+> *"I was sitting at my desk examining the Kolyvagin–Flach method. It wasn't working, it wasn't working, and I sat there thinking. [...] Suddenly, totally unexpectedly, I had this incredible revelation."*
 > — Andrew Wiles
 
 ---
 
-## 2. Taylor betritt die Bühne
+## 2. Taylor Enters the Stage
 
-### Die Zusammenarbeit
+### The collaboration
 
-Im Herbst 1994 bat Wiles seinen ehemaligen Doktoranden **Richard Taylor** um Hilfe. Taylor, damals Professor in Cambridge, war einer der wenigen Mathematiker, die den Beweis im Detail verstanden.
+In autumn 1994, Wiles asked his former doctoral student **Richard Taylor** for help. Taylor, then a professor in Cambridge, was one of the few mathematicians who understood the proof in detail.
 
-Gemeinsam erkannten sie: Der Euler-System-Ansatz war eine Sackgasse. Stattdessen brauchten sie einen völlig neuen Zugang zur oberen Schranke der Selmer-Gruppe.
+Together they recognised: the Euler system approach was a dead end. Instead, they needed an entirely new route to the upper bound on the Selmer group.
 
-### Die entscheidende Einsicht
+### The decisive insight
 
-Die Idee kam aus einer unerwarteten Richtung: Statt die Selmer-Gruppe direkt abzuschätzen, sollte man das **gesamte Problem** – den Ring $R$, die Hecke-Algebra $T$, und die Surjektion $R \twoheadrightarrow T$ – in eine **Familie** einbetten und das Ergebnis „im Limes" beweisen.
-
----
-
-## 3. Die Idee des Patchings
-
-### Hilfs-Primzahlen
-
-Die Grundidee ist bestechend einfach: Man **erweitert** das Problem, indem man zusätzliche Primzahlen hinzunimmt.
-
-Sei $Q = \{q_1, \ldots, q_n\}$ eine endliche Menge von Primzahlen, die bestimmte Eigenschaften erfüllen:
-
-1. $q_i \equiv 1 \pmod{p}$ (damit existieren nichttriviale Charaktere modulo $q_i$)
-2. $q_i \nmid N$ (die Primzahlen sind „neu" – sie teilen nicht die Stufe)
-3. $\bar{\rho}(\text{Frob}_{q_i})$ hat verschiedene Eigenwerte in $\mathbb{F}_p$
-
-### Warum solche Primzahlen existieren
-
-Der Satz von Čebotarëv garantiert: Für jede gegebene Konjugationsklasse in $\text{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})$ gibt es unendlich viele Primzahlen $q$ mit $\text{Frob}_q$ in dieser Klasse. Die Bedingung $q \equiv 1 \pmod{p}$ wählt eine Teilmenge positiver Dichte aus. Es gibt also **beliebig viele** geeignete Hilfs-Primzahlen.
-
-### Was die Hilfs-Primzahlen bewirken
-
-Für jede Menge $Q$ betrachtet man:
-
-- Den **aufgeblähten Deformationsring** $R_Q$: Deformationen von $\bar{\rho}$ mit den üblichen lokalen Bedingungen, aber **zusätzlich** mit einer vorgeschriebenen Struktur bei den Primzahlen $q \in Q$.
-- Die **aufgeblähte Hecke-Algebra** $T_Q$: Die Hecke-Algebra der Stufe $N \cdot \prod_{q \in Q} q$.
-
-Die Surjektion $R_Q \twoheadrightarrow T_Q$ bleibt erhalten, aber die Ringe sind „größer" und haben eine zusätzliche Struktur.
+The idea came from an unexpected direction: instead of estimating the Selmer group directly, one should embed the **entire problem** – the ring $R$, the Hecke algebra $T$, and the surjection $R \twoheadrightarrow T$ – into a **family** and prove the result "in the limit".
 
 ---
 
-## 4. Aufgeblähte Deformationsringe
+## 3. The Idea of Patching
 
-### Die $\Delta_Q$-Wirkung
+### Auxiliary primes
 
-Jede Primzahl $q \in Q$ mit $q \equiv 1 \pmod{p}$ liefert eine Gruppe
+The basic idea is strikingly simple: one **enlarges** the problem by adding extra primes.
+
+Let $Q = \{q_1, \ldots, q_n\}$ be a finite set of primes satisfying certain properties:
+
+1. $q_i \equiv 1 \pmod{p}$ (so that non-trivial characters modulo $q_i$ exist)
+2. $q_i \nmid N$ (the primes are "new" – they do not divide the level)
+3. $\bar{\rho}(\text{Frob}_{q_i})$ has distinct eigenvalues in $\mathbb{F}_p$
+
+### Why such primes exist
+
+The Čebotarëv density theorem guarantees: for every given conjugacy class in $\text{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})$, there are infinitely many primes $q$ with $\text{Frob}_q$ in that class. The condition $q \equiv 1 \pmod{p}$ selects a subset of positive density. So there are **arbitrarily many** suitable auxiliary primes.
+
+### What the auxiliary primes achieve
+
+For each set $Q$ one considers:
+
+- The **augmented deformation ring** $R_Q$: deformations of $\bar{\rho}$ with the usual local conditions, but **additionally** with a prescribed structure at the primes $q \in Q$.
+- The **augmented Hecke algebra** $T_Q$: the Hecke algebra of level $N \cdot \prod_{q \in Q} q$.
+
+The surjection $R_Q \twoheadrightarrow T_Q$ is preserved, but the rings are "larger" and carry additional structure.
+
+---
+
+## 4. Augmented Deformation Rings
+
+### The $\Delta_Q$-action
+
+Each prime $q \in Q$ with $q \equiv 1 \pmod{p}$ yields a group
 
 $$
 \Delta_q = (\mathbb{Z}/q\mathbb{Z})^\times / (\mathbb{Z}/q\mathbb{Z})^{\times p} \cong \mathbb{Z}/p\mathbb{Z}.
 $$
 
-Das Produkt
+The product
 
 $$
 \Delta_Q = \prod_{q \in Q} \Delta_q \cong (\mathbb{Z}/p\mathbb{Z})^n
 $$
 
-wirkt auf $R_Q$ und $T_Q$ durch die Galois-Wirkung bei den Hilfs-Primzahlen. Der **Augmentationsideal** $\mathfrak{a}_Q = \ker(\mathbb{F}_p[\Delta_Q] \to \mathbb{F}_p)$ hat die Eigenschaft:
+acts on $R_Q$ and $T_Q$ via the Galois action at the auxiliary primes. The **augmentation ideal** $\mathfrak{a}_Q = \ker(\mathbb{F}_p[\Delta_Q] \to \mathbb{F}_p)$ has the property:
 
 $$
 R_Q / \mathfrak{a}_Q \cdot R_Q \cong R, \qquad T_Q / \mathfrak{a}_Q \cdot T_Q \cong T.
 $$
 
-Die ursprünglichen Ringe $R$ und $T$ sind also Quotienten der aufgeblähten Ringe. **Das Problem wird zurückgewonnen, indem man die Hilfs-Primzahlen wieder „vergisst".**
+The original rings $R$ and $T$ are thus quotients of the augmented rings. **The problem is recovered by "forgetting" the auxiliary primes.**
 
-### Die entscheidende Eigenschaft
+### The crucial property
 
-Taylor und Wiles zeigen: Für geeignet gewählte Mengen $Q$ ist $R_Q$ ein **Potenzreihenring über $R$**:
+Taylor and Wiles show: for suitably chosen sets $Q$, $R_Q$ is a **power series ring over $R$**:
 
 $$
 R_Q \cong R[[s_1, \ldots, s_n]],
 $$
 
-wobei $n = |Q|$. Der aufgeblähte Ring hat genau $n$ zusätzliche freie Variablen – eine für jede Hilfs-Primzahl. Dies folgt aus einer sorgfältigen Berechnung der Selmer-Gruppe: Die $n$ Hilfs-Primzahlen erzeugen genau $n$ neue Deformationsrichtungen.
+where $n = |Q|$. The augmented ring has exactly $n$ additional free variables – one for each auxiliary prime. This follows from a careful computation of the Selmer group: the $n$ auxiliary primes generate exactly $n$ new deformation directions.
 
 ---
 
-## 5. Der Limesprozess
+## 5. The Limit Process
 
-### Wachsende Primzahlmengen
+### Growing sets of primes
 
-Nun konstruiert man eine Folge von Primzahlmengen:
+One now constructs a sequence of prime sets:
 
 $$
 Q_1 \subset Q_2 \subset Q_3 \subset \cdots
 $$
 
-mit $|Q_m| = m$, so dass jede Menge $Q_m$ die oben genannten Bedingungen erfüllt.
+with $|Q_m| = m$, each satisfying the conditions above.
 
-### Der inverse Limes
+### The inverse limit
 
-Man bildet die inversen Limites:
+One forms the inverse limits:
 
 $$
 R_\infty = \varprojlim_m R_{Q_m}, \qquad T_\infty = \varprojlim_m T_{Q_m}.
 $$
 
-Die Surjektionen $R_{Q_m} \twoheadrightarrow T_{Q_m}$ liefern eine Surjektion im Limes:
+The surjections $R_{Q_m} \twoheadrightarrow T_{Q_m}$ yield a surjection in the limit:
 
 $$
 R_\infty \twoheadrightarrow T_\infty.
 $$
 
-### Warum der Limes hilft
+### Why the limit helps
 
-Im Limes werden die Ringe „einfacher" im folgenden Sinne:
+In the limit, the rings become "simpler" in the following sense:
 
-1. $R_\infty$ ist ein **formaler Potenzreihenring** über $\mathbb{Z}_p$: $R_\infty \cong \mathbb{Z}_p[[x_1, x_2, \ldots]]$ (unendlich viele Variablen, aber die Struktur ist explizit).
-2. $T_\infty$ ist ein **freier $R_\infty$-Modul** endlichen Rangs.
+1. $R_\infty$ is a **formal power series ring** over $\mathbb{Z}_p$: $R_\infty \cong \mathbb{Z}_p[[x_1, x_2, \ldots]]$ (infinitely many variables, but the structure is explicit).
+2. $T_\infty$ is a **free $R_\infty$-module** of finite rank.
 
-In dieser Situation ist das numerische Kriterium **automatisch erfüllt**: Ein Potenzreihenring, der surjektiv auf einen freien Modul abbildet, ist notwendig ein Isomorphismus (bis auf die richtigen Dimensionsbedingungen).
+In this situation, the numerical criterion is **automatically satisfied**: a power series ring surjecting onto a free module is necessarily an isomorphism (up to the correct dimension conditions).
 
 ---
 
-## 6. Zurück zum minimalen Fall
+## 6. Back to the Minimal Case
 
-### Der Abstieg
+### The descent
 
-Aus $R_\infty = T_\infty$ im Limes muss man auf den endlichen Fall zurückschließen. Das geht so:
+From $R_\infty = T_\infty$ in the limit, one must descend to the finite case. This works as follows:
 
-1. $R_\infty = T_\infty$ impliziert $R_{Q_m} = T_{Q_m}$ für jedes $m$ (durch Spezialisierung).
-2. $R_{Q_m} = T_{Q_m}$ impliziert $R = T$ durch Quotientenbildung modulo $\mathfrak{a}_{Q_m}$.
+1. $R_\infty = T_\infty$ implies $R_{Q_m} = T_{Q_m}$ for each $m$ (by specialisation).
+2. $R_{Q_m} = T_{Q_m}$ implies $R = T$ by taking the quotient modulo $\mathfrak{a}_{Q_m}$.
 
-Der inverse Limes ist also kein Selbstzweck, sondern ein **Umweg**, der den Beweis ermöglicht: Im Limes ist die Struktur einfach genug, um $R = T$ zu verifizieren, und der Abstieg überträgt das Ergebnis auf den Ausgangsfall.
+The inverse limit is thus not an end in itself, but a **detour** that makes the proof possible: in the limit, the structure is simple enough to verify $R = T$, and the descent transfers the result to the original case.
 
-### Die Struktur des Arguments
+### The structure of the argument
 
 $$
-\boxed{R = T} \xleftarrow{\text{Quotient}} \boxed{R_Q = T_Q} \xleftarrow{\text{Limes}} \boxed{R_\infty = T_\infty \text{ (einfach!)}}
+\boxed{R = T} \xleftarrow{\text{quotient}} \boxed{R_Q = T_Q} \xleftarrow{\text{limit}} \boxed{R_\infty = T_\infty \text{ (simple!)}}
 $$
 
-### Warum der minimale Fall entscheidend ist
+### Why the minimal case is decisive
 
-Das Patching-Argument funktioniert am saubersten im **minimalen Fall** – wenn die lokalen Deformationsbedingungen so restriktiv wie möglich sind. Im minimalen Fall hat $R_Q$ genau die richtige Struktur (Potenzreihenring über $R$), und die Dimensionsberechnungen gehen auf.
+The patching argument works most cleanly in the **minimal case** – when the local deformation conditions are as restrictive as possible. In the minimal case, $R_Q$ has exactly the right structure (power series ring over $R$), and the dimension calculations work out.
 
-Der allgemeine Fall wird dann auf den minimalen zurückgeführt – eine technisch anspruchsvolle, aber konzeptionell separate Aufgabe.
-
----
-
-## 7. Die Bedeutung des Tricks
-
-### Revolutionäre Methodik
-
-Das Taylor-Wiles-Patching war nicht nur der Schlüssel zu Fermats letztem Satz – es etablierte eine **neue Methode** in der algebraischen Zahlentheorie, die seither in zahllosen Kontexten angewandt wurde:
-
-- **BCDT (2001)**: Breuil, Conrad, Diamond und Taylor verallgemeinerten den Beweis auf alle elliptischen Kurven über $\mathbb{Q}$ – mit derselben Patching-Methode.
-- **Serres Vermutung (2009)**: Khare und Wintenberger nutzten Patching-Argumente für den Beweis.
-- **Langlands-Programm**: Taylor-Wiles-Patching ist ein Standardwerkzeug für Modularitätsbeweise in höheren Dimensionen.
-- **Calegari-Geraghty**: Verallgemeinerung auf nicht-reguläre Gewichte und andere Situationen.
-
-### Was den Trick so elegant macht
-
-1. **Umgehung von Euler-Systemen**: Statt ein kompliziertes kohomologisches Objekt zu konstruieren, nutzt man die Freiheit, Hilfs-Primzahlen hinzuzufügen – eine viel flexiblere Methode.
-2. **Algebraische Einfachheit im Limes**: Was im endlichen Fall schwierig ist, wird im Limes trivial – eine typische Strategie der kommutativen Algebra.
-3. **Universelle Anwendbarkeit**: Die Methode hängt nicht von der speziellen Situation ab, sondern nur von allgemeinen strukturellen Eigenschaften der Deformationsringe und Hecke-Algebren.
-
-### Die persönliche Dimension
-
-Die Geschichte des Taylor-Wiles-Tricks ist auch eine zutiefst menschliche Geschichte. Wiles hatte sieben Jahre im Geheimen gearbeitet, seinen Beweis angekündigt, eine Lücke gefunden, und stand kurz vor dem Scheitern. Die Zusammenarbeit mit Taylor und die Entdeckung des Patching-Arguments im September 1994 retteten nicht nur den Beweis, sondern auch Wiles' Lebenswerk.
-
-Am 25. Oktober 1995 – nach der sorgfältigen Begutachtung durch sechs Referees – erschienen die beiden Artikel in den *Annals of Mathematics*:
-
-1. **Wiles**: *Modular elliptic curves and Fermat's Last Theorem* (109 Seiten)
-2. **Taylor-Wiles**: *Ring-theoretic properties of certain Hecke algebras* (20 Seiten)
-
-Zusammen bilden sie einen der bedeutendsten mathematischen Beweise des 20. Jahrhunderts.
+The general case is then reduced to the minimal one – a technically demanding but conceptually separate task.
 
 ---
 
-## Ausblick
+## 7. The Significance of the Trick
 
-Mit dem Taylor-Wiles-Trick ist der Beweis von $R = T$ im minimalen Fall gesichert. Aber ein entscheidender Schritt fehlt noch: Woher wissen wir, dass $\bar{\rho}_{E,p}$ überhaupt modular ist? Das ist der Ausgangspunkt, und er erfordert den eleganten 3-5-Switch:
+### Revolutionary methodology
 
-| Artikel | Thema |
+The Taylor–Wiles patching was not only the key to Fermat's Last Theorem – it established a **new method** in algebraic number theory that has since been applied in countless contexts:
+
+- **BCDT (2001)**: Breuil, Conrad, Diamond, and Taylor generalised the proof to all elliptic curves over $\mathbb{Q}$ – using the same patching method.
+- **Serre's conjecture (2009)**: Khare and Wintenberger used patching arguments for the proof.
+- **Langlands programme**: Taylor–Wiles patching is a standard tool for modularity proofs in higher dimensions.
+- **Calegari–Geraghty**: Generalisation to non-regular weights and other situations.
+
+### What makes the trick so elegant
+
+1. **Bypassing Euler systems**: Instead of constructing a complicated cohomological object, one uses the freedom to add auxiliary primes – a far more flexible method.
+2. **Algebraic simplicity in the limit**: What is difficult in the finite case becomes trivial in the limit – a typical strategy of commutative algebra.
+3. **Universal applicability**: The method depends not on the specific situation but only on general structural properties of deformation rings and Hecke algebras.
+
+### The personal dimension
+
+The story of the Taylor–Wiles trick is also a deeply human one. Wiles had worked in secret for seven years, announced his proof, found a gap, and stood on the brink of failure. The collaboration with Taylor and the discovery of the patching argument in September 1994 saved not only the proof but also Wiles' life's work.
+
+On 25 October 1995 – after careful review by six referees – the two papers appeared in the *Annals of Mathematics*:
+
+1. **Wiles**: *Modular elliptic curves and Fermat's Last Theorem* (109 pages)
+2. **Taylor–Wiles**: *Ring-theoretic properties of certain Hecke algebras* (20 pages)
+
+Together they form one of the most significant mathematical proofs of the 20th century.
+
+---
+
+## Outlook
+
+With the Taylor–Wiles trick, the proof of $R = T$ in the minimal case is secured. But one decisive step is still missing: how do we know that $\bar{\rho}_{E,p}$ is modular in the first place? That is the starting point, and it requires the elegant 3-5 switch:
+
+| Article | Topic |
 |---------|-------|
-| [07 – Der 3-5-Switch](07-3-5-switch.md) | Langlands-Tunnell und der Abschluss des Beweises |
-| [08 – Was danach kam](08-was-danach-kam.md) | Von Wiles zu BCDT und zum Langlands-Programm |
+| [07 – The 3-5 Switch](07-3-5-switch.md) | Langlands–Tunnell and the completion of the proof |
+| [08 – What Came After](08-was-danach-kam.md) | From Wiles to BCDT and the Langlands programme |
 
 ---
 
-## Quellen
+## Sources
 
 - **Richard Taylor, Andrew Wiles**: *Ring-theoretic properties of certain Hecke algebras*, Annals of Mathematics 141 (1995), 553–572
 - **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), §3.3
-- **Fred Diamond**: *The Taylor-Wiles construction and multiplicity one*, Inventiones Mathematicae 128 (1997) – Vereinfachung und Verallgemeinerung
-- **Chandrashekhar Khare**: *Serre's modularity conjecture*, Inventiones Mathematicae 178 (2009) – Anwendung der Taylor-Wiles-Methode
-- **Simon Singh**: *Fermats letzter Satz*, dtv (1998) – Die menschliche Geschichte hinter dem Beweis
+- **Fred Diamond**: *The Taylor-Wiles construction and multiplicity one*, Inventiones Mathematicae 128 (1997) – Simplification and generalisation
+- **Chandrashekhar Khare**: *Serre's modularity conjecture*, Inventiones Mathematicae 178 (2009) – Application of the Taylor–Wiles method
+- **Simon Singh**: *Fermat's Last Theorem*, Fourth Estate (1997) – The human story behind the proof

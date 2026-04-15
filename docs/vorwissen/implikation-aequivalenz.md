@@ -1,30 +1,30 @@
 ---
-title: "Implikation und Äquivalenz"
-description: "Logische Folgerung, Kontraposition und die Äquivalenz von Aussagen"
-lang: de
+title: "Implication and Equivalence"
+description: "Logical implication, contrapositive, and equivalence of propositions"
+lang: en
 type: vorwissen
 ---
 
-# Implikation und Äquivalenz
+# Implication and Equivalence
 
-## Implikation (⟹)
+## Implication (⟹)
 
-Die **Implikation** $A \Rightarrow B$ („aus $A$ folgt $B$", „wenn $A$, dann $B$") ist nur dann falsch, wenn $A$ wahr und $B$ falsch ist.
+The **implication** $A \Rightarrow B$ ("if $A$, then $B$") is false only when $A$ is true and $B$ is false.
 
 | $A$ | $B$ | $A \Rightarrow B$ |
 |-----|-----|--------------------|
-| w   | w   | w                  |
-| w   | f   | f                  |
-| f   | w   | w                  |
-| f   | f   | w                  |
+| T   | T   | T                  |
+| T   | F   | F                  |
+| F   | T   | T                  |
+| F   | F   | T                  |
 
-**Zentrale Beobachtung:** Ist die Voraussetzung $A$ falsch, ist die Implikation immer wahr – unabhängig von $B$. Diese Konvention heißt **ex falso quodlibet**.
+**Key observation:** If the hypothesis $A$ is false, the implication is always true — regardless of $B$. This convention is called **ex falso quodlibet**.
 
-**Beispiel.** „Wenn $n$ durch 6 teilbar ist, dann ist $n$ durch 3 teilbar." → Für $n = 12$: wahr ⟹ wahr = wahr. Für $n = 5$: falsch ⟹ falsch = wahr.
+**Example.** "If $n$ is divisible by 6, then $n$ is divisible by 3." → For $n = 12$: true ⟹ true = true. For $n = 5$: false ⟹ false = true.
 
-## Äquivalenz zu ¬A ∨ B
+## Equivalence to ¬A ∨ B
 
-Die Implikation $A \Rightarrow B$ ist **logisch äquivalent** zur Disjunktion $\neg A \lor B$:
+The implication $A \Rightarrow B$ is **logically equivalent** to the disjunction $\neg A \lor B$:
 
 $$
 (A \Rightarrow B) \iff (\neg A \lor B)
@@ -32,62 +32,62 @@ $$
 
 | $A$ | $B$ | $\neg A$ | $\neg A \lor B$ | $A \Rightarrow B$ |
 |-----|-----|----------|------------------|--------------------|
-| w   | w   | f        | w                | w                  |
-| w   | f   | f        | f                | f                  |
-| f   | w   | w        | w                | w                  |
-| f   | f   | w        | w                | w                  |
+| T   | T   | F        | T                | T                  |
+| T   | F   | F        | F                | F                  |
+| F   | T   | T        | T                | T                  |
+| F   | F   | T        | T                | T                  |
 
-Die Spalten stimmen überein. Das bedeutet: „Wenn $A$, dann $B$" sagt dasselbe wie „$A$ ist falsch oder $B$ ist wahr".
+The columns match. This means: "if $A$, then $B$" says the same as "$A$ is false or $B$ is true".
 
-## Kontraposition
+## Contrapositive
 
-Die **Kontraposition** einer Implikation $A \Rightarrow B$ ist $\neg B \Rightarrow \neg A$. Beide sind logisch äquivalent:
+The **contrapositive** of an implication $A \Rightarrow B$ is $\neg B \Rightarrow \neg A$. Both are logically equivalent:
 
 $$
 (A \Rightarrow B) \iff (\neg B \Rightarrow \neg A)
 $$
 
-**Beispiel.** „Wenn $n^2$ gerade ist, dann ist $n$ gerade." Die Kontraposition lautet: „Wenn $n$ ungerade ist, dann ist $n^2$ ungerade." Beide Aussagen sind gleichwertig.
+**Example.** "If $n^2$ is even, then $n$ is even." The contrapositive reads: "If $n$ is odd, then $n^2$ is odd." Both statements are equivalent.
 
-Die Kontraposition ist ein häufig genutztes Beweismittel: Statt $A \Rightarrow B$ direkt zu zeigen, zeigt man $\neg B \Rightarrow \neg A$.
+The contrapositive is a frequently used proof technique: instead of showing $A \Rightarrow B$ directly, one shows $\neg B \Rightarrow \neg A$.
 
-## Umkehrung
+## Converse
 
-Die **Umkehrung** von $A \Rightarrow B$ ist $B \Rightarrow A$. Die Umkehrung ist **nicht** automatisch äquivalent zur Originalaussage.
+The **converse** of $A \Rightarrow B$ is $B \Rightarrow A$. The converse is **not** automatically equivalent to the original statement.
 
-**Beispiel.** „Wenn $n$ durch 6 teilbar ist, dann ist $n$ durch 3 teilbar." → wahr. Umkehrung: „Wenn $n$ durch 3 teilbar ist, dann ist $n$ durch 6 teilbar." → falsch ($n = 9$).
+**Example.** "If $n$ is divisible by 6, then $n$ is divisible by 3." → true. Converse: "If $n$ is divisible by 3, then $n$ is divisible by 6." → false ($n = 9$).
 
-## Äquivalenz (⟺)
+## Equivalence (⟺)
 
-Die **Äquivalenz** $A \Leftrightarrow B$ („$A$ genau dann, wenn $B$") ist wahr, wenn beide Aussagen denselben Wahrheitswert haben:
+The **equivalence** $A \Leftrightarrow B$ ("$A$ if and only if $B$") is true when both propositions have the same truth value:
 
 | $A$ | $B$ | $A \Leftrightarrow B$ |
 |-----|-----|------------------------|
-| w   | w   | w                      |
-| w   | f   | f                      |
-| f   | w   | f                      |
-| f   | f   | w                      |
+| T   | T   | T                      |
+| T   | F   | F                      |
+| F   | T   | F                      |
+| F   | F   | T                      |
 
-Die Äquivalenz entspricht der Konjunktion beider Richtungen:
+Equivalence corresponds to the conjunction of both directions:
 
 $$
 (A \Leftrightarrow B) \iff (A \Rightarrow B) \land (B \Rightarrow A)
 $$
 
-**Beispiel.** „$n$ ist gerade $\Leftrightarrow$ $n^2$ ist gerade." Beide Richtungen gelten, also liegt Äquivalenz vor.
+**Example.** "$n$ is even $\Leftrightarrow$ $n^2$ is even." Both directions hold, so equivalence obtains.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Verknüpfung | Symbol | Bedeutung |
-|-------------|--------|-----------|
-| Implikation | $A \Rightarrow B$ | „wenn $A$, dann $B$"; äquivalent zu $\neg A \lor B$ |
-| Kontraposition | $\neg B \Rightarrow \neg A$ | äquivalent zu $A \Rightarrow B$ |
-| Umkehrung | $B \Rightarrow A$ | **nicht** äquivalent zu $A \Rightarrow B$ |
-| Äquivalenz | $A \Leftrightarrow B$ | beide Richtungen gelten |
+| Connective | Symbol | Meaning |
+|------------|--------|---------|
+| Implication | $A \Rightarrow B$ | "if $A$, then $B$"; equivalent to $\neg A \lor B$ |
+| Contrapositive | $\neg B \Rightarrow \neg A$ | equivalent to $A \Rightarrow B$ |
+| Converse | $B \Rightarrow A$ | **not** equivalent to $A \Rightarrow B$ |
+| Equivalence | $A \Leftrightarrow B$ | both directions hold |
 
-## Quellen
+## References
 
-- Ebbinghaus, H.-D.; Flum, J.; Thomas, W.: *Einführung in die mathematische Logik.* Springer, 6. Auflage, 2018. Kapitel 1.
-- Velleman, Daniel J.: *How to Prove It.* Cambridge University Press, 3. Auflage, 2019. Kapitel 2.
+- Ebbinghaus, H.-D.; Flum, J.; Thomas, W.: *Mathematical Logic.* Springer, 3rd edition, 2021. Chapter 1.
+- Velleman, Daniel J.: *How to Prove It.* Cambridge University Press, 3rd edition, 2019. Chapter 2.

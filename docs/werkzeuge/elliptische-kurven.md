@@ -1,248 +1,235 @@
 ---
-title: "Elliptische Kurven – Von Diophant zu Kryptographie"
+title: "Elliptic Curves – From Diophantus to Cryptography"
 slug: elliptische-kurven/01-elliptische-kurven
 series: elliptische-kurven
 part: 1
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: zahlentheorie
 tags:
-  - elliptische-kurven
-  - gruppengesetz
-  - l-reihen
+  - elliptic-curves
+  - group-law
+  - l-series
 requires:
-  - koordinatengeometrie
-  - bruchrechnung
-  - modulare-arithmetik
-  - abbildungen
-  - summen-produktnotation
+  - gruppen-und-symmetrie/01-gruppen
+  - ringe-und-koerper/01-ringe-koerper
 ---
 
-# Elliptische Kurven
+# Elliptic Curves
 
-!!! abstract "Zusammenfassung"
-    Algebraische Kurven mit natürlicher Gruppenstruktur. Frey-Kurve, Taniyama-Shimura-Vermutung
-    und Galois-Darstellungen – alle zentralen Objekte in Wiles' Beweis basieren auf elliptischen Kurven.
+!!! abstract "Summary"
+    Elliptic curves are algebraic curves with a natural group structure.
+    They stand at the centre of Wiles' proof – the Frey curve, the Taniyama–Shimura conjecture,
+    and the Galois representations all involve elliptic curves.
 
-## Voraussetzungen
+## Prerequisites
 
-- [Gruppen – Symmetrie als Sprache der Mathematik](gruppen.md)
-- [Ringe und Körper](ringe-koerper.md)
-
-| Thema | Beschreibung |
-|-------|-------------|
-| [Koordinatengeometrie](../vorwissen/koordinatengeometrie.md) | Punkte, Geraden, Kurven als Gleichungen |
-| [Bruchrechnung](../vorwissen/bruchrechnung.md) | Rechnen mit Brüchen $a/b$ |
-| [Modulare Arithmetik](../vorwissen/modulare-arithmetik.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
-| [Abbildungen (Funktionen)](../vorwissen/abbildungen.md) | $f: A \to B$, injektiv, surjektiv, bijektiv |
-| [Summen- und Produktnotation](../vorwissen/summen-produktnotation.md) | $\sum$- und $\prod$-Notation |
+- [Groups – Symmetry as the Language of Mathematics](gruppen.md)
+- [Rings and Fields](ringe-koerper.md)
 
 ---
 
-## 1. Definition
+## 1. What Is an Elliptic Curve?
 
-Eine **elliptische Kurve** über einem Körper $K$ ist eine glatte, projektive Kurve vom Geschlecht $1$ mit einem ausgezeichneten Punkt. In der Praxis die **Weierstraß-Form**:
+An **elliptic curve** over a field $K$ is a smooth, projective curve of genus $1$ with a distinguished point. In practice, one works with the **Weierstraß form**:
 
 $$
 E: \quad y^2 = x^3 + ax + b \qquad (a, b \in K)
 $$
 
-Die Glattheitsbedingung (keine Spitzen oder Selbstüberschneidungen) erfordert eine nichtverschwindende **Diskriminante**:
+For the curve to be "smooth" (no cusps or self-intersections), the **discriminant** must be non-zero:
 
 $$
 \Delta = -16(4a^3 + 27b^2) \neq 0
 $$
 
-Geometrisch über $\mathbb{R}$: eine glatte Kurve in der Ebene, bestehend aus einer oder zwei Komponenten.
+Geometrically, an elliptic curve over $\mathbb{R}$ is a smooth curve in the plane consisting either of one component (when $x^3 + ax + b$ has one real root) or of two components.
 
-!!! note "Warum „elliptisch"?"
-    Der Name hat nichts mit Ellipsen zu tun. Er stammt von den **elliptischen Integralen** – Integralen der Form $\int \frac{dx}{\sqrt{x^3 + ax + b}}$, die bei der Berechnung des Umfangs einer Ellipse auftreten.
+!!! note "Why 'elliptic'?"
+    The name has nothing to do with ellipses. It originates historically from **elliptic integrals** – integrals of the form $\int \frac{dx}{\sqrt{x^3 + ax + b}}$, which arise in computing the circumference of an ellipse.
 
-### Beispiele
+### Examples
 
-| Kurve | $a$ | $b$ | $\Delta$ |
+| Curve | $a$ | $b$ | $\Delta$ |
 |-------|-----|-----|----------|
 | $y^2 = x^3 - x$ | $-1$ | $0$ | $64$ |
 | $y^2 = x^3 + 1$ | $0$ | $1$ | $-432$ |
 | $y^2 = x^3 - x + 1$ | $-1$ | $1$ | $-368$ |
 
-### Der Punkt im Unendlichen
+### The Point at Infinity
 
-Technisch lebt eine elliptische Kurve im **projektiven Raum** $\mathbb{P}^2$. Neben den affinen Punkten $(x, y)$ mit $y^2 = x^3 + ax + b$ gibt es einen zusätzlichen **Punkt im Unendlichen** $\mathcal{O}$, der als neutrales Element der Gruppenstruktur dient.
+Technically, an elliptic curve lives in **projective space** $\mathbb{P}^2$. Besides the affine points $(x, y)$ with $y^2 = x^3 + ax + b$, there is an additional **point at infinity** $\mathcal{O}$, which serves as the identity element of the group structure.
 
-## 2. Die Gruppenoperation
+## 2. The Group Operation
 
-Die Punkte einer elliptischen Kurve bilden eine **abelsche Gruppe**. Die Verknüpfung ist geometrisch über die **Sekanten-Tangenten-Methode** definiert:
+The most remarkable feature of elliptic curves: their points form an **abelian group**. The operation is defined geometrically by the **secant-tangent method**:
 
-**Addition zweier Punkte $P + Q$:**
-1. Gerade durch $P$ und $Q$ legen
-2. Diese Gerade schneidet die Kurve in genau einem dritten Punkt $R'$
-3. $R'$ an der $x$-Achse spiegeln: Das Ergebnis ist $P + Q$
+**Addition of two points $P + Q$:**
+1. Draw the line through $P$ and $Q$
+2. This line intersects the curve in exactly one third point $R'$
+3. Reflect $R'$ across the $x$-axis: the result is $P + Q$
 
-**Verdopplung $2P = P + P$:**
-1. Tangente an die Kurve in $P$ legen
-2. Diese Tangente schneidet die Kurve in einem zweiten Punkt $R'$
-3. Spiegeln: Das Ergebnis ist $2P$
+**Doubling $2P = P + P$:**
+1. Draw the tangent to the curve at $P$
+2. This tangent intersects the curve in a second point $R'$
+3. Reflect: the result is $2P$
 
-**Neutrales Element:** Der Punkt $\mathcal{O}$ im Unendlichen. Es gilt $P + \mathcal{O} = P$ für alle $P$.
+**Identity element:** The point $\mathcal{O}$ at infinity. We have $P + \mathcal{O} = P$ for all $P$.
 
-**Inverses:** Das Inverse von $P = (x, y)$ ist $-P = (x, -y)$ (Spiegelung an der $x$-Achse).
+**Inverse:** The inverse of $P = (x, y)$ is $-P = (x, -y)$ (reflection across the $x$-axis).
 
-> „It is a wonderful fact that this geometric construction gives a group law on the points of an elliptic curve."
-> — Joseph Silverman, *The Arithmetic of Elliptic Curves* (1986), S. 51
-
-!!! tip "Algebraische Formeln"
-    Für $P = (x_1, y_1)$ und $Q = (x_2, y_2)$ mit $P \neq \pm Q$:
+!!! tip "Algebraic Formulas"
+    For $P = (x_1, y_1)$ and $Q = (x_2, y_2)$ with $P \neq \pm Q$:
 
     $$
     \lambda = \frac{y_2 - y_1}{x_2 - x_1}, \quad x_3 = \lambda^2 - x_1 - x_2, \quad y_3 = \lambda(x_1 - x_3) - y_1
     $$
 
-    Für $P = Q$ (Verdopplung):
+    For $P = Q$ (doubling):
 
     $$
     \lambda = \frac{3x_1^2 + a}{2y_1}
     $$
 
-    Diese Formeln gelten über **jedem** Körper – auch über $\mathbb{F}_p$ oder $\mathbb{Q}_p$.
+    These formulas work over **any** field – including $\mathbb{F}_p$ or $\mathbb{Q}_p$.
 
-## 3. Rationale Punkte und der Satz von Mordell
+## 3. Rational Points and Mordell's Theorem
 
-Die Menge der rationalen Punkte $E(\mathbb{Q}) = \{(x, y) \in \mathbb{Q}^2 \mid y^2 = x^3 + ax + b\} \cup \{\mathcal{O}\}$ ist eine Untergruppe von $E$.
+The set of rational points $E(\mathbb{Q}) = \{(x, y) \in \mathbb{Q}^2 \mid y^2 = x^3 + ax + b\} \cup \{\mathcal{O}\}$ is a subgroup of $E$.
 
-**Satz (Mordell, 1922).** $E(\mathbb{Q})$ ist eine endlich erzeugte abelsche Gruppe.
+**Theorem (Mordell, 1922).** $E(\mathbb{Q})$ is a finitely generated abelian group.
 
-Nach dem Struktursatz für endlich erzeugte abelsche Gruppen:
+By the structure theorem for finitely generated abelian groups:
 
 $$
 E(\mathbb{Q}) \cong \mathbb{Z}^r \oplus E(\mathbb{Q})_{\text{tors}}
 $$
 
-wobei:
-- $r = \text{rang}(E)$ der **Rang** der Kurve ist (Anzahl unabhängiger Punkte unendlicher Ordnung)
-- $E(\mathbb{Q})_{\text{tors}}$ die endliche **Torsionsuntergruppe** ist (Punkte endlicher Ordnung)
+where:
+- $r = \text{rank}(E)$ is the **rank** of the curve (the number of independent points of infinite order)
+- $E(\mathbb{Q})_{\text{tors}}$ is the finite **torsion subgroup** (points of finite order)
 
-**Satz (Mazur, 1977).** Die Torsionsuntergruppe $E(\mathbb{Q})_{\text{tors}}$ ist isomorph zu einer der folgenden Gruppen:
+**Theorem (Mazur, 1977).** The torsion subgroup $E(\mathbb{Q})_{\text{tors}}$ is isomorphic to one of the following groups:
 
 $$
-\mathbb{Z}/n\mathbb{Z} \text{ für } n \in \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12\}
+\mathbb{Z}/n\mathbb{Z} \text{ for } n \in \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12\}
 $$
 $$
-\text{oder } \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2n\mathbb{Z} \text{ für } n \in \{1, 2, 3, 4\}
+\text{or } \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2n\mathbb{Z} \text{ for } n \in \{1, 2, 3, 4\}
 $$
 
-Der Rang $r$ ist schwer zu berechnen. Ob elliptische Kurven mit beliebig großem Rang existieren, ist eine offene Frage.
+The rank $r$, by contrast, is hard to compute, and it remains unknown to this day whether elliptic curves of arbitrarily large rank exist.
 
-## 4. Reduktion modulo $p$
+## 4. Reduction Modulo $p$
 
-Eine elliptische Kurve $E: y^2 = x^3 + ax + b$ mit $a, b \in \mathbb{Z}$ kann modulo einer Primzahl $p$ reduziert werden:
+An elliptic curve $E: y^2 = x^3 + ax + b$ with $a, b \in \mathbb{Z}$ can be reduced modulo a prime $p$:
 
 $$
 \tilde{E}: \quad y^2 \equiv x^3 + ax + b \pmod{p}
 $$
 
-Wenn $p \nmid \Delta$, ist $\tilde{E}$ eine glatte Kurve über $\mathbb{F}_p$ – $E$ hat **gute Reduktion** bei $p$. Andernfalls liegt **schlechte Reduktion** vor.
+If $p \nmid \Delta$ (the discriminant), then $\tilde{E}$ is a smooth curve over $\mathbb{F}_p$ – one says $E$ has **good reduction** at $p$. Otherwise, $E$ has **bad reduction**.
 
-### Die $a_p$-Koeffizienten
+### The $a_p$-Coefficients
 
-Für Primzahlen $p$ guter Reduktion:
+For primes $p$ of good reduction, we define:
 
 $$
 a_p = p + 1 - \#\tilde{E}(\mathbb{F}_p)
 $$
 
-wobei $\#\tilde{E}(\mathbb{F}_p)$ die Anzahl der Punkte von $\tilde{E}$ über $\mathbb{F}_p$ ist (inklusive $\mathcal{O}$).
+where $\#\tilde{E}(\mathbb{F}_p)$ is the number of points of $\tilde{E}$ over $\mathbb{F}_p$ (including $\mathcal{O}$).
 
-**Satz (Hasse, 1933).** Es gilt $|a_p| \leq 2\sqrt{p}$.
+**Theorem (Hasse, 1933).** We have $|a_p| \leq 2\sqrt{p}$.
 
-Die $a_p$-Koeffizienten kodieren das Verhalten der Kurve Primzahl für Primzahl. Sie bilden die Bausteine der $L$-Reihe.
+The $a_p$-coefficients encode what the curve looks like "prime by prime". They are the building blocks of the $L$-series.
 
-**Beispiel:** Für $E: y^2 = x^3 - x$ und $p = 5$:
+**Example:** For $E: y^2 = x^3 - x$ and $p = 5$:
 
 | $x$ | $0$ | $1$ | $2$ | $3$ | $4$ |
 |-----|-----|-----|-----|-----|-----|
 | $x^3 - x \bmod 5$ | $0$ | $0$ | $1$ | $4$ | $0$ |
 | $y^2 \equiv \ldots$? | $y = 0$ | $y = 0$ | $y = \pm 1$ | $y = \pm 2$ | $y = 0$ |
 
-Das ergibt $8$ affine Punkte plus $\mathcal{O}$, also $\#\tilde{E}(\mathbb{F}_5) = 9$ und $a_5 = 5 + 1 - 9 = -3$.
+This gives $8$ affine points plus $\mathcal{O}$, so $\#\tilde{E}(\mathbb{F}_5) = 9$ and $a_5 = 5 + 1 - 9 = -3$.
 
-## 5. Die $L$-Reihe einer elliptischen Kurve
+## 5. The $L$-Series of an Elliptic Curve
 
-Die $a_p$-Koeffizienten werden in einer analytischen Funktion gebündelt – der **$L$-Reihe** (Hasse-Weil):
+The $a_p$-coefficients are assembled into an analytic function – the **$L$-series** (Hasse–Weil):
 
 $$
-L(E, s) = \prod_{p \text{ gut}} \frac{1}{1 - a_p p^{-s} + p^{1-2s}} \cdot \prod_{p \text{ schlecht}} (\text{lokaler Faktor})
+L(E, s) = \prod_{p \text{ good}} \frac{1}{1 - a_p p^{-s} + p^{1-2s}} \cdot \prod_{p \text{ bad}} (\text{local factor})
 $$
 
-Diese $L$-Reihe konvergiert für $\text{Re}(s) > 3/2$ und kodiert die gesamte arithmetische Information der Kurve.
+This $L$-series converges for $\text{Re}(s) > 3/2$ and encodes the entire arithmetic information of the curve.
 
-**Die BSD-Vermutung** (Birch und Swinnerton-Dyer, eines der Millennium-Probleme): Der Rang von $E(\mathbb{Q})$ ist gleich der Ordnung der Nullstelle von $L(E, s)$ bei $s = 1$.
+**The BSD conjecture** (Birch and Swinnerton-Dyer, one of the Millennium Problems): The rank of $E(\mathbb{Q})$ equals the order of the zero of $L(E, s)$ at $s = 1$.
 
-### Die Verbindung zu Modulformen
+### The Connection to Modular Forms
 
-Die zentrale Frage: Ist die $L$-Reihe $L(E, s)$ *gleich* der $L$-Reihe einer **Modulform** $f$?
+The central question: is the $L$-series $L(E, s)$ *equal* to the $L$-series of a **modular form** $f$?
 
 $$
 L(E, s) \stackrel{?}{=} L(f, s) = \sum_{n=1}^{\infty} a_n n^{-s}
 $$
 
-Wenn ja, heißt $E$ **modular**. Die **Taniyama-Shimura-Vermutung** (jetzt Theorem) besagt: **Jede** elliptische Kurve über $\mathbb{Q}$ ist modular. Dieser Satz – genauer: der semistabile Fall, bewiesen von Wiles – impliziert Fermats letzten Satz.
+If so, $E$ is called **modular**. The **Taniyama–Shimura conjecture** (now a theorem) states: **every** elliptic curve over $\mathbb{Q}$ is modular. This theorem – more precisely: the semistable case, proved by Wiles – implies Fermat's Last Theorem.
 
-## 6. Torsionspunkte und Galois-Darstellungen
+## 6. Torsion Points and Galois Representations
 
-Für eine Primzahl $\ell$ sind die **$\ell$-Teilungspunkte** die Punkte $P \in E(\overline{\mathbb{Q}})$ mit $\ell P = \mathcal{O}$:
+For a prime $\ell$, the **$\ell$-division points** are the points $P \in E(\overline{\mathbb{Q}})$ with $\ell P = \mathcal{O}$:
 
 $$
 E[\ell] = \{P \in E(\overline{\mathbb{Q}}) \mid \ell P = \mathcal{O}\}
 $$
 
-Es gilt $E[\ell] \cong (\mathbb{Z}/\ell\mathbb{Z})^2$ – ein zweidimensionaler Vektorraum über $\mathbb{F}_\ell$.
+We have $E[\ell] \cong (\mathbb{Z}/\ell\mathbb{Z})^2$ – a two-dimensional group over $\mathbb{F}_\ell$.
 
-Die **absolute Galois-Gruppe** $G_{\mathbb{Q}}$ wirkt auf $E[\ell]$ durch Permutation der Koordinaten. Dies definiert eine **Galois-Darstellung**:
+The **absolute Galois group** $G_{\mathbb{Q}}$ acts on $E[\ell]$ by permuting the coordinates. This defines a **Galois representation**:
 
 $$
 \bar{\rho}_{E,\ell}: G_{\mathbb{Q}} \to \text{Aut}(E[\ell]) \cong \text{GL}_2(\mathbb{F}_\ell)
 $$
 
-Für die **$\ell$-adischen Tate-Moduln** (den projektiven Limes über alle $\ell^n$-Teilungspunkte) ergibt sich eine $\ell$-adische Darstellung:
+For the **$\ell$-adic Tate modules** (the projective limit over all $\ell^n$-division points), one obtains an $\ell$-adic representation:
 
 $$
 \rho_{E,\ell}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_\ell) \hookrightarrow \text{GL}_2(\mathbb{Q}_\ell)
 $$
 
-Diese Darstellungen bilden das Bindeglied zwischen elliptischen Kurven und der Galois-Theorie – das zentrale Objekt in Wiles' Beweis.
+These representations are the link between elliptic curves and Galois theory – and the central object of Wiles' proof.
 
-## 7. Elliptische Kurven in der Kryptographie
+## 7. Elliptic Curves and Cryptography
 
-Elliptische Kurven über endlichen Körpern $\mathbb{F}_p$ bilden die Grundlage moderner **kryptographischer Verfahren** (ECC – Elliptic Curve Cryptography).
+A brief excursion into applications: elliptic curves over finite fields $\mathbb{F}_p$ form the foundation of modern **cryptographic methods** (ECC – Elliptic Curve Cryptography).
 
-Die Sicherheit beruht auf dem **diskreten Logarithmusproblem**: Gegeben $P$ und $Q = nP$ auf $E(\mathbb{F}_p)$, ist es rechnerisch extrem schwierig, $n$ zu bestimmen – obwohl die Berechnung von $nP$ aus $n$ und $P$ effizient möglich ist (durch wiederholtes Verdoppeln und Addieren).
+The security rests on the **discrete logarithm problem**: given $P$ and $Q = nP$ on $E(\mathbb{F}_p)$, it is computationally extremely difficult to find $n$ – even though computing $nP$ from $n$ and $P$ is efficient (via repeated doubling and addition).
 
-ECC bietet dasselbe Sicherheitsniveau wie RSA, aber mit kürzeren Schlüsseln:
+ECC offers the same security level as RSA, but with significantly shorter keys:
 
-| Sicherheitsniveau | RSA-Schlüssel | ECC-Schlüssel |
-|-------------------|---------------|---------------|
-| 128 Bit | 3072 Bit | 256 Bit |
-| 256 Bit | 15360 Bit | 512 Bit |
+| Security level | RSA key | ECC key |
+|----------------|---------|---------|
+| 128 bit | 3072 bit | 256 bit |
+| 256 bit | 15360 bit | 512 bit |
 
-## 8. Ausblick: Modularität
+## 8. Outlook: Modularity
 
-Dieser Artikel hat elliptische Kurven als eigenständige algebraische Objekte vorgestellt. Ihre Verbindung zu **Modulformen** ist Thema des nächsten Werkzeug-Artikels.
+This article has presented elliptic curves as self-contained algebraic objects. Their true power unfolds in the interplay with **modular forms** – the subject of the next tool article.
 
-Die Kette der Verbindungen:
+The chain of connections:
 
 $$
-\text{Elliptische Kurve } E \xrightarrow{a_p} \text{$L$-Reihe } L(E,s) \xleftarrow{?} L(f,s) \xleftarrow{a_n} \text{Modulform } f
+\text{Elliptic curve } E \xrightarrow{a_p} \text{$L$-series } L(E,s) \xleftarrow{?} L(f,s) \xleftarrow{a_n} \text{Modular form } f
 $$
 
-Die Taniyama-Shimura-Vermutung behauptet, dass der mittlere Pfeil immer existiert – dass jede elliptische Kurve ein Gegenstück im Raum der Modulformen hat. Wiles' Beweis dieser Vermutung (für semistabile Kurven) ist der Schlüssel zu Fermats letztem Satz.
+The Taniyama–Shimura conjecture asserts that the arrow in the middle always exists – that every elliptic curve has its "twin soul" in the realm of modular forms. Wiles' proof of this conjecture (for semistable curves) is the key to Fermat's Last Theorem.
 
 ---
 
-## Quellen
+## Further Reading
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 6
-- **Joseph Silverman**: *The Arithmetic of Elliptic Curves*, Springer (1986)
-- **Joseph Silverman, John Tate**: *Rational Points on Elliptic Curves*, Springer (1992)
-- **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), §1
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem*, Ch. 6
+- **Joseph Silverman**: *The Arithmetic of Elliptic Curves* – the standard reference
+- **Joseph Silverman, John Tate**: *Rational Points on Elliptic Curves* – accessible introduction
+- **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, §1

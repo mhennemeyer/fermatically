@@ -1,27 +1,27 @@
-# Werkzeuge – Die Sprache der modernen Mathematik
+# Tools – The Language of Modern Mathematics
 
-!!! abstract "Überblick"
-    Bevor wir Wiles' Beweis von Fermats letztem Satz verstehen können, brauchen wir die richtigen **mathematischen Werkzeuge**. Jedes der folgenden Themen ist eigenständig lesbar und wird in mehreren Beweis-Artikeln referenziert.
+!!! abstract "Overview"
+    Before we can understand Wiles' proof of Fermat's Last Theorem, we need the right **mathematical tools**. Each of the following topics is self-contained and is referenced in multiple proof articles.
 
-## Worum geht es?
+## What Is This About?
 
-Die moderne Mathematik hat eine reiche Sprache entwickelt, um strukturelle Zusammenhänge zwischen scheinbar verschiedenen Gebieten zu beschreiben. Wiles' Beweis verbindet **Zahlentheorie**, **Algebra** und **Analysis** auf tiefgründige Weise – und nutzt dabei Konzepte, die über Jahrhunderte hinweg entwickelt wurden.
+Modern mathematics has developed a rich language to describe structural connections between seemingly different fields. Wiles' proof connects **number theory**, **algebra**, and **analysis** in a profound way – using concepts developed over centuries.
 
-Diese Werkzeug-Artikel geben dir das nötige Rüstzeug, um den Beweis Schritt für Schritt nachvollziehen zu können.
+These tool articles provide the necessary foundation to follow the proof step by step.
 
-## Artikel in dieser Sektion
+## Articles in This Section
 
-| Artikel | Thema |
+| Article | Topic |
 |---------|-------|
-| [Gruppen](gruppen.md) | Symmetrie als Sprache der Mathematik |
-| [Ringe und Körper](ringe-koerper.md) | Die Welt jenseits der rationalen Zahlen |
-| [Galois-Theorie](galois-theorie.md) | Warum Gleichungen keine Lösungsformeln haben |
-| [p-adische Zahlen](p-adische-zahlen.md) | Eine andere Art, Zahlen zu betrachten |
-| [Elliptische Kurven](elliptische-kurven.md) | Von Diophant zu Kryptographie |
-| [Modulformen](modulformen.md) | Symmetrische Funktionen der oberen Halbebene |
+| [Groups](gruppen.md) | Symmetry as the language of mathematics |
+| [Rings and Fields](ringe-koerper.md) | The world beyond the rational numbers |
+| [Galois Theory](galois-theorie.md) | Why equations have no solution formulas |
+| [p-adic Numbers](p-adische-zahlen.md) | A different way of looking at numbers |
+| [Elliptic Curves](elliptische-kurven.md) | From Diophantus to cryptography |
+| [Modular Forms](modulformen.md) | Symmetric functions of the upper half-plane |
 
-## Empfohlene Reihenfolge
+## Recommended Order
 
-Die Artikel können weitgehend unabhängig gelesen werden, aber die obige Reihenfolge spiegelt eine sinnvolle Progression wider: von grundlegenden algebraischen Strukturen (Gruppen, Ringe) über Galois-Theorie und p-adische Zahlen bis zu den zentralen Objekten des Beweises (Elliptische Kurven, Modulformen).
+The articles can largely be read independently, but the order above reflects a meaningful progression: from basic algebraic structures (groups, rings) through Galois theory and p-adic numbers to the central objects of the proof (elliptic curves, modular forms).
 
-**Voraussetzung:** [Elementare Zahlentheorie](../grundlagen/elementare-zahlentheorie/index.md) · **Weiter:** [Fermats letzter Satz – Der Beweis](../fermat-wiles/index.md)
+**Prerequisite:** [Elementary Number Theory](../grundlagen/elementare-zahlentheorie/index.md) · **Next:** [Fermat's Last Theorem – The Proof](../fermat-wiles/index.md)

@@ -1,66 +1,66 @@
 ---
-title: "Aussagenlogik"
-description: "Aussagen, Wahrheitswerte, Konjunktion, Disjunktion und Negation"
-lang: de
+title: "Propositional Logic"
+description: "Propositions, truth values, conjunction, disjunction, and negation"
+lang: en
 type: vorwissen
 ---
 
-# Aussagenlogik
+# Propositional Logic
 
-## Aussagen und Wahrheitswerte
+## Propositions and Truth Values
 
-Eine **Aussage** ist ein Satz, dem genau einer der Wahrheitswerte **wahr** (w) oder **falsch** (f) zugeordnet werden kann.
+A **proposition** is a statement that can be assigned exactly one of the truth values **true** (T) or **false** (F).
 
-**Beispiele für Aussagen:**
+**Examples of propositions:**
 
-- „7 ist eine Primzahl." → wahr
-- „4 ist ungerade." → falsch
-- „$2 + 3 = 5$." → wahr
+- "7 is a prime number." → true
+- "4 is odd." → false
+- "$2 + 3 = 5$." → true
 
-**Keine Aussagen** sind Fragen („Ist 7 eine Primzahl?"), Aufforderungen („Berechne den ggT!") oder unbestimmte Ausdrücke („$x > 3$" – hängt von $x$ ab).
+**Not propositions:** questions ("Is 7 prime?"), commands ("Compute the GCD!"), or indeterminate expressions ("$x > 3$" — depends on $x$).
 
 ## Negation (¬)
 
-Die **Negation** einer Aussage $A$ kehrt den Wahrheitswert um. Notation: $\neg A$.
+The **negation** of a proposition $A$ reverses its truth value. Notation: $\neg A$.
 
 | $A$ | $\neg A$ |
 |-----|----------|
-| w   | f        |
-| f   | w        |
+| T   | F        |
+| F   | T        |
 
-**Beispiel.** $A$: „5 ist gerade." (falsch) → $\neg A$: „5 ist nicht gerade." (wahr)
+**Example.** $A$: "5 is even." (false) → $\neg A$: "5 is not even." (true)
 
-## Konjunktion (∧)
+## Conjunction (∧)
 
-Die **Konjunktion** $A \land B$ („$A$ und $B$") ist genau dann wahr, wenn **beide** Aussagen wahr sind.
+The **conjunction** $A \land B$ ("$A$ and $B$") is true if and only if **both** propositions are true.
 
 | $A$ | $B$ | $A \land B$ |
 |-----|-----|-------------|
-| w   | w   | w           |
-| w   | f   | f           |
-| f   | w   | f           |
-| f   | f   | f           |
+| T   | T   | T           |
+| T   | F   | F           |
+| F   | T   | F           |
+| F   | F   | F           |
 
-**Beispiel.** „7 ist eine Primzahl **und** 7 ist ungerade." → wahr ∧ wahr = wahr.
+**Example.** "7 is prime **and** 7 is odd." → true ∧ true = true.
 
-## Disjunktion (∨)
+## Disjunction (∨)
 
-Die **Disjunktion** $A \lor B$ („$A$ oder $B$") ist wahr, wenn **mindestens eine** der Aussagen wahr ist.
+The **disjunction** $A \lor B$ ("$A$ or $B$") is true when **at least one** of the propositions is true.
 
 | $A$ | $B$ | $A \lor B$ |
 |-----|-----|------------|
-| w   | w   | w          |
-| w   | f   | w          |
-| f   | w   | w          |
-| f   | f   | f          |
+| T   | T   | T          |
+| T   | F   | T          |
+| F   | T   | T          |
+| F   | F   | F          |
 
-Das mathematische „oder" ist **inklusiv**: Auch wenn beide wahr sind, ist die Disjunktion wahr.
+The mathematical "or" is **inclusive**: even if both are true, the disjunction is true.
 
-**Beispiel.** „4 ist gerade **oder** 4 ist eine Primzahl." → wahr ∨ falsch = wahr.
+**Example.** "4 is even **or** 4 is prime." → true ∨ false = true.
 
-## De Morgansche Gesetze
+## De Morgan's Laws
 
-Zwei fundamentale Umformungsregeln:
+Two fundamental transformation rules:
 
 $$
 \neg (A \land B) \iff (\neg A) \lor (\neg B)
@@ -70,18 +70,18 @@ $$
 \neg (A \lor B) \iff (\neg A) \land (\neg B)
 $$
 
-In Worten: Die Negation eines „und" wird zu einem „oder" der Negationen – und umgekehrt.
+In words: the negation of an "and" becomes an "or" of the negations — and vice versa.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Verknüpfung | Symbol | Wahr wenn… |
-|-------------|--------|-----------|
-| Negation | $\neg A$ | $A$ falsch ist |
-| Konjunktion | $A \land B$ | beide wahr |
-| Disjunktion | $A \lor B$ | mindestens eine wahr |
+| Connective | Symbol | True when… |
+|------------|--------|-----------|
+| Negation | $\neg A$ | $A$ is false |
+| Conjunction | $A \land B$ | both true |
+| Disjunction | $A \lor B$ | at least one true |
 
-## Quellen
+## References
 
-- Ebbinghaus, H.-D.; Flum, J.; Thomas, W.: *Einführung in die mathematische Logik.* Springer, 6. Auflage, 2018. Kapitel 1.
+- Ebbinghaus, H.-D.; Flum, J.; Thomas, W.: *Mathematical Logic.* Springer, 3rd edition, 2021. Chapter 1.

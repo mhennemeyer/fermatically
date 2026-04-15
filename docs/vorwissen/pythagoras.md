@@ -1,74 +1,74 @@
 ---
-title: "Pythagoras und pythagoräische Tripel"
-description: "Satz des Pythagoras, ganzzahlige Lösungen und Bezug zu Fermats Gleichung"
-lang: de
+title: "Pythagoras and Pythagorean Triples"
+description: "The Pythagorean theorem, integer solutions, and the connection to Fermat's equation"
+lang: en
 type: vorwissen
 ---
 
-# Pythagoras und pythagoräische Tripel
+# Pythagoras and Pythagorean Triples
 
-## Der Satz des Pythagoras
+## The Pythagorean Theorem
 
-In einem rechtwinkligen Dreieck mit Katheten $a$, $b$ und Hypotenuse $c$ gilt:
+In a right triangle with legs $a$, $b$ and hypotenuse $c$:
 
 $$
 a^2 + b^2 = c^2
 $$
 
-Die Umkehrung gilt ebenfalls: Erfüllen die Seitenlängen eines Dreiecks diese Gleichung, so ist das Dreieck rechtwinklig.
+The converse also holds: if the side lengths of a triangle satisfy this equation, the triangle is right-angled.
 
-**Beispiel.** Ein Dreieck mit Seiten $3, 4, 5$: $3^2 + 4^2 = 9 + 16 = 25 = 5^2$. ✓
+**Example.** A triangle with sides $3, 4, 5$: $3^2 + 4^2 = 9 + 16 = 25 = 5^2$. ✓
 
-## Pythagoräische Tripel
+## Pythagorean Triples
 
-Ein **pythagoräisches Tripel** ist ein Tupel $(a, b, c)$ natürlicher Zahlen mit $a^2 + b^2 = c^2$.
+A **Pythagorean triple** is a tuple $(a, b, c)$ of natural numbers with $a^2 + b^2 = c^2$.
 
-**Beispiele:**
+**Examples:**
 
-| $a$ | $b$ | $c$ | Prüfung |
-|-----|-----|-----|---------|
+| $a$ | $b$ | $c$ | Check |
+|-----|-----|-----|-------|
 | 3 | 4 | 5 | $9 + 16 = 25$ |
 | 5 | 12 | 13 | $25 + 144 = 169$ |
 | 8 | 15 | 17 | $64 + 225 = 289$ |
 
-Ein Tripel heißt **primitiv**, wenn $\gcd(a, b, c) = 1$.
+A triple is **primitive** if $\gcd(a, b, c) = 1$.
 
-### Erzeugung aller primitiven Tripel
+### Generating All Primitive Triples
 
-Alle primitiven pythagoräischen Tripel haben die Form:
+All primitive Pythagorean triples have the form:
 
 $$
 a = m^2 - n^2, \quad b = 2mn, \quad c = m^2 + n^2
 $$
 
-mit $m > n > 0$, $\gcd(m, n) = 1$ und $m - n$ ungerade.
+with $m > n > 0$, $\gcd(m, n) = 1$, and $m - n$ odd.
 
-**Beispiel.** $m = 2, n = 1$: $a = 4 - 1 = 3$, $b = 4$, $c = 4 + 1 = 5$. → $(3, 4, 5)$.
+**Example.** $m = 2, n = 1$: $a = 4 - 1 = 3$, $b = 4$, $c = 4 + 1 = 5$. → $(3, 4, 5)$.
 
-## Bezug zu Fermats Gleichung
+## Connection to Fermat's Equation
 
-Die Gleichung $a^2 + b^2 = c^2$ hat unendlich viele ganzzahlige Lösungen.
+The equation $a^2 + b^2 = c^2$ has infinitely many integer solutions.
 
-Fermats letzter Satz besagt: Für $n \geq 3$ hat die Gleichung
+Fermat's Last Theorem states: for $n \geq 3$, the equation
 
 $$
 a^n + b^n = c^n
 $$
 
-**keine** Lösung mit $a, b, c \in \mathbb{Z}^+$. Der Fall $n = 2$ (Pythagoras) ist also der letzte Exponent, für den ganzzahlige Lösungen existieren.
+has **no** solution with $a, b, c \in \mathbb{Z}^+$. The case $n = 2$ (Pythagoras) is thus the last exponent for which integer solutions exist.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Begriff | Definition |
+| Concept | Definition |
 |---------|-----------|
-| Satz des Pythagoras | $a^2 + b^2 = c^2$ im rechtwinkligen Dreieck |
-| Pythagoräisches Tripel | $(a,b,c) \in \mathbb{N}^3$ mit $a^2 + b^2 = c^2$ |
-| Primitives Tripel | $\gcd(a,b,c) = 1$ |
-| Parametrisierung | $a = m^2-n^2,\; b = 2mn,\; c = m^2+n^2$ |
+| Pythagorean theorem | $a^2 + b^2 = c^2$ in a right triangle |
+| Pythagorean triple | $(a,b,c) \in \mathbb{N}^3$ with $a^2 + b^2 = c^2$ |
+| Primitive triple | $\gcd(a,b,c) = 1$ |
+| Parametrization | $a = m^2-n^2,\; b = 2mn,\; c = m^2+n^2$ |
 
-## Quellen
+## References
 
-- Hardy, G.H.; Wright, E.M.: *An Introduction to the Theory of Numbers.* Oxford University Press, 6. Auflage, 2008. Kapitel 13.
-- Edwards, Harold M.: *Fermat's Last Theorem.* Springer, 1977. Kapitel 1.
+- Hardy, G.H.; Wright, E.M.: *An Introduction to the Theory of Numbers.* Oxford University Press, 6th edition, 2008. Chapter 13.
+- Edwards, Harold M.: *Fermat's Last Theorem.* Springer, 1977. Chapter 1.

@@ -1,96 +1,96 @@
 ---
-title: "Bruchrechnung"
-description: "Addition, Multiplikation, Kürzen und Erweitern von Brüchen"
-lang: de
+title: "Fractions"
+description: "Addition, multiplication, simplifying and expanding fractions"
+lang: en
 type: vorwissen
 ---
 
-# Bruchrechnung
+# Fractions
 
-## Brüche als Zahlen
+## Fractions as Numbers
 
-Ein **Bruch** $\frac{a}{b}$ mit $a \in \mathbb{Z}$ und $b \in \mathbb{Z} \setminus \{0\}$ repräsentiert das Ergebnis der Division $a \div b$. Dabei heißt $a$ der **Zähler** und $b$ der **Nenner**.
+A **fraction** $\frac{a}{b}$ with $a \in \mathbb{Z}$ and $b \in \mathbb{Z} \setminus \{0\}$ represents the result of the division $a \div b$. Here $a$ is the **numerator** and $b$ is the **denominator**.
 
-Zwei Brüche $\frac{a}{b}$ und $\frac{c}{d}$ sind **gleich**, wenn $a \cdot d = b \cdot c$.
+Two fractions $\frac{a}{b}$ and $\frac{c}{d}$ are **equal** if $a \cdot d = b \cdot c$.
 
-**Beispiel.** $\frac{2}{3} = \frac{4}{6}$, denn $2 \cdot 6 = 3 \cdot 4 = 12$.
+**Example.** $\frac{2}{3} = \frac{4}{6}$, since $2 \cdot 6 = 3 \cdot 4 = 12$.
 
-## Kürzen und Erweitern
+## Simplifying and Expanding
 
-### Kürzen
+### Simplifying
 
-Ein Bruch wird **gekürzt**, indem Zähler und Nenner durch denselben Faktor $k \neq 0$ geteilt werden:
+A fraction is **simplified** by dividing both numerator and denominator by the same factor $k \neq 0$:
 
 $$
 \frac{a}{b} = \frac{a / k}{b / k}
 $$
 
-**Vollständig gekürzt** ist ein Bruch, wenn $\gcd(a, b) = 1$.
+A fraction is **fully reduced** when $\gcd(a, b) = 1$.
 
-**Beispiel.** $\frac{12}{18} = \frac{12/6}{18/6} = \frac{2}{3}$.
+**Example.** $\frac{12}{18} = \frac{12/6}{18/6} = \frac{2}{3}$.
 
-### Erweitern
+### Expanding
 
-Ein Bruch wird **erweitert**, indem Zähler und Nenner mit demselben Faktor $k \neq 0$ multipliziert werden:
+A fraction is **expanded** by multiplying both numerator and denominator by the same factor $k \neq 0$:
 
 $$
 \frac{a}{b} = \frac{a \cdot k}{b \cdot k}
 $$
 
-**Beispiel.** $\frac{2}{3} = \frac{2 \cdot 5}{3 \cdot 5} = \frac{10}{15}$.
+**Example.** $\frac{2}{3} = \frac{2 \cdot 5}{3 \cdot 5} = \frac{10}{15}$.
 
-## Addition und Subtraktion
+## Addition and Subtraction
 
-Brüche mit **gleichem Nenner** werden direkt addiert:
+Fractions with the **same denominator** are added directly:
 
 $$
 \frac{a}{n} + \frac{b}{n} = \frac{a + b}{n}
 $$
 
-Bei **verschiedenen Nennern** wird zunächst der **Hauptnenner** (kleinstes gemeinsames Vielfaches, kgV) gebildet:
+For **different denominators**, a **common denominator** is formed first:
 
 $$
 \frac{a}{b} + \frac{c}{d} = \frac{a \cdot d + c \cdot b}{b \cdot d}
 $$
 
-**Beispiel.** $\frac{2}{3} + \frac{1}{4} = \frac{2 \cdot 4 + 1 \cdot 3}{3 \cdot 4} = \frac{8 + 3}{12} = \frac{11}{12}$.
+**Example.** $\frac{2}{3} + \frac{1}{4} = \frac{2 \cdot 4 + 1 \cdot 3}{3 \cdot 4} = \frac{8 + 3}{12} = \frac{11}{12}$.
 
-Die Subtraktion funktioniert analog: $\frac{a}{b} - \frac{c}{d} = \frac{a \cdot d - c \cdot b}{b \cdot d}$.
+Subtraction works analogously: $\frac{a}{b} - \frac{c}{d} = \frac{a \cdot d - c \cdot b}{b \cdot d}$.
 
-## Multiplikation
+## Multiplication
 
-Brüche werden multipliziert, indem Zähler mit Zähler und Nenner mit Nenner multipliziert werden:
+Fractions are multiplied by multiplying numerator by numerator and denominator by denominator:
 
 $$
 \frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d}
 $$
 
-**Beispiel.** $\frac{2}{3} \cdot \frac{5}{7} = \frac{10}{21}$.
+**Example.** $\frac{2}{3} \cdot \frac{5}{7} = \frac{10}{21}$.
 
 ## Division
 
-Die Division durch einen Bruch entspricht der Multiplikation mit dem **Kehrwert**:
+Division by a fraction equals multiplication by its **reciprocal**:
 
 $$
 \frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} = \frac{a \cdot d}{b \cdot c}
 $$
 
-Voraussetzung: $c \neq 0$.
+Requirement: $c \neq 0$.
 
-**Beispiel.** $\frac{3}{4} \div \frac{2}{5} = \frac{3}{4} \cdot \frac{5}{2} = \frac{15}{8}$.
+**Example.** $\frac{3}{4} \div \frac{2}{5} = \frac{3}{4} \cdot \frac{5}{2} = \frac{15}{8}$.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Operation | Formel |
-|-----------|--------|
-| Kürzen | $\frac{a}{b} = \frac{a/k}{b/k}$ |
-| Erweitern | $\frac{a}{b} = \frac{ak}{bk}$ |
+| Operation | Formula |
+|-----------|---------|
+| Simplify | $\frac{a}{b} = \frac{a/k}{b/k}$ |
+| Expand | $\frac{a}{b} = \frac{ak}{bk}$ |
 | Addition | $\frac{a}{b} + \frac{c}{d} = \frac{ad + cb}{bd}$ |
-| Multiplikation | $\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$ |
+| Multiplication | $\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$ |
 | Division | $\frac{a}{b} \div \frac{c}{d} = \frac{ad}{bc}$ |
 
-## Quellen
+## References
 
-- Courant, Richard; Robbins, Herbert: *What Is Mathematics?* Oxford University Press, 2. Auflage, 1996. Kapitel 1.
+- Courant, Richard; Robbins, Herbert: *What Is Mathematics?* Oxford University Press, 2nd edition, 1996. Chapter 1.

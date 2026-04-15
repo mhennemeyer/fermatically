@@ -1,48 +1,48 @@
 ---
-title: Vorwissen
+title: Prerequisites
 ---
 
-# Elementares Vorwissen
+# Elementary Prerequisites
 
-Dieses Nachschlagewerk enthält grundlegende mathematische Konzepte, die in den Hauptartikeln vorausgesetzt werden. Die Einträge sind knapp gehalten und dienen als schnelle Referenz – kein Ersatz für ein Lehrbuch, sondern ein Werkzeug zum gezielten Nachschlagen.
+This reference contains fundamental mathematical concepts assumed in the main articles. The entries are kept concise and serve as a quick reference – not a substitute for a textbook, but a tool for targeted lookup.
 
-## A. Logik und Beweistechniken
+## A. Logic and Proof Techniques
 
-| Thema | Inhalt |
-|-------|--------|
-| [Aussagenlogik](aussagenlogik.md) | Aussagen, Wahrheitswerte, Konjunktion, Disjunktion, Negation |
-| [Implikation und Äquivalenz](implikation-aequivalenz.md) | „A ⟹ B" ≡ „¬A ∨ B", Kontraposition, Bikonditional |
-| [Beweisarten](beweisarten.md) | Direkter Beweis, Widerspruchsbeweis, Induktion, Gegenbeispiel |
-| [Was ist ein Beweis?](was-ist-ein-beweis.md) | Axiome, Definitionen, Sätze, Lemmata, Vermutung vs. Satz |
+| Topic | Content |
+|-------|---------|
+| [Propositional Logic](aussagenlogik.md) | Propositions, truth values, conjunction, disjunction, negation |
+| [Implication and Equivalence](implikation-aequivalenz.md) | "A ⟹ B" ≡ "¬A ∨ B", contraposition, biconditional |
+| [Types of Proof](beweisarten.md) | Direct proof, proof by contradiction, induction, counterexample |
+| [What Is a Proof?](was-ist-ein-beweis.md) | Axioms, definitions, theorems, lemmas, conjecture vs. theorem |
 
-## B. Arithmetik und Zahlen
+## B. Arithmetic and Numbers
 
-| Thema | Inhalt |
-|-------|--------|
-| [Bruchrechnung](bruchrechnung.md) | Addition, Multiplikation, Kürzen, Erweitern, Hauptnenner |
-| [Gleichungen und äquivalente Umformungen](gleichungen.md) | Gleichheitszeichen, erlaubte Operationen, Äquivalenzumformungen |
-| [Ungleichungen](ungleichungen.md) | Ordnung auf ℝ, Rechenregeln, Betrag, Dreiecksungleichung |
-| [Teilbarkeit und ggT](teilbarkeit-ggt.md) | Division mit Rest, größter gemeinsamer Teiler, Euklidischer Algorithmus |
-| [Modulare Arithmetik](modulare-arithmetik.md) | Kongruenz, Rechnen modulo n, Restklassen |
+| Topic | Content |
+|-------|---------|
+| [Fractions](bruchrechnung.md) | Addition, multiplication, reducing, expanding, common denominator |
+| [Equations and Equivalent Transformations](gleichungen.md) | Equality sign, permitted operations, equivalent transformations |
+| [Inequalities](ungleichungen.md) | Order on ℝ, computation rules, absolute value, triangle inequality |
+| [Divisibility and GCD](teilbarkeit-ggt.md) | Division with remainder, greatest common divisor, Euclidean algorithm |
+| [Modular Arithmetic](modulare-arithmetik.md) | Congruence, computing modulo n, residue classes |
 
-## C. Mengen und Strukturen
+## C. Sets and Structures
 
-| Thema | Inhalt |
-|-------|--------|
-| [Mengen und Mengenoperationen](mengen.md) | Notation (∈, ⊂, ∪, ∩, ∅), Teilmengen, Potenzmengen |
-| [Abbildungen (Funktionen)](abbildungen.md) | Definitions-/Wertebereich, injektiv, surjektiv, bijektiv |
-| [Zahlenbereiche](zahlenbereiche.md) | ℕ, ℤ, ℚ, ℝ, ℂ – Erweiterungskette |
+| Topic | Content |
+|-------|---------|
+| [Sets and Set Operations](mengen.md) | Notation (∈, ⊂, ∪, ∩, ∅), subsets, power sets |
+| [Mappings (Functions)](abbildungen.md) | Domain/codomain, injective, surjective, bijective |
+| [Number Systems](zahlenbereiche.md) | ℕ, ℤ, ℚ, ℝ, ℂ – chain of extensions |
 
-## D. Geometrie
+## D. Geometry
 
-| Thema | Inhalt |
-|-------|--------|
-| [Pythagoras und pythagoräische Tripel](pythagoras.md) | Satz des Pythagoras, ganzzahlige Lösungen, Bezug zu Fermat |
-| [Koordinatengeometrie](koordinatengeometrie.md) | Punkte, Geraden, Kurven in der Ebene |
+| Topic | Content |
+|-------|---------|
+| [Pythagoras and Pythagorean Triples](pythagoras.md) | Pythagorean theorem, integer solutions, connection to Fermat |
+| [Coordinate Geometry](koordinatengeometrie.md) | Points, lines, curves in the plane |
 
 ## E. Algebra
 
-| Thema | Inhalt |
-|-------|--------|
-| [Potenzen und Polynome](potenzen-polynome.md) | Potenzgesetze, Polynomausdruck, Grad eines Polynoms |
-| [Binomische Formeln und Faktorisierung](binomische-formeln.md) | (a+b)², (a-b)², a²-b², Binomischer Satz |
+| Topic | Content |
+|-------|---------|
+| [Powers and Polynomials](potenzen-polynome.md) | Laws of exponents, polynomial expressions, degree of a polynomial |
+| [Binomial Formulas and Factoring](binomische-formeln.md) | (a+b)², (a-b)², a²-b², binomial theorem |

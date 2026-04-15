@@ -1,178 +1,158 @@
 ---
-title: "Primzahlen und warum sie reichen"
+title: "Primes and Why They Suffice"
 slug: elementare-zahlentheorie/03-primzahlen-reduktion
 series: elementare-zahlentheorie
 part: 3
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: zahlentheorie
 tags:
   - fermat
-  - primzahlen
-  - reduktion
-requires:
-  - teilbarkeit-ggt
-  - beweisarten
-  - modulare-arithmetik
-  - primfaktorzerlegung
-  - kombinatorik
+  - primes
+  - reduction
+requires: []
 ---
 
-# Primzahlen und warum sie reichen
+# Primes and Why They Suffice
 
-!!! abstract "Zusammenfassung"
-    Reduktion von FLT auf Primzahl-Exponenten. Teilerfolge von Sophie Germain
-    und Kummer zeigen Reichweite und Grenzen elementarer Methoden.
+!!! abstract "Summary"
+    Why it suffices to prove Fermat's Last Theorem only for prime exponents –
+    and how Kummer and Sophie Germain achieved important partial results with this insight.
 
-## Voraussetzungen
+## Prerequisites
 
-- [Was ist Fermats letzter Satz?](01-was-ist-flt.md)
-- [Der Beweis für $n = 4$](02-beweis-n4.md)
-
-| Thema | Beschreibung |
-|-------|-------------|
-| [Teilbarkeit und ggT](../../vorwissen/teilbarkeit-ggt.md) | Teilerfremdheit, $\gcd$, Euklidischer Algorithmus |
-| [Beweisarten](../../vorwissen/beweisarten.md) | Direkter Beweis, Widerspruch, Induktion, Abstieg |
-| [Modulare Arithmetik](../../vorwissen/modulare-arithmetik.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
-| [Primfaktorzerlegung](../../vorwissen/primfaktorzerlegung.md) | Eindeutige Zerlegung in Primfaktoren (Fundamentalsatz der Arithmetik) |
-| [Kombinatorik](../../vorwissen/kombinatorik.md) | Permutationen, Kombinationen, Binomialkoeffizienten |
+- [What Is Fermat's Last Theorem?](01-was-ist-flt.md)
+- [The Proof for $n = 4$](02-beweis-n4.md)
 
 ---
 
-## 1. Die Idee der Reduktion
+## 1. The Idea of Reduction
 
-Fermats letzter Satz behauptet, dass $x^n + y^n = z^n$ für **alle** $n \geq 3$ keine Lösung in positiven ganzen Zahlen hat. Ein einfaches Argument reduziert die Aufgabe: Es genügt, den Satz für **Primzahl-Exponenten** $p$ zu beweisen.
+Fermat's Last Theorem asserts that $x^n + y^n = z^n$ has no solution in positive integers for **all** $n \geq 3$. That sounds like infinitely many cases – one for each $n$. Yet a simple argument drastically reduces the work: it suffices to prove the theorem for **prime exponents** $p$.
 
-Die Grundidee: Jede ganze Zahl $n \geq 3$ ist entweder selbst eine Primzahl oder hat einen Primfaktor. Wenn FLT für einen Exponenten gilt, dann gilt er auch für alle Vielfachen dieses Exponenten.
+The basic idea: every integer $n \geq 3$ is either itself a prime, or it has a prime factor. And if FLT holds for one exponent, it also holds for all multiples of that exponent.
 
-## 2. Das Reduktionsargument
+## 2. The Reduction Argument
 
-**Satz.** Wenn FLT für $n = 4$ und für alle ungeraden Primzahlen $p$ gilt, dann gilt FLT für alle $n \geq 3$.
+**Theorem.** If FLT holds for $n = 4$ and for all odd primes $p$, then FLT holds for all $n \geq 3$.
 
-**Beweis.** Sei $n \geq 3$ beliebig. Drei Fälle:
+**Proof.** Let $n \geq 3$ be arbitrary. We distinguish two cases:
 
-**Fall 1: $n$ ist durch $4$ teilbar.** Dann ist $n = 4k$ für ein $k \geq 1$, und eine Lösung $x^n + y^n = z^n$ wäre gleichbedeutend mit:
+**Case 1: $n$ is divisible by $4$.** Then $n = 4k$ for some $k \geq 1$, and a solution $x^n + y^n = z^n$ would be equivalent to:
 
 $$
 (x^k)^4 + (y^k)^4 = (z^k)^4
 $$
 
-Eine Lösung von FLT für $n = 4$ – die nach Fermats Beweis nicht existiert.
+This would be a solution of FLT for $n = 4$ – which does not exist by Fermat's proof.
 
-**Fall 2: $n$ hat einen ungeraden Primfaktor $p$.** Dann ist $n = pm$ für ein $m \geq 1$, und eine Lösung $x^n + y^n = z^n$ wäre gleichbedeutend mit:
+**Case 2: $n$ has an odd prime factor $p$.** Then $n = pm$ for some $m \geq 1$, and a solution $x^n + y^n = z^n$ would be equivalent to:
 
 $$
 (x^m)^p + (y^m)^p = (z^m)^p
 $$
 
-Eine Lösung von FLT für den Primexponenten $p$ – die nach Voraussetzung nicht existiert.
+This would be a solution of FLT for the prime exponent $p$ – which does not exist by assumption.
 
-**Fall 3: Es gibt keinen dritten Fall.** Jede ganze Zahl $n \geq 3$ ist entweder durch $4$ teilbar oder hat einen ungeraden Primfaktor (oder beides). Die einzigen Zahlen ohne ungeraden Primfaktor sind die Zweierpotenzen $2^k$, und für $k \geq 2$ ist $2^k$ durch $4$ teilbar. $\square$
+**Case 3: There is no third case.** Every integer $n \geq 3$ is either divisible by $4$, or it has an odd prime factor (or both). For the only numbers without an odd prime factor are the powers of two $2^k$, and for $k \geq 2$, $2^k$ is divisible by $4$. $\square$
 
-!!! note "Warum $n = 4$ statt $n = 2$?"
-    Die Reduktion funktioniert über Primfaktoren. Die Zahl $n = 4$ ist keine Primzahl, deckt aber den Fall der Zweierpotenzen ab: $n = 4, 8, 12, 16, \ldots$ werden alle durch Fall 1 erfasst. Die einzigen verbleibenden Fälle sind die ungeraden Primzahlen $p = 3, 5, 7, 11, 13, \ldots$
+!!! note "Why does $n = 4$ suffice instead of $n = 2$?"
+    The reduction works via prime factors. The number $n = 4$ is not a prime, but it covers the case of powers of two: $n = 4, 8, 12, 16, \ldots$ are all handled by Case 1. The only remaining cases are the odd primes $p = 3, 5, 7, 11, 13, \ldots$
 
-## 3. Die verbleibende Aufgabe
+## 3. What Remains to Be Done?
 
-Nach der Reduktion lautet die Aufgabe:
+After the reduction, the task is clear:
 
 $$
-\boxed{\text{Zeige: } x^p + y^p = z^p \text{ hat keine Lösung für alle ungeraden Primzahlen } p.}
+\boxed{\text{Show: } x^p + y^p = z^p \text{ has no solution for all odd primes } p.}
 $$
 
-Zusammen mit Fermats Beweis für $n = 4$ wäre FLT damit vollständig bewiesen. Statt alle natürlichen Zahlen ab $3$ abzudecken, genügt die Behandlung der Primzahlen. Aber es gibt unendlich viele Primzahlen, und ein Fall-für-Fall-Ansatz ist keine Option.
+Together with Fermat's proof for $n = 4$, this would completely prove FLT. That sounds like a simplification – and it is. Instead of covering all natural numbers from $3$ upwards, one "only" needs to handle the primes. But there are infinitely many primes, and working through them one by one is not an option.
 
-Die Geschichte der Teilbeweise zeigt das Dilemma:
+The history of partial proofs illustrates the dilemma:
 
-| Zeitraum | Ergebnis | Exponenten |
-|----------|----------|------------|
+| Period | Result | Exponents |
+|--------|--------|-----------|
 | ca. 1640 | Fermat | $n = 4$ |
 | 1770 | Euler | $p = 3$ |
 | 1825 | Dirichlet, Legendre | $p = 5$ |
 | 1839 | Lamé | $p = 7$ |
-| 1847–1857 | Kummer | alle regulären $p$ |
-| 1993 | Computer | alle $p \leq 4{,}000{,}000$ |
+| 1847–1857 | Kummer | all regular $p$ |
+| 1993 | Computer | all $p \leq 4{,}000{,}000$ |
 
-## 4. Sophie Germains Durchbruch
+## 4. Sophie Germain's Breakthrough
 
-**Sophie Germain** (1776–1831) erzielte 1823 den ersten Teilerfolg, der unendlich viele Primzahlen gleichzeitig abdeckte. Ihre Strategie: Statt $x^p + y^p = z^p$ direkt anzugreifen, die Fallunterscheidung:
+**Sophie Germain** (1776–1831) achieved in 1823 the first partial success covering infinitely many primes at once. Her idea: instead of directly solving $x^p + y^p = z^p$, she distinguished two cases:
 
-- **Fall 1**: $p$ teilt keinen der Werte $x$, $y$, $z$ (d.h. $p \nmid xyz$)
-- **Fall 2**: $p$ teilt mindestens einen der Werte $x$, $y$, $z$ (d.h. $p \mid xyz$)
+- **Case 1**: $p$ divides none of the values $x$, $y$, $z$ (i.e., $p \nmid xyz$)
+- **Case 2**: $p$ divides at least one of the values $x$, $y$, $z$ (i.e., $p \mid xyz$)
 
-**Satz (Sophie Germain).** Sei $p$ eine ungerade Primzahl mit der Eigenschaft, dass $q = 2p + 1$ ebenfalls prim ist. Dann hat $x^p + y^p = z^p$ keine Lösung mit $p \nmid xyz$.
+**Theorem (Sophie Germain).** Let $p$ be an odd prime such that $q = 2p + 1$ is also prime. Then $x^p + y^p = z^p$ has no solution with $p \nmid xyz$.
 
-Eine Primzahl $p$ mit der Eigenschaft, dass $2p + 1$ ebenfalls prim ist, heißt **Germain-Primzahl**. Beispiele: $2, 3, 5, 11, 23, 29, 41, 53, 83, 89, \ldots$
+A prime $p$ with the property that $2p + 1$ is also prime is called a **Germain prime**. Examples: $2, 3, 5, 11, 23, 29, 41, 53, 83, 89, \ldots$
 
-Es wird vermutet, dass es unendlich viele Germain-Primzahlen gibt – ein bislang unbewiesenes Ergebnis. Germains Resultat war dennoch ein konzeptueller Meilenstein: die erste Methode, die systematisch für eine ganze Klasse von Exponenten gleichzeitig funktionierte.
+It is conjectured that there are infinitely many Germain primes – but this remains unproven to this day. Nevertheless, Germain's result was a conceptual milestone: it was the first method that systematically worked for an entire class of exponents simultaneously.
 
-> „Sophie Germain proved a major theorem in number theory at a time when women were not even allowed to attend university lectures."
-> — Simon Singh, *Fermat's Last Theorem* (1997), S. 109
+**The proof idea.** Germain uses the fact that in $\mathbb{Z}/q\mathbb{Z}$ (the integers modulo $q = 2p + 1$), the $p$-th powers have a special structure. If $q$ is prime and $q = 2p + 1$, then in $\mathbb{Z}/q\mathbb{Z}$ there are only three $p$-th powers: $0$, $1$, and $-1$. It follows that a solution $x^p + y^p \equiv z^p \pmod{q}$ forces $q$ to divide one of the values $x$, $y$, $z$. With further analysis, Germain can then exclude Case 1 ($p \nmid xyz$).
 
-**Die Beweisidee.** In $\mathbb{Z}/q\mathbb{Z}$ (den ganzen Zahlen modulo $q = 2p + 1$) haben die $p$-ten Potenzen eine besondere Struktur. Wenn $q$ prim ist und $q = 2p + 1$, dann gibt es in $\mathbb{Z}/q\mathbb{Z}$ nur drei $p$-te Potenzen: $0$, $1$ und $-1$. Daraus folgt, dass eine Lösung $x^p + y^p \equiv z^p \pmod{q}$ erzwingt, dass $q$ einen der Werte $x$, $y$, $z$ teilt. Mit weiterer Analyse lässt sich Fall 1 ($p \nmid xyz$) ausschließen.
+## 5. Kummer's Revolution: Regular Primes
 
-## 5. Kummers Idealtheorie und reguläre Primzahlen
+**Ernst Eduard Kummer** (1810–1893) went one decisive step further. His work in the 1840s and 1850s revolutionised algebraic number theory and delivered the most comprehensive partial result for FLT up to that point.
 
-**Ernst Eduard Kummer** (1810–1893) ging einen entscheidenden Schritt weiter. Seine Arbeit in den 1840er und 1850er Jahren begründete wesentliche Teile der algebraischen Zahlentheorie und lieferte den bis dahin umfassendsten Teilerfolg für FLT.
+### The idea: Factorisation in the cyclotomic field
 
-### Faktorisierung im Kreisteilungskörper
-
-Für eine ungerade Primzahl $p$ sei $\zeta_p = e^{2\pi i/p}$ eine primitive $p$-te Einheitswurzel. Die Gleichung $x^p + y^p = z^p$ lässt sich im Ring $\mathbb{Z}[\zeta_p]$ faktorisieren:
+For an odd prime $p$, let $\zeta_p = e^{2\pi i/p}$ be a primitive $p$-th root of unity. The equation $x^p + y^p = z^p$ can be factorised in the ring $\mathbb{Z}[\zeta_p]$:
 
 $$
 x^p + y^p = \prod_{k=0}^{p-1} (x + \zeta_p^k \, y) = z^p
 $$
 
-Wenn in $\mathbb{Z}[\zeta_p]$ die **eindeutige Primfaktorzerlegung** (EPZ) gelten würde, ließe sich aus dieser Faktorisierung direkt ein Widerspruch herleiten – analog zum Beweis für $n = 4$.
+If **unique prime factorisation** (UPF) held in $\mathbb{Z}[\zeta_p]$, one could derive a contradiction directly from this factorisation – similarly to the proof for $n = 4$.
 
-### Das Problem: EPZ gilt nicht immer
+### The problem: UPF does not always hold
 
-Lamé glaubte 1847, auf diese Weise einen Beweis für FLT gefunden zu haben. Kummer wies darauf hin, dass die EPZ in $\mathbb{Z}[\zeta_p]$ **nicht** für alle Primzahlen gilt. Für $p = 23$ beispielsweise versagt sie – es gibt Elemente mit mehreren wesentlich verschiedenen Faktorisierungen.
+Lamé believed in 1847 that he had found a proof of FLT in precisely this way. But Kummer pointed out that UPF in $\mathbb{Z}[\zeta_p]$ does **not** hold for all primes. For $p = 23$, for example, it fails – there are elements with several essentially distinct factorisations.
 
-> „It is a fact, which Kummer first proved in 1844, that unique factorization can fail in the rings of cyclotomic integers."
-> — Harold M. Edwards, *Fermat's Last Theorem* (1977), S. 76
+### Kummer's solution: Ideal theory
 
-### Kummers Lösung: Idealtheorie
+To compensate for the failure of UPF, Kummer introduced **ideal numbers** – precursors of modern **ideals** in ring theory. The basic idea: instead of factorising elements, one factorises *ideals*. And for ideals, UPF **always** holds (in Dedekind domains).
 
-Um das Fehlen der EPZ zu kompensieren, führte Kummer die **idealen Zahlen** ein – Vorläufer der modernen **Ideale** in der Ringtheorie. Statt Elemente zu faktorisieren, werden *Ideale* faktorisiert. Für Ideale gilt die EPZ **immer** (in Dedekind-Ringen).
+The measure for the failure of UPF at the element level is the **class number** $h_p$ of the cyclotomic field $\mathbb{Q}(\zeta_p)$. We have: $h_p = 1$ if and only if UPF holds in $\mathbb{Z}[\zeta_p]$.
 
-Das Maß für das Versagen der EPZ auf Elementebene ist die **Klassenzahl** $h_p$ des Kreisteilungskörpers $\mathbb{Q}(\zeta_p)$. Es gilt: $h_p = 1$ genau dann, wenn EPZ in $\mathbb{Z}[\zeta_p]$ gilt.
+### Regular primes
 
-### Reguläre Primzahlen
+Kummer called a prime $p$ **regular** if $p$ does not divide the class number $h_p$: $p \nmid h_p$.
 
-Kummer nannte eine Primzahl $p$ **regulär**, wenn $p$ die Klassenzahl $h_p$ nicht teilt: $p \nmid h_p$.
+**Theorem (Kummer, 1850).** If $p$ is a regular prime, then $x^p + y^p = z^p$ has no solution in positive integers.
 
-**Satz (Kummer, 1850).** Wenn $p$ eine reguläre Primzahl ist, dann hat $x^p + y^p = z^p$ keine Lösung in positiven ganzen Zahlen.
+**Examples of regular primes:** $3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 43, 47, \ldots$
 
-**Beispiele regulärer Primzahlen:** $3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 43, 47, \ldots$
+**Irregular primes (up to 100):** $37, 59, 67$
 
-**Irreguläre Primzahlen (bis 100):** $37, 59, 67$
+Kummer's method thus proved FLT for most small primes – but not all. The irregular primes turned out to be stubborn exceptions.
 
-Kummers Methode bewies FLT für die meisten kleinen Primzahlen – aber nicht für alle. Die irregulären Primzahlen blieben als Ausnahmen bestehen.
+!!! note "How common are regular primes?"
+    Heuristic arguments suggest that approximately $e^{-1/2} \approx 60.6\%$ of all primes are regular. It is conjectured that there are infinitely many regular (and infinitely many irregular) primes – neither has been proved.
 
-!!! note "Häufigkeit regulärer Primzahlen"
-    Heuristische Argumente legen nahe, dass etwa $e^{-1/2} \approx 60{,}6\%$ aller Primzahlen regulär sind. Es wird vermutet, dass es unendlich viele reguläre (und unendlich viele irreguläre) Primzahlen gibt – bewiesen ist beides nicht.
+## 6. The Limits of Elementary Methods
 
-## 6. Die Grenzen elementarer Methoden
+The history of partial proofs reveals a clear pattern: each new case required deeper tools.
 
-Die Geschichte der Teilbeweise zeigt ein Muster: Jeder neue Fall erforderte tiefere Werkzeuge.
+- **$n = 4$**: Elementary descent in $\mathbb{Z}$ (Fermat)
+- **$n = 3$**: Descent in $\mathbb{Z}[\omega]$ – entry into algebraic number theory (Euler)
+- **$n = 5, 7$**: Elaborate case distinctions in cyclotomic fields (Dirichlet, Legendre, Lamé)
+- **Regular $p$**: Ideal theory and class numbers (Kummer)
+- **All $p$**: ???
 
-- **$n = 4$**: Elementarer Abstieg in $\mathbb{Z}$ (Fermat)
-- **$n = 3$**: Abstieg in $\mathbb{Z}[\omega]$ – Einstieg in die algebraische Zahlentheorie (Euler)
-- **$n = 5, 7$**: Aufwendige Fallunterscheidungen in Kreisteilungskörpern (Dirichlet, Legendre, Lamé)
-- **Reguläre $p$**: Idealtheorie und Klassenzahlen (Kummer)
-- **Alle $p$**: ???
+Kummer's method hit a fundamental barrier: the class number $h_p$ grows with $p$, and there is no general way to force regularity. After Kummer, it was clear that an entirely new approach would be needed – one that no longer argues case by case, but treats the equation $x^p + y^p = z^p$ for *all* $p$ simultaneously.
 
-Kummers Methode stieß an eine fundamentale Grenze: Die Klassenzahl $h_p$ wächst mit $p$, und es gibt keinen allgemeinen Weg, die Regularität zu erzwingen. Ein völlig neuer Ansatz war nötig – einer, der nicht mehr Fall für Fall argumentiert, sondern die Gleichung $x^p + y^p = z^p$ für *alle* $p$ gleichzeitig behandelt.
-
-Dieser Ansatz kam über einen Umweg, der erst 100 Jahre später sichtbar wurde: die Verbindung zwischen elliptischen Kurven und Modulformen. Zunächst behandelt [Artikel 04](04-beweis-n3.md) jedoch den Beweis für $n = 3$ – und zeigt, was geschieht, wenn der Zahlbereich erstmals erweitert wird.
+This approach finally came via a detour that became clear only 100 years later: the connection between elliptic curves and modular forms. But before we get there, we first need to understand the proof for $n = 3$ – and see what happens when one extends the number domain for the first time.
 
 ---
 
-## Quellen
+## Further Reading
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 1–2
-- **Harold M. Edwards**: *Fermat's Last Theorem: A Genetic Introduction to Algebraic Number Theory*, Springer (1977)
-- **Simon Singh**: *Fermat's Last Theorem*, Fourth Estate (1997)
-- **Paulo Ribenboim**: *Fermat's Last Theorem for Amateurs*, Springer (1999)
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem*, Ch. 1–2
+- **Harold Edwards**: *Fermat's Last Theorem* – detailed account of Kummer's work
+- **Paulo Ribenboim**: *Fermat's Last Theorem for Amateurs* – accessible overview of the partial proofs

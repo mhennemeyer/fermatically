@@ -1,39 +1,39 @@
-# Über das Projekt
+# About the Project
 
 ## Vision
 
-**fermatically** ist eine umfangreiche Plattform mit dem Schwerpunkt auf das Verständnis der großen Beweise von lange Zeit unbewiesenen Vermutungen:
+**fermatically** is a comprehensive platform focused on understanding the great proofs of long-standing conjectures:
 
-- **Fermats letzter Satz** (Wiles, 1995) – *in Arbeit*
-- **Poincaré-Vermutung** (Perelman, 2003) – *geplant*
-- **Weitere** (Vier-Farben-Satz, Keplersche Vermutung, …) – *Zukunft*
+- **Fermat's Last Theorem** (Wiles, 1995) – *in progress*
+- **Poincaré Conjecture** (Perelman, 2003) – *planned*
+- **Others** (Four Color Theorem, Kepler Conjecture, …) – *future*
 
-## Aufbau
+## Structure
 
-Die Plattform ist in **eigenständige, querverweisbare Topics** gegliedert:
+The platform is organized into **self-contained, cross-referenced topics**:
 
-1. **Grundlagen-Topics** – Elementare Mathematik, die für mehrere Beweise wiederverwendet wird
-2. **Werkzeug-Topics** – Galois-Theorie, Elliptische Kurven, Modulformen, … – jeweils eigenständig, aber Voraussetzung für bestimmte Beweis-Topics
-3. **Beweis-Topics** – Ausführliche Darstellungen der großen Beweise
-4. **Meta-Topics** – Moderne Methoden (HoTT, formale Verifikation in Lean/Coq) – *Zukunft*
+1. **Foundation Topics** – Elementary mathematics reused across multiple proofs
+2. **Tool Topics** – Galois Theory, Elliptic Curves, Modular Forms, … – each self-contained, but prerequisites for specific proof topics
+3. **Proof Topics** – Detailed expositions of the great proofs
+4. **Meta Topics** – Modern methods (HoTT, formal verification in Lean/Coq) – *future*
 
-## Prinzipien
+## Principles
 
-- **Kein Vorwissen nötig**: Die Darstellung setzt bei Schulmathematik an
-- **Keine Vereinfachung**: Alle mathematischen Details werden behandelt – klar und präzise formuliert
-- **Eigenständige Topics**: Jedes Thema ist in sich abgeschlossen verständlich
-- **Querverweise**: Ein Abhängigkeitsgraph zeigt, welche Grundlagen für welchen Beweis nötig sind
-- **Zweisprachig**: Artikel erscheinen auf Deutsch und Englisch (DE zuerst)
+- **No prerequisites**: The exposition starts from school mathematics
+- **No oversimplification**: All mathematical details are covered – clearly and precisely formulated
+- **Self-contained topics**: Each topic is understandable on its own
+- **Cross-references**: A dependency graph shows which foundations are needed for which proof
+- **Bilingual**: Articles appear in German and English (DE first)
 
-## Quellen
+## Sources
 
-Die Plattform stützt sich auf:
+The platform is based on:
 
-- **Andrew Wiles** – *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), S. 443–551
-- **Nigel Boston** – *The Proof of Fermat's Last Theorem* (Lehrbuch, Univ. Wisconsin, 2003)
+- **Andrew Wiles** – *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), pp. 443–551
+- **Nigel Boston** – *The Proof of Fermat's Last Theorem* (textbook, Univ. Wisconsin, 2003)
 
-Siehe auch die [Quellen-Seite](quellen.md) für Details.
+See also the [Sources page](quellen.md) for details.
 
-## Hinweis
+## Notice
 
-Die Artikel auf dieser Plattform werden mit Unterstützung von **Künstlicher Intelligenz** erstellt und redaktionell geprüft.
+The articles on this platform are created with the assistance of **Artificial Intelligence** and editorially reviewed.

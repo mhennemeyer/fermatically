@@ -1,29 +1,29 @@
-# Elementare Zahlentheorie
+# Elementary Number Theory
 
-!!! abstract "Überblick"
-    Diese Artikelserie führt in die **elementare Zahlentheorie** ein – das Fundament, auf dem der Beweis von Fermats letztem Satz aufbaut. Wir beginnen mit der Formulierung des berühmten Satzes und arbeiten uns durch die ersten historischen Beweise für Spezialfälle.
+!!! abstract "Overview"
+    This article series introduces **elementary number theory** – the foundation on which the proof of Fermat's Last Theorem is built. We begin with the statement of the famous theorem and work through the first historical proofs for special cases.
 
-## Worum geht es?
+## What Is This About?
 
-Fermats letzter Satz behauptet, dass die Gleichung
+Fermat's Last Theorem asserts that the equation
 
 \[
 x^n + y^n = z^n
 \]
 
-für \(n \geq 3\) **keine** Lösung in positiven ganzen Zahlen besitzt. Über 350 Jahre lang blieb diese Vermutung unbewiesen – obwohl Fermat selbst behauptete, einen Beweis gefunden zu haben.
+has **no** solution in positive integers for \(n \geq 3\). For over 350 years this conjecture remained unproven – even though Fermat himself claimed to have found a proof.
 
-In dieser Serie zeigen wir, wie die ersten Spezialfälle gelöst wurden und warum es genügt, den Satz nur für **Primzahl-Exponenten** zu beweisen.
+In this series we show how the first special cases were solved and why it suffices to prove the theorem only for **prime exponents**.
 
-## Artikel in dieser Serie
+## Articles in This Series
 
-| # | Artikel | Thema |
+| # | Article | Topic |
 |---|---------|-------|
-| 1 | [Was ist Fermats letzter Satz?](01-was-ist-flt.md) | Geschichte, Fermat, 350 Jahre Suche |
-| 2 | [Der Beweis für \(n=4\)](02-beweis-n4.md) | Fermats eigener Beweis (Infinite Descent) |
-| 3 | [Primzahlen und warum sie reichen](03-primzahlen-reduktion.md) | Reduktion auf Primzahl-Exponenten |
-| 4 | [Der Beweis für \(n=3\)](04-beweis-n3.md) | Euler, Gauß, algebraische Zahlen |
+| 1 | [What Is Fermat's Last Theorem?](01-was-ist-flt.md) | History, Fermat, 350 years of searching |
+| 2 | [The Proof for \(n=4\)](02-beweis-n4.md) | Fermat's own proof (Infinite Descent) |
+| 3 | [Primes and Why They Suffice](03-primzahlen-reduktion.md) | Reduction to prime exponents |
+| 4 | [The Proof for \(n=3\)](04-beweis-n3.md) | Euler, Gauss, algebraic numbers |
 
-## Empfohlene Reihenfolge
+## Recommended Order
 
-Die Artikel bauen aufeinander auf. Wir empfehlen, sie in der angegebenen Reihenfolge zu lesen. Danach bist du bereit für die [Werkzeuge](../../werkzeuge/index.md) der modernen Mathematik.
+The articles build on each other. We recommend reading them in the order listed. Afterwards you will be ready for the [Tools](../../werkzeuge/index.md) of modern mathematics.

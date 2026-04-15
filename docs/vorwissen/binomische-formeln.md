@@ -1,83 +1,83 @@
 ---
-title: "Binomische Formeln und Faktorisierung"
-description: "Die drei binomischen Formeln und ihre Anwendung beim Umformen"
-lang: de
+title: "Binomial Formulas and Factorization"
+description: "The three binomial formulas and their use in algebraic manipulation"
+lang: en
 type: vorwissen
 ---
 
-# Binomische Formeln und Faktorisierung
+# Binomial Formulas and Factorization
 
-## Die drei binomischen Formeln
+## The Three Binomial Formulas
 
-### Erste binomische Formel
+### First Binomial Formula
 
 $$
 (a + b)^2 = a^2 + 2ab + b^2
 $$
 
-**Beispiel.** $(x + 3)^2 = x^2 + 6x + 9$.
+**Example.** $(x + 3)^2 = x^2 + 6x + 9$.
 
-### Zweite binomische Formel
+### Second Binomial Formula
 
 $$
 (a - b)^2 = a^2 - 2ab + b^2
 $$
 
-**Beispiel.** $(x - 5)^2 = x^2 - 10x + 25$.
+**Example.** $(x - 5)^2 = x^2 - 10x + 25$.
 
-### Dritte binomische Formel
+### Third Binomial Formula
 
 $$
 (a + b)(a - b) = a^2 - b^2
 $$
 
-**Beispiel.** $(x + 4)(x - 4) = x^2 - 16$.
+**Example.** $(x + 4)(x - 4) = x^2 - 16$.
 
-## Faktorisierung
+## Factorization
 
-Die binomischen Formeln lassen sich auch in umgekehrter Richtung lesen – zum **Faktorisieren** (Zerlegen in Faktoren):
+The binomial formulas can also be read in reverse — for **factoring** (decomposing into factors):
 
-| Ausdruck | Faktorisierte Form |
-|----------|-------------------|
+| Expression | Factored Form |
+|-----------|---------------|
 | $a^2 + 2ab + b^2$ | $(a + b)^2$ |
 | $a^2 - 2ab + b^2$ | $(a - b)^2$ |
 | $a^2 - b^2$ | $(a + b)(a - b)$ |
 
-**Beispiel.** $x^2 - 9 = x^2 - 3^2 = (x + 3)(x - 3)$.
+**Example.** $x^2 - 9 = x^2 - 3^2 = (x + 3)(x - 3)$.
 
-**Beispiel.** $4x^2 - 12x + 9 = (2x)^2 - 2 \cdot 2x \cdot 3 + 3^2 = (2x - 3)^2$.
+**Example.** $4x^2 - 12x + 9 = (2x)^2 - 2 \cdot 2x \cdot 3 + 3^2 = (2x - 3)^2$.
 
-## Anwendung: Quadratische Gleichungen
+## Application: Quadratic Equations
 
-Die dritte binomische Formel löst Gleichungen der Form $a^2 = b^2$:
+The third binomial formula solves equations of the form $a^2 = b^2$:
 
 $$
-a^2 = b^2 \iff a^2 - b^2 = 0 \iff (a+b)(a-b) = 0 \iff a = b \text{ oder } a = -b
+a^2 = b^2 \iff a^2 - b^2 = 0 \iff (a+b)(a-b) = 0 \iff a = b \text{ or } a = -b
 $$
 
-## Höhere Potenzen (Ausblick)
+## Higher Powers (Preview)
 
-Für $(a + b)^n$ mit $n > 2$ gilt der **binomische Satz**:
+For $(a + b)^n$ with $n > 2$, the **binomial theorem** applies:
 
 $$
 (a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k
 $$
 
-mit dem **Binomialkoeffizienten** $\binom{n}{k} = \frac{n!}{k!(n-k)!}$.
+with the **binomial coefficient** $\binom{n}{k} = \frac{n!}{k!(n-k)!}$.
 
-**Beispiel.** $(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
+**Example.** $(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Formel | Gleichung |
-|--------|-----------|
-| 1. binomische | $(a+b)^2 = a^2 + 2ab + b^2$ |
-| 2. binomische | $(a-b)^2 = a^2 - 2ab + b^2$ |
-| 3. binomische | $(a+b)(a-b) = a^2 - b^2$ |
-| Binomischer Satz | $(a+b)^n = \sum \binom{n}{k} a^{n-k} b^k$ |
+| Formula | Equation |
+|---------|----------|
+| 1st binomial | $(a+b)^2 = a^2 + 2ab + b^2$ |
+| 2nd binomial | $(a-b)^2 = a^2 - 2ab + b^2$ |
+| 3rd binomial | $(a+b)(a-b) = a^2 - b^2$ |
+| Binomial theorem | $(a+b)^n = \sum \binom{n}{k} a^{n-k} b^k$ |
 
-## Quellen
+## References
 
-- Courant, Richard; Robbins, Herbert: *What Is Mathematics?* Oxford University Press, 2. Auflage, 1996.
+- Courant, Richard; Robbins, Herbert: *What Is Mathematics?* Oxford University Press, 2nd edition, 1996.

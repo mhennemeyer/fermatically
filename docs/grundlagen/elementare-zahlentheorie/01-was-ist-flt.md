@@ -1,185 +1,167 @@
 ---
-title: "Was ist Fermats letzter Satz?"
+title: "What Is Fermat's Last Theorem?"
 slug: elementare-zahlentheorie/01-was-ist-flt
 series: elementare-zahlentheorie
 part: 1
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: zahlentheorie
 tags:
   - fermat
-  - zahlentheorie
-  - geschichte
-requires:
-  - potenzen-polynome
-  - zahlenbereiche
-  - pythagoras
-  - gleichungen
+  - number-theory
+  - history
+requires: []
 ---
 
-# Was ist Fermats letzter Satz?
+# What Is Fermat's Last Theorem?
 
-!!! abstract "Zusammenfassung"
-    Fermats letzter Satz – eine Vermutung aus dem Jahr 1637, die 358 Jahre
-    unbewiesen blieb. Von der Randnotiz bis zu Wiles' Beweis 1995.
+!!! abstract "Summary"
+    The story of a conjecture that remained unproven for 358 years –
+    from Fermat's marginal note to Andrew Wiles' proof in 1995.
 
-## Voraussetzungen
+## Prerequisites
 
-| Thema | Beschreibung |
-|-------|-------------|
-| [Potenzen und Polynome](../../vorwissen/potenzen-polynome.md) | Potenzschreibweise $a^n$ und Rechenregeln |
-| [Zahlenbereiche](../../vorwissen/zahlenbereiche.md) | $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ und ihre Beziehungen |
-| [Pythagoras und pythagoräische Tripel](../../vorwissen/pythagoras.md) | Der Satz von Pythagoras und ganzzahlige Lösungen von $a^2 + b^2 = c^2$ |
-| [Gleichungen](../../vorwissen/gleichungen.md) | Äquivalente Umformungen und Lösungsstrategien |
+None – this article is the entry point to the series.
 
 ---
 
-## 1. Fermats Randnotiz (1637)
+## 1. Fermat's Marginal Note (1637)
 
-Im Jahr 1637 notierte Pierre de Fermat am Rand seines Exemplars der *Arithmetica* von Diophant:
+In 1637, Pierre de Fermat wrote in the margin of his copy of Diophantus' *Arithmetica* a statement that would occupy mathematics for over three centuries:
 
-> *„Cubum autem in duos cubos, aut quadratoquadratum in duos quadratoquadratos, et generaliter nullam in infinitum ultra quadratum potestatem in duos eiusdem nominis fas est dividere. Cuius rei demonstrationem mirabilem sane detexi. Hanc marginis exiguitas non caperet."*
+> *"Cubum autem in duos cubos, aut quadratoquadratum in duos quadratoquadratos, et generaliter nullam in infinitum ultra quadratum potestatem in duos eiusdem nominis fas est dividere. Cuius rei demonstrationem mirabilem sane detexi. Hanc marginis exiguitas non caperet."*
 
-Auf Deutsch:
+In English:
 
-> *„Es ist unmöglich, einen Kubus in zwei Kuben zu zerlegen, oder eine vierte Potenz in zwei vierte Potenzen, oder allgemein irgendeine Potenz höher als die zweite in zwei Potenzen derselben Art. Ich habe hierfür einen wahrhaft wunderbaren Beweis entdeckt, den dieser Rand nicht fassen kann."*
+> *"It is impossible to separate a cube into two cubes, or a fourth power into two fourth powers, or in general, any power higher than the second, into two like powers. I have discovered a truly marvellous proof of this, which this margin is too narrow to contain."*
 
-Die Notiz wurde erst nach Fermats Tod (1665) von seinem Sohn Clément-Samuel veröffentlicht. Sie begründete eines der bekanntesten offenen Probleme der Mathematik.
+This marginal note was only published after Fermat's death (1665) by his son Clément-Samuel. It established one of the most famous unsolved problems in mathematics – and a 358-year hunt for a proof.
 
-Fermat war kein Berufsmathematiker, sondern Jurist am Parlament von Toulouse. Dennoch zählen seine Beiträge zur Zahlentheorie zu den bedeutendsten des 17. Jahrhunderts. Viele seiner Behauptungen stellte er ohne Beweis auf – nahezu alle erwiesen sich als korrekt. Nur diese eine, die bekannteste, widerstand jedem Beweisversuch über dreieinhalb Jahrhunderte.
+Fermat himself was not a professional mathematician. He was a jurist at the Parliament of Toulouse and pursued mathematics as a passion. Yet his contributions to number theory were so profound that he is often called the "Prince of Amateurs." He stated many claims without proof – nearly all turned out to be correct. Only this one, the most famous of all, resisted every attempt at proof.
 
-> „Fermat's Last Theorem has always been the Holy Grail of mathematics."
-> — Simon Singh, *Fermat's Last Theorem* (1997), Vorwort
+## 2. The Formal Statement
 
-## 2. Die Aussage formal
-
-Die Behauptung lässt sich präzise formulieren:
+What Fermat claimed can be stated precisely as follows:
 
 $$
-x^n + y^n = z^n \quad \text{hat für } n \geq 3 \text{ keine Lösung in } x, y, z \in \mathbb{Z}^+
+x^n + y^n = z^n \quad \text{has no solution for } n \geq 3 \text{ with } x, y, z \in \mathbb{Z}^+
 $$
 
-Es gibt keine drei positiven [ganzen Zahlen](../../vorwissen/zahlenbereiche.md) $x$, $y$ und $z$, die diese [Gleichung](../../vorwissen/gleichungen.md) für einen ganzzahligen [Exponenten](../../vorwissen/potenzen-polynome.md) $n \geq 3$ erfüllen.
+That is: there are no three positive integers $x$, $y$, and $z$ that satisfy this equation for any integer exponent $n \geq 3$.
 
-Für $n = 2$ existieren dagegen unendlich viele Lösungen – die **[pythagoräische Tripel](../../vorwissen/pythagoras.md)**:
+For $n = 2$, by contrast, we know infinitely many solutions – the **Pythagorean triples**:
 
 $$
 3^2 + 4^2 = 5^2, \quad 5^2 + 12^2 = 13^2, \quad 8^2 + 15^2 = 17^2, \quad \ldots
 $$
 
-Der [Satz von Pythagoras](../../vorwissen/pythagoras.md) garantiert unendlich viele solcher Tripel, und sie lassen sich vollständig parametrisieren. Beim Übergang von Exponent $2$ zu $3$ verschwinden sämtliche Lösungen.
+The Pythagorean theorem even guarantees that infinitely many such triples exist, and they can be completely parametrised. But as soon as the exponent rises from $2$ to $3$, all solutions seem to vanish – as if an invisible barrier had been crossed.
 
-## 3. Die Schwierigkeit des Problems
+## 3. Why Is This Hard?
 
-Die Behauptung wirkt auf den ersten Blick einfach. Mehrere strukturelle Gründe machen den Beweis jedoch außerordentlich schwierig.
+At first glance, the claim appears harmless. One might think a clever algebraic trick would suffice. But the devil is in the details.
 
-**Nichtexistenz-Beweis.** Es ist zu zeigen, dass unter den unendlich vielen Kombinationen von $x$, $y$, $z$ und $n$ keine einzige die Gleichung erfüllt. Ein einziges Gegenbeispiel hätte den Satz widerlegt – doch keines wurde je gefunden.
+**The problem of non-existence.** Finding a proof that *something exists* is often easier than showing that *something does not exist*. One would need to show that among infinitely many combinations of $x$, $y$, $z$, and $n$, not a single one satisfies the equation. A single counterexample would have sufficed to disprove the theorem – but nobody found one.
 
-**Computersuchen.** Systematische Suchen im 20. Jahrhundert verifizierten den Satz bis in den Billionenbereich. Das liefert ein starkes Indiz, aber keinen Beweis. In der Mathematik existieren Vermutungen, die erst bei extrem großen Zahlen scheitern.
+**Computer searches.** In the 20th century, systematic searches were conducted. Up into the trillions – no solution. That is strong evidence, but not a proof. In mathematics, there are conjectures that fail only at astronomically large numbers.
 
-**Fehlende geometrische Struktur.** Für $n = 2$ hat die Gleichung eine reiche geometrische Interpretation: Jede Lösung entspricht einem rechtwinkligen Dreieck mit ganzzahligen Seiten. Für $n \geq 3$ fehlt eine vergleichbare Deutung – und damit fehlen die Werkzeuge.
+**The asymmetry with the Pythagorean theorem.** For $n = 2$, the equation has a rich geometric structure: every solution corresponds to a right triangle with integer sides. For $n \geq 3$, a comparable geometric interpretation is absent – and with it, the tools.
 
-**Fermats „wunderbarer Beweis".** Die Konsensposition unter Mathematikhistorikern: Fermat besaß keinen korrekten Beweis für den allgemeinen Fall. Der tatsächliche Beweis von Wiles nutzt Konzepte – elliptische Kurven, Modulformen, Galois-Darstellungen –, die erst im 19. und 20. Jahrhundert entwickelt wurden.
+**Fermat's "marvellous proof."** Almost all historians of mathematics agree: Fermat could not have possessed a correct proof. Wiles' actual proof uses concepts – elliptic curves, modular forms, Galois representations – that were not developed until the 19th and 20th centuries. Fermat probably had an idea that worked for $n = 4$ (we know that proof), but was flawed for general $n$.
 
-> „It is now clear that Fermat did not have a proof of his 'Last Theorem'. The techniques available in the seventeenth century are simply insufficient."
-> — Nigel Boston, *The Proof of Fermat's Last Theorem* (2003), S. 1
+## 4. The History of Partial Proofs
 
-## 4. Die Geschichte der Teilbeweise
+The history of Fermat's Last Theorem is also a history of the development of mathematics. Every partial proof required new methods and drove entire fields of research forward.
 
-Die Geschichte von Fermats letztem Satz ist zugleich eine Geschichte der Entwicklung der Mathematik. Jeder Teilbeweis erforderte neue Methoden und trieb ganze Forschungsgebiete voran.
+### Fermat himself: $n = 4$ (ca. 1640)
 
-### Fermat: $n = 4$ (ca. 1640)
+Fermat proved the only case for which we have a complete proof from him. He used the method of **infinite descent** (*descente infinie*): Suppose a solution existed. Then one could construct from it a *smaller* solution, and from that an even smaller one – ad infinitum. Since positive integers cannot become infinitely small, the assumption is false. We treat this proof in detail in the [next article](02-beweis-n4.md).
 
-Fermat lieferte den einzigen Fallbeweis, der von ihm überliefert ist. Die Methode: **unendlicher Abstieg** (*descente infinie*). Angenommen, es existiert eine Lösung. Dann lässt sich daraus eine kleinere Lösung konstruieren, und daraus eine noch kleinere – ad infinitum. Da positive ganze Zahlen nicht beliebig klein werden können, führt dies zum Widerspruch. Details in [Artikel 02](02-beweis-n4.md).
+### Leonhard Euler: $n = 3$ (1770)
 
-### Euler: $n = 3$ (1770)
+Euler extended Fermat's method to the case $n = 3$. But to do so, he had to take a crucial step: he left the ordinary integers $\mathbb{Z}$ and computed instead with the **Eisenstein integers** $\mathbb{Z}[\omega]$, where $\omega = e^{2\pi i/3}$ is a primitive cube root of unity. In this extended number domain, he could factorise the equation and carry out the descent. Euler's proof did contain a gap, however: he implicitly assumed that unique prime factorisation holds in $\mathbb{Z}[\omega]$ – which happens to be true, but needs to be proved. We discuss the complete proof in [Article 4](04-beweis-n3.md).
 
-Euler erweiterte die Abstiegsmethode auf den Fall $n = 3$. Dafür verließ er die gewöhnlichen ganzen Zahlen $\mathbb{Z}$ und rechnete mit den **Eisenstein-Zahlen** $\mathbb{Z}[\omega]$, wobei $\omega = e^{2\pi i/3}$ eine primitive dritte Einheitswurzel ist. In diesem erweiterten Zahlenbereich ließ sich die Gleichung faktorisieren und der Abstieg durchführen. Eulers Beweis enthielt eine Lücke: Er setzte implizit voraus, dass in $\mathbb{Z}[\omega]$ die eindeutige Primfaktorzerlegung gilt – was zutrifft, aber eines separaten Beweises bedarf. Der vollständige Beweis ist Thema von [Artikel 04](04-beweis-n3.md).
+### Sophie Germain: A New Strategy (1823)
 
-### Sophie Germain: Eine allgemeine Strategie (1823)
+Sophie Germain – one of the first prominent female mathematicians – developed a more general approach. She proved: if $p$ is an odd prime and $2p + 1$ is also prime (a so-called **Germain prime**), then $x^p + y^p = z^p$ has no solution in which $p$ divides none of the values $x$, $y$, $z$ (**Case 1** of FLT). This was the first partial success that applied to infinitely many exponents simultaneously.
 
-Sophie Germain entwickelte einen Ansatz, der erstmals für unendlich viele Exponenten gleichzeitig galt. Ihr Resultat: Wenn $p$ eine ungerade Primzahl ist und $2p + 1$ ebenfalls prim (eine **Germain-Primzahl**), dann hat $x^p + y^p = z^p$ keine Lösung, bei der $p$ keinen der Werte $x$, $y$, $z$ teilt (**Fall 1** von FLT).
+### Ernst Kummer: Regular Primes (1847–1857)
 
-### Kummer: Reguläre Primzahlen (1847–1857)
+Kummer revolutionised algebraic number theory by developing **ideal theory** – a concept that compensates for the lack of unique factorisation in general number rings. He proved FLT for all **regular primes** – primes $p$ that do not divide the class number of the $p$-th cyclotomic field. Up to $p = 100$, all primes except $37$, $59$, and $67$ are regular. Yet there are infinitely many irregular primes, and Kummer's method fails for them.
 
-Kummer entwickelte die **Idealtheorie** – ein Konzept, das die fehlende eindeutige Faktorisierung in allgemeinen Zahlringen kompensiert. Er bewies FLT für alle **regulären Primzahlen**: Primzahlen $p$, die nicht die Klassenzahl des $p$-ten Kreisteilungskörpers teilen. Bis $p = 100$ sind alle Primzahlen außer $37$, $59$ und $67$ regulär. Für irreguläre Primzahlen versagt die Methode.
+### The 20th Century: Computer Proofs and Bounds
 
-> „Kummer's introduction of ideal numbers [...] was one of the most important advances in number theory in the nineteenth century."
-> — Harold M. Edwards, *Fermat's Last Theorem: A Genetic Introduction to Algebraic Number Theory* (1977), S. 76
+With the advent of computers, FLT was verified for ever-larger exponents. In 1993, shortly before Wiles' breakthrough, the theorem had been proved for all $n \leq 4{,}000{,}000$. Yet these results remained piecework – they could not cover the general case.
 
-### 20. Jahrhundert: Computerergebnisse
+## 5. Failed Attempts and Dead Ends
 
-Mit zunehmender Rechenleistung wurde FLT für immer größere Exponenten verifiziert. 1993, kurz vor Wiles' Durchbruch, war der Satz für alle $n \leq 4{,}000{,}000$ bewiesen. Diese Ergebnisse blieben Einzelfallprüfungen – sie konnten den allgemeinen Fall nicht abdecken.
+The history of FLT is also a history of errors. Hundreds of incorrect proofs were submitted – by amateurs and professionals alike.
 
-## 5. Fehlgeschlagene Beweisversuche
+A typical mistake: one tries to factorise the equation $x^p + y^p = z^p$ directly in a number ring $\mathbb{Z}[\zeta_p]$ (with $\zeta_p = e^{2\pi i/p}$) and assumes that the factors are coprime. For $p = 3$ this works (because $\mathbb{Z}[\omega]$ is a principal ideal domain), but for general $p$ unique factorisation does not hold. Gabriel Lamé announced a supposed proof in 1847, which failed at precisely this point – Kummer identified the error the very same day.
 
-Hunderte fehlerhafte Beweise wurden eingereicht – von Amateuren und Fachleuten gleichermaßen.
+These failures were not useless: they drove the development of algebraic number theory, ideal theory, and ultimately modern algebraic geometry.
 
-Ein typischer Fehler: Die Gleichung $x^p + y^p = z^p$ wird direkt im Zahlring $\mathbb{Z}[\zeta_p]$ faktorisiert (mit $\zeta_p = e^{2\pi i/p}$), und die Teilerfremdhheit der Faktoren wird stillschweigend vorausgesetzt. Für $p = 3$ funktioniert dies (weil $\mathbb{Z}[\omega]$ ein Hauptidealring ist), für allgemeines $p$ ist die eindeutige Faktorisierung nicht gegeben. Gabriel Lamé verkündete 1847 einen vermeintlichen Beweis, der genau an dieser Stelle scheiterte – Kummer wies den Fehler noch am selben Tag nach.
+## 6. The Wolfskehl Prize
 
-Diese Fehlschläge trieben die Entwicklung der algebraischen Zahlentheorie, der Idealtheorie und der modernen algebraischen Geometrie voran.
+In 1908, the Darmstadt industrialist **Paul Wolfskehl** endowed a prize of 100,000 gold marks for the proof of Fermat's Last Theorem. According to legend, Wolfskehl, suffering from an incurable illness, had planned his suicide for midnight. While waiting, he immersed himself in Kummer's work, lost track of time – and found new will to live. In gratitude, he endowed the prize.
 
-## 6. Der Wolfskehl-Preis
+The Wolfskehl Prize triggered a flood of submissions. The University of Göttingen, which administered the prize, received thousands of purported proofs – most with obvious errors. Edmund Landau is said to have had form postcards printed:
 
-Im Jahr 1908 stiftete der Darmstädter Industrielle **Paul Wolfskehl** einen Preis von 100.000 Goldmark für den Beweis von Fermats letztem Satz.
+> *"Dear Sir/Madam ..., Your purported proof of Fermat's Last Theorem contains an error on page ..., line ..."*
 
-Der Preis löste eine Flut von Einsendungen aus. Die Universität Göttingen, die den Preis verwaltete, erhielt tausende vermeintliche Beweise. Edmund Landau soll Formularkarten gedruckt haben:
+After two World Wars and inflation, the prize was worth only a fraction of its original value. When Andrew Wiles finally received it in 1997, it amounted to roughly 50,000 DM – but its symbolic value was priceless.
 
-> *„Sehr geehrter Herr/Frau ..., Ihr vermeintlicher Beweis von Fermats letztem Satz enthält einen Fehler auf Seite ..., Zeile ..."*
+## 7. The Modern Turn
 
-Nach zwei Weltkriegen und Inflation war der Preis nur noch einen Bruchteil seines ursprünglichen Wertes wert. Andrew Wiles erhielt ihn 1997 – umgerechnet etwa 50.000 DM.
+The breakthrough came from a completely unexpected direction. It was not number theory itself that solved the problem, but a bridge between two seemingly unrelated fields of mathematics.
 
-## 7. Die moderne Wende
+### The Taniyama–Shimura Conjecture (1955)
 
-Der Durchbruch kam nicht aus der klassischen Zahlentheorie, sondern aus einer Verbindung zwischen zwei scheinbar getrennten Gebieten.
+The Japanese mathematicians **Yutaka Taniyama** and **Goro Shimura** posed a bold conjecture: every **elliptic curve** over $\mathbb{Q}$ is **modular** – that is, it can be described by a **modular form**. At first, this sounded like a purely technical result with no connection to FLT. But three decades later, it became clear that this connection was the key.
 
-### Die Taniyama-Shimura-Vermutung (1955)
+### The Frey Curve and Ribet's Proof (1985–1986)
 
-Yutaka Taniyama und Goro Shimura formulierten die Vermutung, dass jede **elliptische Kurve** über $\mathbb{Q}$ **modular** ist – also durch eine **Modulform** beschrieben werden kann. Ein Zusammenhang zu FLT war zu diesem Zeitpunkt nicht erkennbar.
-
-### Die Frey-Kurve und Ribets Theorem (1985–1986)
-
-Gerhard Frey beobachtete 1985: Wenn FLT falsch wäre – wenn also eine Lösung $a^p + b^p = c^p$ existierte –, dann definiert
+The German mathematician **Gerhard Frey** had a spectacular idea in 1985: if FLT were *false* – if a solution $a^p + b^p = c^p$ existed – then one could construct from it an elliptic curve:
 
 $$
 y^2 = x(x - a^p)(x + b^p)
 $$
 
-eine elliptische Kurve mit Eigenschaften, die Modularität ausschließen. Kenneth Ribet bewies 1986, dass diese Beobachtung korrekt ist: Die Frey-Kurve ist nicht modular. Damit stand die Implikation:
+This "**Frey curve**" would have such exotic properties that it could not possibly be modular. So if the Taniyama–Shimura conjecture holds (all elliptic curves are modular), then the Frey curve cannot exist – and FLT must be true.
+
+**Kenneth Ribet** proved in 1986 that Frey's intuition was correct: the Frey curve is indeed not modular. This secured the implication:
 
 $$
-\text{Taniyama-Shimura} \implies \text{Fermats letzter Satz}
+\text{Taniyama–Shimura} \implies \text{Fermat's Last Theorem}
 $$
 
-### Wiles' Beweis (1993–1995)
+### Andrew Wiles (1993–1995)
 
-Andrew Wiles arbeitete ab 1986 an einem Beweis der Taniyama-Shimura-Vermutung für die Klasse der **semistabilen** elliptischen Kurven – ausreichend für FLT.
+Andrew Wiles, a British mathematician at Princeton, had dreamed since childhood of proving FLT. After Ribet's result, he worked in secret for seven years on a proof of the Taniyama–Shimura conjecture – at least for the class of **semistable** elliptic curves, which suffices for FLT.
 
-Im Juni 1993 stellte Wiles den Beweis in Cambridge vor. Bei der Begutachtung zeigte sich eine Lücke. Im September 1994 fand Wiles zusammen mit Richard Taylor die Lösung: den **Taylor-Wiles-Trick**, eine patching-Methode für Galois-Deformationen.
+In June 1993, Wiles announced his proof in a dramatic lecture series in Cambridge. But during peer review, a gap was found. For months, Wiles tried to close it – he nearly gave up. Then, in September 1994, together with his former student **Richard Taylor**, he found the solution: the famous **Taylor–Wiles trick**.
 
-Am 25. Oktober 1995 erschien der korrigierte Beweis in den *Annals of Mathematics*. Fermats letzter Satz war bewiesen – 358 Jahre nach der Randnotiz.
+On 25 October 1995, the corrected proof was published in the *Annals of Mathematics*. Fermat's Last Theorem was proved – after 358 years.
 
-> „The proof represents the culmination of a remarkable era in the history of the problem, beginning with the pioneering work of Frey, Serre, and Ribet."
-> — Andrew Wiles, *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), S. 443
+## 8. Outlook: What Comes in the Next Articles?
 
-## 8. Ausblick
+This first article has drawn the big picture. In the following articles, we dive into the details:
 
-Dieser Artikel hat den historischen und mathematischen Rahmen abgesteckt. Die folgenden Artikel behandeln die technischen Details:
-
-| Artikel | Thema |
+| Article | Topic |
 |---------|-------|
-| [02 – Der Beweis für $n = 4$](02-beweis-n4.md) | Fermats Abstiegsmethode |
-| [03 – Primzahlen und warum sie reichen](03-primzahlen-reduktion.md) | Reduktion auf Primzahl-Exponenten |
-| [04 – Der Beweis für $n = 3$](04-beweis-n3.md) | Eulers Beweis und algebraische Zahlentheorie |
+| [02 – The Proof for $n = 4$](02-beweis-n4.md) | Fermat's own proof using the method of infinite descent |
+| [03 – Primes and Why They Suffice](03-primzahlen-reduktion.md) | Why it suffices to prove FLT for prime exponents |
+| [04 – The Proof for $n = 3$](04-beweis-n3.md) | Euler's proof and the entry into algebraic number theory |
 
-Es folgen die **Werkzeug-Artikel** (Gruppen, Ringe, Galois-Theorie, elliptische Kurven, Modulformen) und schließlich die **Beweis-Artikel**, die Wiles' Argument Schritt für Schritt darstellen.
+After the fundamentals come the **tool topics** – self-contained articles on groups, rings, Galois theory, elliptic curves, and modular forms. And finally the **proof topics**, which guide step by step through Wiles' proof.
+
+The goal: by the end, every reader – whether student, mathematics enthusiast, or fellow researcher – should understand *why* Wiles' proof works and what ideas sustain it.
 
 ---
 
-## Quellen
+## Further Reading
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 1
-- **Harold M. Edwards**: *Fermat's Last Theorem: A Genetic Introduction to Algebraic Number Theory*, Springer (1977)
-- **Simon Singh**: *Fermat's Last Theorem*, Fourth Estate (1997)
+- **Simon Singh**: *Fermat's Last Theorem* – The story of a riddle that confounded the world's greatest minds for 358 years (popular science, brilliantly told)
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003) – Textbook with mathematical details
 - **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), 443–551

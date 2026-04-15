@@ -1,287 +1,282 @@
 ---
-title: "Deformationstheorie"
+title: "Deformation Theory"
 slug: fermat-wiles/04-deformationstheorie
 series: fermat-wiles
 part: 4
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: zahlentheorie
 tags:
-  - deformationstheorie
+  - deformation-theory
   - mazur
-  - deformationsring
+  - deformation-ring
 requires:
-  - grenzwerte-konvergenz
-  - relationen-aequivalenzklassen
+  - fermat-wiles/03-galois-darstellungen
+  - p-adische-zahlen/01-p-adische-zahlen
 ---
-# Deformationstheorie
+# Deformation Theory
 
-!!! abstract "Zusammenfassung"
-    Mazurs Deformationstheorie fragt: Gegeben eine residuale Galois-Darstellung
-    $\bar{\rho}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p)$, welche „Liftungen"
-    nach $\text{GL}_2(A)$ für lokale Ringe $A$ existieren? Der universelle
-    Deformationsring $R$ parametrisiert alle zulässigen Liftungen, die Hecke-Algebra
-    $T$ die modularen. Wiles' Ziel: $R = T$.
+!!! abstract "Summary"
+    Mazur's deformation theory asks: given a residual Galois representation
+    $\bar{\rho}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p)$, which "lifts"
+    to $\text{GL}_2(A)$ for local rings $A$ exist? The universal
+    deformation ring $R$ parametrises all admissible lifts, the Hecke algebra
+    $T$ the modular ones. Wiles' goal: $R = T$.
 
-## Voraussetzungen
+## Prerequisites
 
-- [Galois-Darstellungen](03-galois-darstellungen.md) – Residuale und $p$-adische Darstellungen, Modularität
-- [p-adische Zahlen](../werkzeuge/p-adische-zahlen.md) – Lokale Ringe, $\mathbb{Z}_p$, $p$-adische Topologie
-
-| Thema | Beschreibung |
-|-------|-------------|
-| [Grenzwerte und Konvergenz](../vorwissen/grenzwerte-konvergenz.md) | $\lim_{n \to \infty} a_n = L$, Cauchy-Folgen, Reihen |
-| [Relationen und Äquivalenzklassen](../vorwissen/relationen-aequivalenzklassen.md) | Äquivalenzrelationen, Restklassen, Quotientenmengen |
+- [Galois Representations](03-galois-darstellungen.md) – residual and $p$-adic representations, modularity
+- [p-adic Numbers](../werkzeuge/p-adische-zahlen.md) – local rings, $\mathbb{Z}_p$, $p$-adic topology
 
 ---
 
-## 1. Die Ausgangslage
+## 1. The Starting Point
 
-### Ausgangspunkt
+### What we have
 
-Nach den Ergebnissen von Langlands-Tunnell (für $p = 3$) oder durch den 3-5-Switch (für $p = 5$) wissen wir: Für eine semistabile elliptische Kurve $E/\mathbb{Q}$ ist die **residuale Darstellung**
+From the results of Langlands–Tunnell (for $p = 3$) or via the 3-5 switch (for $p = 5$), we know: for a semistable elliptic curve $E/\mathbb{Q}$, the **residual representation**
 
 $$
 \bar{\rho} = \bar{\rho}_{E,p}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p)
 $$
 
-**modular** – sie kommt von einer Neuform.
+is **modular** – it comes from a newform.
 
-### Ziel
+### What we want to show
 
-Zu beweisen ist, dass auch die **volle $p$-adische Darstellung**
+We must prove that the **full $p$-adic representation**
 
 $$
 \rho = \rho_{E,p}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_p)
 $$
 
-modular ist. Die residuale Darstellung ist die Reduktion modulo $p$: $\rho \bmod p = \bar{\rho}$.
+is also modular. The residual representation is the reduction modulo $p$: $\rho \bmod p = \bar{\rho}$.
 
-### Die Frage der Liftung
+### The lifting question
 
-Das Problem lässt sich so formulieren: Unter allen Darstellungen $\rho: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_p)$, die modulo $p$ die gegebene Darstellung $\bar{\rho}$ ergeben, welche sind modular? **Wiles' Antwort: Alle (unter geeigneten Bedingungen).**
+The problem can be formulated as follows: among all representations $\rho: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_p)$ that reduce modulo $p$ to the given $\bar{\rho}$, which are modular? **Wiles' answer: all of them (under suitable conditions).**
 
-Dazu braucht man ein systematisches Werkzeug, um den „Raum aller Liftungen" zu beschreiben – und genau das leistet Mazurs Deformationstheorie.
+For this, one needs a systematic tool to describe the "space of all lifts" – and that is precisely what Mazur's deformation theory provides.
 
 ---
 
-## 2. Was ist eine Deformation?
+## 2. What Is a Deformation?
 
-### Lokale Ringe
+### Local rings
 
-Ein **vollständiger lokaler noetherscher Ring** $A$ mit Restklassenkörper $\mathbb{F}_p$ ist ein Ring der Form
+A **complete local Noetherian ring** $A$ with residue field $\mathbb{F}_p$ is a ring of the form
 
 $$
 A = \varprojlim A/\mathfrak{m}^n,
 $$
 
-wobei $\mathfrak{m}$ das maximale Ideal ist und $A/\mathfrak{m} \cong \mathbb{F}_p$. Beispiele:
+where $\mathfrak{m}$ is the maximal ideal and $A/\mathfrak{m} \cong \mathbb{F}_p$. Examples:
 
-- $A = \mathbb{F}_p$ (triviale Liftung – nur die residuale Darstellung)
-- $A = \mathbb{Z}_p$ (die $p$-adischen ganzen Zahlen)
-- $A = \mathbb{Z}_p[[x_1, \ldots, x_n]]$ (formale Potenzreihenringe)
-- $A = \mathbb{Z}_p[x]/(x^2)$ (Dualzahlen – für infinitesimale Deformationen)
+- $A = \mathbb{F}_p$ (trivial lift – only the residual representation)
+- $A = \mathbb{Z}_p$ (the $p$-adic integers)
+- $A = \mathbb{Z}_p[[x_1, \ldots, x_n]]$ (formal power series rings)
+- $A = \mathbb{Z}_p[x]/(x^2)$ (dual numbers – for infinitesimal deformations)
 
-### Liftungen
+### Lifts
 
-Eine **Liftung** von $\bar{\rho}$ nach $A$ ist ein stetiger Homomorphismus
+A **lift** of $\bar{\rho}$ to $A$ is a continuous homomorphism
 
 $$
 \rho_A: G_{\mathbb{Q}} \to \text{GL}_2(A),
 $$
 
-der modulo $\mathfrak{m}$ die gegebene Darstellung $\bar{\rho}$ ergibt:
+that reduces modulo $\mathfrak{m}$ to the given representation $\bar{\rho}$:
 
 $$
 \rho_A \pmod{\mathfrak{m}} = \bar{\rho}.
 $$
 
-### Deformationen
+### Deformations
 
-Zwei Liftungen $\rho_A$ und $\rho_A'$ heißen **äquivalent**, wenn sie durch Konjugation mit einer Matrix $M \in \ker(\text{GL}_2(A) \to \text{GL}_2(\mathbb{F}_p))$ ineinander überführt werden können:
+Two lifts $\rho_A$ and $\rho_A'$ are called **equivalent** if they can be conjugated into each other by a matrix $M \in \ker(\text{GL}_2(A) \to \text{GL}_2(\mathbb{F}_p))$:
 
 $$
 \rho_A' = M \rho_A M^{-1}, \qquad M \equiv I_2 \pmod{\mathfrak{m}}.
 $$
 
-Eine **Deformation** ist eine Äquivalenzklasse von Liftungen. Die Passage von Liftungen zu Deformationen eliminiert die „unwesentlichen" Freiheitsgrade der Basiswahl.
+A **deformation** is an equivalence class of lifts. The passage from lifts to deformations eliminates the "inessential" degrees of freedom from the choice of basis.
 
 ---
 
-## 3. Der universelle Deformationsring $R$
+## 3. The Universal Deformation Ring $R$
 
-### Mazurs Darstellbarkeitssatz
+### Mazur's representability theorem
 
-Das zentrale Ergebnis von **Barry Mazur** (1989) ist:
+The central result of **Barry Mazur** (1989) is:
 
 !!! note "Theorem (Mazur, 1989)"
-    Sei $\bar{\rho}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p)$ eine stetige,
-    irreduzible Darstellung. Dann existiert ein **universeller Deformationsring**
-    $R$ (ein vollständiger lokaler noetherscher Ring mit Restklassenkörper $\mathbb{F}_p$)
-    und eine **universelle Deformation**
+    Let $\bar{\rho}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p)$ be a continuous,
+    irreducible representation. Then there exists a **universal deformation ring**
+    $R$ (a complete local Noetherian ring with residue field $\mathbb{F}_p$)
+    and a **universal deformation**
     $$
     \rho^{\text{univ}}: G_{\mathbb{Q}} \to \text{GL}_2(R),
     $$
-    so dass jede Deformation von $\bar{\rho}$ nach einem Ring $A$ **eindeutig** durch
-    einen lokalen Ringhomomorphismus $R \to A$ faktorisiert.
+    such that every deformation of $\bar{\rho}$ to a ring $A$ **uniquely** factors
+    through a local ring homomorphism $R \to A$.
 
-In der Sprache der Kategorientheorie: Der Funktor „Deformationen von $\bar{\rho}$" ist **darstellbar**, und $R$ ist das darstellende Objekt.
+In the language of category theory: the functor "deformations of $\bar{\rho}$" is **representable**, and $R$ is the representing object.
 
-### Was bedeutet das konkret?
+### What does this mean concretely?
 
-Der universelle Deformationsring $R$ ist die „größtmögliche" Liftung:
+The universal deformation ring $R$ is the "largest possible" lift:
 
-- Jede Deformation von $\bar{\rho}$ nach $\mathbb{Z}_p$ entsteht durch einen Ringhomomorphismus $R \to \mathbb{Z}_p}$ (Spezialisierung der universellen Deformation).
-- Die Struktur von $R$ kodiert alle Informationen über alle möglichen Liftungen gleichzeitig.
-- $R$ kann als $\mathbb{Z}_p$-Algebra geschrieben werden: $R \cong \mathbb{Z}_p[[x_1, \ldots, x_r]] / (f_1, \ldots, f_s)$ für geeignete $r$ und Relationen $f_i$.
+- Every deformation of $\bar{\rho}$ to $\mathbb{Z}_p$ arises via a ring homomorphism $R \to \mathbb{Z}_p$ (specialisation of the universal deformation).
+- The structure of $R$ encodes all information about all possible lifts simultaneously.
+- $R$ can be written as a $\mathbb{Z}_p$-algebra: $R \cong \mathbb{Z}_p[[x_1, \ldots, x_r]] / (f_1, \ldots, f_s)$ for suitable $r$ and relations $f_i$.
 
-### Analogie
+### Analogy
 
-Man kann sich $R$ vorstellen wie den **Koordinatenring einer Moduli-Varietät**: Punkte von $\text{Spec}(R)$ (genauer: $\mathbb{Z}_p$-wertige Punkte) entsprechen Deformationen von $\bar{\rho}$. Die Geometrie von $\text{Spec}(R)$ spiegelt die Struktur des Raums aller Deformationen wider.
+One can think of $R$ as the **coordinate ring of a moduli variety**: points of $\text{Spec}(R)$ (more precisely: $\mathbb{Z}_p$-valued points) correspond to deformations of $\bar{\rho}$. The geometry of $\text{Spec}(R)$ reflects the structure of the space of all deformations.
 
 ---
 
-## 4. Deformationsbedingungen
+## 4. Deformation Conditions
 
-### Warum Bedingungen nötig sind
+### Why conditions are necessary
 
-Der „nackte" universelle Deformationsring $R$ parametrisiert **alle** Deformationen von $\bar{\rho}$ – ohne jede Einschränkung. Für Wiles' Beweis ist das zu viel: Man braucht Deformationen, die zusätzliche **lokale Bedingungen** erfüllen.
+The "bare" universal deformation ring $R$ parametrises **all** deformations of $\bar{\rho}$ – without any restriction. For Wiles' proof, this is too much: one needs deformations satisfying additional **local conditions**.
 
-### Lokale Bedingungen bei $q \neq p$
+### Local conditions at $q \neq p$
 
-Für jede Primzahl $q \neq p$ kann man fordern, dass die Deformation bei $q$ eine bestimmte Form hat. Die wichtigsten Bedingungen:
+For every prime $q \neq p$, one can require the deformation at $q$ to have a particular form. The most important conditions:
 
-- **Unverzweigt**: Die Trägheitsgruppe $I_q$ wirkt trivial. Dies erzwingt man an Stellen guter Reduktion.
-- **Steinberg**: Die Darstellung hat bei $q$ eine spezielle Form, die multiplikativer Reduktion entspricht.
-- **Minimale Bedingung**: Die Darstellung bei $q$ hat denselben Typ wie $\bar{\rho}$ – keine zusätzliche Verzweigung erlaubt.
+- **Unramified**: The inertia group $I_q$ acts trivially. This is imposed at places of good reduction.
+- **Steinberg**: The representation at $q$ has a special form corresponding to multiplicative reduction.
+- **Minimal condition**: The representation at $q$ has the same type as $\bar{\rho}$ – no additional ramification allowed.
 
-### Lokale Bedingungen bei $p$
+### Local conditions at $p$
 
-Bei der Primzahl $p$ selbst gibt es besonders wichtige Bedingungen:
+At the prime $p$ itself, there are particularly important conditions:
 
-- **Flach (flat)**: Die Darstellung kommt von einem flachen Gruppenschema über $\mathbb{Z}_p$. Dies ist die stärkste Bedingung und entspricht guter Reduktion.
-- **Ordinär**: Die Darstellung hat bei $p$ eine obere Dreiecksform mit unramifiziertem Quotienten.
-- **Semistabil**: Eine Verallgemeinerung, die multiplikative Reduktion erlaubt.
+- **Flat**: The representation comes from a flat group scheme over $\mathbb{Z}_p$. This is the strongest condition and corresponds to good reduction.
+- **Ordinary**: The representation at $p$ has an upper triangular form with unramified quotient.
+- **Semistable**: A generalisation that allows multiplicative reduction.
 
-### Der eingeschränkte Deformationsring $R_{\mathcal{D}}$
+### The restricted deformation ring $R_{\mathcal{D}}$
 
-Fasst man eine Menge $\mathcal{D}$ lokaler Bedingungen zusammen, so erhält man einen **Quotienten** des universellen Deformationsrings:
+Combining a set $\mathcal{D}$ of local conditions, one obtains a **quotient** of the universal deformation ring:
 
 $$
 R \twoheadrightarrow R_{\mathcal{D}},
 $$
 
-der nur diejenigen Deformationen parametrisiert, die die Bedingungen $\mathcal{D}$ erfüllen. Im Folgenden steht $R$ für den eingeschränkten Ring $R_{\mathcal{D}}$.
+parametrising only those deformations that satisfy the conditions $\mathcal{D}$. In what follows, we simply write $R$ for the restricted ring $R_{\mathcal{D}}$.
 
 ---
 
-## 5. Der Hecke-Ring $T$
+## 5. The Hecke Ring $T$
 
-### Modulare Deformationen
+### Modular deformations
 
-Unter allen Deformationen von $\bar{\rho}$ gibt es eine besondere Teilmenge: die **modularen Deformationen** – solche, die von Neuformen kommen.
+Among all deformations of $\bar{\rho}$, there is a special subset: the **modular deformations** – those coming from newforms.
 
-Zu jeder Neuform $f$ vom Gewicht 2 und Stufe $N$ gibt es (nach Eichler-Shimura) eine Galois-Darstellung $\rho_f: G_{\mathbb{Q}} \to \text{GL}_2(\mathcal{O}_f)$, wobei $\mathcal{O}_f$ der Koeffizientenring von $f$ ist. Wenn $\bar{\rho}_f \cong \bar{\rho}$, dann ist $\rho_f$ eine Deformation von $\bar{\rho}$.
+For every newform $f$ of weight 2 and level $N$, there exists (by Eichler–Shimura) a Galois representation $\rho_f: G_{\mathbb{Q}} \to \text{GL}_2(\mathcal{O}_f)$, where $\mathcal{O}_f$ is the coefficient ring of $f$. If $\bar{\rho}_f \cong \bar{\rho}$, then $\rho_f$ is a deformation of $\bar{\rho}$.
 
-### Die Hecke-Algebra
+### The Hecke algebra
 
-Die **Hecke-Algebra** $\mathbb{T}$ wird erzeugt von den Hecke-Operatoren $T_q$ (für Primzahlen $q \nmid N$) und $U_q$ (für $q \mid N$), wirkend auf dem Raum der Spitzenformen $S_2(\Gamma_0(N))$.
+The **Hecke algebra** $\mathbb{T}$ is generated by the Hecke operators $T_q$ (for primes $q \nmid N$) and $U_q$ (for $q \mid N$), acting on the space of cusp forms $S_2(\Gamma_0(N))$.
 
-Der **lokalisierte Hecke-Ring** $T$ ist der Quotient von $\mathbb{T}$, der die modularen Deformationen von $\bar{\rho}$ parametrisiert:
+The **localised Hecke ring** $T$ is the quotient of $\mathbb{T}$ parametrising the modular deformations of $\bar{\rho}$:
 
 $$
 T = \mathbb{T}_{\mathfrak{m}},
 $$
 
-lokalisiert am maximalen Ideal $\mathfrak{m}$, das durch $\bar{\rho}$ bestimmt wird (konkret: $T_q - \text{tr}(\bar{\rho}(\text{Frob}_q)) \in \mathfrak{m}$ für alle $q$).
+localised at the maximal ideal $\mathfrak{m}$ determined by $\bar{\rho}$ (concretely: $T_q - \text{tr}(\bar{\rho}(\text{Frob}_q)) \in \mathfrak{m}$ for all $q$).
 
-### Die modulare Deformation
+### The modular deformation
 
-Die Hecke-Algebra $T$ trägt eine **universelle modulare Deformation**:
+The Hecke algebra $T$ carries a **universal modular deformation**:
 
 $$
 \rho^{\text{mod}}: G_{\mathbb{Q}} \to \text{GL}_2(T),
 $$
 
-die alle modularen Deformationen simultan erfasst.
+capturing all modular deformations simultaneously.
 
 ---
 
-## 6. Die natürliche Surjektion $R \twoheadrightarrow T$
+## 6. The Natural Surjection $R \twoheadrightarrow T$
 
-### Warum eine Surjektion existiert
+### Why a surjection exists
 
-Da jede modulare Deformation insbesondere eine Deformation ist, gibt es (durch die universelle Eigenschaft von $R$) einen **natürlichen Ringhomomorphismus**:
+Since every modular deformation is in particular a deformation, there exists (by the universal property of $R$) a **natural ring homomorphism**:
 
 $$
 \varphi: R \twoheadrightarrow T.
 $$
 
-Dieser Homomorphismus ist **surjektiv**: Die Hecke-Algebra $T$ wird von den Spuren $\text{tr}(\rho^{\text{mod}}(\text{Frob}_q))$ erzeugt, und diese sind Bilder der entsprechenden Spuren der universellen Deformation.
+This homomorphism is **surjective**: the Hecke algebra $T$ is generated by the traces $\text{tr}(\rho^{\text{mod}}(\text{Frob}_q))$, and these are images of the corresponding traces of the universal deformation.
 
-### Was die Surjektion bedeutet
+### What the surjection means
 
 $$
 R \twoheadrightarrow T
 $$
 
-bedeutet: $T$ ist ein Quotient von $R$. Oder geometrisch: Die „modularen Punkte" bilden eine **abgeschlossene Teilmenge** des Deformationsraums.
+means: $T$ is a quotient of $R$. Or geometrically: the "modular points" form a **closed subset** of the deformation space.
 
-Die entscheidende Frage ist: **Ist $\varphi$ ein Isomorphismus?** Also: $R = T$?
+The decisive question is: **is $\varphi$ an isomorphism?** That is: $R = T$?
 
 ---
 
-## 7. Wiles' Ziel: $R = T$
+## 7. Wiles' Goal: $R = T$
 
-### Was $R = T$ bedeutet
+### What $R = T$ means
 
-Wenn $R \cong T$ (als Ringe), dann ist jede zulässige Deformation von $\bar{\rho}$ automatisch modular:
+If $R \cong T$ (as rings), then every admissible deformation of $\bar{\rho}$ is automatically modular:
 
 $$
-R = T \implies \text{jede Deformation von } \bar{\rho} \text{ mit den gegebenen Bedingungen ist modular.}
+R = T \implies \text{every deformation of } \bar{\rho} \text{ with the given conditions is modular.}
 $$
 
-Insbesondere: Die Darstellung $\rho_{E,p}$ der elliptischen Kurve $E$ ist eine Deformation von $\bar{\rho}$ mit den richtigen lokalen Bedingungen (weil $E$ semistabil ist). Wenn $R = T$, dann ist $\rho_{E,p}$ modular – und damit ist $E$ modular.
+In particular: the representation $\rho_{E,p}$ of the elliptic curve $E$ is a deformation of $\bar{\rho}$ with the right local conditions (because $E$ is semistable). If $R = T$, then $\rho_{E,p}$ is modular – and hence $E$ is modular.
 
-### Die Beweisstruktur
+### The proof structure
 
 $$
 \boxed{\bar{\rho} \text{ modular}} \xrightarrow{R = T} \boxed{\rho_{E,p} \text{ modular}} \implies \boxed{E \text{ modular}} \implies \boxed{\text{FLT}}
 $$
 
-### Warum $R = T$ schwierig ist
+### Why $R = T$ is hard
 
-Die Surjektion $R \twoheadrightarrow T$ ist „geschenkt" – sie folgt aus der universellen Eigenschaft. Die Injektivität ist das Schwierige: Man muss zeigen, dass der Kern trivial ist, also dass es **keine** nichtmodularen Deformationen gibt.
+The surjection $R \twoheadrightarrow T$ is "for free" – it follows from the universal property. The injectivity is the hard part: one must show that the kernel is trivial, i.e., that there are **no** non-modular deformations.
 
-Wiles' großer Durchbruch war die Entwicklung eines **numerischen Kriteriums** – einer rein algebraischen Bedingung, die $R = T$ impliziert. Dieses Kriterium und sein Beweis sind Gegenstand des [nächsten Artikels](05-r-gleich-t.md).
+Wiles' great breakthrough was the development of a **numerical criterion** – a purely algebraic condition implying $R = T$. This criterion and its proof are the subject of the [next article](05-r-gleich-t.md).
 
-### Übersicht der Beweismaschinerie
+### Overview of the proof machinery
 
-| Objekt | Beschreibung | Parametrisiert |
-|--------|-------------|----------------|
-| $\bar{\rho}$ | Residuale Darstellung | Ausgangspunkt |
-| $R$ | Universeller Deformationsring | Alle zulässigen Deformationen |
-| $T$ | Hecke-Algebra | Modulare Deformationen |
-| $R \twoheadrightarrow T$ | Natürliche Surjektion | Modulare ⊂ Alle |
-| $R = T$ | Isomorphismus | Alle = Modulare |
+| Object | Description | Parametrises |
+|--------|------------|--------------|
+| $\bar{\rho}$ | Residual representation | Starting point |
+| $R$ | Universal deformation ring | All admissible deformations |
+| $T$ | Hecke algebra | Modular deformations |
+| $R \twoheadrightarrow T$ | Natural surjection | Modular ⊂ All |
+| $R = T$ | Isomorphism | All = Modular |
 
 ---
 
-## Ausblick
+## Outlook
 
-Die Deformationstheorie liefert den konzeptionellen Rahmen für Wiles' Beweis. Aber das Herzstück ist der Beweis von $R = T$ – eine tiefe algebraische Aussage, die im nächsten Artikel entfaltet wird:
+Deformation theory provides the conceptual framework for Wiles' proof. But the heart of the matter is the proof of $R = T$ – a deep algebraic statement developed in the next article:
 
-| Artikel | Thema |
+| Article | Topic |
 |---------|-------|
-| [05 – R = T](05-r-gleich-t.md) | Das numerische Kriterium, Selmer-Gruppen und der Beweis |
-| [06 – Der Taylor-Wiles-Trick](06-taylor-wiles-trick.md) | Das Patching-Argument, das die Lücke schloss |
+| [05 – R = T](05-r-gleich-t.md) | The numerical criterion, Selmer groups, and the proof |
+| [06 – The Taylor–Wiles Trick](06-taylor-wiles-trick.md) | The patching argument that closed the gap |
 
 ---
 
-## Quellen
+## Sources
 
 - **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), §1.2–1.6
-- **Barry Mazur**: *Deforming Galois representations*, in: Galois Groups over $\mathbb{Q}$, MSRI Publications 16 (1989) – Die Grundlegung der Deformationstheorie
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 11 – Deformationsringe und Hecke-Algebren
-- **Gebhard Böckle**: *Deformations of Galois representations*, in: Clay Mathematics Proceedings 4 (2005) – Moderne Darstellung
+- **Barry Mazur**: *Deforming Galois representations*, in: Galois Groups over $\mathbb{Q}$, MSRI Publications 16 (1989) – The foundation of deformation theory
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Chapter 11 – Deformation rings and Hecke algebras
+- **Gebhard Böckle**: *Deformations of Galois representations*, in: Clay Mathematics Proceedings 4 (2005) – Modern exposition

@@ -1,151 +1,136 @@
 ---
-title: "Der Beweis für n=3"
+title: "The Proof for n=3"
 slug: elementare-zahlentheorie/04-beweis-n3
 series: elementare-zahlentheorie
 part: 4
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: zahlentheorie
 tags:
   - fermat
   - euler
   - gauss
-  - algebraische-zahlen
-requires:
-  - komplexe-zahlen
-  - teilbarkeit-ggt
-  - modulare-arithmetik
-  - beweisarten
-  - zahlenbereiche
-  - primfaktorzerlegung
+  - algebraic-numbers
+requires: []
 ---
 
-# Der Beweis für $n = 3$
+# The Proof for $n = 3$
 
-!!! abstract "Zusammenfassung"
-    Eulers Beweis von FLT für $n = 3$ – und die daraus resultierende Notwendigkeit,
-    die gewöhnlichen ganzen Zahlen zu verlassen. Einstieg in die algebraische Zahlentheorie.
+!!! abstract "Summary"
+    Euler's proof of Fermat's Last Theorem for the case $n = 3$ – and why it forces us
+    to leave the ordinary integers behind. The entry into algebraic number theory.
 
-## Voraussetzungen
+## Prerequisites
 
-- [Was ist Fermats letzter Satz?](01-was-ist-flt.md)
-- [Der Beweis für $n = 4$](02-beweis-n4.md)
-- [Primzahlen und warum sie reichen](03-primzahlen-reduktion.md)
-
-| Thema | Beschreibung |
-|-------|-------------|
-| [Komplexe Zahlen](../../vorwissen/komplexe-zahlen.md) | Zahlen $a + bi$ mit $i^2 = -1$, Polarform, Einheitswurzeln |
-| [Teilbarkeit und ggT](../../vorwissen/teilbarkeit-ggt.md) | Teilerfremdheit, $\gcd$, Euklidischer Algorithmus |
-| [Modulare Arithmetik](../../vorwissen/modulare-arithmetik.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
-| [Beweisarten](../../vorwissen/beweisarten.md) | Direkter Beweis, Widerspruch, Induktion, Abstieg |
-| [Zahlenbereiche](../../vorwissen/zahlenbereiche.md) | $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ und ihre Beziehungen |
-| [Primfaktorzerlegung](../../vorwissen/primfaktorzerlegung.md) | Eindeutige Zerlegung in Primfaktoren (Fundamentalsatz der Arithmetik) |
+- [What Is Fermat's Last Theorem?](01-was-ist-flt.md)
+- [The Proof for $n = 4$](02-beweis-n4.md)
+- [Primes and Why They Suffice](03-primzahlen-reduktion.md)
 
 ---
 
-## 1. Warum $n = 3$ schwieriger ist als $n = 4$
+## 1. Why $n = 3$ Is Harder Than $n = 4$
 
-Im Beweis für $n = 4$ ließ sich die Gleichung $x^4 + y^4 = z^2$ vollständig in $\mathbb{Z}$ behandeln. Der Schlüssel war die Parametrisierung der pythagoreischen Tripel – eine Formel, die *alle* Lösungen von $x^2 + y^2 = z^2$ beschreibt.
+In the proof for $n = 4$, we could treat the equation $x^4 + y^4 = z^2$ entirely within $\mathbb{Z}$. The key was the parametrisation of Pythagorean triples – a formula describing *all* solutions of $x^2 + y^2 = z^2$.
 
-Für $n = 3$ existiert kein Analogon. Die Gleichung $x^3 + y^3 = z^3$ lässt sich in $\mathbb{Z}$ nicht so faktorisieren, dass ein Abstieg möglich wird. Die Faktorisierung
+For $n = 3$, no analogue exists. The equation $x^3 + y^3 = z^3$ cannot be factorised in $\mathbb{Z}$ in a way that makes a descent possible. The reason: the factorisation
 
 $$
 x^3 + y^3 = (x + y)(x^2 - xy + y^2)
 $$
 
-liefert zwei Faktoren, deren Teilerfremdheit schwer zu kontrollieren ist. Informationen über $\gcd(x + y, \, x^2 - xy + y^2)$ sind in $\mathbb{Z}$ nicht leicht zu gewinnen.
+yields two factors whose coprimality is hard to control. One would need information about $\gcd(x + y, \, x^2 - xy + y^2)$, which is not easy to obtain in $\mathbb{Z}$.
 
-Eulers Lösung: Erweiterung des Zahlbereichs.
+Euler's brilliant idea: instead of computing in $\mathbb{Z}$, we extend the number domain.
 
-## 2. Die Eisenstein-Zahlen
+## 2. The Eisenstein Integers
 
-Sei $\omega = e^{2\pi i/3} = \frac{-1 + \sqrt{-3}}{2}$ eine primitive dritte Einheitswurzel. Die **Eisenstein-Zahlen** sind der Ring:
+Let $\omega = e^{2\pi i/3} = \frac{-1 + \sqrt{-3}}{2}$ be a primitive cube root of unity. The **Eisenstein integers** are the ring:
 
 $$
 \mathbb{Z}[\omega] = \{ a + b\omega \mid a, b \in \mathbb{Z} \}
 $$
 
-Geometrisch bilden die Eisenstein-Zahlen ein regelmäßiges Dreiecksgitter in der komplexen Ebene. Jedes Element hat die Form $a + b\omega$ mit ganzzahligen Koordinaten.
+Geometrically, the Eisenstein integers form a regular triangular lattice in the complex plane. Every element has the form $a + b\omega$ with integer coordinates.
 
-### Grundlegende Eigenschaften
+### Basic Properties
 
-**Norm.** Für $\alpha = a + b\omega$ ist die Norm definiert als:
+**Norm.** For $\alpha = a + b\omega$ we define the norm as:
 
 $$
 N(\alpha) = \alpha \cdot \bar{\alpha} = a^2 - ab + b^2
 $$
 
-wobei $\bar{\alpha} = a + b\bar{\omega} = a + b\omega^2$ die konjugierte Zahl ist (denn $\omega^2 = \bar{\omega}$). Die Norm ist stets eine nichtnegative ganze Zahl und multiplikativ: $N(\alpha\beta) = N(\alpha) \cdot N(\beta)$.
+where $\bar{\alpha} = a + b\bar{\omega} = a + b\omega^2$ is the conjugate (since $\omega^2 = \bar{\omega}$). The norm is always a non-negative integer and is multiplicative: $N(\alpha\beta) = N(\alpha) \cdot N(\beta)$.
 
-**Einheiten.** Die Einheiten (invertierbaren Elemente) von $\mathbb{Z}[\omega]$ sind genau die Elemente mit Norm $1$:
+**Units.** The units (invertible elements) of $\mathbb{Z}[\omega]$ are precisely the elements with norm $1$:
 
 $$
 \mathbb{Z}[\omega]^\times = \{ \pm 1, \pm \omega, \pm \omega^2 \}
 $$
 
-Sechs Einheiten – im Vergleich zu den zwei Einheiten $\pm 1$ in $\mathbb{Z}$.
+That is six units – more than the two units $\pm 1$ in $\mathbb{Z}$.
 
-**Primelemente.** Ein Eisenstein-Element $\pi$ heißt *prim*, wenn es keine Einheit ist und $\pi \mid \alpha\beta$ impliziert $\pi \mid \alpha$ oder $\pi \mid \beta$. Die Primstruktur von $\mathbb{Z}[\omega]$ unterscheidet sich von der in $\mathbb{Z}$:
+**Prime elements.** An Eisenstein element $\pi$ is called *prime* if it is not a unit and $\pi \mid \alpha\beta$ implies $\pi \mid \alpha$ or $\pi \mid \beta$. The prime structure of $\mathbb{Z}[\omega]$ differs from that of $\mathbb{Z}$:
 
-- Die Primzahl $3$ zerfällt besonders: $3 = -\omega^2 (1 - \omega)^2$, also ist $\lambda := 1 - \omega$ ein Primelement mit $N(\lambda) = 3$.
-- Primzahlen $p \equiv 2 \pmod{3}$ bleiben prim in $\mathbb{Z}[\omega]$.
-- Primzahlen $p \equiv 1 \pmod{3}$ zerfallen: $p = \pi \bar{\pi}$ für ein Primelement $\pi$.
+- The prime $3$ decomposes specially: $3 = -\omega^2 (1 - \omega)^2$, so $\lambda := 1 - \omega$ is a prime element with $N(\lambda) = 3$.
+- Primes $p \equiv 2 \pmod{3}$ remain prime in $\mathbb{Z}[\omega]$.
+- Primes $p \equiv 1 \pmod{3}$ split: $p = \pi \bar{\pi}$ for some prime element $\pi$.
 
-### Der entscheidende Vorteil
+### The Decisive Advantage
 
-In $\mathbb{Z}[\omega]$ lässt sich $x^3 + y^3$ *vollständig* faktorisieren:
+In $\mathbb{Z}[\omega]$ we can factorise $x^3 + y^3$ *completely*:
 
 $$
 x^3 + y^3 = (x + y)(x + \omega y)(x + \omega^2 y)
 $$
 
-Drei lineare Faktoren statt zwei. Diese feinere Faktorisierung ermöglicht den Abstieg.
+Three linear factors instead of two! This finer factorisation makes the descent possible.
 
-## 3. Eindeutige Faktorisierung
+## 3. Unique Factorisation
 
-Der Beweis setzt voraus, dass $\mathbb{Z}[\omega]$ ein **Hauptidealring** (HIR) ist – dass also jedes Element eine im Wesentlichen eindeutige Zerlegung in Primelemente besitzt.
+The proof works only if $\mathbb{Z}[\omega]$ is a **principal ideal domain** (PID) – that is, if every element has an essentially unique decomposition into prime elements.
 
-**Satz.** $\mathbb{Z}[\omega]$ ist ein euklidischer Ring (mit der Normfunktion als euklidischer Funktion) und daher insbesondere ein HIR.
+**Theorem.** $\mathbb{Z}[\omega]$ is a Euclidean domain (with the norm function as Euclidean function) and therefore in particular a PID.
 
-**Beweisskizze.** Für $\alpha, \beta \in \mathbb{Z}[\omega]$ mit $\beta \neq 0$ wird $\alpha/\beta \in \mathbb{Q}(\omega)$ betrachtet. Dieses Element lässt sich durch ein Gitterelement $\gamma \in \mathbb{Z}[\omega]$ approximieren mit $N(\alpha/\beta - \gamma) < 1$ (das Dreiecksgitter ist dicht genug). Dann ist $\alpha = \beta\gamma + \rho$ mit $N(\rho) < N(\beta)$ – die Division mit Rest. $\square$
+**Proof sketch.** For $\alpha, \beta \in \mathbb{Z}[\omega]$ with $\beta \neq 0$, consider $\alpha/\beta \in \mathbb{Q}(\omega)$. This element can be approximated by a lattice element $\gamma \in \mathbb{Z}[\omega]$ with $N(\alpha/\beta - \gamma) < 1$ (because the triangular lattice is dense enough). Then $\alpha = \beta\gamma + \rho$ with $N(\rho) < N(\beta)$ – exactly the division with remainder that is needed. $\square$
 
-!!! warning "Nicht selbstverständlich"
-    Für $p = 3$ ist $\mathbb{Z}[\omega]$ ein HIR – aber $\mathbb{Z}[\zeta_p]$ ist für allgemeines $p$ **kein** HIR. Bereits für $p = 23$ versagt die eindeutige Faktorisierung. An diesem Punkt scheiterte Lamé, und Kummer entwickelte die Idealtheorie.
+!!! warning "Not self-evident!"
+    For $p = 3$, $\mathbb{Z}[\omega]$ is a PID – but $\mathbb{Z}[\zeta_p]$ is **not** a PID for general $p$. Already for $p = 23$, unique factorisation fails. This was the point where Lamé failed and Kummer invented ideal theory.
 
-## 4. Der Beweis: Schritt für Schritt
+## 4. The Proof: Step by Step
 
-Zu zeigen: $x^3 + y^3 = z^3$ hat keine Lösung in positiven ganzen Zahlen.
+We prove: $x^3 + y^3 = z^3$ has no solution in positive integers.
 
-Äquivalent (und technisch geschickter) die allgemeinere Aussage in $\mathbb{Z}[\omega]$:
+Equivalently (and more technically convenient), we prove the more general statement in $\mathbb{Z}[\omega]$:
 
 $$
-\alpha^3 + \beta^3 + \gamma^3 = 0 \quad \text{hat keine Lösung mit } \alpha, \beta, \gamma \in \mathbb{Z}[\omega] \setminus \{0\} \text{ und } \lambda \nmid \alpha\beta\gamma
+\alpha^3 + \beta^3 + \gamma^3 = 0 \quad \text{has no solution with } \alpha, \beta, \gamma \in \mathbb{Z}[\omega] \setminus \{0\} \text{ and } \lambda \nmid \alpha\beta\gamma
 $$
 
-wobei $\lambda = 1 - \omega$ das Primelement über $3$ ist. (Die symmetrische Form $\alpha^3 + \beta^3 + \gamma^3 = 0$ ist äquivalent zu $x^3 + y^3 = z^3$ mit umgedrehtem Vorzeichen von $z$.)
+where $\lambda = 1 - \omega$ is the prime element above $3$. (The symmetric form $\alpha^3 + \beta^3 + \gamma^3 = 0$ is equivalent to $x^3 + y^3 = z^3$ with the sign of $z$ reversed.)
 
-Der Beweis erfolgt mittels unendlichem Abstieg in mehreren Stufen.
+In fact, we prove an even stronger version by infinite descent. The proof proceeds in several stages.
 
-### Vorbereitung: Kubische Reste modulo $\lambda$
+### Preparation: Cubic residues modulo $\lambda$
 
-Da $N(\lambda) = 3$, ist $\mathbb{Z}[\omega]/(\lambda) \cong \mathbb{Z}/3\mathbb{Z} = \{0, 1, 2\}$. Jedes Element von $\mathbb{Z}[\omega]$, das nicht durch $\lambda$ teilbar ist, ist kongruent zu $\pm 1 \pmod{\lambda}$. Daraus folgt: Jede dritte Potenz eines solchen Elements ist ebenfalls kongruent zu $\pm 1 \pmod{\lambda}$.
+Since $N(\lambda) = 3$, we have $\mathbb{Z}[\omega]/(\lambda) \cong \mathbb{Z}/3\mathbb{Z} = \{0, 1, 2\}$. Every element of $\mathbb{Z}[\omega]$ not divisible by $\lambda$ is congruent to $\pm 1 \pmod{\lambda}$. It follows that every cube of such an element is likewise congruent to $\pm 1 \pmod{\lambda}$.
 
-Genauer gilt für jedes $\alpha$ mit $\lambda \nmid \alpha$:
+More precisely, for every $\alpha$ with $\lambda \nmid \alpha$:
 
 $$
 \alpha^3 \equiv \pm 1 \pmod{\lambda^4}
 $$
 
-Die Analogie zur Aussage „jedes Quadrat ist $\equiv 0$ oder $1 \pmod{4}$" in $\mathbb{Z}$ – aber eine Stufe komplizierter.
+This is the analogue of the statement "every square is $\equiv 0$ or $1 \pmod{4}$" in $\mathbb{Z}$ – but one level more intricate.
 
-### Der Abstieg
+### The Descent
 
-**Annahme.** Sei $(\alpha, \beta, \gamma)$ eine Lösung von $\alpha^3 + \beta^3 + \gamma^3 = 0$ mit $\lambda \nmid \alpha\beta\gamma$ und mit *minimaler* $\lambda$-Bewertung in einem der Terme. Konkret: $\lambda \mid \gamma$ (nach Umordnung), mit $\gamma = \lambda^n \delta$, $\lambda \nmid \delta$ und minimalem $n \geq 1$.
+**Assumption.** Let $(\alpha, \beta, \gamma)$ be a solution of $\alpha^3 + \beta^3 + \gamma^3 = 0$ with $\lambda \nmid \alpha\beta\gamma$ and with *minimal* $\lambda$-valuation in one of the terms. More precisely: we assume that $\lambda \mid \gamma$ (after reordering), and write $\gamma = \lambda^n \delta$ with $\lambda \nmid \delta$ and minimal $n \geq 1$.
 
-Zu zeigen: Aus dieser Lösung lässt sich eine neue Lösung mit kleinerem $n$ konstruieren – Widerspruch.
+We show that from this solution a new solution with smaller $n$ can be constructed – contradiction.
 
-**Schritt 1: Faktorisierung.** In $\mathbb{Z}[\omega]$:
+**Step 1: Factorisation.** In $\mathbb{Z}[\omega]$:
 
 $$
 \alpha^3 + \beta^3 = -\gamma^3 = -\lambda^{3n} \delta^3
@@ -155,68 +140,65 @@ $$
 (\alpha + \beta)(\alpha + \omega\beta)(\alpha + \omega^2\beta) = -\lambda^{3n} \delta^3
 $$
 
-**Schritt 2: Teilerfremdheit der Faktoren.** Die drei Faktoren $\alpha + \beta$, $\alpha + \omega\beta$, $\alpha + \omega^2\beta$ lassen sich paarweise durch $\lambda$ trennen: Ihre paarweisen Differenzen sind $(1 - \omega)\beta = \lambda\beta$ und $(1 - \omega^2)\beta$, also ist $\lambda$ der einzige gemeinsame Faktor. Nach Analyse der $\lambda$-Bewertung: Genau einer der drei Faktoren ist durch $\lambda^{3n-2}$ teilbar, die anderen beiden nicht durch $\lambda$.
+**Step 2: Coprimality of the factors.** One shows that the three factors $\alpha + \beta$, $\alpha + \omega\beta$, $\alpha + \omega^2\beta$ can be separated pairwise by $\lambda$: their pairwise differences are $(1 - \omega)\beta = \lambda\beta$ and $(1 - \omega^2)\beta$, so $\lambda$ is the only common factor. After careful analysis of the $\lambda$-valuation, one can show that exactly one of the three factors is divisible by $\lambda^{3n-2}$ and the other two are not divisible by $\lambda$.
 
-**Schritt 3: Kubische Struktur erzwingen.** Da $\mathbb{Z}[\omega]$ ein HIR ist und die drei Faktoren (bis auf $\lambda$-Anteile) teilerfremd sind, muss jeder Faktor (bis auf Einheiten und $\lambda$-Potenzen) ein Kubus sein. Es existieren $\alpha_1, \beta_1, \gamma_1 \in \mathbb{Z}[\omega]$ mit:
+**Step 3: Force cubic structure.** Since $\mathbb{Z}[\omega]$ is a PID and the three factors (up to $\lambda$-parts) are coprime, each factor (up to units and powers of $\lambda$) must be a cube. In particular, there exist $\alpha_1, \beta_1, \gamma_1 \in \mathbb{Z}[\omega]$ with:
 
 $$
 \alpha + \beta = \varepsilon_1 \lambda^{3n-2} \gamma_1^3, \quad \alpha + \omega\beta = \varepsilon_2 \alpha_1^3, \quad \alpha + \omega^2\beta = \varepsilon_3 \beta_1^3
 $$
 
-wobei $\varepsilon_1, \varepsilon_2, \varepsilon_3$ Einheiten sind.
+where $\varepsilon_1, \varepsilon_2, \varepsilon_3$ are units.
 
-**Schritt 4: Neue Gleichung aufstellen.** Durch Kombination der drei Gleichungen ergibt sich eine Gleichung der Form
+**Step 4: Derive a new equation.** From the three equations, one can (by skilful combination) derive an equation of the form
 
 $$
 \alpha_1^3 + \beta_1^3 + \varepsilon \lambda^{n'} \gamma_1^3 = 0
 $$
 
-wobei $n' < n$. Die Einheit $\varepsilon$ lässt sich durch Wahl geeigneter Assoziierter absorbieren.
+where $n' < n$. The unit $\varepsilon$ can be absorbed by choosing suitable associates.
 
-**Schritt 5: Widerspruch.** Eine Lösung mit $\lambda$-Bewertung $n' < n$ ist konstruiert. Da $n$ minimal war, ergibt sich der Widerspruch. $\blacksquare$
+**Step 5: Contradiction.** We have found a solution with $\lambda$-valuation $n' < n$. Since $n$ was minimal, this is a contradiction. $\blacksquare$
 
-## 5. Die Lücke in Eulers Original
+## 5. The Gap in Euler's Original
 
-Eulers Beweis, wie er 1770 in seiner *Algebra* erschien, enthielt eine subtile Lücke. Im entscheidenden Schritt des Abstiegs setzte er die **eindeutige Primfaktorzerlegung** in $\mathbb{Z}[\omega]$ voraus, ohne sie zu beweisen.
+Euler's proof, as it appeared in his 1770 *Algebra*, contained a subtle gap. In the decisive step of the descent, he used the fact that certain elements in $\mathbb{Z}[\omega]$ must be cubes – and thereby implicitly assumed **unique prime factorisation** in $\mathbb{Z}[\omega]$.
 
-> „Euler's proof of Fermat's Last Theorem for cubes [...] is essentially correct, but it does assume, without proof, the unique factorization of the Eisenstein integers."
-> — Harold M. Edwards, *Fermat's Last Theorem* (1977), S. 39
+This assumption happens to be correct: $\mathbb{Z}[\omega]$ is indeed a PID. But Euler did not *prove* this; he took it for granted. The fact that UPF holds in $\mathbb{Z}[\omega]$ was rigorously established only later – among others by Gauss.
 
-Die Voraussetzung ist korrekt: $\mathbb{Z}[\omega]$ ist tatsächlich ein HIR. Aber Euler bewies das nicht; er verwendete es als gegeben. Der rigorose Nachweis erfolgte später – unter anderem durch Gauß.
+The gap is repairable: one can make Euler's proof completely correct by establishing the PID property of $\mathbb{Z}[\omega]$ first. But the gap reveals a deep conceptual problem: for general $p$, $\mathbb{Z}[\zeta_p]$ is not a PID, and Euler's strategy breaks down.
 
-Die Lücke ist heilbar: Eulers Beweis wird vollständig korrekt, wenn die HIR-Eigenschaft von $\mathbb{Z}[\omega]$ vorangestellt wird. Aber die Lücke offenbart ein tiefes konzeptuelles Problem: Für allgemeines $p$ ist $\mathbb{Z}[\zeta_p]$ kein HIR, und Eulers Strategie versagt.
+## 6. A Taste of Where the Method Fails
 
-## 6. Wo die Methode an ihre Grenzen stößt
+For $p = 5$, we consider $\mathbb{Z}[\zeta_5]$ with $\zeta_5 = e^{2\pi i/5}$. Here UPF still holds – the proof for $n = 5$ (Dirichlet/Legendre, 1825) uses this, albeit with considerably more effort.
 
-Für $p = 5$ gilt in $\mathbb{Z}[\zeta_5]$ noch die EPZ – der Beweis für $n = 5$ (Dirichlet/Legendre, 1825) nutzt dies, allerdings mit erheblich mehr Aufwand.
+For $p = 23$, the situation is dramatically different: $\mathbb{Z}[\zeta_{23}]$ has class number $h_{23} = 3 \neq 1$. UPF fails, and a naïve factorisation approach yields false results. This is precisely where Kummer's ideal theory stepped in, as we shall explore further in the [article on rings and fields](../../werkzeuge/ringe-koerper.md).
 
-Für $p = 23$ ist die Situation grundlegend anders: $\mathbb{Z}[\zeta_{23}]$ hat Klassenzahl $h_{23} = 3 \neq 1$. Die EPZ versagt, und ein direkter Faktorisierungsansatz liefert falsche Ergebnisse. Hier setzte Kummers Idealtheorie an, vertieft im [Artikel über Ringe und Körper](../../werkzeuge/ringe-koerper.md).
+The moral: **The proof for $n = 3$ works because we are lucky.** The Eisenstein integers are "good enough" – they have unique factorisation. For general $p$, an entirely different approach is needed.
 
-Die zentrale Erkenntnis: **Der Beweis für $n = 3$ funktioniert, weil die Eisenstein-Zahlen eindeutige Faktorisierung besitzen.** Für allgemeines $p$ ist diese Eigenschaft nicht gegeben – ein grundlegend anderer Ansatz wird nötig.
+## 7. From Euler to Kummer – and Beyond
 
-## 7. Von Euler zu Kummer – und weiter
+The proof for $n = 3$ marks a turning point in the history of FLT:
 
-Der Beweis für $n = 3$ markiert einen Wendepunkt in der Geschichte von FLT:
-
-| Aspekt | $n = 4$ (Fermat) | $n = 3$ (Euler) |
+| Aspect | $n = 4$ (Fermat) | $n = 3$ (Euler) |
 |--------|-------------------|------------------|
-| Zahlbereich | $\mathbb{Z}$ | $\mathbb{Z}[\omega]$ |
-| Faktorisierung | pythagoreische Tripel | kubische Faktorisierung |
-| Abstieg über | Größe von $z$ | $\lambda$-Bewertung |
-| Neue Mathematik | Infinite Descent | Algebraische Zahlentheorie |
+| Number domain | $\mathbb{Z}$ | $\mathbb{Z}[\omega]$ |
+| Factorisation | Pythagorean triples | cubic factorisation |
+| Descent via | size of $z$ | $\lambda$-valuation |
+| New mathematics | Infinite Descent | Algebraic Number Theory |
 
-Von hier aus verzweigt sich der Weg:
+From here the path branches:
 
-1. **Grundlagen-Werkzeuge**: Gruppen, Ringe, Körper, Galois-Theorie – die Sprache der modernen Algebra.
-2. **Spezialwerkzeuge**: Elliptische Kurven und Modulformen – die Objekte, die Wiles' Beweis verbindet.
-3. **Der Beweis selbst**: Galois-Darstellungen, Deformationstheorie, der $R = T$-Satz.
+1. **Foundational tools**: To understand the proof for general $p$, we need groups, rings, fields, Galois theory – the "language" of modern algebra.
+2. **Specialised tools**: Elliptic curves and modular forms – the objects that Wiles' proof connects.
+3. **The proof itself**: Galois representations, deformation theory, the $R = T$ theorem – the heart of the matter.
 
-Die folgenden Werkzeug-Artikel bauen diese Grundlagen auf.
+In the following tool topics, we build these foundations piece by piece.
 
 ---
 
-## Quellen
+## Further Reading
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 2
-- **Harold M. Edwards**: *Fermat's Last Theorem: A Genetic Introduction to Algebraic Number Theory*, Springer (1977), Kapitel 3
-- **Kenneth Ireland, Michael Rosen**: *A Classical Introduction to Modern Number Theory*, Springer (1990)
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem*, Ch. 2
+- **Harold Edwards**: *Fermat's Last Theorem*, Ch. 3 – the most detailed account of Euler's proof
+- **Kenneth Ireland, Michael Rosen**: *A Classical Introduction to Modern Number Theory* – the Eisenstein integers in context

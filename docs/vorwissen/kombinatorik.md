@@ -1,55 +1,55 @@
 ---
-title: "Kombinatorik"
-description: "Fakultät, Binomialkoeffizient und Binomialsatz"
-lang: de
+title: "Combinatorics"
+description: "Factorial, binomial coefficient, and the binomial theorem"
+lang: en
 type: vorwissen
 ---
 
-# Kombinatorik
+# Combinatorics
 
-## Fakultät
+## Factorial
 
-Die **Fakultät** einer natürlichen Zahl $n$ ist das Produkt aller positiven ganzen Zahlen bis $n$:
+The **factorial** of a natural number $n$ is the product of all positive integers up to $n$:
 
 $$
 n! = 1 \cdot 2 \cdot 3 \cdots n = \prod_{k=1}^{n} k
 $$
 
-Per Konvention gilt $0! = 1$.
+By convention, $0! = 1$.
 
-**Beispiel.** $5! = 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 = 120$.
+**Example.** $5! = 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 = 120$.
 
-### Kombinatorische Bedeutung
+### Combinatorial Meaning
 
-$n!$ ist die Anzahl der **Permutationen** einer $n$-elementigen Menge – die Anzahl der Möglichkeiten, $n$ verschiedene Objekte in eine Reihenfolge zu bringen.
+$n!$ is the number of **permutations** of an $n$-element set — the number of ways to arrange $n$ distinct objects in order.
 
-**Beispiel.** Die Menge $\{a, b, c\}$ hat $3! = 6$ Permutationen: $abc, acb, bac, bca, cab, cba$.
+**Example.** The set $\{a, b, c\}$ has $3! = 6$ permutations: $abc, acb, bac, bca, cab, cba$.
 
-In der Gruppentheorie: Die symmetrische Gruppe $S_n$ (die Gruppe aller Permutationen von $n$ Elementen) hat die **Ordnung** $|S_n| = n!$.
+In group theory: the symmetric group $S_n$ (the group of all permutations of $n$ elements) has **order** $|S_n| = n!$.
 
-## Binomialkoeffizient
+## Binomial Coefficient
 
-Der **Binomialkoeffizient** $\binom{n}{k}$ gibt die Anzahl der Möglichkeiten an, $k$ Elemente aus einer $n$-elementigen Menge auszuwählen (ohne Beachtung der Reihenfolge):
+The **binomial coefficient** $\binom{n}{k}$ gives the number of ways to choose $k$ elements from an $n$-element set (without regard to order):
 
 $$
-\binom{n}{k} = \frac{n!}{k!(n-k)!} \quad \text{für } 0 \leq k \leq n
+\binom{n}{k} = \frac{n!}{k!(n-k)!} \quad \text{for } 0 \leq k \leq n
 $$
 
-Gelesen als „$n$ über $k$".
+Read as "$n$ choose $k$".
 
-**Beispiel.** $\binom{5}{2} = \frac{5!}{2! \cdot 3!} = \frac{120}{2 \cdot 6} = 10$. Aus fünf Elementen lassen sich zehn verschiedene Zweiergruppen bilden.
+**Example.** $\binom{5}{2} = \frac{5!}{2! \cdot 3!} = \frac{120}{2 \cdot 6} = 10$. From five elements, ten distinct pairs can be formed.
 
-### Eigenschaften
+### Properties
 
-- **Symmetrie:** $\binom{n}{k} = \binom{n}{n-k}$
-- **Randfälle:** $\binom{n}{0} = \binom{n}{n} = 1$
-- **Rekursion (Pascalsche Regel):**
+- **Symmetry:** $\binom{n}{k} = \binom{n}{n-k}$
+- **Boundary cases:** $\binom{n}{0} = \binom{n}{n} = 1$
+- **Recursion (Pascal's rule):**
 
 $$
 \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}
 $$
 
-Diese Rekursion erzeugt das **Pascalsche Dreieck**:
+This recursion generates **Pascal's triangle**:
 
 $$
 \begin{array}{ccccccc}
@@ -60,44 +60,44 @@ $$
 \end{array}
 $$
 
-## Binomialsatz
+## Binomial Theorem
 
-Für beliebige $a, b$ und $n \in \mathbb{N}_0$ gilt:
+For any $a, b$ and $n \in \mathbb{N}_0$:
 
 $$
 (a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k
 $$
 
-> „The binomial theorem is one of the most useful formulas in all of mathematics."
+> "The binomial theorem is one of the most useful formulas in all of mathematics."
 > — Ronald L. Graham, Donald E. Knuth, Oren Patashnik, *Concrete Mathematics*, Addison-Wesley, 1994.
 
-**Beispiel.** $(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
+**Example.** $(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
 
-### Spezialfälle
+### Special Cases
 
-- **$a = 1, b = 1$:** $\sum_{k=0}^{n} \binom{n}{k} = 2^n$ (Gesamtzahl aller Teilmengen einer $n$-elementigen Menge).
+- **$a = 1, b = 1$:** $\sum_{k=0}^{n} \binom{n}{k} = 2^n$ (total number of subsets of an $n$-element set).
 - **$a = 1, b = -1$:** $\sum_{k=0}^{n} (-1)^k \binom{n}{k} = 0$.
 
-## Anwendung in der Zahlentheorie
+## Application in Number Theory
 
-In der Zahlentheorie treten Binomialkoeffizienten unter anderem auf bei:
+Binomial coefficients appear in number theory in several contexts:
 
-- **Fermats kleiner Satz:** Aus $\binom{p}{k} \equiv 0 \pmod{p}$ für $0 < k < p$ (mit $p$ prim) folgt $(a+b)^p \equiv a^p + b^p \pmod{p}$.
-- **Symmetrische Gruppe:** Die Ordnung $|S_n| = n!$ bestimmt die Struktur der Galois-Gruppen endlicher Erweiterungen.
+- **Fermat's little theorem:** From $\binom{p}{k} \equiv 0 \pmod{p}$ for $0 < k < p$ (with $p$ prime), it follows that $(a+b)^p \equiv a^p + b^p \pmod{p}$.
+- **Symmetric group:** The order $|S_n| = n!$ determines the structure of Galois groups of finite extensions.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Begriff | Definition |
+| Concept | Definition |
 |---------|-----------|
-| Fakultät | $n! = 1 \cdot 2 \cdots n$, $0! = 1$ |
-| Permutationen | $n!$ Anordnungen von $n$ Elementen |
-| Binomialkoeffizient | $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ |
-| Pascalsche Regel | $\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$ |
-| Binomialsatz | $(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k}b^k$ |
+| Factorial | $n! = 1 \cdot 2 \cdots n$, $0! = 1$ |
+| Permutations | $n!$ arrangements of $n$ elements |
+| Binomial coefficient | $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ |
+| Pascal's rule | $\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$ |
+| Binomial theorem | $(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k}b^k$ |
 
-## Quellen
+## References
 
-- Graham, Ronald L.; Knuth, Donald E.; Patashnik, Oren: *Concrete Mathematics.* Addison-Wesley, 2. Auflage, 1994. Kapitel 5.
-- Aigner, Martin: *Diskrete Mathematik.* Springer Spektrum, 6. Auflage, 2006. Kapitel 1.
+- Graham, Ronald L.; Knuth, Donald E.; Patashnik, Oren: *Concrete Mathematics.* Addison-Wesley, 2nd edition, 1994. Chapter 5.
+- Aigner, Martin: *Discrete Mathematics.* Springer, 2007. Chapter 1.

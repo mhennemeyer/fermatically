@@ -1,167 +1,159 @@
 ---
-title: "Die Taniyama-Shimura-Vermutung"
+title: "The Taniyama–Shimura Conjecture"
 slug: fermat-wiles/01-taniyama-shimura
 series: fermat-wiles
 part: 1
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: zahlentheorie
 tags:
   - taniyama-shimura
-  - modularitaet
-  - vermutung
+  - modularity
+  - conjecture
 requires:
-  - summen-produktnotation
-  - modulare-arithmetik
-  - komplexe-zahlen
+  - elliptische-kurven/01-elliptische-kurven
+  - modulformen/01-modulformen
 ---
-# Die Taniyama-Shimura-Vermutung
+# The Taniyama–Shimura Conjecture
 
-!!! abstract "Zusammenfassung"
-    Die Taniyama-Shimura-Vermutung behauptet, dass jede elliptische Kurve
-    über $\mathbb{Q}$ modular ist – dass also die $L$-Reihe jeder solchen Kurve
-    mit der $L$-Reihe einer Modulform übereinstimmt. Diese Brücke zwischen
-    Geometrie und Analysis ist der Schlüssel zu Wiles' Beweis von Fermats
-    letztem Satz.
+!!! abstract "Summary"
+    The Taniyama–Shimura conjecture asserts that every elliptic curve
+    over $\mathbb{Q}$ is modular – that the $L$-series of every such curve
+    coincides with the $L$-series of a modular form. This bridge between
+    geometry and analysis is the key to Wiles' proof of Fermat's
+    Last Theorem.
 
-## Voraussetzungen
+## Prerequisites
 
-- [Elliptische Kurven](../werkzeuge/elliptische-kurven.md) – Grundbegriffe: Weierstraß-Gleichung, Gruppenstruktur, Reduktion modulo $p$
-- [Modulformen](../werkzeuge/modulformen.md) – Modulformen, Neuformen, $q$-Entwicklung, Hecke-Operatoren
-
-| Thema | Beschreibung |
-|-------|-------------|
-| [Summen- und Produktnotation](../vorwissen/summen-produktnotation.md) | $\sum$- und $\prod$-Notation |
-| [Modulare Arithmetik](../vorwissen/modulare-arithmetik.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
-| [Komplexe Zahlen](../vorwissen/komplexe-zahlen.md) | Zahlen $a + bi$ mit $i^2 = -1$, Polarform, Einheitswurzeln |
+- [Elliptic Curves](../werkzeuge/elliptische-kurven.md) – basic concepts: Weierstraß equation, group structure, reduction modulo $p$
+- [Modular Forms](../werkzeuge/modulformen.md) – modular forms, newforms, $q$-expansion, Hecke operators
 
 ---
 
-## 1. Zwei getrennte Welten
+## 1. Two Separate Worlds
 
-Die Mathematik des 20. Jahrhunderts kannte zwei scheinbar unabhängige Gebiete, die beide eine tiefe Struktur besaßen – aber auf den ersten Blick nichts miteinander zu tun hatten.
+Twentieth-century mathematics knew two seemingly independent domains, both possessing deep structure – but at first glance having nothing to do with each other.
 
-### Die Welt der elliptischen Kurven
+### The world of elliptic curves
 
-Eine **elliptische Kurve** über $\mathbb{Q}$ ist (vereinfacht) die Lösungsmenge einer Gleichung der Form
+An **elliptic curve** over $\mathbb{Q}$ is (in simplified form) the solution set of an equation of the form
 
 $$
 E: \quad y^2 = x^3 + ax + b, \qquad a, b \in \mathbb{Q}, \quad 4a^3 + 27b^2 \neq 0.
 $$
 
-Sie lebt in der **algebraischen Geometrie** und der **Zahlentheorie**: Man untersucht ihre rationalen Punkte, ihre Struktur als abelsche Gruppe, ihre Reduktion modulo Primzahlen. Für jede Primzahl $p$ zählt man die Punkte der reduzierten Kurve über $\mathbb{F}_p$ und definiert
+It lives in **algebraic geometry** and **number theory**: one studies its rational points, its structure as an abelian group, its reduction modulo primes. For each prime $p$, one counts the points of the reduced curve over $\mathbb{F}_p$ and defines
 
 $$
 a_p(E) = p - \#E(\mathbb{F}_p),
 $$
 
-wobei $\#E(\mathbb{F}_p)$ die Anzahl der Punkte (inklusive des Punkts im Unendlichen) auf der reduzierten Kurve ist. Diese Zahlen $a_p$ kodieren die **lokale Arithmetik** der Kurve bei jeder Primzahl.
+where $\#E(\mathbb{F}_p)$ is the number of points (including the point at infinity) on the reduced curve. These numbers $a_p$ encode the **local arithmetic** of the curve at each prime.
 
-### Die Welt der Modulformen
+### The world of modular forms
 
-Eine **Modulform** vom Gewicht $k$ und Stufe $N$ ist eine holomorphe Funktion
+A **modular form** of weight $k$ and level $N$ is a holomorphic function
 
 $$
 f: \mathcal{H} \to \mathbb{C}
 $$
 
-auf der oberen Halbebene $\mathcal{H} = \{z \in \mathbb{C} : \text{Im}(z) > 0\}$, die sich unter der Wirkung der Kongruenzuntergruppe $\Gamma_0(N) \subset \text{SL}_2(\mathbb{Z})$ in einer bestimmten Weise transformiert. Sie lebt in der **komplexen Analysis** und hat eine Fourier-Entwicklung (auch **$q$-Entwicklung** genannt):
+on the upper half-plane $\mathcal{H} = \{z \in \mathbb{C} : \text{Im}(z) > 0\}$ that transforms in a prescribed way under the action of the congruence subgroup $\Gamma_0(N) \subset \text{SL}_2(\mathbb{Z})$. It lives in **complex analysis** and has a Fourier expansion (also called a **$q$-expansion**):
 
 $$
 f(z) = \sum_{n=0}^{\infty} b_n q^n, \qquad q = e^{2\pi i z}.
 $$
 
-Die Koeffizienten $b_n$ kodieren die Struktur der Modulform. Besonders wichtig sind die **Neuformen** – normalisierte Hecke-Eigenformen, die „irreduzibel" sind in dem Sinne, dass sie nicht von niedrigerer Stufe kommen.
+The coefficients $b_n$ encode the structure of the modular form. Particularly important are the **newforms** – normalised Hecke eigenforms that are "irreducible" in the sense that they do not arise from lower level.
 
-### Warum getrennt?
+### Why separate?
 
-Elliptische Kurven gehören zur algebraischen Geometrie und Zahlentheorie. Modulformen gehören zur komplexen Analysis und Darstellungstheorie. Ihre Werkzeuge, ihre Intuitionen, ihre Fachsprachen – alles scheint verschieden. Dass zwischen diesen Welten eine tiefe Verbindung bestehen könnte, war bis Mitte des 20. Jahrhunderts kaum vorstellbar.
+Elliptic curves belong to algebraic geometry and number theory. Modular forms belong to complex analysis and representation theory. Their tools, their intuitions, their languages – everything seems different. That a deep connection might exist between these worlds was scarcely imaginable until the mid-20th century.
 
 ---
 
-## 2. Die $L$-Reihen-Brücke
+## 2. The $L$-Series Bridge
 
-Der Schlüssel zur Verbindung liegt in den **$L$-Reihen** – analytischen Objekten, die beide Welten mit einer gemeinsamen Sprache versehen.
+The key to the connection lies in the **$L$-series** – analytic objects that equip both worlds with a common language.
 
-### Die $L$-Reihe einer elliptischen Kurve
+### The $L$-series of an elliptic curve
 
-Für eine elliptische Kurve $E/\mathbb{Q}$ definiert man die **$L$-Reihe** als Euler-Produkt:
+For an elliptic curve $E/\mathbb{Q}$, one defines the **$L$-series** as an Euler product:
 
 $$
-L(E, s) = \prod_{p \text{ prim}} L_p(E, s)^{-1},
+L(E, s) = \prod_{p \text{ prime}} L_p(E, s)^{-1},
 $$
 
-wobei die lokalen Faktoren für Primzahlen guter Reduktion die Form haben:
+where the local factors for primes of good reduction take the form:
 
 $$
 L_p(E, s) = 1 - a_p p^{-s} + p^{1-2s}.
 $$
 
-Die $a_p$ sind genau die oben definierten Punktezähl-Koeffizienten. Für endlich viele Primzahlen schlechter Reduktion (die den **Konduktor** $N_E$ von $E$ bilden) ist der lokale Faktor einfacher.
+The $a_p$ are precisely the point-counting coefficients defined above. For the finitely many primes of bad reduction (which make up the **conductor** $N_E$ of $E$), the local factor is simpler.
 
-### Die $L$-Reihe einer Modulform
+### The $L$-series of a modular form
 
-Für eine Neuform $f = \sum b_n q^n$ vom Gewicht 2 und Stufe $N$ definiert man analog:
-
-$$
-L(f, s) = \sum_{n=1}^{\infty} b_n n^{-s} = \prod_{p \text{ prim}} \left(1 - b_p p^{-s} + p^{1-2s}\right)^{-1}.
-$$
-
-### Die Brücke
-
-Die zentrale Beobachtung ist: Beide $L$-Reihen haben exakt dieselbe Struktur. Wenn es eine Neuform $f$ vom Gewicht 2 gibt mit
+For a newform $f = \sum b_n q^n$ of weight 2 and level $N$, one defines analogously:
 
 $$
-a_p(E) = b_p(f) \quad \text{für (fast) alle Primzahlen } p,
+L(f, s) = \sum_{n=1}^{\infty} b_n n^{-s} = \prod_{p \text{ prime}} \left(1 - b_p p^{-s} + p^{1-2s}\right)^{-1}.
 $$
 
-dann stimmen die $L$-Reihen überein: $L(E, s) = L(f, s)$. In diesem Fall sagt man: **$E$ ist modular**, und $f$ ist die zu $E$ gehörige Modulform.
+### The bridge
+
+The central observation is: both $L$-series have exactly the same structure. If there exists a newform $f$ of weight 2 with
+
+$$
+a_p(E) = b_p(f) \quad \text{for (almost) all primes } p,
+$$
+
+then the $L$-series agree: $L(E, s) = L(f, s)$. In this case one says: **$E$ is modular**, and $f$ is the modular form associated to $E$.
 
 ---
 
-## 3. Taniyama und Shimura – Die Vermutung und ihre Geschichte
+## 3. Taniyama and Shimura – The Conjecture and Its History
 
-### Das Symposium von Tokio (1955)
+### The Tokyo Symposium (1955)
 
-Im September 1955 fand in Tokio ein internationales Symposium über algebraische Zahlentheorie statt. Dort formulierte **Yutaka Taniyama** (1927–1958) eine Reihe von Problemen, die eine Verbindung zwischen elliptischen Kurven und Modulformen andeuteten. Die Fragen waren zunächst vage formuliert, aber der Kern war klar: Die $L$-Reihen elliptischer Kurven sollten mit denen von Modulformen übereinstimmen.
+In September 1955, an international symposium on algebraic number theory took place in Tokyo. There the young Japanese mathematician **Yutaka Taniyama** (1927–1958) formulated a series of problems suggesting a connection between elliptic curves and modular forms. His questions were somewhat vaguely stated, but the core was revolutionary: the $L$-series of elliptic curves should agree with those of modular forms.
 
-Taniyamas Kollege **Goro Shimura** (1930–2019) präzisierte die Vermutung in den folgenden Jahren und untermauerte sie mit Berechnungen und theoretischen Argumenten. In der westlichen Literatur wurde die Vermutung daher oft als **Taniyama-Shimura-Vermutung** (TSV) bezeichnet, manchmal auch als Taniyama-Shimura-Weil-Vermutung, da André Weil einen wichtigen Beitrag zur Präzisierung leistete.
+Taniyama's colleague **Goro Shimura** (1930–2019) made the conjecture precise in the following years and supported it with calculations and theoretical arguments. In the Western literature, the conjecture is therefore often called the **Taniyama–Shimura conjecture** (TSC), sometimes also the Taniyama–Shimura–Weil conjecture, since André Weil made an important contribution to its precise formulation.
 
-Taniyama starb 1958 im Alter von 31 Jahren. Seine mathematische Vision überlebte ihn und wurde zu einer der einflussreichsten Vermutungen des 20. Jahrhunderts.
+### The tragic history
 
-> „I do not deny that there is an element of mystery in the conjecture [...] but I think, at the time, it was just a guess."
-> — Goro Shimura, zitiert in Singh, *Fermat's Last Theorem* (1997), S. 174
+Taniyama took his own life in 1958 at the age of only 31 – for reasons that remain not fully understood to this day. His mathematical vision, however, survived him and became one of the most influential conjectures of the 20th century.
 
-### Die Vermutung, präzise formuliert
+### The conjecture, precisely stated
 
-!!! note "Taniyama-Shimura-Vermutung (Modularitätsvermutung)"
-    Jede elliptische Kurve $E$ über $\mathbb{Q}$ ist **modular**: Es existiert eine
-    Neuform $f$ vom Gewicht 2 und Stufe $N_E$ (dem Konduktor von $E$) mit
+!!! note "Taniyama–Shimura Conjecture (Modularity Conjecture)"
+    Every elliptic curve $E$ over $\mathbb{Q}$ is **modular**: there exists a
+    newform $f$ of weight 2 and level $N_E$ (the conductor of $E$) with
     $$
     L(E, s) = L(f, s).
     $$
-    Äquivalent: $a_p(E) = b_p(f)$ für alle Primzahlen $p$ guter Reduktion.
+    Equivalently: $a_p(E) = b_p(f)$ for all primes $p$ of good reduction.
 
-### Warum glaubte man daran?
+### Why did people believe it?
 
-Zunächst gab es **numerische Evidenz**: Für viele explizit berechnete elliptische Kurven ließen sich passende Modulformen finden, und die Koeffizienten stimmten überein – so weit man rechnen konnte.
+First, there was **numerical evidence**: for many explicitly computed elliptic curves, matching modular forms could be found, and the coefficients agreed – as far as one could compute.
 
-Dann gab es **strukturelle Argumente**: Die funktionalgleichung der $L$-Reihe einer modularen Form war bekannt. Wenn die $L$-Reihe einer elliptischen Kurve dieselbe Funktionalgleichung erfüllt (was durch die Arbeit von Weil nahegelegt wurde), dann liegt ein Zusammenhang nahe.
+Then there were **structural arguments**: the functional equation of the $L$-series of a modular form was known. If the $L$-series of an elliptic curve satisfies the same functional equation (as suggested by the work of Weil), then a connection seems likely.
 
-Schließlich gab es die **philosophische Überzeugung**, die dem Langlands-Programm zugrunde liegt: Zwischen automorphen Formen (zu denen Modulformen gehören) und Galois-Darstellungen (die elliptische Kurven liefern) sollte eine systematische Korrespondenz bestehen.
+Finally, there was the **philosophical conviction** underlying the Langlands programme: between automorphic forms (to which modular forms belong) and Galois representations (which elliptic curves yield), there should be a systematic correspondence.
 
 ---
 
-## 4. Was „modular" bedeutet – Ein Beispiel
+## 4. What "Modular" Means – An Example
 
-Gegeben die elliptische Kurve
+Consider the elliptic curve
 
 $$
 E: \quad y^2 = x^3 - x.
 $$
 
-Diese Kurve hat **Konduktor** $N_E = 32$. Die Koeffizienten $a_p$ ergeben sich durch Punktezählung modulo kleiner Primzahlen:
+This is a curve with **conductor** $N_E = 32$. We compute the coefficients $a_p$ by counting points modulo small primes:
 
 | $p$ | $\#E(\mathbb{F}_p)$ | $a_p = p - \#E(\mathbb{F}_p)$ |
 |-----|---------------------|-------------------------------|
@@ -171,99 +163,99 @@ Diese Kurve hat **Konduktor** $N_E = 32$. Die Koeffizienten $a_p$ ergeben sich d
 | 11  | 12                  | $-1$                          |
 | 13  | 12                  | $1$                           |
 
-Die zugehörige Modulform $f$ vom Gewicht 2 und Stufe 32 ist eindeutig bestimmt. Ihre $q$-Entwicklung beginnt mit:
+Now we look for a modular form $f$ of weight 2 and level 32 with the same coefficients. Indeed, there is exactly one such newform, and its $q$-expansion begins with:
 
 $$
 f(q) = q - q^3 + q^5 - q^7 - q^{11} + q^{13} + \cdots
 $$
 
-Die Koeffizienten $b_3 = -1$, $b_5 = 1$, $b_7 = -1$, $b_{11} = -1$, $b_{13} = 1$ stimmen exakt mit den $a_p$ überein. Die Kurve $y^2 = x^3 - x$ **ist modular**.
+The coefficients $b_3 = -1$, $b_5 = 1$, $b_7 = -1$, $b_{11} = -1$, $b_{13} = 1$ agree exactly with the $a_p$. The curve $y^2 = x^3 - x$ **is modular**.
 
-Dieses Beispiel illustriert die Vermutung konkret: Die arithmetische Information der Kurve (Punktezählung über endlichen Körpern) wird exakt von einem analytischen Objekt (einer Modulform) widergespiegelt.
-
----
-
-## 5. Warum die TSV so mächtig ist
-
-Die Taniyama-Shimura-Vermutung ist nicht einfach eine Beobachtung über einzelne Beispiele – sie ist eine **universelle Aussage** über alle elliptischen Kurven über $\mathbb{Q}$:
-
-### Unendlich viele Kurven, eine Vermutung
-
-Es gibt unendlich viele nicht-isomorphe elliptische Kurven über $\mathbb{Q}$, parametrisiert durch die Koeffizienten $a$ und $b$. Für **jede einzelne** behauptet die TSV die Existenz einer passenden Modulform.
-
-### Von Geometrie zu Analysis
-
-Die TSV übersetzt ein **geometrisch-arithmetisches** Problem (Struktur einer elliptischen Kurve) in ein **analytisches** Problem (Existenz einer Modulform). Da Modulformen gut verstandene Objekte sind – mit reicher Theorie der Hecke-Operatoren, $L$-Reihen und Funktionalgleichungen –, erschließt die Modularität einer Kurve sofort eine Fülle analytischer Werkzeuge.
-
-### Konsequenzen der Modularität
-
-Wenn $E$ modular ist, folgt automatisch:
-
-1. **Analytische Fortsetzung**: $L(E, s)$ lässt sich auf ganz $\mathbb{C}$ analytisch fortsetzen.
-2. **Funktionalgleichung**: $L(E, s)$ erfüllt eine Funktionalgleichung, die $s$ und $2-s$ verbindet.
-3. **BSD-Vermutung**: Die Ordnung der Nullstelle von $L(E, s)$ bei $s = 1$ sollte gleich dem Rang von $E(\mathbb{Q})$ sein (Birch und Swinnerton-Dyer).
-
-Vor Wiles' Beweis war selbst die analytische Fortsetzung von $L(E, s)$ nur für einzelne Kurven bekannt – nicht für alle.
+This example illustrates the conjecture concretely: the arithmetic information of the curve (point counting over finite fields) is exactly mirrored by an analytic object (a modular form).
 
 ---
 
-## 6. Die semistabile Version
+## 5. Why the TSC Is So Powerful
 
-### Semistabile elliptische Kurven
+The Taniyama–Shimura conjecture is not merely an observation about individual examples – it is a **universal statement** about all elliptic curves over $\mathbb{Q}$:
 
-Eine elliptische Kurve $E/\mathbb{Q}$ heißt **semistabil**, wenn sie bei jeder Primzahl $p$ entweder gute oder **multiplikative** (nicht additive) Reduktion hat. Geometrisch bedeutet das: Bei schlechter Reduktion hat die Kurve höchstens einen gewöhnlichen Doppelpunkt (eine „Selbstkreuzung"), aber keinen Rückkehrpunkt.
+### Infinitely many curves, one conjecture
 
-Die Klasse der semistabilen Kurven ist groß genug, um die **Frey-Kurve** zu enthalten – das ist entscheidend für die Anwendung auf Fermats letzten Satz.
+There are infinitely many non-isomorphic elliptic curves over $\mathbb{Q}$, parametrised by the coefficients $a$ and $b$. For **every single one**, the TSC asserts the existence of a matching modular form. This is a breathtakingly strong statement.
+
+### From geometry to analysis
+
+The TSC translates a **geometric-arithmetic** problem (structure of an elliptic curve) into an **analytic** problem (existence of a modular form). Since modular forms are well-understood objects – with a rich theory of Hecke operators, $L$-series, and functional equations – the modularity of a curve immediately unlocks a wealth of analytic tools.
+
+### Consequences of modularity
+
+If $E$ is modular, it follows automatically that:
+
+1. **Analytic continuation**: $L(E, s)$ admits analytic continuation to all of $\mathbb{C}$.
+2. **Functional equation**: $L(E, s)$ satisfies a functional equation relating $s$ and $2-s$.
+3. **BSD conjecture**: The order of the zero of $L(E, s)$ at $s = 1$ should equal the rank of $E(\mathbb{Q})$ (Birch and Swinnerton-Dyer).
+
+Before Wiles' proof, even the analytic continuation of $L(E, s)$ was known only for individual curves – not for all.
+
+---
+
+## 6. The Semistable Version
+
+### Semistable elliptic curves
+
+An elliptic curve $E/\mathbb{Q}$ is called **semistable** if at every prime $p$ it has either good or **multiplicative** (not additive) reduction. Geometrically, this means: at primes of bad reduction, the curve has at most an ordinary double point (a "self-crossing"), but no cusp.
+
+The class of semistable curves is large enough to contain the **Frey curve** – this is decisive for the application to Fermat's Last Theorem.
 
 ### Wiles' Theorem (1995)
 
-!!! note "Theorem (Wiles, Taylor-Wiles, 1995)"
-    Jede **semistabile** elliptische Kurve über $\mathbb{Q}$ ist modular.
+!!! note "Theorem (Wiles, Taylor–Wiles, 1995)"
+    Every **semistable** elliptic curve over $\mathbb{Q}$ is modular.
 
-Andrew Wiles bewies diese Aussage in seiner bahnbrechenden Arbeit *„Modular elliptic curves and Fermat's Last Theorem"* (Annals of Mathematics, 1995), zusammen mit dem ergänzenden Artikel von Richard Taylor und Andrew Wiles.
+Andrew Wiles proved this statement in his groundbreaking paper *"Modular elliptic curves and Fermat's Last Theorem"* (Annals of Mathematics, 1995), together with the companion article by Richard Taylor and Andrew Wiles.
 
-Der Beweis der **vollständigen** Taniyama-Shimura-Vermutung – für alle elliptischen Kurven, nicht nur die semistabilen – gelang erst 2001 durch **Breuil, Conrad, Diamond und Taylor**, aufbauend auf Wiles' Methoden.
+The proof of the **full** Taniyama–Shimura conjecture – for all elliptic curves, not just the semistable ones – was achieved only in 2001 by **Breuil, Conrad, Diamond, and Taylor**, building on Wiles' methods.
 
-### Warum reicht die semistabile Version für FLT?
+### Why does the semistable version suffice for FLT?
 
-Die Frey-Kurve, die aus einer hypothetischen FLT-Lösung konstruiert wird, ist semistabil. Daher genügt die semistabile Version der TSV, um Fermats letzten Satz zu beweisen – mehr war nicht nötig. Die Details dieser Reduktion sind Gegenstand des [nächsten Artikels](02-frey-ribet.md).
-
----
-
-## 7. Von TSV zu FLT – Vorschau auf Freys Argument
-
-Die logische Kette von der TSV zu Fermats letztem Satz lässt sich knapp so zusammenfassen:
-
-**Angenommen**, es gäbe eine nichttriviale Lösung $a^p + b^p = c^p$ für eine Primzahl $p \geq 5$.
-
-1. **Frey (1985)**: Konstruiere die elliptische Kurve $E: y^2 = x(x - a^p)(x + b^p)$.
-2. **Frey/Serre**: Diese Kurve ist semistabil, hat aber eine so extreme Diskriminante, dass sie „zu exotisch" ist, um modular zu sein.
-3. **Ribet (1986)**: Beweist, dass $E$ tatsächlich nicht modular sein kann (Level-Lowering-Theorem).
-4. **Wiles (1995)**: Beweist, dass jede semistabile Kurve modular ist.
-5. **Widerspruch**: $E$ ist semistabil (also modular nach Wiles), aber nicht modular (nach Ribet). Also kann die Lösung nicht existieren.
-
-$$
-\boxed{\text{FLT-Lösung} \xrightarrow{\text{Frey}} E \xrightarrow{\text{Ribet}} \text{nicht modular} \xleftarrow{\text{Widerspruch}} \xrightarrow{\text{Wiles}} \text{modular}}
-$$
-
-Dieser Widerspruchsbeweis – der eine Vermutung aus der Zahlentheorie über algebraische Geometrie und komplexe Analysis beweist – verbindet drei zentrale Gebiete der modernen Mathematik.
+The Frey curve, constructed from a hypothetical FLT solution, is semistable. Therefore the semistable version of the TSC suffices to prove Fermat's Last Theorem – nothing more was needed. The details of this reduction are the subject of the [next article](02-frey-ribet.md).
 
 ---
 
-## Ausblick
+## 7. From TSC to FLT – Preview of Frey's Argument
 
-Dieser Artikel hat die Taniyama-Shimura-Vermutung als Verbindung zwischen elliptischen Kurven und Modulformen dargestellt. Die folgenden Artikel vertiefen die einzelnen Schritte:
+The logical chain from the TSC to Fermat's Last Theorem can be summarised concisely:
 
-| Artikel | Thema |
+**Suppose** there existed a non-trivial solution $a^p + b^p = c^p$ for a prime $p \geq 5$.
+
+1. **Frey (1985)**: Construct the elliptic curve $E: y^2 = x(x - a^p)(x + b^p)$.
+2. **Frey/Serre**: This curve is semistable but has such an extreme discriminant that it is "too exotic" to be modular.
+3. **Ribet (1986)**: Proves that $E$ indeed cannot be modular (level-lowering theorem).
+4. **Wiles (1995)**: Proves that every semistable curve is modular.
+5. **Contradiction**: $E$ is semistable (hence modular by Wiles), but not modular (by Ribet). Therefore the solution cannot exist.
+
+$$
+\boxed{\text{FLT solution} \xrightarrow{\text{Frey}} E \xrightarrow{\text{Ribet}} \text{not modular} \xleftarrow{\text{contradiction}} \xrightarrow{\text{Wiles}} \text{modular}}
+$$
+
+This beautiful proof by contradiction – which proves a conjecture in number theory via a detour through algebraic geometry and complex analysis – is one of the great intellectual masterpieces of mathematics.
+
+---
+
+## Outlook
+
+This article has presented the Taniyama–Shimura conjecture as a bridge between elliptic curves and modular forms. In the next article, we dive deeper:
+
+| Article | Topic |
 |---------|-------|
-| [02 – Freys Idee und Ribets Theorem](02-frey-ribet.md) | Wie eine FLT-Lösung zur „unmöglichen" Frey-Kurve führt |
-| [03 – Galois-Darstellungen](03-galois-darstellungen.md) | Wie Wiles Modularität in die Sprache der Darstellungen übersetzt |
+| [02 – Frey's Idea and Ribet's Theorem](02-frey-ribet.md) | How an FLT solution leads to the "impossible" Frey curve |
+| [03 – Galois Representations](03-galois-darstellungen.md) | How Wiles translates modularity into the language of representations |
 
 ---
 
-## Quellen
+## Sources
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 8 – Modularität und die TSV
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Chapter 8 – Modularity and the TSC
 - **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), §1–2
-- **Fred Diamond, Jerry Shurman**: *A First Course in Modular Forms*, Springer (2005) – Ausführliche Darstellung der TSV und ihrer Beweise
-- **Barry Mazur**: *Number Theory as Gadfly*, The American Mathematical Monthly 98 (1991) – Motivation der Vermutung
+- **Fred Diamond, Jerry Shurman**: *A First Course in Modular Forms*, Springer (2005) – Detailed exposition of the TSC and its proofs
+- **Barry Mazur**: *Number Theory as Gadfly*, The American Mathematical Monthly 98 (1991) – Motivation of the conjecture

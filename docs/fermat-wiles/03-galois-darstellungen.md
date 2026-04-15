@@ -1,291 +1,286 @@
 ---
-title: "Galois-Darstellungen"
+title: "Galois Representations"
 slug: fermat-wiles/03-galois-darstellungen
 series: fermat-wiles
 part: 3
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: zahlentheorie
 tags:
-  - galois-darstellungen
-  - darstellungstheorie
-  - modularitaet
+  - galois-representations
+  - representation-theory
+  - modularity
 requires:
-  - abbildungen
-  - mengen
-  - modulare-arithmetik
+  - gruppen-und-symmetrie/01-gruppen
+  - ringe-und-koerper/01-ringe-koerper
+  - galois-theorie/01-galois-theorie
+  - elliptische-kurven/01-elliptische-kurven
 ---
-# Galois-Darstellungen
+# Galois Representations
 
-!!! abstract "Zusammenfassung"
-    Galois-Darstellungen übersetzen die Symmetrien algebraischer Gleichungen in
-    die Sprache der linearen Algebra: Homomorphismen von Galois-Gruppen in
-    Matrizengruppen. Jede elliptische Kurve liefert eine natürliche 2-dimensionale
-    Darstellung, und Wiles' Beweis zeigt Modularität auf genau dieser Ebene.
+!!! abstract "Summary"
+    Galois representations translate the symmetries of algebraic equations into
+    the language of linear algebra: homomorphisms from Galois groups into
+    matrix groups. Every elliptic curve yields a natural 2-dimensional
+    representation, and Wiles' proof establishes modularity at precisely this level.
 
-## Voraussetzungen
+## Prerequisites
 
-- [Gruppen und Symmetrie](../werkzeuge/gruppen.md) – Homomorphismen, Normalteiler, Quotientengruppen
-- [Ringe und Körper](../werkzeuge/ringe-koerper.md) – Körpererweiterungen, endliche Körper $\mathbb{F}_p$, $p$-adische Zahlen $\mathbb{Z}_p$
-- [Galois-Theorie](../werkzeuge/galois-theorie.md) – Galois-Gruppen, Frobenius-Elemente, Verzweigung
-- [Elliptische Kurven](../werkzeuge/elliptische-kurven.md) – Gruppenstruktur, Torsionspunkte, Reduktion modulo $p$
-
-| Thema | Beschreibung |
-|-------|-------------|
-| [Abbildungen (Funktionen)](../vorwissen/abbildungen.md) | $f: A \to B$, injektiv, surjektiv, bijektiv |
-| [Mengen und Mengenoperationen](../vorwissen/mengen.md) | Mengennotation, $\cup, \cap, \setminus, \times$ |
-| [Modulare Arithmetik](../vorwissen/modulare-arithmetik.md) | Kongruenzen $a \equiv b \pmod{n}$ und Restklassen |
+- [Groups and Symmetry](../werkzeuge/gruppen.md) – homomorphisms, normal subgroups, quotient groups
+- [Rings and Fields](../werkzeuge/ringe-koerper.md) – field extensions, finite fields $\mathbb{F}_p$, $p$-adic numbers $\mathbb{Z}_p$
+- [Galois Theory](../werkzeuge/galois-theorie.md) – Galois groups, Frobenius elements, ramification
+- [Elliptic Curves](../werkzeuge/elliptische-kurven.md) – group structure, torsion points, reduction modulo $p$
 
 ---
 
-## 1. Von Galois-Gruppen zu Matrizen
+## 1. From Galois Groups to Matrices
 
-### Was ist eine Darstellung?
+### What is a representation?
 
-Eine **Darstellung** einer Gruppe $G$ ist ein Homomorphismus
+A **representation** of a group $G$ is a homomorphism
 
 $$
 \rho: G \to \text{GL}_n(K),
 $$
 
-wobei $\text{GL}_n(K)$ die Gruppe der invertierbaren $n \times n$-Matrizen über einem Körper (oder Ring) $K$ ist. Die Darstellung „übersetzt" die abstrakte Gruppenstruktur in die konkrete Sprache der linearen Algebra.
+where $\text{GL}_n(K)$ is the group of invertible $n \times n$ matrices over a field (or ring) $K$. The representation "translates" the abstract group structure into the concrete language of linear algebra.
 
-### Warum Darstellungen?
+### Why representations?
 
-Galois-Gruppen – insbesondere die absolute Galois-Gruppe $G_{\mathbb{Q}}$ – sind unendlich und hochkomplex. Direkt mit ihnen zu arbeiten ist oft unmöglich. Darstellungen liefern ein handhabbares Werkzeug: Statt die Gruppe selbst zu studieren, studiert man ihre **Wirkung auf Vektorräumen**.
+Galois groups – in particular the absolute Galois group $G_{\mathbb{Q}}$ – are infinite and highly complex. Working with them directly is often impossible. Representations provide a tractable tool: instead of studying the group itself, one studies its **action on vector spaces**.
 
-Die zentrale Einsicht von Wiles' Beweis ist: Modularität einer elliptischen Kurve lässt sich als Eigenschaft ihrer Galois-Darstellung formulieren – und auf dieser Ebene beweisen.
+The central insight of Wiles' proof is: modularity of an elliptic curve can be formulated as a property of its Galois representation – and proved at that level.
 
 ---
 
-## 2. Die absolute Galois-Gruppe
+## 2. The Absolute Galois Group
 
 ### Definition
 
-Die **absolute Galois-Gruppe** von $\mathbb{Q}$ ist
+The **absolute Galois group** of $\mathbb{Q}$ is
 
 $$
 G_{\mathbb{Q}} = \text{Gal}(\overline{\mathbb{Q}}/\mathbb{Q}),
 $$
 
-wobei $\overline{\mathbb{Q}}$ der algebraische Abschluss von $\mathbb{Q}$ ist (die Menge aller algebraischen Zahlen). $G_{\mathbb{Q}}$ besteht aus allen Körperautomorphismen von $\overline{\mathbb{Q}}$, die $\mathbb{Q}$ elementweise festlassen.
+where $\overline{\mathbb{Q}}$ is the algebraic closure of $\mathbb{Q}$ (the set of all algebraic numbers). $G_{\mathbb{Q}}$ consists of all field automorphisms of $\overline{\mathbb{Q}}$ that fix $\mathbb{Q}$ element-wise.
 
-### Profinite Struktur
+### Profinite structure
 
-$G_{\mathbb{Q}}$ ist eine **profinite Gruppe** – der inverse Limes aller endlichen Galois-Gruppen $\text{Gal}(K/\mathbb{Q})$:
+$G_{\mathbb{Q}}$ is a **profinite group** – the inverse limit of all finite Galois groups $\text{Gal}(K/\mathbb{Q})$:
 
 $$
-G_{\mathbb{Q}} = \varprojlim_{K/\mathbb{Q} \text{ endlich, Galois}} \text{Gal}(K/\mathbb{Q}).
+G_{\mathbb{Q}} = \varprojlim_{K/\mathbb{Q} \text{ finite, Galois}} \text{Gal}(K/\mathbb{Q}).
 $$
 
-Sie ist überabzählbar und trägt eine natürliche Topologie (die Krull-Topologie), unter der sie kompakt und total unzusammenhängend ist. Jedes offene Untergruppe hat endlichen Index.
+It is uncountable and carries a natural topology (the Krull topology), under which it is compact and totally disconnected. Every open subgroup has finite index.
 
-### Zerlegungsgruppen und Frobenius
+### Decomposition groups and Frobenius
 
-Für jede Primzahl $p$ gibt es eine **Zerlegungsgruppe** $D_p \subset G_{\mathbb{Q}}$ und eine **Trägheitsgruppe** $I_p \subset D_p$. Das Frobenius-Element
+For every prime $p$ there is a **decomposition group** $D_p \subset G_{\mathbb{Q}}$ and an **inertia group** $I_p \subset D_p$. The Frobenius element
 
 $$
 \text{Frob}_p \in D_p / I_p
 $$
 
-ist die „Signatur" der Primzahl $p$ in $G_{\mathbb{Q}}$. Es wirkt auf Reduktionen modulo $p$ wie $x \mapsto x^p$.
+is the "signature" of the prime $p$ in $G_{\mathbb{Q}}$. It acts on reductions modulo $p$ as $x \mapsto x^p$.
 
-Für eine Darstellung $\rho: G_{\mathbb{Q}} \to \text{GL}_n(K)$ kann man die **Spur des Frobenius**
+For a representation $\rho: G_{\mathbb{Q}} \to \text{GL}_n(K)$, one can compute the **trace of the Frobenius**
 
 $$
 \text{tr}(\rho(\text{Frob}_p))
 $$
 
-berechnen – und diese Zahl kodiert die arithmetische Information der Darstellung bei $p$.
+– and this number encodes the arithmetic information of the representation at $p$.
 
 ---
 
-## 3. $p$-Torsion elliptischer Kurven
+## 3. $p$-Torsion of Elliptic Curves
 
-### Das Galois-Modul $E[p]$
+### The Galois module $E[p]$
 
-Sei $E$ eine elliptische Kurve über $\mathbb{Q}$ und $p$ eine Primzahl. Die **$p$-Torsionspunkte** sind:
+Let $E$ be an elliptic curve over $\mathbb{Q}$ and $p$ a prime. The **$p$-torsion points** are:
 
 $$
 E[p] = \{P \in E(\overline{\mathbb{Q}}) : pP = \mathcal{O}\},
 $$
 
-wobei $\mathcal{O}$ der Punkt im Unendlichen (das Neutralelement der Gruppenstruktur) ist.
+where $\mathcal{O}$ is the point at infinity (the identity element of the group structure).
 
-Als abelsche Gruppe ist $E[p]$ isomorph zu
+As an abelian group, $E[p]$ is isomorphic to
 
 $$
 E[p] \cong (\mathbb{Z}/p\mathbb{Z})^2.
 $$
 
-Es ist ein zweidimensionaler Vektorraum über $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$.
+It is a two-dimensional vector space over $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$.
 
-### Die Galois-Wirkung
+### The Galois action
 
-Die Punkte in $E[p]$ haben Koordinaten in $\overline{\mathbb{Q}}$, und die absolute Galois-Gruppe wirkt auf ihnen durch ihre Wirkung auf die Koordinaten:
+The points in $E[p]$ have coordinates in $\overline{\mathbb{Q}}$, and the absolute Galois group acts on them through its action on the coordinates:
 
 $$
-\sigma(P) = (\sigma(x_P), \sigma(y_P)) \quad \text{für } \sigma \in G_{\mathbb{Q}}.
+\sigma(P) = (\sigma(x_P), \sigma(y_P)) \quad \text{for } \sigma \in G_{\mathbb{Q}}.
 $$
 
-Diese Wirkung respektiert die Gruppenstruktur: $\sigma(P + Q) = \sigma(P) + \sigma(Q)$. Damit ist $E[p]$ ein **Galois-Modul** – ein $\mathbb{F}_p$-Vektorraum mit einer linearen Wirkung von $G_{\mathbb{Q}}$.
+This action respects the group structure: $\sigma(P + Q) = \sigma(P) + \sigma(Q)$. Thus $E[p]$ is a **Galois module** – an $\mathbb{F}_p$-vector space with a linear action of $G_{\mathbb{Q}}$.
 
 ---
 
-## 4. Die residuale Darstellung
+## 4. The Residual Representation
 
 ### Definition
 
-Wählt man eine Basis $\{P_1, P_2\}$ von $E[p]$ über $\mathbb{F}_p$, so wird die Galois-Wirkung durch eine Matrix beschrieben:
+Choosing a basis $\{P_1, P_2\}$ of $E[p]$ over $\mathbb{F}_p$, the Galois action is described by a matrix:
 
 $$
 \sigma(P_j) = \sum_i a_{ij}(\sigma) P_i, \qquad (a_{ij}(\sigma)) \in \text{GL}_2(\mathbb{F}_p).
 $$
 
-Dies definiert die **residuale Galois-Darstellung**:
+This defines the **residual Galois representation**:
 
 $$
 \bar{\rho}_{E,p}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p).
 $$
 
-Sie ist ein stetiger Gruppenhomomorphismus (bezüglich der Krull-Topologie auf $G_{\mathbb{Q}}$ und der diskreten Topologie auf $\text{GL}_2(\mathbb{F}_p)$). Bis auf Konjugation ist sie unabhängig von der Basiswahl.
+It is a continuous group homomorphism (with respect to the Krull topology on $G_{\mathbb{Q}}$ and the discrete topology on $\text{GL}_2(\mathbb{F}_p)$). Up to conjugation, it is independent of the choice of basis.
 
-### Irreduzibilität
+### Irreducibility
 
-Die Darstellung $\bar{\rho}_{E,p}$ heißt **irreduzibel**, wenn $E[p]$ keine nichttriviale $G_{\mathbb{Q}}$-invariante Untergruppe hat (d.h. keinen $\mathbb{F}_p$-Untervektorraum, der unter der Galois-Wirkung stabil ist).
+The representation $\bar{\rho}_{E,p}$ is called **irreducible** if $E[p]$ has no non-trivial $G_{\mathbb{Q}}$-invariant subgroup (i.e., no $\mathbb{F}_p$-subspace stable under the Galois action).
 
-Irreduzibilität ist eine entscheidende Voraussetzung für Wiles' Beweis. Für die Frey-Kurve ist $\bar{\rho}_{E,p}$ irreduzibel für $p \geq 5$ – eine Folge von Mazurs bahnbrechender Arbeit über isogene elliptische Kurven.
+Irreducibility is a crucial hypothesis for Wiles' proof. For the Frey curve, $\bar{\rho}_{E,p}$ is irreducible for $p \geq 5$ – a consequence of Mazur's groundbreaking work on isogenous elliptic curves.
 
-### Verzweigung und Konduktor
+### Ramification and conductor
 
-Die Darstellung $\bar{\rho}_{E,p}$ ist **unverzweigt** bei einer Primzahl $q \neq p$, wenn die Trägheitsgruppe $I_q$ trivial auf $E[p]$ wirkt. Dies geschieht genau dann, wenn $E$ gute Reduktion bei $q$ hat.
+The representation $\bar{\rho}_{E,p}$ is **unramified** at a prime $q \neq p$ if the inertia group $I_q$ acts trivially on $E[p]$. This happens precisely when $E$ has good reduction at $q$.
 
-Der **Artin-Konduktor** $N(\bar{\rho}_{E,p})$ misst die Verzweigung der Darstellung und ist ein Teiler des Konduktors $N_E$ der Kurve.
+The **Artin conductor** $N(\bar{\rho}_{E,p})$ measures the ramification of the representation and is a divisor of the conductor $N_E$ of the curve.
 
 ---
 
-## 5. Die $p$-adische Darstellung
+## 5. The $p$-adic Representation
 
-### Der Tate-Modul
+### The Tate module
 
-Statt nur die $p$-Torsion zu betrachten, kann man alle $p^n$-Torsionspunkte simultan erfassen. Der **Tate-Modul** ist der inverse Limes:
+Instead of considering only the $p$-torsion, one can capture all $p^n$-torsion points simultaneously. The **Tate module** is the inverse limit:
 
 $$
 T_p(E) = \varprojlim_{n} E[p^n],
 $$
 
-wobei die Übergangsabbildungen die Multiplikation-mit-$p$-Abbildungen $E[p^{n+1}] \to E[p^n]$ sind.
+where the transition maps are the multiplication-by-$p$ maps $E[p^{n+1}] \to E[p^n]$.
 
-Als $\mathbb{Z}_p$-Modul ist $T_p(E)$ frei vom Rang 2:
+As a $\mathbb{Z}_p$-module, $T_p(E)$ is free of rank 2:
 
 $$
 T_p(E) \cong \mathbb{Z}_p^2.
 $$
 
-### Die $p$-adische Darstellung
+### The $p$-adic representation
 
-Die Galois-Wirkung auf $T_p(E)$ liefert die **$p$-adische Galois-Darstellung**:
+The Galois action on $T_p(E)$ yields the **$p$-adic Galois representation**:
 
 $$
 \rho_{E,p}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_p) \hookrightarrow \text{GL}_2(\mathbb{Q}_p).
 $$
 
-Dies ist eine stetige Darstellung bezüglich der $p$-adischen Topologie. Sie ist eine „Liftung" der residualen Darstellung: Reduktion modulo $p$ gibt
+This is a continuous representation with respect to the $p$-adic topology. It is a "lift" of the residual representation: reduction modulo $p$ gives
 
 $$
 \rho_{E,p} \pmod{p} = \bar{\rho}_{E,p}.
 $$
 
-### Die Verbindung zu $L$-Reihen
+### The connection to $L$-series
 
-Die $p$-adische Darstellung kodiert die arithmetische Information der Kurve vollständig:
+The $p$-adic representation encodes the arithmetic information of the curve completely:
 
 $$
 \text{tr}(\rho_{E,p}(\text{Frob}_q)) = a_q(E), \qquad \det(\rho_{E,p}(\text{Frob}_q)) = q,
 $$
 
-für jede Primzahl $q$ guter Reduktion (mit $q \neq p$). Damit bestimmt die Darstellung die $L$-Reihe $L(E, s)$ – und umgekehrt.
+for every prime $q$ of good reduction (with $q \neq p$). Thus the representation determines the $L$-series $L(E, s)$ – and vice versa.
 
 ---
 
-## 6. Modulare Darstellungen
+## 6. Modular Representations
 
-### Darstellungen von Modulformen
+### Representations from modular forms
 
-Nicht nur elliptische Kurven liefern Galois-Darstellungen – auch **Modulformen** tun dies. Zu jeder Neuform $f$ vom Gewicht 2 und Stufe $N$ konstruierten Eichler und Shimura eine zugehörige Galois-Darstellung:
+Not only elliptic curves yield Galois representations – **modular forms** do as well. For every newform $f$ of weight 2 and level $N$, Eichler and Shimura constructed an associated Galois representation:
 
 $$
 \rho_f: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_p),
 $$
 
-mit der Eigenschaft
+with the property
 
 $$
 \text{tr}(\rho_f(\text{Frob}_q)) = b_q(f), \qquad \det(\rho_f(\text{Frob}_q)) = q,
 $$
 
-wobei $b_q$ der $q$-te Fourier-Koeffizient von $f$ ist.
+where $b_q$ is the $q$-th Fourier coefficient of $f$.
 
-### Modularität als Darstellungseigenschaft
+### Modularity as a property of representations
 
-Jetzt wird die Verbindung klar: Eine elliptische Kurve $E$ ist genau dann **modular**, wenn ihre Galois-Darstellung $\rho_{E,p}$ mit der Darstellung $\rho_f$ einer Neuform $f$ übereinstimmt:
+Now the connection becomes clear: an elliptic curve $E$ is **modular** if and only if its Galois representation $\rho_{E,p}$ agrees with the representation $\rho_f$ of a newform $f$:
 
 $$
-\rho_{E,p} \cong \rho_f \quad \iff \quad a_q(E) = b_q(f) \text{ für alle } q \quad \iff \quad L(E, s) = L(f, s).
+\rho_{E,p} \cong \rho_f \quad \iff \quad a_q(E) = b_q(f) \text{ for all } q \quad \iff \quad L(E, s) = L(f, s).
 $$
 
-Die Modularitätsvermutung (TSV) wird damit zu einer Aussage über Galois-Darstellungen: **Jede Darstellung, die von einer elliptischen Kurve kommt, kommt auch von einer Modulform.**
+The modularity conjecture (TSC) thus becomes a statement about Galois representations: **every representation coming from an elliptic curve also comes from a modular form.**
 
-### Residuale Modularität
+### Residual modularity
 
-Analog heißt $\bar{\rho}_{E,p}$ **modular**, wenn sie isomorph zur Reduktion modulo $p$ einer modularen Darstellung ist:
+Analogously, $\bar{\rho}_{E,p}$ is called **modular** if it is isomorphic to the reduction modulo $p$ of a modular representation:
 
 $$
 \bar{\rho}_{E,p} \cong \bar{\rho}_f \pmod{p}
 $$
 
-für eine Neuform $f$. Dies ist eine schwächere Bedingung als volle Modularität – und genau der Ausgangspunkt von Wiles' Beweisstrategie.
+for some newform $f$. This is a weaker condition than full modularity – and precisely the starting point of Wiles' proof strategy.
 
 ---
 
-## 7. Wiles' Strategie
+## 7. Wiles' Strategy
 
-### Die zwei Schritte
+### The two steps
 
-Wiles' Beweis der Modularität semistabiler elliptischer Kurven zerfällt in zwei große Schritte:
+Wiles' proof of the modularity of semistable elliptic curves breaks into two major steps:
 
-**Schritt 1: Residuale Modularität zeigen.** Man muss beweisen, dass $\bar{\rho}_{E,p}$ modular ist – also von einer Neuform kommt. Für $p = 3$ folgt dies aus einem berühmten Ergebnis von **Langlands und Tunnell**: Da $\text{GL}_2(\mathbb{F}_3)$ auflösbar ist, kann man Langlands' Basis-Wechsel-Techniken (base change) anwenden. Für $p = 5$ nutzt Wiles den sogenannten **3-5-Switch** (siehe [Artikel 07](07-3-5-switch.md)).
+**Step 1: Establish residual modularity.** One must prove that $\bar{\rho}_{E,p}$ is modular – i.e., comes from a newform. For $p = 3$, this follows from a famous result of **Langlands and Tunnell**: since $\text{GL}_2(\mathbb{F}_3)$ is solvable, Langlands' base change techniques can be applied. For $p = 5$, Wiles uses the so-called **3-5 switch** (see [Article 07](07-3-5-switch.md)).
 
-**Schritt 2: Von residualer zu voller Modularität „liften".** Dies ist das Herzstück des Beweises: Gegeben, dass $\bar{\rho}_{E,p}$ modular ist, muss man zeigen, dass auch die volle Darstellung $\rho_{E,p}$ modular ist. Dazu führt Wiles die Sprache der **Deformationstheorie** ein (siehe [Artikel 04](04-deformationstheorie.md)).
+**Step 2: "Lift" from residual to full modularity.** This is the heart of the proof: given that $\bar{\rho}_{E,p}$ is modular, one must show that the full representation $\rho_{E,p}$ is also modular. For this, Wiles introduces the language of **deformation theory** (see [Article 04](04-deformationstheorie.md)).
 
-### Warum Darstellungen der richtige Rahmen sind
+### Why representations are the right framework
 
-Die Umformulierung der TSV in die Sprache der Galois-Darstellungen hat entscheidende Vorteile:
+The reformulation of the TSC in the language of Galois representations has decisive advantages:
 
-1. **Algebraische Werkzeuge**: Darstellungstheorie, Kohomologie und kommutative Algebra werden anwendbar.
-2. **Lokale-globale Prinzipien**: Man kann Darstellungen „lokal" (bei jeder Primzahl) und „global" (über $\mathbb{Q}$) studieren.
-3. **Deformationen**: Die residuale Darstellung $\bar{\rho}$ hat einen „Raum aller Liftungen" – den Deformationsraum, der mit algebraischen Methoden analysiert werden kann.
-4. **Reduktion**: Man kann Modularität schrittweise beweisen – zuerst residual, dann voll.
+1. **Algebraic tools**: Representation theory, cohomology, and commutative algebra become applicable.
+2. **Local-global principles**: One can study representations "locally" (at each prime) and "globally" (over $\mathbb{Q}$).
+3. **Deformations**: The residual representation $\bar{\rho}$ has a "space of all lifts" – the deformation space, which can be analysed with algebraic methods.
+4. **Reduction**: One can prove modularity step by step – first residually, then fully.
 
-Diese Perspektive – Modularität als Eigenschaft von Galois-Darstellungen – war Wiles' entscheidende konzeptionelle Innovation und hat die Zahlentheorie nach 1995 nachhaltig geprägt.
+This perspective – modularity as a property of Galois representations – was Wiles' decisive conceptual innovation and has profoundly shaped number theory since 1995.
 
 ---
 
-## Ausblick
+## Outlook
 
-Galois-Darstellungen bilden die Sprache, in der Wiles' Beweis formuliert ist. Die zentrale Frage des nächsten Schritts: Wie lässt sich zeigen, dass eine residuale modulare Darstellung zu einer vollen modularen Darstellung geliftet werden kann?
+With Galois representations, we have the language in which Wiles' proof is formulated. The next step is the central question: how does one show that a residually modular representation can be lifted to a fully modular representation?
 
-| Artikel | Thema |
+| Article | Topic |
 |---------|-------|
-| [04 – Deformationstheorie](04-deformationstheorie.md) | Der universelle Deformationsring $R$ und Mazurs Theorie |
-| [05 – R = T](05-r-gleich-t.md) | Warum $R = T$ Modularität beweist |
+| [04 – Deformation Theory](04-deformationstheorie.md) | The universal deformation ring $R$ and Mazur's theory |
+| [05 – R = T](05-r-gleich-t.md) | Why $R = T$ proves modularity |
 
 ---
 
-## Quellen
+## Sources
 
 - **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), §1
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 10 – Galois-Darstellungen
-- **Jean-Pierre Serre**: *Abelian $\ell$-adic representations and elliptic curves*, W.A. Benjamin (1968) – Klassische Referenz für $\ell$-adische Darstellungen
-- **Barry Mazur**: *Deforming Galois representations*, in: Galois Groups over $\mathbb{Q}$, MSRI Publications 16 (1989) – Grundlegend für den Deformationsansatz
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Chapter 10 – Galois representations
+- **Jean-Pierre Serre**: *Abelian $\ell$-adic representations and elliptic curves*, W.A. Benjamin (1968) – Classical reference for $\ell$-adic representations
+- **Barry Mazur**: *Deforming Galois representations*, in: Galois Groups over $\mathbb{Q}$, MSRI Publications 16 (1989) – Foundational for the deformation approach

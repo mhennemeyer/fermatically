@@ -1,225 +1,203 @@
 ---
-title: "Ringe und Körper – Die Welt jenseits der rationalen Zahlen"
+title: "Rings and Fields – The World Beyond the Rational Numbers"
 slug: ringe-und-koerper/01-ringe-koerper
 series: ringe-und-koerper
 part: 1
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: algebra
 tags:
-  - ringe
-  - koerper
+  - rings
+  - fields
   - algebra
-  - idealtheorie
+  - ideal-theory
 requires:
-  - mengen
-  - abbildungen
-  - gleichungen
-  - teilbarkeit-ggt
-  - primfaktorzerlegung
-  - komplexe-zahlen
-  - relationen-aequivalenzklassen
+  - gruppen-und-symmetrie/01-gruppen
 ---
 
-# Ringe und Körper
+# Rings and Fields
 
-!!! abstract "Zusammenfassung"
-    Von Gruppen (eine Verknüpfung) zu Ringen (zwei Verknüpfungen) und Körpern (mit Division).
-    Idealtheorie als Antwort auf das Versagen der eindeutigen Faktorisierung.
+!!! abstract "Summary"
+    From groups (one operation) to rings (two operations) and fields (with division).
+    Why the integers are not always "enough" – and how ideal theory solves the problem
+    of missing unique factorisation.
 
-## Voraussetzungen
+## Prerequisites
 
-- [Gruppen – Symmetrie als Sprache der Mathematik](gruppen.md)
-
-| Thema | Beschreibung |
-|-------|-------------|
-| [Mengen und Mengenoperationen](../vorwissen/mengen.md) | Mengennotation, $\cup, \cap, \setminus, \times$ |
-| [Abbildungen (Funktionen)](../vorwissen/abbildungen.md) | $f: A \to B$, injektiv, surjektiv, bijektiv |
-| [Gleichungen](../vorwissen/gleichungen.md) | Äquivalente Umformungen und Lösungsstrategien |
-| [Teilbarkeit und ggT](../vorwissen/teilbarkeit-ggt.md) | Teilerfremdheit, $\gcd$, Euklidischer Algorithmus |
-| [Primfaktorzerlegung](../vorwissen/primfaktorzerlegung.md) | Eindeutige Zerlegung in Primfaktoren (Fundamentalsatz der Arithmetik) |
-| [Komplexe Zahlen](../vorwissen/komplexe-zahlen.md) | Zahlen $a + bi$ mit $i^2 = -1$, Polarform, Einheitswurzeln |
-| [Relationen und Äquivalenzklassen](../vorwissen/relationen-aequivalenzklassen.md) | Äquivalenzrelationen, Restklassen, Quotientenmengen |
+- [Groups – Symmetry as the Language of Mathematics](gruppen.md)
 
 ---
 
-## 1. Von Gruppen zu Ringen
+## 1. From Groups to Rings
 
-In einer Gruppe gibt es *eine* Verknüpfung. Die ganzen Zahlen $\mathbb{Z}$ besitzen jedoch *zwei*: Addition und Multiplikation. Um beide gleichzeitig zu erfassen, ist eine reichere Struktur nötig – der **Ring**.
+In a group we have *one* operation. But even the integers $\mathbb{Z}$ have *two*: addition and multiplication. To capture both simultaneously, we need a richer structure – the **ring**.
 
-Die Motivation stammt direkt aus der Zahlentheorie: Die Beweise von FLT für $n = 3$ und $n = 4$ zeigten, dass der Zahlbereich erweitert werden muss – auf $\mathbb{Z}[\omega]$ oder $\mathbb{Z}[i]$. All diese Zahlbereiche sind Ringe.
+The motivation comes directly from number theory: Fermat's Last Theorem is about the equation $x^n + y^n = z^n$ in the integers. The proofs for $n = 3$ and $n = 4$ showed that sometimes one must extend the number domain – to $\mathbb{Z}[\omega]$ or $\mathbb{Z}[i]$. All these number domains are rings.
 
-## 2. Ringaxiome und Beispiele
+## 2. Ring Axioms and Examples
 
-Ein **Ring** $(R, +, \cdot)$ ist eine Menge $R$ mit zwei Verknüpfungen, die folgende Axiome erfüllen:
+A **ring** $(R, +, \cdot)$ is a set $R$ with two operations satisfying the following axioms:
 
-1. $(R, +)$ ist eine abelsche Gruppe (mit neutralem Element $0$)
-2. Die Multiplikation ist assoziativ: $(ab)c = a(bc)$
-3. Es gibt ein Einselement: $1 \cdot a = a \cdot 1 = a$
-4. Die Distributivgesetze gelten: $a(b + c) = ab + ac$ und $(a + b)c = ac + bc$
+1. $(R, +)$ is an abelian group (with identity element $0$)
+2. Multiplication is associative: $(ab)c = a(bc)$
+3. There is a unity element: $1 \cdot a = a \cdot 1 = a$
+4. The distributive laws hold: $a(b + c) = ab + ac$ and $(a + b)c = ac + bc$
 
-Wenn zusätzlich $ab = ba$ für alle $a, b \in R$ gilt, heißt der Ring **kommutativ**.
+If additionally $ab = ba$ for all $a, b \in R$, the ring is called **commutative**.
 
-### Die wichtigsten Beispiele
+### The Most Important Examples
 
-| Ring | Beschreibung | Kommutativ? |
-|------|-------------|-------------|
-| $\mathbb{Z}$ | Ganze Zahlen | ✓ |
-| $\mathbb{Z}/n\mathbb{Z}$ | Restklassen modulo $n$ | ✓ |
-| $\mathbb{Z}[i] = \{a + bi \mid a, b \in \mathbb{Z}\}$ | Gaußsche ganze Zahlen | ✓ |
-| $\mathbb{Z}[\omega] = \{a + b\omega \mid a, b \in \mathbb{Z}\}$ | Eisenstein-Zahlen | ✓ |
-| $\mathbb{Z}[\zeta_p]$ | Kreisteilungsring | ✓ |
-| $K[x]$ | Polynomring über einem Körper $K$ | ✓ |
-| $M_n(\mathbb{R})$ | $n \times n$-Matrizen | ✗ (für $n \geq 2$) |
+| Ring | Description | Commutative? |
+|------|------------|--------------|
+| $\mathbb{Z}$ | Integers | ✓ |
+| $\mathbb{Z}/n\mathbb{Z}$ | Residue classes modulo $n$ | ✓ |
+| $\mathbb{Z}[i] = \{a + bi \mid a, b \in \mathbb{Z}\}$ | Gaussian integers | ✓ |
+| $\mathbb{Z}[\omega] = \{a + b\omega \mid a, b \in \mathbb{Z}\}$ | Eisenstein integers | ✓ |
+| $\mathbb{Z}[\zeta_p]$ | Cyclotomic ring | ✓ |
+| $K[x]$ | Polynomial ring over a field $K$ | ✓ |
+| $M_n(\mathbb{R})$ | $n \times n$ matrices | ✗ (for $n \geq 2$) |
 
-### Nullteiler und Integritätsbereiche
+### Zero Divisors and Integral Domains
 
-In $\mathbb{Z}$ gilt: Wenn $ab = 0$, dann $a = 0$ oder $b = 0$. Diese Eigenschaft gilt nicht in allen Ringen. In $\mathbb{Z}/6\mathbb{Z}$ ist $2 \cdot 3 = 6 \equiv 0$, obwohl weder $2$ noch $3$ null sind. Solche Elemente heißen **Nullteiler**.
+In $\mathbb{Z}$ we have: if $ab = 0$, then $a = 0$ or $b = 0$. This is not the case in every ring! In $\mathbb{Z}/6\mathbb{Z}$, $2 \cdot 3 = 6 \equiv 0$, even though neither $2$ nor $3$ is zero. Such elements are called **zero divisors**.
 
-Ein kommutativer Ring ohne Nullteiler (außer $0$) heißt **Integritätsbereich**. Die Ringe $\mathbb{Z}$, $\mathbb{Z}[i]$, $\mathbb{Z}[\omega]$ und $K[x]$ sind Integritätsbereiche; $\mathbb{Z}/6\mathbb{Z}$ ist keiner.
+A commutative ring without zero divisors (other than $0$) is called an **integral domain**. The rings $\mathbb{Z}$, $\mathbb{Z}[i]$, $\mathbb{Z}[\omega]$, and $K[x]$ are integral domains; $\mathbb{Z}/6\mathbb{Z}$ is not.
 
-## 3. Ideale und Faktorringe
+## 3. Ideals and Quotient Rings
 
-In $\mathbb{Z}$ ist Teilbarkeit ein zentrales Konzept: $3 \mid 12$, weil $12 = 3 \cdot 4$. Die Menge aller Vielfachen von $3$ bildet eine Teilmenge $3\mathbb{Z} = \{\ldots, -6, -3, 0, 3, 6, \ldots\}$ mit besonderen Eigenschaften:
+In $\mathbb{Z}$, divisibility is a central concept: $3 \mid 12$, because $12 = 3 \cdot 4$. The set of all multiples of $3$ forms a subset $3\mathbb{Z} = \{\ldots, -6, -3, 0, 3, 6, \ldots\}$ with special properties:
 
-- $3\mathbb{Z}$ ist unter Addition abgeschlossen
-- Für jedes $r \in \mathbb{Z}$ und $a \in 3\mathbb{Z}$ ist $ra \in 3\mathbb{Z}$
+- $3\mathbb{Z}$ is closed under addition
+- For every $r \in \mathbb{Z}$ and $a \in 3\mathbb{Z}$, $ra \in 3\mathbb{Z}$
 
-Diese Eigenschaften definieren ein **Ideal**.
+These properties define an **ideal**.
 
-**Definition.** Eine Teilmenge $I \subseteq R$ heißt **Ideal**, wenn:
-1. $(I, +)$ ist eine Untergruppe von $(R, +)$
-2. Für alle $r \in R$ und $a \in I$ gilt $ra \in I$ und $ar \in I$
+**Definition.** A subset $I \subseteq R$ is called an **ideal** if:
+1. $(I, +)$ is a subgroup of $(R, +)$
+2. For all $r \in R$ and $a \in I$, $ra \in I$ and $ar \in I$
 
-Ideale spielen in Ringen dieselbe Rolle wie Normalteiler in Gruppen: Sie ermöglichen die Bildung von **Faktorrringen**:
+Ideals play the same role in rings as normal subgroups in groups: one can form **quotient rings**:
 
 $$
 R/I = \{r + I \mid r \in R\}
 $$
 
-**Beispiel:** $\mathbb{Z}/n\mathbb{Z} = \mathbb{Z}/(n)$ ist der Faktorring von $\mathbb{Z}$ nach dem Ideal $(n) = n\mathbb{Z}$.
+**Example:** $\mathbb{Z}/n\mathbb{Z} = \mathbb{Z}/(n)$ is the quotient ring of $\mathbb{Z}$ by the ideal $(n) = n\mathbb{Z}$.
 
-### Hauptideale und Hauptidealringe
+### Principal Ideals and Principal Ideal Domains
 
-Ein Ideal der Form $(a) = \{ra \mid r \in R\}$ (alle Vielfachen eines Elements) heißt **Hauptideal**. Ein Integritätsbereich, in dem jedes Ideal ein Hauptideal ist, heißt **Hauptidealring** (HIR).
+An ideal of the form $(a) = \{ra \mid r \in R\}$ (all multiples of an element) is called a **principal ideal**. An integral domain in which every ideal is a principal ideal is called a **principal ideal domain** (PID).
 
-**HIR-Beispiele:** $\mathbb{Z}$, $K[x]$ (Polynome über einem Körper), $\mathbb{Z}[i]$, $\mathbb{Z}[\omega]$
+**PID examples:** $\mathbb{Z}$, $K[x]$ (polynomials over a field), $\mathbb{Z}[i]$, $\mathbb{Z}[\omega]$
 
-**Kein HIR:** $\mathbb{Z}[\sqrt{-5}]$ – das Ideal $(2, 1 + \sqrt{-5})$ hat kein erzeugendes Element.
+**Not a PID:** $\mathbb{Z}[\sqrt{-5}]$ – here the ideal $(2, 1 + \sqrt{-5})$ has no single generator.
 
-> „The notion of an ideal [...] is the key to the whole of algebraic number theory."
-> — Serge Lang, *Algebra* (2002), Kapitel II
+!!! warning "The crux in FLT"
+    In a PID, unique prime factorisation holds. In $\mathbb{Z}[\zeta_p]$ for general $p$, this is **not** the case – this is precisely where Lamé's proof failed and Kummer invented ideal theory.
 
-!!! warning "Die Crux bei FLT"
-    In einem HIR gilt die eindeutige Primfaktorzerlegung. In $\mathbb{Z}[\zeta_p]$ für allgemeines $p$ ist das **nicht** der Fall – genau hier scheiterte Lamés Beweis und Kummer entwickelte die Idealtheorie.
+## 4. Fields
 
-## 4. Körper
+A **field** is a commutative ring in which every element $a \neq 0$ has a multiplicative inverse: there exists $a^{-1}$ with $a \cdot a^{-1} = 1$.
 
-Ein **Körper** ist ein kommutativer Ring, in dem jedes Element $a \neq 0$ ein multiplikatives Inverses besitzt: Es gibt $a^{-1}$ mit $a \cdot a^{-1} = 1$.
+In other words: in a field one can add, subtract, multiply **and divide** (except by $0$).
 
-In einem Körper sind Addition, Subtraktion, Multiplikation **und Division** (außer durch $0$) möglich.
+### The Most Important Fields
 
-### Die wichtigsten Körper
+| Field | Description | Property |
+|-------|------------|----------|
+| $\mathbb{Q}$ | Rational numbers | smallest field of characteristic $0$ |
+| $\mathbb{R}$ | Real numbers | complete, ordered |
+| $\mathbb{C}$ | Complex numbers | algebraically closed |
+| $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$ | Finite field with $p$ elements | characteristic $p$ |
+| $\mathbb{Q}_p$ | $p$-adic numbers | completion of $\mathbb{Q}$ |
 
-| Körper | Beschreibung | Eigenschaft |
-|--------|-------------|-------------|
-| $\mathbb{Q}$ | Rationale Zahlen | kleinster Körper der Charakteristik $0$ |
-| $\mathbb{R}$ | Reelle Zahlen | vollständig, geordnet |
-| $\mathbb{C}$ | Komplexe Zahlen | algebraisch abgeschlossen |
-| $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$ | Endlicher Körper mit $p$ Elementen | Charakteristik $p$ |
-| $\mathbb{Q}_p$ | $p$-adische Zahlen | Vervollständigung von $\mathbb{Q}$ |
+**Why is $\mathbb{Z}/p\mathbb{Z}$ a field?** Because $p$ is prime: for $a \not\equiv 0 \pmod{p}$, $\gcd(a, p) = 1$, so by the extended Euclidean algorithm there exists $b$ with $ab \equiv 1 \pmod{p}$. By contrast, $\mathbb{Z}/6\mathbb{Z}$ is not a field (because $2 \cdot 3 = 0$).
 
-**Warum ist $\mathbb{Z}/p\mathbb{Z}$ ein Körper?** Weil $p$ prim ist: Für $a \not\equiv 0 \pmod{p}$ ist $\gcd(a, p) = 1$, also existiert nach dem erweiterten euklidischen Algorithmus ein $b$ mit $ab \equiv 1 \pmod{p}$. Dagegen ist $\mathbb{Z}/6\mathbb{Z}$ kein Körper (weil $2 \cdot 3 = 0$).
+## 5. Field Extensions
 
-## 5. Körpererweiterungen
+A **field extension** is a pair $K \subseteq L$ of fields. One writes $L/K$ and calls $L$ an extension of $K$.
 
-Eine **Körpererweiterung** ist ein Paar $K \subseteq L$ von Körpern. Notation: $L/K$. $L$ heißt Erweiterung von $K$.
+### Algebraic Extensions
 
-### Algebraische Erweiterungen
+An element $\alpha \in L$ is called **algebraic** over $K$ if there is a polynomial $f \in K[x]$ with $f(\alpha) = 0$. The extension $L/K$ is called algebraic if every element of $L$ is algebraic over $K$.
 
-Ein Element $\alpha \in L$ heißt **algebraisch** über $K$, wenn ein Polynom $f \in K[x]$ mit $f(\alpha) = 0$ existiert. Die Erweiterung $L/K$ heißt algebraisch, wenn jedes Element von $L$ algebraisch über $K$ ist.
+**Examples:**
+- $\mathbb{Q}(\sqrt{2}) = \{a + b\sqrt{2} \mid a, b \in \mathbb{Q}\}$ – an extension of degree $2$
+- $\mathbb{Q}(i) = \{a + bi \mid a, b \in \mathbb{Q}\}$ – also degree $2$
+- $\mathbb{Q}(\zeta_p)$ – the $p$-th **cyclotomic field**, degree $p - 1$
 
-**Beispiele:**
-- $\mathbb{Q}(\sqrt{2}) = \{a + b\sqrt{2} \mid a, b \in \mathbb{Q}\}$ – Erweiterung vom Grad $2$
-- $\mathbb{Q}(i) = \{a + bi \mid a, b \in \mathbb{Q}\}$ – ebenfalls Grad $2$
-- $\mathbb{Q}(\zeta_p)$ – der $p$-te **Kreisteilungskörper**, Grad $p - 1$
+### The Degree of an Extension
 
-### Der Grad einer Erweiterung
+The **degree** $[L : K]$ is the dimension of $L$ as a $K$-vector space. It measures how "much larger" $L$ is compared to $K$.
 
-Der **Grad** $[L : K]$ ist die Dimension von $L$ als $K$-Vektorraum. Er quantifiziert den „Abstand" zwischen $L$ und $K$.
-
-**Gradformel (Turmsatz).** Für $K \subseteq M \subseteq L$ gilt:
+**Degree formula (tower law).** For $K \subseteq M \subseteq L$:
 
 $$
 [L : K] = [L : M] \cdot [M : K]
 $$
 
-**Beispiel:** $[\mathbb{Q}(\sqrt{2}, \sqrt{3}) : \mathbb{Q}] = [\mathbb{Q}(\sqrt{2}, \sqrt{3}) : \mathbb{Q}(\sqrt{2})] \cdot [\mathbb{Q}(\sqrt{2}) : \mathbb{Q}] = 2 \cdot 2 = 4$.
+**Example:** $[\mathbb{Q}(\sqrt{2}, \sqrt{3}) : \mathbb{Q}] = [\mathbb{Q}(\sqrt{2}, \sqrt{3}) : \mathbb{Q}(\sqrt{2})] \cdot [\mathbb{Q}(\sqrt{2}) : \mathbb{Q}] = 2 \cdot 2 = 4$.
 
-### Der algebraische Abschluss
+### The Algebraic Closure
 
-Der **algebraische Abschluss** $\overline{K}$ von $K$ ist der kleinste algebraisch abgeschlossene Körper, der $K$ enthält:
+The **algebraic closure** $\overline{K}$ of $K$ is the smallest algebraically closed field containing $K$. For example:
 
-- $\overline{\mathbb{R}} = \mathbb{C}$ (Fundamentalsatz der Algebra)
-- $\overline{\mathbb{Q}}$ ist die Menge aller algebraischen Zahlen – abzählbar, aber nicht gleich $\mathbb{C}$
+- $\overline{\mathbb{R}} = \mathbb{C}$ (Fundamental Theorem of Algebra)
+- $\overline{\mathbb{Q}}$ is the set of all algebraic numbers – countable, but not equal to $\mathbb{C}$
 
-Die **absolute Galois-Gruppe** $G_{\mathbb{Q}} = \text{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})$ – die Symmetriegruppe von $\overline{\mathbb{Q}}$ über $\mathbb{Q}$ – ist das zentrale Objekt in Wiles' Beweis.
+The **absolute Galois group** $G_{\mathbb{Q}} = \text{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})$ – the symmetry group of $\overline{\mathbb{Q}}$ over $\mathbb{Q}$ – is the central object in Wiles' proof.
 
-## 6. Hauptidealringe und eindeutige Faktorisierung
+## 6. Principal Ideal Domains and Unique Factorisation
 
-Die **eindeutige Primfaktorzerlegung** (EPZ) besagt: Jedes Element eines Integritätsbereichs lässt sich im Wesentlichen eindeutig als Produkt von Primelementen schreiben. In $\mathbb{Z}$ ist das der Fundamentalsatz der Arithmetik: $60 = 2^2 \cdot 3 \cdot 5$.
+**Unique prime factorisation** (UPF) states: every element of an integral domain can be written essentially uniquely as a product of prime elements. In $\mathbb{Z}$, this is the Fundamental Theorem of Arithmetic: $60 = 2^2 \cdot 3 \cdot 5$.
 
-**Satz.** In jedem Hauptidealring gilt die EPZ.
+**Theorem.** In every principal ideal domain, UPF holds.
 
-Die Kette der Implikationen:
+The chain of implications:
 
 $$
-\text{Euklidisch} \implies \text{Hauptidealring} \implies \text{Faktorieller Ring (EPZ)}
+\text{Euclidean} \implies \text{Principal ideal domain} \implies \text{Unique factorisation domain (UPF)}
 $$
 
-### Wo die EPZ versagt
+### Where UPF Fails
 
-In $\mathbb{Z}[\sqrt{-5}]$ existieren zwei wesentlich verschiedene Faktorisierungen:
+In $\mathbb{Z}[\sqrt{-5}]$ we have two essentially different factorisations:
 
 $$
 6 = 2 \cdot 3 = (1 + \sqrt{-5})(1 - \sqrt{-5})
 $$
 
-Die Elemente $2$, $3$, $1 + \sqrt{-5}$ und $1 - \sqrt{-5}$ sind alle irreduzibel, aber das Produkt hat zwei verschiedene Zerlegungen. Die EPZ versagt.
+Here $2$, $3$, $1 + \sqrt{-5}$, and $1 - \sqrt{-5}$ are all irreducible, but the product has two different decompositions. UPF fails!
 
-### Kummers Lösung: Ideale faktorisieren
+### Kummer's Rescue: Factorise Ideals
 
-Kummers Einsicht: Auch wenn die EPZ auf **Elementebene** versagt, gilt sie auf **Idealebene** in jedem Dedekind-Ring. Das Ideal $(6)$ hat eine eindeutige Zerlegung in Primideale:
+Kummer's insight: even if UPF fails at the **element level**, it holds at the **ideal level** in every Dedekind domain. The ideal $(6) = (2)(3)$ has a unique decomposition into prime ideals:
 
 $$
 (6) = (2, 1 + \sqrt{-5})^2 \cdot (3, 1 + \sqrt{-5}) \cdot (3, 1 - \sqrt{-5})
 $$
 
-Die **Klassenzahl** $h$ misst, wie weit ein Ring von einem HIR entfernt ist: $h = 1$ genau dann, wenn der Ring ein HIR ist. Für $\mathbb{Z}[\sqrt{-5}]$ ist $h = 2$.
+The **class number** $h$ measures how far a ring is from being a PID: $h = 1$ if and only if the ring is a PID. For $\mathbb{Z}[\sqrt{-5}]$, $h = 2$.
 
-> „Kummer's theory of ideal numbers is rightly considered as one of the great achievements of nineteenth century mathematics."
-> — Harold M. Edwards, *Fermat's Last Theorem* (1977), S. 76
+## 7. Why Rings and Fields Matter for FLT
 
-## 7. Ringe und Körper im Kontext von FLT
+The algebraic structures of this article form the backdrop for Wiles' proof:
 
-Die algebraischen Strukturen dieses Artikels bilden den Hintergrund für Wiles' Beweis:
+1. **Cyclotomic rings** $\mathbb{Z}[\zeta_p]$: Kummer's proof for regular primes uses the ideal structure of these rings.
 
-1. **Kreisteilungsringe** $\mathbb{Z}[\zeta_p]$: Kummers Beweis für reguläre Primzahlen nutzt die Idealstruktur dieser Ringe.
+2. **Field extensions**: Galois theory operates on field extensions – it is the bridge between equations and groups.
 
-2. **Körpererweiterungen**: Die Galois-Theorie operiert auf Körpererweiterungen – die Brücke zwischen Gleichungen und Gruppen.
+3. **Finite fields** $\mathbb{F}_p$: The reduction of elliptic curves modulo $p$ – that is, working over $\mathbb{F}_p$ instead of $\mathbb{Q}$ – yields the $a_p$-coefficients that appear in the $L$-series.
 
-3. **Endliche Körper** $\mathbb{F}_p$: Die Reduktion elliptischer Kurven modulo $p$ – das Arbeiten über $\mathbb{F}_p$ statt über $\mathbb{Q}$ – liefert die $a_p$-Koeffizienten der $L$-Reihe.
+4. **Local rings** and **deformation rings**: In Wiles' proof, the rings $R$ and $T$ in the "$R = T$" theorem are local rings that parametrise families of Galois representations.
 
-4. **Lokale Ringe** und **Deformationsringe**: Die Ringe $R$ und $T$ im „$R = T$"-Theorem sind lokale Ringe, die Familien von Galois-Darstellungen parametrisieren.
-
-Die Ringtheorie liefert die algebraische Infrastruktur, auf der der gesamte Beweis aufbaut.
+Ring theory provides the algebraic infrastructure on which the entire proof is built.
 
 ---
 
-## Quellen
+## Further Reading
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 3–4
-- **Harold M. Edwards**: *Fermat's Last Theorem: A Genetic Introduction to Algebraic Number Theory*, Springer (1977)
-- **Michael Artin**: *Algebra*, Prentice Hall (1991)
-- **Serge Lang**: *Algebra*, Springer (2002)
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem*, Ch. 3–4
+- **Michael Artin**: *Algebra* – rings and fields treated comprehensively
+- **Serge Lang**: *Algebra* – the standard reference for graduate students

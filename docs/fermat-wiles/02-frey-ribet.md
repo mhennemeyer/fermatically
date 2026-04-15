@@ -1,246 +1,237 @@
 ---
-title: "Freys Idee und Ribets Theorem"
+title: "Frey's Idea and Ribet's Theorem"
 slug: fermat-wiles/02-frey-ribet
 series: fermat-wiles
 part: 2
-date: 2026-03-30
+date: 2026-03-31
 status: draft
-lang: de
+lang: en
 category: zahlentheorie
 tags:
-  - frey-kurve
+  - frey-curve
   - ribet
   - level-lowering
 requires:
-  - teilbarkeit-ggt
-  - primfaktorzerlegung
-  - beweisarten
+  - fermat-wiles/01-taniyama-shimura
+  - elliptische-kurven/01-elliptische-kurven
 ---
-# Freys Idee und Ribets Theorem
+# Frey's Idea and Ribet's Theorem
 
-!!! abstract "Zusammenfassung"
-    Gerhard Frey erkannte 1985, dass eine hypothetische Lösung von Fermats
-    letztem Satz zu einer elliptischen Kurve mit so extremen Eigenschaften führt,
-    dass sie nicht modular sein kann. Kenneth Ribet bewies 1986, dass diese
-    Intuition korrekt ist. Damit war FLT auf die Taniyama-Shimura-Vermutung
-    reduziert.
+!!! abstract "Summary"
+    In 1985, Gerhard Frey recognised that a hypothetical solution to Fermat's
+    Last Theorem leads to an elliptic curve with such extreme properties
+    that it cannot be modular. In 1986, Kenneth Ribet proved that this
+    intuition is correct. With that, FLT was reduced to the Taniyama–Shimura
+    conjecture.
 
-## Voraussetzungen
+## Prerequisites
 
-- [Die Taniyama-Shimura-Vermutung](01-taniyama-shimura.md) – Modularität, $L$-Reihen, semistabile Kurven
-- [Elliptische Kurven](../werkzeuge/elliptische-kurven.md) – Weierstraß-Form, Diskriminante, Konduktor
-
-| Thema | Beschreibung |
-|-------|-------------|
-| [Teilbarkeit und ggT](../vorwissen/teilbarkeit-ggt.md) | Teilerfremdheit, $\gcd$, Euklidischer Algorithmus |
-| [Primfaktorzerlegung](../vorwissen/primfaktorzerlegung.md) | Eindeutige Zerlegung in Primfaktoren (Fundamentalsatz der Arithmetik) |
-| [Beweisarten](../vorwissen/beweisarten.md) | Direkter Beweis, Widerspruch, Induktion, Abstieg |
+- [The Taniyama–Shimura Conjecture](01-taniyama-shimura.md) – modularity, $L$-series, semistable curves
+- [Elliptic Curves](../werkzeuge/elliptische-kurven.md) – Weierstraß form, discriminant, conductor
 
 ---
 
-## 1. Freys Geistesblitz (1985)
+## 1. Frey's Flash of Insight (1985)
 
-### Die entscheidende Frage
+### The decisive question
 
-Nach Jahrhunderten direkter Angriffe auf Fermats letzten Satz – Beweis für $n = 4$ (Fermat), $n = 3$ (Euler), $n = 5$ (Dirichlet/Legendre), und so weiter – kam 1985 eine völlig neue Idee aus einer unerwarteten Richtung.
+After centuries of direct attacks on Fermat's Last Theorem – proofs for $n = 4$ (Fermat), $n = 3$ (Euler), $n = 5$ (Dirichlet/Legendre), and so on – in 1985 a completely new idea came from an unexpected direction.
 
-**Gerhard Frey**, ein deutscher Mathematiker an der Universität des Saarlandes, stellte folgende Frage: Was wäre, wenn man eine hypothetische FLT-Lösung nicht direkt widerlegen müsste, sondern stattdessen zeigen könnte, dass sie zu einem **Widerspruch** mit einer anderen bekannten (oder vermuteten) Tatsache führt?
+**Gerhard Frey**, a German mathematician at Saarland University, posed the following question: what if one did not have to directly refute a hypothetical FLT solution, but instead could show that it leads to a **contradiction** with another known (or conjectured) fact?
 
-### Der Ansatz
+### The approach
 
-Frey nahm an, es gäbe eine nichttriviale Lösung der Fermat-Gleichung für eine Primzahl $p \geq 5$:
+Frey assumed there existed a non-trivial solution of the Fermat equation for a prime $p \geq 5$:
 
 $$
 a^p + b^p = c^p, \qquad a, b, c \in \mathbb{Z}, \quad abc \neq 0.
 $$
 
-Ohne Einschränkung der Allgemeinheit kann man annehmen:
+Without loss of generality, one can assume:
+- $\gcd(a, b, c) = 1$ (the solution is primitive)
+- $a \equiv -1 \pmod{4}$ and $2 \mid b$ (by suitable choice of signs and permutations)
 
-- $\gcd(a, b, c) = 1$ (die Lösung ist primitiv)
-- $a \equiv -1 \pmod{4}$ und $2 \mid b$ (durch geeignete Vorzeichen- und Vertauschungswahl)
-
-Aus diesen drei Zahlen konstruierte Frey eine elliptische Kurve – und diese Kurve sollte sich als der Schlüssel zum gesamten Beweis herausstellen.
+From these three numbers, Frey constructed an elliptic curve – and this curve would turn out to be the key to the entire proof.
 
 ---
 
-## 2. Die Frey-Kurve
+## 2. The Frey Curve
 
-### Konstruktion
+### Construction
 
-Aus der hypothetischen Lösung $a^p + b^p = c^p$ definiert Frey die elliptische Kurve:
+From the hypothetical solution $a^p + b^p = c^p$, Frey defines the elliptic curve:
 
 $$
 E_{a,b,c}: \quad y^2 = x(x - a^p)(x + b^p).
 $$
 
-Diese Kurve ist in **Weierstraß-Form** (nach einer einfachen Variablensubstitution) und hat drei offensichtliche 2-Torsionspunkte: $(0, 0)$, $(a^p, 0)$ und $(-b^p, 0)$.
+This curve is in **Weierstraß form** (after a simple change of variables) and has three obvious 2-torsion points: $(0, 0)$, $(a^p, 0)$, and $(-b^p, 0)$.
 
-### Die Diskriminante
+### The discriminant
 
-Die **minimale Diskriminante** der Frey-Kurve ist (bis auf Potenzen von 2):
+The **minimal discriminant** of the Frey curve is (up to powers of 2):
 
 $$
 \Delta = \frac{(abc)^{2p}}{2^8}.
 $$
 
-Dies ist eine außergewöhnlich große Diskriminante – viel größer als bei „normalen" elliptischen Kurven. Der Exponent $2p$ (mit $p \geq 5$) sorgt dafür, dass die Primfaktorzerlegung von $\Delta$ extrem konzentriert ist.
+This is an extraordinarily large discriminant – much larger than for "normal" elliptic curves. The exponent $2p$ (with $p \geq 5$) ensures that the prime factorisation of $\Delta$ is extremely concentrated.
 
-### Der Konduktor
+### The conductor
 
-Der **Konduktor** $N_E$ der Frey-Kurve ist:
+The **conductor** $N_E$ of the Frey curve is:
 
 $$
 N_E = \prod_{q \mid abc} q,
 $$
 
-wobei das Produkt über alle Primteiler von $abc$ läuft (und der Faktor bei $q = 2$ etwas subtiler ist). Entscheidend ist: $N_E$ ist **quadratfrei** (oder fast quadratfrei) – die Frey-Kurve ist **semistabil**.
+where the product runs over all prime divisors of $abc$ (and the factor at $q = 2$ is somewhat more subtle). Crucially: $N_E$ is **squarefree** (or nearly so) – the Frey curve is **semistable**.
 
-### Warum semistabil?
+### Why semistable?
 
-Eine elliptische Kurve ist semistabil, wenn sie bei jeder Primzahl höchstens multiplikative Reduktion hat. Für die Frey-Kurve gilt: Bei jeder ungeraden Primzahl $q$, die $abc$ teilt, hat die Kurve multiplikative Reduktion (einen Knotenpunkt). Bei Primzahlen, die $abc$ nicht teilen, hat sie gute Reduktion. Die Semistabilität folgt aus der speziellen Form der Gleichung.
+An elliptic curve is semistable if at every prime it has at most multiplicative reduction. For the Frey curve: at every odd prime $q$ dividing $abc$, the curve has multiplicative reduction (a node). At primes not dividing $abc$, it has good reduction. The semistability follows from the special form of the equation.
 
 ---
 
-## 3. Serres Epsilon-Vermutung
+## 3. Serre's Epsilon Conjecture
 
-### Das Modularitätsproblem
+### The modularity problem
 
-**Angenommen**, die Frey-Kurve $E$ wäre modular – es gäbe also eine Neuform $f$ vom Gewicht 2 und Stufe $N_E$ mit $L(E, s) = L(f, s)$. Was könnte man über diese Neuform sagen?
+**Suppose** the Frey curve $E$ were modular – that is, there existed a newform $f$ of weight 2 and level $N_E$ with $L(E, s) = L(f, s)$. What could one say about this newform?
 
-### Die Galois-Darstellung
+### The Galois representation
 
-Jede elliptische Kurve liefert für jede Primzahl $p$ eine **residuale Galois-Darstellung**:
+Every elliptic curve yields for every prime $p$ a **residual Galois representation**:
 
 $$
 \bar{\rho}_{E,p}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p),
 $$
 
-die beschreibt, wie die absolute Galois-Gruppe $G_{\mathbb{Q}} = \text{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})$ auf den $p$-Torsionspunkten $E[p]$ wirkt.
+describing how the absolute Galois group $G_{\mathbb{Q}} = \text{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})$ acts on the $p$-torsion points $E[p]$.
 
-Für die Frey-Kurve hat $\bar{\rho}_{E,p}$ besondere Eigenschaften:
+For the Frey curve, $\bar{\rho}_{E,p}$ has special properties:
+1. It is **irreducible** (for $p \geq 5$, which follows from the special structure of the solution).
+2. It is **little ramified**: at almost all places, the representation is unramified.
+3. It comes (if $E$ is modular) from a newform of level $N_E$.
 
-1. Sie ist **irreduzibel** (für $p \geq 5$, was aus der speziellen Struktur der Lösung folgt).
-2. Sie ist **wenig verzweigt**: An fast allen Stellen ist die Darstellung unverzweigt.
-3. Sie kommt (wenn $E$ modular ist) von einer Neuform der Stufe $N_E$.
+### Serre's conjecture
 
-### Serres Vermutung
+**Jean-Pierre Serre** formulated in the 1980s a general conjecture about what level a modular representation must have. Applied to the Frey curve, his conjecture (more precisely: a consequence he called the "$\varepsilon$-conjecture") states:
 
-**Jean-Pierre Serre** formulierte in den 1980er Jahren eine allgemeine Vermutung darüber, von welcher Stufe eine modulare Darstellung sein muss. Angewandt auf die Frey-Kurve besagt seine Vermutung (genauer: eine Konsequenz, die er „$\varepsilon$-Vermutung" nannte):
+!!! note "Serre's $\varepsilon$-conjecture (for the Frey curve)"
+    If the Frey curve is modular, then the representation $\bar{\rho}_{E,p}$
+    comes from a newform of **level 2**.
 
-!!! note "Serres $\varepsilon$-Vermutung (für die Frey-Kurve)"
-    Wenn die Frey-Kurve modular ist, dann kommt die Darstellung $\bar{\rho}_{E,p}$
-    von einer Neuform der **Stufe 2**.
-
-Das ist dramatisch: Es gibt **keine** Neuform vom Gewicht 2 und Stufe 2 (der Raum $S_2(\Gamma_0(2))$ ist null-dimensional). Wenn also Serres Vermutung stimmt, dann **kann die Frey-Kurve nicht modular sein**.
+This is dramatic: there are **no** newforms of weight 2 and level 2 (the space $S_2(\Gamma_0(2))$ is zero-dimensional). So if Serre's conjecture holds, then **the Frey curve cannot be modular**.
 
 ---
 
-## 4. Ribets Beweis (1986)
+## 4. Ribet's Proof (1986)
 
-### Level-Lowering
+### Level-lowering
 
-**Kenneth Ribet**, Professor an der University of California in Berkeley, bewies 1986 genau die Aussage, die Serre als $\varepsilon$-Vermutung formuliert hatte. Sein Werkzeug war das sogenannte **Level-Lowering** (Stufenabsenkung):
+**Kenneth Ribet**, professor at the University of California at Berkeley, proved in 1986 exactly the statement that Serre had formulated as the $\varepsilon$-conjecture. His tool was the so-called **level-lowering**:
 
 !!! note "Theorem (Ribet, 1986)"
-    Sei $E$ eine semistabile elliptische Kurve über $\mathbb{Q}$ und $p$ eine Primzahl
-    mit $p \geq 3$. Wenn $\bar{\rho}_{E,p}$ modular ist (d.h. von einer Neuform
-    der Stufe $N$ kommt) und eine Primzahl $q \| N$ die Darstellung nicht teilt
-    (d.h. $q \nmid N(\bar{\rho})$, den Artin-Konduktor der Darstellung),
-    dann kommt $\bar{\rho}_{E,p}$ bereits von einer Neuform der **Stufe $N/q$**.
+    Let $E$ be a semistable elliptic curve over $\mathbb{Q}$ and $p$ a prime
+    with $p \geq 3$. If $\bar{\rho}_{E,p}$ is modular (i.e., comes from a newform
+    of level $N$) and a prime $q \| N$ does not divide the representation
+    (i.e., $q \nmid N(\bar{\rho})$, the Artin conductor of the representation),
+    then $\bar{\rho}_{E,p}$ already comes from a newform of **level $N/q$**.
 
-### Anwendung auf die Frey-Kurve
+### Application to the Frey curve
 
-Für die Frey-Kurve $E$ mit Konduktor $N_E = \prod_{q \mid abc} q$ lässt sich das Level-Lowering iteriert anwenden: Bei jeder ungeraden Primzahl $q \mid abc$ gilt $q^p \mid \Delta$ (wegen des Exponenten $2p$ in der Diskriminante), was $q \nmid N(\bar{\rho}_{E,p})$ impliziert. Ribet erlaubt es, den Faktor $q$ aus der Stufe zu entfernen.
+For the Frey curve $E$ with conductor $N_E = \prod_{q \mid abc} q$, level-lowering can be applied iteratively: at every odd prime $q \mid abc$, we have $q^p \mid \Delta$ (because of the exponent $2p$ in the discriminant), which implies $q \nmid N(\bar{\rho}_{E,p})$. Ribet's theorem allows removing the factor $q$ from the level.
 
-Nach Entfernung aller solchen Faktoren bleibt nur die Stufe **2** übrig. Da $S_2(\Gamma_0(2)) = 0$, gibt es keine passende Neuform – die Darstellung kann nicht modular sein.
+After removing all such factors, only level **2** remains. Since $S_2(\Gamma_0(2)) = 0$, there is no matching newform – the representation cannot be modular.
 
-### Die Bedeutung
+### The significance
 
-Ribets Theorem verwandelte Serres Vermutung in ein **Theorem**:
-
-$$
-\text{Frey-Kurve modular} \implies \text{Neuform der Stufe 2 existiert} \implies \text{Widerspruch!}
-$$
-
-Damit war klar: **Die Frey-Kurve ist nicht modular** – vorausgesetzt, die Taniyama-Shimura-Vermutung ist falsch. Oder umgekehrt:
+Ribet's theorem turned Serre's conjecture into a **theorem**:
 
 $$
-\text{Taniyama-Shimura (semistabil)} \implies \text{keine Frey-Kurve} \implies \text{FLT.}
+\text{Frey curve modular} \implies \text{newform of level 2 exists} \implies \text{contradiction!}
+$$
+
+Thus it was clear: **the Frey curve is not modular** – provided the Taniyama–Shimura conjecture is false. Or conversely:
+
+$$
+\text{Taniyama–Shimura (semistable)} \implies \text{no Frey curve} \implies \text{FLT.}
 $$
 
 ---
 
-## 5. Die logische Kette
+## 5. The Logical Chain
 
-Die gesamte Argumentationskette im Überblick – eine Kette von Implikationen:
+Let us summarise the entire chain of argument. It consists of a sequence of implications:
 
-### Schritt 1: Hypothetische FLT-Lösung → Frey-Kurve
+### Step 1: Hypothetical FLT solution → Frey curve
 
-Aus $a^p + b^p = c^p$ (mit $p \geq 5$, primitiv) konstruiert Frey:
+From $a^p + b^p = c^p$ (with $p \geq 5$, primitive), Frey constructs:
 
 $$
 E: \quad y^2 = x(x - a^p)(x + b^p).
 $$
 
-Diese Kurve ist **semistabil** mit extrem großer Diskriminante.
+This curve is **semistable** with an extremely large discriminant.
 
-### Schritt 2: Frey-Kurve + TSV → modulare Darstellung
+### Step 2: Frey curve + TSC → modular representation
 
-Wenn die TSV (semistabile Version) gilt, ist $E$ modular. Dann kommt $\bar{\rho}_{E,p}$ von einer Neuform der Stufe $N_E$.
+If the TSC (semistable version) holds, then $E$ is modular. Then $\bar{\rho}_{E,p}$ comes from a newform of level $N_E$.
 
-### Schritt 3: Level-Lowering → Stufe 2
+### Step 3: Level-lowering → level 2
 
-Ribets Theorem erlaubt die schrittweise Reduktion der Stufe:
+Ribet's theorem allows the stepwise reduction of the level:
 
 $$
 N_E = \prod_{q \mid abc} q \quad \xrightarrow{\text{Ribet}} \quad 2.
 $$
 
-### Schritt 4: Widerspruch
+### Step 4: Contradiction
 
-Es gibt keine Neuform vom Gewicht 2 und Stufe 2. Also ist die Frey-Kurve nicht modular. Aber nach TSV müsste sie modular sein. **Widerspruch.**
+There is no newform of weight 2 and level 2. So the Frey curve is not modular. But by the TSC it would have to be modular. **Contradiction.**
 
-### Das Diagramm
+### The diagram
 
 $$
-\boxed{a^p + b^p = c^p} \xrightarrow{\text{Frey}} \boxed{E \text{ semistabil}} \xrightarrow{\text{TSV}} \boxed{E \text{ modular}} \xrightarrow{\text{Ribet}} \boxed{\text{Stufe 2}} \to \boxed{\bot}
+\boxed{a^p + b^p = c^p} \xrightarrow{\text{Frey}} \boxed{E \text{ semistable}} \xrightarrow{\text{TSC}} \boxed{E \text{ modular}} \xrightarrow{\text{Ribet}} \boxed{\text{level 2}} \to \boxed{\bot}
 $$
 
-Der Widerspruch zeigt: Die Annahme einer FLT-Lösung war falsch. **Fermats letzter Satz ist wahr.**
+The contradiction shows: the assumption of an FLT solution was false. **Fermat's Last Theorem is true.**
 
 ---
 
-## 6. Was bleibt zu tun?
+## 6. What Remains to Be Done?
 
-Nach Ribets Durchbruch von 1986 war die Situation kristallklar:
+After Ribet's breakthrough of 1986, the situation was crystal clear:
 
-> **Um Fermats letzten Satz zu beweisen, genügt es, die Taniyama-Shimura-Vermutung für semistabile elliptische Kurven zu beweisen.**
+> **To prove Fermat's Last Theorem, it suffices to prove the Taniyama–Shimura conjecture for semistable elliptic curves.**
 
-Das war gleichzeitig eine gute und eine schlechte Nachricht:
+This was simultaneously good and bad news:
 
-**Die gute Nachricht**: FLT war auf ein konkretes, klar formuliertes Problem reduziert – die Modularität semistabiler Kurven. Kein Raten mehr, kein Suchen nach dem „richtigen" Ansatz. Der Weg war vorgezeichnet.
+**The good news**: FLT was reduced to a concrete, clearly formulated problem – the modularity of semistable curves. No more guessing, no more searching for the "right" approach. The path was laid out.
 
-**Die schlechte Nachricht**: Die TSV galt als hoffnungslos schwierig. Die meisten Experten hielten einen Beweis in absehbarer Zeit für unmöglich. Selbst André Weil, der zur Formulierung der Vermutung beigetragen hatte, äußerte sich skeptisch.
+**The bad news**: The TSC was considered hopelessly difficult. Most experts thought a proof in the foreseeable future was impossible. Even André Weil, who had contributed to the formulation of the conjecture, expressed scepticism.
 
-Doch ein Mathematiker nahm die Herausforderung an: **Andrew Wiles**, der seit seiner Kindheit von Fermats letztem Satz fasziniert war. Von 1986 bis 1993 arbeitete er im Geheimen an einem Beweis – mit Werkzeugen, die in den folgenden Artikeln entwickelt werden: Galois-Darstellungen, Deformationstheorie und der revolutionäre Taylor-Wiles-Trick.
+Yet one mathematician took up the challenge: **Andrew Wiles**, who had been fascinated by Fermat's Last Theorem since childhood. From 1986 to 1993, he worked in secret on a proof – with tools that are developed in the following articles: Galois representations, deformation theory, and the revolutionary Taylor–Wiles trick.
 
 ---
 
-## Ausblick
+## Outlook
 
-Die Reduktion von FLT auf die TSV war ein Triumph der strukturellen Mathematik. Aber der eigentliche Beweis – die Modularität semistabiler Kurven – erfordert eine völlig neue Sprache:
+The reduction of FLT to the TSC was a triumph of structural mathematics. But the actual proof – the modularity of semistable curves – requires an entirely new language:
 
-| Artikel | Thema |
+| Article | Topic |
 |---------|-------|
-| [03 – Galois-Darstellungen](03-galois-darstellungen.md) | Wie elliptische Kurven Matrizen-Darstellungen liefern |
-| [04 – Deformationstheorie](04-deformationstheorie.md) | Wie man Darstellungen „verbiegt" |
-| [05 – R = T](05-r-gleich-t.md) | Das Herz von Wiles' Beweis |
+| [03 – Galois Representations](03-galois-darstellungen.md) | How elliptic curves yield matrix representations |
+| [04 – Deformation Theory](04-deformationstheorie.md) | How to "bend" representations |
+| [05 – R = T](05-r-gleich-t.md) | The heart of Wiles' proof |
 
 ---
 
-## Quellen
+## Sources
 
-- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Kapitel 9 – Frey-Kurve und Ribets Theorem
+- **Nigel Boston**: *The Proof of Fermat's Last Theorem* (2003), Chapter 9 – Frey curve and Ribet's theorem
 - **Andrew Wiles**: *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics 141 (1995), Introduction
 - **Kenneth Ribet**: *On modular representations of $\text{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})$ arising from modular forms*, Inventiones Mathematicae 100 (1990)
 - **Gerhard Frey**: *Links between stable elliptic curves and certain Diophantine equations*, Annales Universitatis Saraviensis 1 (1986)

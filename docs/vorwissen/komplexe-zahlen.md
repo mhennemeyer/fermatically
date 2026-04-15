@@ -1,134 +1,134 @@
 ---
-title: "Komplexe Zahlen"
-description: "Imaginäre Einheit, Darstellung, Rechenoperationen, Einheitswurzeln und die obere Halbebene"
-lang: de
+title: "Complex Numbers"
+description: "Imaginary unit, representation, arithmetic operations, roots of unity, and the upper half-plane"
+lang: en
 type: vorwissen
 ---
 
-# Komplexe Zahlen
+# Complex Numbers
 
-## Die imaginäre Einheit
+## The Imaginary Unit
 
-Die Gleichung $x^2 = -1$ besitzt keine Lösung in den reellen Zahlen. Die **imaginäre Einheit** $i$ wird als Lösung dieser Gleichung definiert:
+The equation $x^2 = -1$ has no solution in the real numbers. The **imaginary unit** $i$ is defined as a solution to this equation:
 
 $$
 i^2 = -1
 $$
 
-Mit $i$ lassen sich alle quadratischen Gleichungen lösen, auch solche mit negativer Diskriminante.
+With $i$, all quadratic equations become solvable, including those with negative discriminant.
 
-## Darstellung und Grundbegriffe
+## Representation and Basic Concepts
 
-Eine **komplexe Zahl** hat die Form $z = a + bi$ mit $a, b \in \mathbb{R}$. Dabei heißt $a = \operatorname{Re}(z)$ der **Realteil** und $b = \operatorname{Im}(z)$ der **Imaginärteil**.
+A **complex number** has the form $z = a + bi$ with $a, b \in \mathbb{R}$. Here $a = \operatorname{Re}(z)$ is the **real part** and $b = \operatorname{Im}(z)$ is the **imaginary part**.
 
-Die Menge aller komplexen Zahlen wird mit $\mathbb{C}$ bezeichnet:
+The set of all complex numbers is denoted $\mathbb{C}$:
 
 $$
 \mathbb{C} = \{a + bi : a, b \in \mathbb{R}\}
 $$
 
-Jede reelle Zahl ist eine komplexe Zahl mit $b = 0$, daher gilt $\mathbb{R} \subset \mathbb{C}$.
+Every real number is a complex number with $b = 0$, so $\mathbb{R} \subset \mathbb{C}$.
 
-### Konjugation und Betrag
+### Conjugation and Absolute Value
 
-Die **konjugiert komplexe Zahl** zu $z = a + bi$ ist:
+The **complex conjugate** of $z = a + bi$ is:
 
 $$
 \bar{z} = a - bi
 $$
 
-Der **Betrag** (Absolutbetrag) von $z$ ist:
+The **absolute value** (modulus) of $z$ is:
 
 $$
 |z| = \sqrt{a^2 + b^2} = \sqrt{z \cdot \bar{z}}
 $$
 
-**Beispiel.** Für $z = 3 + 4i$ gilt $\bar{z} = 3 - 4i$ und $|z| = \sqrt{9 + 16} = 5$.
+**Example.** For $z = 3 + 4i$: $\bar{z} = 3 - 4i$ and $|z| = \sqrt{9 + 16} = 5$.
 
-## Rechenoperationen
+## Arithmetic Operations
 
-Für $z_1 = a + bi$ und $z_2 = c + di$ gelten:
+For $z_1 = a + bi$ and $z_2 = c + di$:
 
 **Addition:**
 $$
 z_1 + z_2 = (a + c) + (b + d)i
 $$
 
-**Multiplikation** (unter Verwendung von $i^2 = -1$):
+**Multiplication** (using $i^2 = -1$):
 $$
 z_1 \cdot z_2 = (ac - bd) + (ad + bc)i
 $$
 
-**Division** (Erweitern mit dem Konjugierten des Nenners):
+**Division** (multiplying by the conjugate of the denominator):
 $$
 \frac{z_1}{z_2} = \frac{z_1 \cdot \bar{z_2}}{|z_2|^2} = \frac{(ac + bd) + (bc - ad)i}{c^2 + d^2}
 $$
 
-**Beispiel.** $(2 + 3i)(1 - i) = 2 - 2i + 3i - 3i^2 = 2 + i + 3 = 5 + i$.
+**Example.** $(2 + 3i)(1 - i) = 2 - 2i + 3i - 3i^2 = 2 + i + 3 = 5 + i$.
 
-## Polardarstellung
+## Polar Form
 
-Jede komplexe Zahl $z \neq 0$ lässt sich in Polarform schreiben:
+Every complex number $z \neq 0$ can be written in polar form:
 
 $$
 z = r(\cos\varphi + i\sin\varphi) = r \cdot e^{i\varphi}
 $$
 
-Dabei ist $r = |z|$ der Betrag und $\varphi = \arg(z)$ das **Argument** (Winkel zur positiven reellen Achse). Die zweite Gleichung verwendet die **Eulersche Formel**:
+Here $r = |z|$ is the modulus and $\varphi = \arg(z)$ is the **argument** (angle to the positive real axis). The second equality uses **Euler's formula**:
 
 $$
 e^{i\varphi} = \cos\varphi + i\sin\varphi
 $$
 
-> „The formula $e^{i\pi} + 1 = 0$ connects the five most important constants in mathematics."
+> "The formula $e^{i\pi} + 1 = 0$ connects the five most important constants in mathematics."
 > — Eli Maor, *e: The Story of a Number*, Princeton University Press, 1994.
 
-Die Polarform vereinfacht Multiplikation und Potenzierung: Beträge werden multipliziert, Argumente addiert.
+The polar form simplifies multiplication and exponentiation: moduli are multiplied, arguments are added.
 
-## Einheitswurzeln
+## Roots of Unity
 
-Die **$n$-ten Einheitswurzeln** sind die $n$ Lösungen der Gleichung $z^n = 1$:
+The **$n$-th roots of unity** are the $n$ solutions of the equation $z^n = 1$:
 
 $$
 \zeta_k = e^{2\pi i k/n}, \quad k = 0, 1, \ldots, n-1
 $$
 
-Die Zahl $\zeta = e^{2\pi i/n}$ heißt **primitive $n$-te Einheitswurzel**. Alle $n$-ten Einheitswurzeln sind Potenzen von $\zeta$: $\{\zeta^0, \zeta^1, \ldots, \zeta^{n-1}\}$.
+The number $\zeta = e^{2\pi i/n}$ is called a **primitive $n$-th root of unity**. All $n$-th roots of unity are powers of $\zeta$: $\{\zeta^0, \zeta^1, \ldots, \zeta^{n-1}\}$.
 
-**Beispiel.** Die dritten Einheitswurzeln ($n = 3$) sind:
+**Example.** The cube roots of unity ($n = 3$) are:
 
 $$
 \zeta_0 = 1, \quad \zeta_1 = e^{2\pi i/3} = -\frac{1}{2} + \frac{\sqrt{3}}{2}i, \quad \zeta_2 = e^{4\pi i/3} = -\frac{1}{2} - \frac{\sqrt{3}}{2}i
 $$
 
-In der Zahlentheorie spielen Einheitswurzeln eine zentrale Rolle, etwa als Basis der **Kreisteilungsringe** $\mathbb{Z}[\zeta_p]$, die in Kummers Ansatz zum Beweis von Fermats Letztem Satz auftreten.
+In number theory, roots of unity play a central role — for instance as the basis of **cyclotomic rings** $\mathbb{Z}[\zeta_p]$, which appear in Kummer's approach to proving Fermat's Last Theorem.
 
-## Die obere Halbebene
+## The Upper Half-Plane
 
-Die **obere Halbebene** ist die Menge aller komplexen Zahlen mit positivem Imaginärteil:
+The **upper half-plane** is the set of all complex numbers with positive imaginary part:
 
 $$
 \mathbb{H} = \{z \in \mathbb{C} : \operatorname{Im}(z) > 0\}
 $$
 
-Die obere Halbebene ist der natürliche Definitionsbereich von Modulformen – komplexwertigen Funktionen mit speziellen Symmetrieeigenschaften.
+The upper half-plane is the natural domain of modular forms — complex-valued functions with special symmetry properties.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Begriff | Definition |
+| Concept | Definition |
 |---------|-----------|
-| Imaginäre Einheit | $i^2 = -1$ |
-| Komplexe Zahl | $z = a + bi$ mit $a, b \in \mathbb{R}$ |
-| Konjugierte | $\overline{a + bi} = a - bi$ |
-| Betrag | $|z| = \sqrt{a^2 + b^2}$ |
-| Eulersche Formel | $e^{i\varphi} = \cos\varphi + i\sin\varphi$ |
-| $n$-te Einheitswurzel | $\zeta = e^{2\pi i/n}$ |
-| Obere Halbebene | $\mathbb{H} = \{z \in \mathbb{C} : \operatorname{Im}(z) > 0\}$ |
+| Imaginary unit | $i^2 = -1$ |
+| Complex number | $z = a + bi$ with $a, b \in \mathbb{R}$ |
+| Conjugate | $\overline{a + bi} = a - bi$ |
+| Absolute value | $|z| = \sqrt{a^2 + b^2}$ |
+| Euler's formula | $e^{i\varphi} = \cos\varphi + i\sin\varphi$ |
+| $n$-th root of unity | $\zeta = e^{2\pi i/n}$ |
+| Upper half-plane | $\mathbb{H} = \{z \in \mathbb{C} : \operatorname{Im}(z) > 0\}$ |
 
-## Quellen
+## References
 
-- Needham, Tristan: *Visual Complex Analysis.* Oxford University Press, 1997. Kapitel 1–4.
-- Ahlfors, Lars V.: *Complex Analysis.* McGraw-Hill, 3. Auflage, 1979. Kapitel 1.
+- Needham, Tristan: *Visual Complex Analysis.* Oxford University Press, 1997. Chapters 1–4.
+- Ahlfors, Lars V.: *Complex Analysis.* McGraw-Hill, 3rd edition, 1979. Chapter 1.
 - Maor, Eli: *e: The Story of a Number.* Princeton University Press, 1994.

@@ -1,25 +1,25 @@
 ---
-title: "Modulare Arithmetik"
-description: "Kongruenz, Rechnen modulo n und Restklassen"
-lang: de
+title: "Modular Arithmetic"
+description: "Congruence, computing modulo n, and residue classes"
+lang: en
 type: vorwissen
 ---
 
-# Modulare Arithmetik
+# Modular Arithmetic
 
-## Kongruenz
+## Congruence
 
-Zwei ganze Zahlen $a$ und $b$ heißen **kongruent modulo $n$**, wenn ihre Differenz durch $n$ teilbar ist:
+Two integers $a$ and $b$ are **congruent modulo $n$** if their difference is divisible by $n$:
 
 $$
 a \equiv b \pmod{n} \iff n \mid (a - b)
 $$
 
-Äquivalent: $a$ und $b$ lassen bei Division durch $n$ denselben Rest.
+Equivalently: $a$ and $b$ leave the same remainder upon division by $n$.
 
-**Beispiel.** $17 \equiv 5 \pmod{4}$, denn $17 - 5 = 12$ und $4 \mid 12$. Beide Zahlen lassen bei Division durch $4$ den Rest $1$.
+**Example.** $17 \equiv 5 \pmod{4}$, since $17 - 5 = 12$ and $4 \mid 12$. Both numbers leave remainder $1$ when divided by $4$.
 
-## Rechnen modulo n
+## Computing Modulo n
 
 ### Addition
 
@@ -27,64 +27,64 @@ $$
 a \equiv a' \pmod{n},\; b \equiv b' \pmod{n} \implies a + b \equiv a' + b' \pmod{n}
 $$
 
-**Beispiel.** $7 \equiv 2 \pmod{5}$ und $8 \equiv 3 \pmod{5}$. Dann $7 + 8 = 15 \equiv 2 + 3 = 5 \equiv 0 \pmod{5}$. ✓
+**Example.** $7 \equiv 2 \pmod{5}$ and $8 \equiv 3 \pmod{5}$. Then $7 + 8 = 15 \equiv 2 + 3 = 5 \equiv 0 \pmod{5}$. ✓
 
-### Multiplikation
+### Multiplication
 
 $$
 a \equiv a' \pmod{n},\; b \equiv b' \pmod{n} \implies a \cdot b \equiv a' \cdot b' \pmod{n}
 $$
 
-**Beispiel.** $7 \equiv 2 \pmod{5}$ und $8 \equiv 3 \pmod{5}$. Dann $7 \cdot 8 = 56 \equiv 2 \cdot 3 = 6 \equiv 1 \pmod{5}$. ✓
+**Example.** $7 \equiv 2 \pmod{5}$ and $8 \equiv 3 \pmod{5}$. Then $7 \cdot 8 = 56 \equiv 2 \cdot 3 = 6 \equiv 1 \pmod{5}$. ✓
 
-### Potenzierung
+### Exponentiation
 
 $$
-a \equiv b \pmod{n} \implies a^k \equiv b^k \pmod{n} \quad \text{für alle } k \geq 0
+a \equiv b \pmod{n} \implies a^k \equiv b^k \pmod{n} \quad \text{for all } k \geq 0
 $$
 
-**Beispiel.** $2^{10} = 1024$. Da $2 \equiv -1 \pmod{3}$, folgt $2^{10} \equiv (-1)^{10} = 1 \pmod{3}$.
+**Example.** $2^{10} = 1024$. Since $2 \equiv -1 \pmod{3}$, it follows that $2^{10} \equiv (-1)^{10} = 1 \pmod{3}$.
 
-### Division (eingeschränkt)
+### Division (restricted)
 
-Division ist **nicht** allgemein erlaubt. Aus $ac \equiv bc \pmod{n}$ folgt nur dann $a \equiv b \pmod{n}$, wenn $\gcd(c, n) = 1$.
+Division is **not** generally permitted. From $ac \equiv bc \pmod{n}$ it follows that $a \equiv b \pmod{n}$ only if $\gcd(c, n) = 1$.
 
-## Restklassen
+## Residue Classes
 
-Die **Restklasse** von $a$ modulo $n$ ist die Menge aller ganzen Zahlen, die zu $a$ kongruent sind:
+The **residue class** of $a$ modulo $n$ is the set of all integers congruent to $a$:
 
 $$
 [a]_n = \{a + kn : k \in \mathbb{Z}\} = \{\ldots, a - 2n, a - n, a, a + n, a + 2n, \ldots\}
 $$
 
-Für $n = 3$ gibt es genau drei Restklassen:
+For $n = 3$ there are exactly three residue classes:
 
 - $[0]_3 = \{\ldots, -6, -3, 0, 3, 6, \ldots\}$
 - $[1]_3 = \{\ldots, -5, -2, 1, 4, 7, \ldots\}$
 - $[2]_3 = \{\ldots, -4, -1, 2, 5, 8, \ldots\}$
 
-Die Menge aller Restklassen modulo $n$ wird mit $\mathbb{Z}/n\mathbb{Z}$ (oder $\mathbb{Z}_n$) bezeichnet.
+The set of all residue classes modulo $n$ is denoted $\mathbb{Z}/n\mathbb{Z}$ (or $\mathbb{Z}_n$).
 
-## Anwendung: Teilbarkeitsregeln
+## Application: Divisibility Rules
 
-Modulare Arithmetik erklärt klassische Teilbarkeitsregeln:
+Modular arithmetic explains classical divisibility rules:
 
-- **Teilbarkeit durch 3:** Eine Zahl ist durch $3$ teilbar $\iff$ ihre Quersumme ist durch $3$ teilbar. Grund: $10 \equiv 1 \pmod{3}$, also $10^k \equiv 1 \pmod{3}$.
-- **Teilbarkeit durch 9:** Analog, da $10 \equiv 1 \pmod{9}$.
+- **Divisibility by 3:** A number is divisible by $3$ $\iff$ its digit sum is divisible by $3$. Reason: $10 \equiv 1 \pmod{3}$, so $10^k \equiv 1 \pmod{3}$.
+- **Divisibility by 9:** Analogous, since $10 \equiv 1 \pmod{9}$.
 
 ---
 
-## Zusammenfassung
+## Summary
 
-| Begriff | Definition |
+| Concept | Definition |
 |---------|-----------|
 | $a \equiv b \pmod{n}$ | $n \mid (a-b)$ |
-| Restklasse $[a]_n$ | $\{a + kn : k \in \mathbb{Z}\}$ |
+| Residue class $[a]_n$ | $\{a + kn : k \in \mathbb{Z}\}$ |
 | Addition mod $n$ | $(a + b) \bmod n$ |
-| Multiplikation mod $n$ | $(a \cdot b) \bmod n$ |
-| $\mathbb{Z}/n\mathbb{Z}$ | Menge der Restklassen modulo $n$ |
+| Multiplication mod $n$ | $(a \cdot b) \bmod n$ |
+| $\mathbb{Z}/n\mathbb{Z}$ | Set of residue classes modulo $n$ |
 
-## Quellen
+## References
 
-- Hardy, G.H.; Wright, E.M.: *An Introduction to the Theory of Numbers.* Oxford University Press, 6. Auflage, 2008. Kapitel 5.
-- Burton, David M.: *Elementary Number Theory.* McGraw-Hill, 7. Auflage, 2010. Kapitel 4.
+- Hardy, G.H.; Wright, E.M.: *An Introduction to the Theory of Numbers.* Oxford University Press, 6th edition, 2008. Chapter 5.
+- Burton, David M.: *Elementary Number Theory.* McGraw-Hill, 7th edition, 2010. Chapter 4.
