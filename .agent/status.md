@@ -15,6 +15,7 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 - ✅ **Phase 1 – Grundstruktur:** `topics/TEMPLATE.md`, Verzeichnisstruktur für alle 18 Topics, `topics/img/`, `categories/` (5 × DE+EN)
 - ✅ **Phase 2 – Outlines:** 18 × `article_de.md` (YAML-Frontmatter, Zusammenfassung, Voraussetzungen, Überblick), 18 × `outline.md` (detaillierte Gliederungen mit Ziel, Abschnitten, Kernaussagen, Querverweisen, Quellen), `topics/DEPENDENCIES.md` (Abhängigkeitsgraph + Lesereihenfolge)
 - ✅ **Deployment:** GitHub Pages live unter https://fermatically.com (GitHub Actions Workflow, Custom Domain, HTTPS). Dockerfile + .dockerignore entfernt.
+- ✅ **Zweisprachig (DE/EN):** mkdocs-static-i18n Plugin, 48 englische `.en.md`-Dateien in docs/, Sprachumschalter im Header, Navigation mit nav_translations, englisches Glossar. Build: 0 Warnings.
 - ✅ **Keine Autoren-Seiten:** `authors/` entfernt, `author`-Feld aus Frontmatter aller Artikel entfernt, `site_author` aus mkdocs.yml entfernt
 - ✅ **KI-Hinweis auf Homepage:** Prominenter Hinweis auf docs/index.md und about.md, dass Artikel KI-generiert sind
 - ✅ **Topic-Überblicksseiten:** index.md für Elementare Zahlentheorie, Werkzeuge und Fermat-Wiles erstellt, Navigation in mkdocs.yml aktualisiert
@@ -34,6 +35,7 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 - [x] Phase 2d: 6 neue Vorwissen-Artikel erstellt – DE + EN, in docs/ synchronisiert, mkdocs.yml erweitert
 - [x] Phase 3: Vorwissen-Referenzierung implementiert (Glossar-Tooltips, Vorwissen-Tabellen, Inline-Links, 0 Warnings)
 - [x] Statisches Deployment eingerichtet → GitHub Pages live (Plan: `.agent/plans/deployment-plan.md`)
+- [x] Zweisprachige Seite (DE/EN) mit Sprachumschalter eingerichtet (mkdocs-static-i18n)
 - [ ] Navigation aus `requires`-Frontmatter automatisch generieren
 - [ ] Wiles-Transkription in KB aufnehmen (via pandoc → PDF → kb add)
 ## Blocker
