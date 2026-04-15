@@ -32,6 +32,77 @@ theme:
     - content.code.copy
     - content.tooltips
 
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: de
+          name: Deutsch
+          build: true
+          default: true
+        - locale: en
+          name: English
+          build: true
+          site_name: "fermatically"
+          site_description: "From elementary school mathematics to the great proofs: Fermat, Poincaré and more."
+          nav_translations:
+            Startseite: Home
+            Über das Projekt: About
+            Vorwissen: Prerequisites
+            Übersicht: Overview
+            Logik und Beweistechniken: Logic and Proof Techniques
+            "Aussagenlogik": "Propositional Logic"
+            "Implikation und Äquivalenz": "Implication and Equivalence"
+            "Beweisarten": "Types of Proof"
+            "Was ist ein Beweis?": "What Is a Proof?"
+            Arithmetik und Zahlen: Arithmetic and Numbers
+            "Bruchrechnung": "Fractions"
+            "Gleichungen und äquivalente Umformungen": "Equations and Equivalent Transformations"
+            "Ungleichungen": "Inequalities"
+            "Teilbarkeit und ggT": "Divisibility and GCD"
+            "Primfaktorzerlegung": "Prime Factorization"
+            "Modulare Arithmetik": "Modular Arithmetic"
+            "Komplexe Zahlen": "Complex Numbers"
+            Mengen und Strukturen: Sets and Structures
+            "Mengen und Mengenoperationen": "Sets and Set Operations"
+            "Abbildungen (Funktionen)": "Mappings (Functions)"
+            "Relationen und Äquivalenzklassen": "Relations and Equivalence Classes"
+            "Zahlenbereiche": "Number Systems"
+            Geometrie: Geometry
+            "Pythagoras und pythagoräische Tripel": "Pythagoras and Pythagorean Triples"
+            "Koordinatengeometrie": "Coordinate Geometry"
+            Algebra: Algebra
+            "Potenzen und Polynome": "Powers and Polynomials"
+            "Binomische Formeln und Faktorisierung": "Binomial Formulas and Factoring"
+            "Summen- und Produktnotation": "Summation and Product Notation"
+            "Kombinatorik": "Combinatorics"
+            Analysis: Analysis
+            "Grenzwerte und Konvergenz": "Limits and Convergence"
+            Grundlagen: Foundations
+            Elementare Zahlentheorie: Elementary Number Theory
+            "Was ist Fermats letzter Satz?": "What Is Fermat's Last Theorem?"
+            "Der Beweis für n=4": "The Proof for n=4"
+            "Primzahlen und warum sie reichen": "Primes and Why They Suffice"
+            "Der Beweis für n=3": "The Proof for n=3"
+            Werkzeuge: Tools
+            "Gruppen – Symmetrie als Sprache": "Groups – Symmetry as Language"
+            "Ringe und Körper": "Rings and Fields"
+            "Galois-Theorie": "Galois Theory"
+            "p-adische Zahlen": "p-adic Numbers"
+            "Elliptische Kurven": "Elliptic Curves"
+            "Modulformen": "Modular Forms"
+            "Fermats letzter Satz – Der Beweis": "Fermat's Last Theorem – The Proof"
+            "Die Taniyama-Shimura-Vermutung": "The Taniyama-Shimura Conjecture"
+            "Freys Idee und Ribets Theorem": "Frey's Idea and Ribet's Theorem"
+            "Galois-Darstellungen": "Galois Representations"
+            "Deformationstheorie": "Deformation Theory"
+            "R = T – Das Herz des Beweises": "R = T – The Heart of the Proof"
+            "Der Taylor-Wiles-Trick": "The Taylor-Wiles Trick"
+            "Der 3-5-Switch und der Abschluss": "The 3-5 Switch and the Conclusion"
+            "Was danach kam": "What Came After"
+            Quellen: Sources
+
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
