@@ -3,7 +3,7 @@
 - **Typ:** Content / Mathematik-Plattform
 - **Phase:** Phase 5 in Arbeit (Website-Publikation: docs/ mit echten Artikeln, MkDocs build clean)
 - **Priorität:** Mittel
-- **Zuletzt aktualisiert:** 2026-04-14
+- **Zuletzt aktualisiert:** 2026-04-15
 ## Beschreibung
 Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elementarer Zahlentheorie bis zu Wiles' Beweis von Fermats letztem Satz. 18 Artikel in 3 Kategorien (Grundlagen, Werkzeuge, Beweis). Detaillierter Plan: `.agent/plans/artikelserie-plan.md`.
 ## Aktueller Stand
@@ -14,7 +14,7 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 - ✅ MathJax-Integration für LaTeX-Formeln konfiguriert
 - ✅ **Phase 1 – Grundstruktur:** `topics/TEMPLATE.md`, Verzeichnisstruktur für alle 18 Topics, `topics/img/`, `categories/` (5 × DE+EN)
 - ✅ **Phase 2 – Outlines:** 18 × `article_de.md` (YAML-Frontmatter, Zusammenfassung, Voraussetzungen, Überblick), 18 × `outline.md` (detaillierte Gliederungen mit Ziel, Abschnitten, Kernaussagen, Querverweisen, Quellen), `topics/DEPENDENCIES.md` (Abhängigkeitsgraph + Lesereihenfolge)
-- ✅ **Deployment-Vorbereitung:** Dockerfile (multi-stage: Python-Build → nginx) und .dockerignore erstellt. Coolify verworfen – statische Seite kann einfacher deployt werden (z.B. GitHub Pages, Cloudflare Pages, Netlify)
+- ✅ **Deployment:** GitHub Pages live unter https://fermatically.com (GitHub Actions Workflow, Custom Domain, HTTPS). Dockerfile + .dockerignore entfernt.
 - ✅ **Keine Autoren-Seiten:** `authors/` entfernt, `author`-Feld aus Frontmatter aller Artikel entfernt, `site_author` aus mkdocs.yml entfernt
 - ✅ **KI-Hinweis auf Homepage:** Prominenter Hinweis auf docs/index.md und about.md, dass Artikel KI-generiert sind
 - ✅ **Topic-Überblicksseiten:** index.md für Elementare Zahlentheorie, Werkzeuge und Fermat-Wiles erstellt, Navigation in mkdocs.yml aktualisiert
@@ -33,7 +33,7 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 ## Nächste Schritte
 - [x] Phase 2d: 6 neue Vorwissen-Artikel erstellt – DE + EN, in docs/ synchronisiert, mkdocs.yml erweitert
 - [x] Phase 3: Vorwissen-Referenzierung implementiert (Glossar-Tooltips, Vorwissen-Tabellen, Inline-Links, 0 Warnings)
-- [ ] Statisches Deployment einrichten → **GitHub Pages** empfohlen (Details: `.agent/plans/deployment-plan.md`)
+- [x] Statisches Deployment eingerichtet → GitHub Pages live (Plan: `.agent/plans/deployment-plan.md`)
 - [ ] Navigation aus `requires`-Frontmatter automatisch generieren
 - [ ] Wiles-Transkription in KB aufnehmen (via pandoc → PDF → kb add)
 ## Blocker

@@ -1,7 +1,7 @@
 # Plan: Statisches Deployment für fermatically.com
 
 Erstellt: 2026-04-14
-Status: In Arbeit
+Status: Abgeschlossen ✅
 
 ## Ausgangslage
 
@@ -91,33 +91,30 @@ Status: In Arbeit
 ## Umsetzungsschritte
 
 ### Phase 1: GitHub-Repository einrichten
-- [ ] GitHub-Repo `fermatically` erstellen (public)
-- [ ] Git-Remote hinzufügen und pushen
-- [ ] `.gitignore` prüfen (site/ muss ignoriert sein)
+- [x] GitHub-Repo `fermatically` erstellen (public)
+- [x] Git-Remote hinzufügen und pushen
+- [x] `.gitignore` prüfen (site/ muss ignoriert sein)
 
 ### Phase 2: GitHub Actions Workflow
-- [ ] `.github/workflows/deploy.yml` erstellen:
+- [x] `.github/workflows/deploy.yml` erstellt:
   - Trigger: Push auf `main`
-  - Steps: Python installieren, `pip install -r requirements.txt`, `mkdocs build --strict`, Deploy auf `gh-pages`
-  - Optional: Playwright-Tests vor Deploy
-- [ ] Erster Push → Workflow läuft → `gh-pages`-Branch wird erstellt
+  - Steps: Python installieren, `pip install -r requirements.txt`, `mkdocs gh-deploy --force --strict`
+- [x] Erster Push → Workflow lief → `gh-pages`-Branch wurde erstellt
 
 ### Phase 3: Custom Domain konfigurieren
-- [ ] `docs/CNAME`-Datei erstellen (Inhalt: `fermatically.com`)
-- [ ] DNS-Einträge setzen:
-  - `A`-Record: `185.199.108.153` (+ `.109`, `.110`, `.111`)
-  - oder `CNAME`: `<username>.github.io`
-- [ ] HTTPS in GitHub Pages Settings aktivieren
-- [ ] Warten auf DNS-Propagation + SSL-Zertifikat
+- [x] `docs/CNAME`-Datei erstellt (Inhalt: `fermatically.com`)
+- [x] DNS-Einträge gesetzt: 4 × A-Record bei df.eu
+- [x] HTTPS in GitHub Pages Settings aktiviert
+- [x] DNS-Propagation + SSL-Zertifikat abgeschlossen
 
 ### Phase 4: Verifizierung
-- [ ] `https://fermatically.com` aufrufen und prüfen
-- [ ] MathJax-Rendering testen
-- [ ] Navigation und Links prüfen
+- [x] `https://fermatically.com` aufrufen und prüfen
+- [x] MathJax-Rendering testen
+- [x] Navigation und Links prüfen
 - [ ] Mobile Ansicht testen
 - [ ] Playwright-Tests gegen Live-URL laufen lassen (optional)
 
 ### Phase 5: Aufräumen
-- [ ] Dockerfile entfernen (nicht mehr benötigt)
-- [ ] `.dockerignore` entfernen
-- [ ] Pläne und Status aktualisieren
+- [x] Dockerfile entfernt
+- [x] `.dockerignore` entfernt
+- [x] Pläne und Status aktualisiert
