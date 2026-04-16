@@ -1,9 +1,9 @@
 # Projektstatus: fermatically
 ## Meta
 - **Typ:** Content / Mathematik-Plattform
-- **Phase:** Phase 5 in Arbeit (Website-Publikation: docs/ mit echten Artikeln, MkDocs build clean)
+- **Phase:** Phase 5 weitgehend abgeschlossen (Website live, Deployment komplett). Offen: Navigation aus `requires`-Frontmatter.
 - **Priorität:** Mittel
-- **Zuletzt aktualisiert:** 2026-04-15
+- **Zuletzt aktualisiert:** 2026-04-16
 ## Beschreibung
 Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elementarer Zahlentheorie bis zu Wiles' Beweis von Fermats letztem Satz. 18 Artikel in 3 Kategorien (Grundlagen, Werkzeuge, Beweis). Detaillierter Plan: `.agent/plans/artikelserie-plan.md`.
 ## Aktueller Stand
@@ -32,11 +32,15 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 - ✅ **Vorwissen-Bereich:** 22 Themen (DE+EN) vollständig in `topics/vorwissen/` und `docs/vorwissen/`. Alle Phasen 1–4 abgeschlossen. Phase 3: Glossar-Tooltips (`abbr`+`pymdownx.snippets`), Vorwissen-Tabellen in allen 18 Hauptartikeln, `requires:`-Frontmatter, Inline-Links bei Erstnennung. MkDocs build: 0 Warnings, 0 Errors.
 - ✅ **Rechtsprüfung:** Keine urheberrechtlich geschützten Dateien im MkDocs-Output. `quellen.md` bereinigt (interne Ressource-Pfade → DOI/externe Links). `about.md` Guideline-Verstöße behoben. Alle 50 Zitate korrekt mit Quellenangabe.
 ## Nächste Schritte
+- [ ] Navigation aus `requires`-Frontmatter automatisch generieren (artikelserie-plan.md Phase 5, Punkt 16)
+- [ ] Wiles-Transkription in KB aufnehmen (via pandoc → PDF → kb add)
+- [ ] Medium.com-Synchronisation evaluieren (artikelserie-plan.md Phase 6)
+- [ ] Mobile Ansicht testen / CSS-Fix für MathJax-Overflow (deployment-plan.md Phase 4)
+## Erledigte Meilensteine (zuletzt)
 - [x] Phase 2d: 6 neue Vorwissen-Artikel erstellt – DE + EN, in docs/ synchronisiert, mkdocs.yml erweitert
 - [x] Phase 3: Vorwissen-Referenzierung implementiert (Glossar-Tooltips, Vorwissen-Tabellen, Inline-Links, 0 Warnings)
 - [x] Statisches Deployment eingerichtet → GitHub Pages live (Plan: `.agent/plans/deployment-plan.md`)
 - [x] Zweisprachige Seite (DE/EN) mit Sprachumschalter eingerichtet (mkdocs-static-i18n)
-- [ ] Navigation aus `requires`-Frontmatter automatisch generieren
-- [ ] Wiles-Transkription in KB aufnehmen (via pandoc → PDF → kb add)
+- [x] Pläne-Review und Aktualisierung (2026-04-16)
 ## Blocker
 - Keine

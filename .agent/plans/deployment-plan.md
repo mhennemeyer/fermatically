@@ -1,6 +1,7 @@
 # Plan: Statisches Deployment für fermatically.com
 
 Erstellt: 2026-04-14
+Aktualisiert: 2026-04-16
 Status: Abgeschlossen ✅
 
 ## Ausgangslage
@@ -111,7 +112,7 @@ Status: Abgeschlossen ✅
 - [x] `https://fermatically.com` aufrufen und prüfen
 - [x] MathJax-Rendering testen
 - [x] Navigation und Links prüfen
-- [ ] Mobile Ansicht testen
+- [ ] Mobile Ansicht testen (optional, CSS-Overflow bei MathJax-Formeln bei 375px dokumentiert)
 - [ ] Playwright-Tests gegen Live-URL laufen lassen (optional)
 
 ### Phase 5: Aufräumen

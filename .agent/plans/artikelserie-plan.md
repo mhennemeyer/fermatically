@@ -1,8 +1,8 @@
 # Plan: Mathematik-Plattform – Große Beweise verstehen
 
 Erstellt: 2026-03-30
-Aktualisiert: 2026-04-08
-Status: Phase 1–4 abgeschlossen, Phase 5 in Arbeit (docs/ befüllt, MkDocs build clean). Stilüberarbeitung aller 18 Artikel abgeschlossen. Vorwissen-Bereich (16 Themen DE+EN) fertiggestellt. Offen: Referenzierung (Popup/Sidebar), statisches Deployment (→ `deployment-plan.md`).
+Aktualisiert: 2026-04-16
+Status: Phase 1–5 abgeschlossen. Deployment live unter https://fermatically.com (GitHub Pages). Stilüberarbeitung aller 18 Artikel abgeschlossen. Vorwissen-Bereich (22 Themen DE+EN) fertiggestellt. Zweisprachig (DE/EN) mit mkdocs-static-i18n. Offen: Automatische Navigation aus `requires`-Frontmatter (Phase 5), Medium-Synchronisation (Phase 6), Plattform-Erweiterung (Phase 7).
 
 ## Vision
 
@@ -201,11 +201,11 @@ So wird klar, welche Grundlagen-Topics gelesen werden sollten, bevor man in den 
 14. [x] Entscheidung: MkDocs mit Material-Theme (bereits aufgesetzt)
 15. [x] Build-Pipeline: 18 Artikel aus `topics/` nach `docs/` synchronisiert, Links umgeschrieben, MkDocs build mit 0 Warnings (`scripts/sync_topics_to_docs.sh` + `scripts/fix_docs_links.py`)
 16. [ ] Automatische Navigation aus `requires`-Frontmatter generieren
-17. [ ] Deployment-Setup → **GitHub Pages** empfohlen (Details: `deployment-plan.md`)
-    - [ ] GitHub-Repo erstellen + Remote pushen
-    - [ ] GitHub Actions Workflow (Build + Deploy)
-    - [ ] Custom Domain `fermatically.com` konfigurieren (CNAME + DNS)
-    - [ ] Dockerfile + .dockerignore entfernen
+17. [x] Deployment-Setup → **GitHub Pages** (Details: `deployment-plan.md`)
+    - [x] GitHub-Repo erstellt + Remote gepusht
+    - [x] GitHub Actions Workflow (Build + Deploy)
+    - [x] Custom Domain `fermatically.com` konfiguriert (CNAME + DNS + HTTPS)
+    - [x] Dockerfile + .dockerignore entfernt
 
 ### Phase 6: Medium-Synchronisation
 18. [ ] Medium.com API-Integration
@@ -216,18 +216,14 @@ So wird klar, welche Grundlagen-Topics gelesen werden sollten, bevor man in den 
 21. [ ] `poincare-perelman` Topic
 22. [ ] Weitere große Beweise
 
-## Entscheidungen (offen)
+## Entscheidungen
 
-- **Projektname**: `fermatically`
-  → Empfehlung: Vorerst beibehalten, Umbenennung in Phase 5 wenn Website-Domain feststeht
-- **LaTeX-Rendering**: KaTeX (schnell, statisch) vs. MathJax (vollständiger)?
-  → Empfehlung: KaTeX für Website, MathJax als Fallback
-- **Bilingual von Anfang an?** Oder erst DE, dann EN?
-  → Empfehlung: Erst DE komplett pro Topic, dann EN nachziehen
-- **Django vs. Static Site?** LambdaPy nutzt Django, aber für eine Artikelplattform könnte ein SSG ausreichen
-  → Empfehlung: Zunächst nur Topics-Struktur (Markdown im Repo), Website-Entscheidung in Phase 5
-- **Grundlagen-Topics: Einzel- oder Mehrartikel?** Aktuell je 1 Artikel pro Werkzeug-Topic. Bei Bedarf erweiterbar auf Serien (z.B. `galois-theorie/01-grundbegriffe`, `02-hauptsatz`, …)
-  → Empfehlung: Mit je 1 Artikel starten, bei Bedarf erweitern
+- **Projektname**: `fermatically` ✅ Entschieden – Domain `fermatically.com` registriert und live
+- **LaTeX-Rendering**: MathJax v3 ✅ Entschieden – in mkdocs.yml konfiguriert, Playwright-Tests bestätigen Rendering
+- **Bilingual**: DE + EN parallel ✅ Entschieden – mkdocs-static-i18n Plugin, `.de.md`/`.md`-Konvention, Sprachumschalter im Header
+- **Django vs. Static Site**: MkDocs Material (Static Site) ✅ Entschieden – GitHub Pages Deployment
+- **Grundlagen-Topics: Einzel- oder Mehrartikel?** Aktuell je 1 Artikel pro Werkzeug-Topic. Bei Bedarf erweiterbar auf Serien
+  → Entscheidung: Mit je 1 Artikel gestartet, bei Bedarf erweiterbar
 
 ## Quellenstrategie
 
