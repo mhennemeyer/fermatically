@@ -1,6 +1,8 @@
 site_name: "fermatically"
 site_description: "Von elementarer Schulmathematik bis zu den großen Beweisen: Fermat, Poincaré und mehr."
 site_url: "https://fermatically.com"
+repo_url: "https://github.com/mhennemeyer/fermatically"
+repo_name: "mhennemeyer/fermatically"
 
 dev_addr: "127.0.0.1:8100"
 
@@ -25,7 +27,6 @@ theme:
         name: Helles Design
   features:
     - navigation.sections
-    - navigation.expand
     - navigation.top
     - navigation.footer
     - toc.integrate
@@ -51,6 +52,7 @@ plugins:
             Startseite: Home
             Über das Projekt: About
             Vorwissen: Prerequisites
+            Überblick: Overview
             Übersicht: Overview
             Logik und Beweistechniken: Logic and Proof Techniques
             "Aussagenlogik": "Propositional Logic"
@@ -93,7 +95,8 @@ plugins:
             "p-adische Zahlen": "p-adic Numbers"
             "Elliptische Kurven": "Elliptic Curves"
             "Modulformen": "Modular Forms"
-            "Fermats letzter Satz – Der Beweis": "Fermat's Last Theorem – The Proof"
+            "Fermats letzter Satz": "Fermat's Last Theorem"
+            "Der Beweis": "The Proof"
             "Die Taniyama-Shimura-Vermutung": "The Taniyama-Shimura Conjecture"
             "Freys Idee und Ribets Theorem": "Frey's Idea and Ribet's Theorem"
             "Galois-Darstellungen": "Galois Representations"
@@ -131,6 +134,31 @@ extra_javascript:
 nav:
   - Startseite: index.md
   - Über das Projekt: about.md
+  - Fermats letzter Satz:
+    - Überblick: flt-overview.md
+    - Elementare Zahlentheorie:
+      - "Was ist Fermats letzter Satz?": grundlagen/elementare-zahlentheorie/01-was-ist-flt.md
+      - "Der Beweis für n=4": grundlagen/elementare-zahlentheorie/02-beweis-n4.md
+      - "Primzahlen und warum sie reichen": grundlagen/elementare-zahlentheorie/03-primzahlen-reduktion.md
+      - "Der Beweis für n=3": grundlagen/elementare-zahlentheorie/04-beweis-n3.md
+    - Der Beweis:
+      - Überblick: fermat-wiles/index.md
+      - "Die Taniyama-Shimura-Vermutung": fermat-wiles/01-taniyama-shimura.md
+      - "Freys Idee und Ribets Theorem": fermat-wiles/02-frey-ribet.md
+      - "Galois-Darstellungen": fermat-wiles/03-galois-darstellungen.md
+      - "Deformationstheorie": fermat-wiles/04-deformationstheorie.md
+      - "R = T – Das Herz des Beweises": fermat-wiles/05-r-gleich-t.md
+      - "Der Taylor-Wiles-Trick": fermat-wiles/06-taylor-wiles-trick.md
+      - "Der 3-5-Switch und der Abschluss": fermat-wiles/07-3-5-switch.md
+      - "Was danach kam": fermat-wiles/08-was-danach-kam.md
+  - Werkzeuge:
+    - Überblick: werkzeuge/index.md
+    - "Gruppen – Symmetrie als Sprache": werkzeuge/gruppen.md
+    - "Ringe und Körper": werkzeuge/ringe-koerper.md
+    - "Galois-Theorie": werkzeuge/galois-theorie.md
+    - "p-adische Zahlen": werkzeuge/p-adische-zahlen.md
+    - "Elliptische Kurven": werkzeuge/elliptische-kurven.md
+    - "Modulformen": werkzeuge/modulformen.md
   - Vorwissen:
     - Übersicht: vorwissen/index.md
     - Logik und Beweistechniken:
@@ -161,29 +189,4 @@ nav:
       - "Kombinatorik": vorwissen/kombinatorik.md
     - Analysis:
       - "Grenzwerte und Konvergenz": vorwissen/grenzwerte-konvergenz.md
-  - Grundlagen:
-    - Elementare Zahlentheorie:
-      - Überblick: grundlagen/elementare-zahlentheorie/index.md
-      - "Was ist Fermats letzter Satz?": grundlagen/elementare-zahlentheorie/01-was-ist-flt.md
-      - "Der Beweis für n=4": grundlagen/elementare-zahlentheorie/02-beweis-n4.md
-      - "Primzahlen und warum sie reichen": grundlagen/elementare-zahlentheorie/03-primzahlen-reduktion.md
-      - "Der Beweis für n=3": grundlagen/elementare-zahlentheorie/04-beweis-n3.md
-  - Werkzeuge:
-    - Überblick: werkzeuge/index.md
-    - "Gruppen – Symmetrie als Sprache": werkzeuge/gruppen.md
-    - "Ringe und Körper": werkzeuge/ringe-koerper.md
-    - "Galois-Theorie": werkzeuge/galois-theorie.md
-    - "p-adische Zahlen": werkzeuge/p-adische-zahlen.md
-    - "Elliptische Kurven": werkzeuge/elliptische-kurven.md
-    - "Modulformen": werkzeuge/modulformen.md
-  - "Fermats letzter Satz – Der Beweis":
-    - Überblick: fermat-wiles/index.md
-    - "Die Taniyama-Shimura-Vermutung": fermat-wiles/01-taniyama-shimura.md
-    - "Freys Idee und Ribets Theorem": fermat-wiles/02-frey-ribet.md
-    - "Galois-Darstellungen": fermat-wiles/03-galois-darstellungen.md
-    - "Deformationstheorie": fermat-wiles/04-deformationstheorie.md
-    - "R = T – Das Herz des Beweises": fermat-wiles/05-r-gleich-t.md
-    - "Der Taylor-Wiles-Trick": fermat-wiles/06-taylor-wiles-trick.md
-    - "Der 3-5-Switch und der Abschluss": fermat-wiles/07-3-5-switch.md
-    - "Was danach kam": fermat-wiles/08-was-danach-kam.md
   - Quellen: quellen.md
