@@ -1,0 +1,2856 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="From elementary school mathematics to the great proofs: Fermat, Poincaré and more.">
+      
+      
+      
+        <link rel="canonical" href="https://fermatically.com/grundlagen/elementare-zahlentheorie/04-beweis-n3/">
+      
+      
+        <link rel="prev" href="../03-primzahlen-reduktion/">
+      
+      
+        <link rel="next" href="../../../fermat-wiles/">
+      
+      
+        
+          <link rel="alternate" href="../../../de/grundlagen/elementare-zahlentheorie/04-beweis-n3/" hreflang="de">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>The Proof for n=3 - fermatically</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-proof-for-n-3" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="fermatically" class="md-header__button md-logo" aria-label="fermatically" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            fermatically
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Proof for n=3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Dunkles Design"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dunkles Design" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Helles Design"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Helles Design" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            
+            
+            <a href="../../../de/grundlagen/elementare-zahlentheorie/04-beweis-n3/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            
+            
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mhennemeyer/fermatically" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mhennemeyer/fermatically
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="fermatically" class="md-nav__button md-logo" aria-label="fermatically" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    fermatically
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mhennemeyer/fermatically" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mhennemeyer/fermatically
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fermat's Last Theorem
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fermat's Last Theorem
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flt-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elementary Number Theory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Elementary Number Theory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-was-ist-flt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is Fermat's Last Theorem?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-beweis-n4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Proof for n=4
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-primzahlen-reduktion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primes and Why They Suffice
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Proof for n=3
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Proof for n=3
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-n-3-is-harder-than-n-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Why \(n = 3\) Is Harder Than \(n = 4\)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-eisenstein-integers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Eisenstein Integers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Eisenstein Integers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-decisive-advantage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Decisive Advantage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-unique-factorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Unique Factorisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-proof-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Proof: Step by Step
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Proof: Step by Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparation-cubic-residues-modulo-lambda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation: Cubic residues modulo \(\lambda\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Descent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-gap-in-eulers-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. The Gap in Euler's Original
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-a-taste-of-where-the-method-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. A Taste of Where the Method Fails
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-from-euler-to-kummer-and-beyond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. From Euler to Kummer – and Beyond
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Proof
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Proof
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fermat-wiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fermat-wiles/01-taniyama-shimura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Taniyama-Shimura Conjecture
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fermat-wiles/02-frey-ribet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frey's Idea and Ribet's Theorem
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fermat-wiles/03-galois-darstellungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Galois Representations
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fermat-wiles/04-deformationstheorie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deformation Theory
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fermat-wiles/05-r-gleich-t/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R = T – The Heart of the Proof
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fermat-wiles/06-taylor-wiles-trick/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Taylor-Wiles Trick
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fermat-wiles/07-3-5-switch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The 3-5 Switch and the Conclusion
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fermat-wiles/08-was-danach-kam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Came After
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../werkzeuge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../werkzeuge/gruppen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Groups – Symmetry as Language
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../werkzeuge/ringe-koerper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rings and Fields
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../werkzeuge/galois-theorie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Galois Theory
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../werkzeuge/p-adische-zahlen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    p-adic Numbers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../werkzeuge/elliptische-kurven/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elliptic Curves
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../werkzeuge/modulformen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modular Forms
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prerequisites
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic and Proof Techniques
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Logic and Proof Techniques
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/aussagenlogik/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propositional Logic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/implikation-aequivalenz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implication and Equivalence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/beweisarten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types of Proof
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/was-ist-ein-beweis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is a Proof?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic and Numbers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetic and Numbers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/bruchrechnung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fractions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/gleichungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equations and Equivalent Transformations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/ungleichungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inequalities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/teilbarkeit-ggt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divisibility and GCD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/primfaktorzerlegung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prime Factorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/modulare-arithmetik/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modular Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/komplexe-zahlen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sets and Structures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sets and Structures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/mengen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sets and Set Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/abbildungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mappings (Functions)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/relationen-aequivalenzklassen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relations and Equivalence Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/zahlenbereiche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Number Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geometry
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Geometry
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/pythagoras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pythagoras and Pythagorean Triples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/koordinatengeometrie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coordinate Geometry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algebra
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Algebra
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/potenzen-polynome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Powers and Polynomials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/binomische-formeln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Binomial Formulas and Factoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/summen-produktnotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summation and Product Notation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/kombinatorik/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinatorics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vorwissen/grenzwerte-konvergenz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limits and Convergence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quellen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="the-proof-for-n-3">The Proof for <span class="arithmatex">\(n = 3\)</span><a class="headerlink" href="#the-proof-for-n-3" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Summary</p>
+<p>Euler's proof of Fermat's Last Theorem for the case <span class="arithmatex">\(n = 3\)</span> – and why it forces us
+to leave the ordinary integers behind. The entry into algebraic number theory.</p>
+</div>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../01-was-ist-flt/">What Is Fermat's Last Theorem?</a></li>
+<li><a href="../02-beweis-n4/">The Proof for <span class="arithmatex">\(n = 4\)</span></a></li>
+<li><a href="../03-primzahlen-reduktion/">Primes and Why They Suffice</a></li>
+</ul>
+<hr />
+<h2 id="1-why-n-3-is-harder-than-n-4">1. Why <span class="arithmatex">\(n = 3\)</span> Is Harder Than <span class="arithmatex">\(n = 4\)</span><a class="headerlink" href="#1-why-n-3-is-harder-than-n-4" title="Permanent link">&para;</a></h2>
+<p>In the proof for <span class="arithmatex">\(n = 4\)</span>, we could treat the equation <span class="arithmatex">\(x^4 + y^4 = z^2\)</span> entirely within <span class="arithmatex">\(\mathbb{Z}\)</span>. The key was the parametrisation of <abbr title="Integer solutions (a, b, c) of a² + b² = c². → Prerequisites: Pythagoras">Pythagorean triples</abbr> – a formula describing <em>all</em> solutions of <span class="arithmatex">\(x^2 + y^2 = z^2\)</span>.</p>
+<p>For <span class="arithmatex">\(n = 3\)</span>, no analogue exists. The equation <span class="arithmatex">\(x^3 + y^3 = z^3\)</span> cannot be factorised in <span class="arithmatex">\(\mathbb{Z}\)</span> in a way that makes a descent possible. The reason: the factorisation</p>
+<div class="arithmatex">\[
+x^3 + y^3 = (x + y)(x^2 - xy + y^2)
+\]</div>
+<p>yields two factors whose coprimality is hard to control. One would need information about <span class="arithmatex">\(\gcd(x + y, \, x^2 - xy + y^2)\)</span>, which is not easy to obtain in <span class="arithmatex">\(\mathbb{Z}\)</span>.</p>
+<p>Euler's brilliant idea: instead of computing in <span class="arithmatex">\(\mathbb{Z}\)</span>, we extend the number domain.</p>
+<h2 id="2-the-eisenstein-integers">2. The Eisenstein Integers<a class="headerlink" href="#2-the-eisenstein-integers" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(\omega = e^{2\pi i/3} = \frac{-1 + \sqrt{-3}}{2}\)</span> be a primitive cube root of unity. The <strong>Eisenstein integers</strong> are the ring:</p>
+<div class="arithmatex">\[
+\mathbb{Z}[\omega] = \{ a + b\omega \mid a, b \in \mathbb{Z} \}
+\]</div>
+<p>Geometrically, the Eisenstein integers form a regular triangular lattice in the complex plane. Every element has the form <span class="arithmatex">\(a + b\omega\)</span> with integer coordinates.</p>
+<h3 id="basic-properties">Basic Properties<a class="headerlink" href="#basic-properties" title="Permanent link">&para;</a></h3>
+<p><strong>Norm.</strong> For <span class="arithmatex">\(\alpha = a + b\omega\)</span> we define the norm as:</p>
+<div class="arithmatex">\[
+N(\alpha) = \alpha \cdot \bar{\alpha} = a^2 - ab + b^2
+\]</div>
+<p>where <span class="arithmatex">\(\bar{\alpha} = a + b\bar{\omega} = a + b\omega^2\)</span> is the conjugate (since <span class="arithmatex">\(\omega^2 = \bar{\omega}\)</span>). The norm is always a non-negative integer and is multiplicative: <span class="arithmatex">\(N(\alpha\beta) = N(\alpha) \cdot N(\beta)\)</span>.</p>
+<p><strong>Units.</strong> The units (invertible elements) of <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> are precisely the elements with norm <span class="arithmatex">\(1\)</span>:</p>
+<div class="arithmatex">\[
+\mathbb{Z}[\omega]^\times = \{ \pm 1, \pm \omega, \pm \omega^2 \}
+\]</div>
+<p>That is six units – more than the two units <span class="arithmatex">\(\pm 1\)</span> in <span class="arithmatex">\(\mathbb{Z}\)</span>.</p>
+<p><strong>Prime elements.</strong> An Eisenstein element <span class="arithmatex">\(\pi\)</span> is called <em>prime</em> if it is not a unit and <span class="arithmatex">\(\pi \mid \alpha\beta\)</span> implies <span class="arithmatex">\(\pi \mid \alpha\)</span> or <span class="arithmatex">\(\pi \mid \beta\)</span>. The prime structure of <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> differs from that of <span class="arithmatex">\(\mathbb{Z}\)</span>:</p>
+<ul>
+<li>The prime <span class="arithmatex">\(3\)</span> decomposes specially: <span class="arithmatex">\(3 = -\omega^2 (1 - \omega)^2\)</span>, so <span class="arithmatex">\(\lambda := 1 - \omega\)</span> is a prime element with <span class="arithmatex">\(N(\lambda) = 3\)</span>.</li>
+<li>Primes <span class="arithmatex">\(p \equiv 2 \pmod{3}\)</span> remain prime in <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span>.</li>
+<li>Primes <span class="arithmatex">\(p \equiv 1 \pmod{3}\)</span> split: <span class="arithmatex">\(p = \pi \bar{\pi}\)</span> for some prime element <span class="arithmatex">\(\pi\)</span>.</li>
+</ul>
+<h3 id="the-decisive-advantage">The Decisive Advantage<a class="headerlink" href="#the-decisive-advantage" title="Permanent link">&para;</a></h3>
+<p>In <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> we can factorise <span class="arithmatex">\(x^3 + y^3\)</span> <em>completely</em>:</p>
+<div class="arithmatex">\[
+x^3 + y^3 = (x + y)(x + \omega y)(x + \omega^2 y)
+\]</div>
+<p>Three linear factors instead of two! This finer factorisation makes the descent possible.</p>
+<h2 id="3-unique-factorisation">3. Unique Factorisation<a class="headerlink" href="#3-unique-factorisation" title="Permanent link">&para;</a></h2>
+<p>The proof works only if <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> is a <strong>principal ideal domain</strong> (PID) – that is, if every element has an essentially unique decomposition into prime elements.</p>
+<p><strong>Theorem.</strong> <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> is a Euclidean domain (with the norm function as Euclidean function) and therefore in particular a PID.</p>
+<p><strong>Proof sketch.</strong> For <span class="arithmatex">\(\alpha, \beta \in \mathbb{Z}[\omega]\)</span> with <span class="arithmatex">\(\beta \neq 0\)</span>, consider <span class="arithmatex">\(\alpha/\beta \in \mathbb{Q}(\omega)\)</span>. This element can be approximated by a lattice element <span class="arithmatex">\(\gamma \in \mathbb{Z}[\omega]\)</span> with <span class="arithmatex">\(N(\alpha/\beta - \gamma) &lt; 1\)</span> (because the triangular lattice is dense enough). Then <span class="arithmatex">\(\alpha = \beta\gamma + \rho\)</span> with <span class="arithmatex">\(N(\rho) &lt; N(\beta)\)</span> – exactly the division with remainder that is needed. <span class="arithmatex">\(\square\)</span></p>
+<div class="admonition warning">
+<p class="admonition-title">Not self-evident!</p>
+<p>For <span class="arithmatex">\(p = 3\)</span>, <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> is a PID – but <span class="arithmatex">\(\mathbb{Z}[\zeta_p]\)</span> is <strong>not</strong> a PID for general <span class="arithmatex">\(p\)</span>. Already for <span class="arithmatex">\(p = 23\)</span>, unique factorisation fails. This was the point where Lamé failed and Kummer invented ideal theory.</p>
+</div>
+<h2 id="4-the-proof-step-by-step">4. The Proof: Step by Step<a class="headerlink" href="#4-the-proof-step-by-step" title="Permanent link">&para;</a></h2>
+<p>We prove: <span class="arithmatex">\(x^3 + y^3 = z^3\)</span> has no solution in positive integers.</p>
+<p>Equivalently (and more technically convenient), we prove the more general statement in <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span>:</p>
+<div class="arithmatex">\[
+\alpha^3 + \beta^3 + \gamma^3 = 0 \quad \text{has no solution with } \alpha, \beta, \gamma \in \mathbb{Z}[\omega] \setminus \{0\} \text{ and } \lambda \nmid \alpha\beta\gamma
+\]</div>
+<p>where <span class="arithmatex">\(\lambda = 1 - \omega\)</span> is the prime element above <span class="arithmatex">\(3\)</span>. (The symmetric form <span class="arithmatex">\(\alpha^3 + \beta^3 + \gamma^3 = 0\)</span> is equivalent to <span class="arithmatex">\(x^3 + y^3 = z^3\)</span> with the sign of <span class="arithmatex">\(z\)</span> reversed.)</p>
+<p>In fact, we prove an even stronger version by infinite descent. The proof proceeds in several stages.</p>
+<h3 id="preparation-cubic-residues-modulo-lambda">Preparation: Cubic residues modulo <span class="arithmatex">\(\lambda\)</span><a class="headerlink" href="#preparation-cubic-residues-modulo-lambda" title="Permanent link">&para;</a></h3>
+<p>Since <span class="arithmatex">\(N(\lambda) = 3\)</span>, we have <span class="arithmatex">\(\mathbb{Z}[\omega]/(\lambda) \cong \mathbb{Z}/3\mathbb{Z} = \{0, 1, 2\}\)</span>. Every element of <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> not divisible by <span class="arithmatex">\(\lambda\)</span> is congruent to <span class="arithmatex">\(\pm 1 \pmod{\lambda}\)</span>. It follows that every cube of such an element is likewise congruent to <span class="arithmatex">\(\pm 1 \pmod{\lambda}\)</span>.</p>
+<p>More precisely, for every <span class="arithmatex">\(\alpha\)</span> with <span class="arithmatex">\(\lambda \nmid \alpha\)</span>:</p>
+<div class="arithmatex">\[
+\alpha^3 \equiv \pm 1 \pmod{\lambda^4}
+\]</div>
+<p>This is the analogue of the statement "every square is <span class="arithmatex">\(\equiv 0\)</span> or <span class="arithmatex">\(1 \pmod{4}\)</span>" in <span class="arithmatex">\(\mathbb{Z}\)</span> – but one level more intricate.</p>
+<h3 id="the-descent">The Descent<a class="headerlink" href="#the-descent" title="Permanent link">&para;</a></h3>
+<p><strong>Assumption.</strong> Let <span class="arithmatex">\((\alpha, \beta, \gamma)\)</span> be a solution of <span class="arithmatex">\(\alpha^3 + \beta^3 + \gamma^3 = 0\)</span> with <span class="arithmatex">\(\lambda \nmid \alpha\beta\gamma\)</span> and with <em>minimal</em> <span class="arithmatex">\(\lambda\)</span>-valuation in one of the terms. More precisely: we assume that <span class="arithmatex">\(\lambda \mid \gamma\)</span> (after reordering), and write <span class="arithmatex">\(\gamma = \lambda^n \delta\)</span> with <span class="arithmatex">\(\lambda \nmid \delta\)</span> and minimal <span class="arithmatex">\(n \geq 1\)</span>.</p>
+<p>We show that from this solution a new solution with smaller <span class="arithmatex">\(n\)</span> can be constructed – contradiction.</p>
+<p><strong>Step 1: Factorisation.</strong> In <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span>:</p>
+<div class="arithmatex">\[
+\alpha^3 + \beta^3 = -\gamma^3 = -\lambda^{3n} \delta^3
+\]</div>
+<div class="arithmatex">\[
+(\alpha + \beta)(\alpha + \omega\beta)(\alpha + \omega^2\beta) = -\lambda^{3n} \delta^3
+\]</div>
+<p><strong>Step 2: Coprimality of the factors.</strong> One shows that the three factors <span class="arithmatex">\(\alpha + \beta\)</span>, <span class="arithmatex">\(\alpha + \omega\beta\)</span>, <span class="arithmatex">\(\alpha + \omega^2\beta\)</span> can be separated pairwise by <span class="arithmatex">\(\lambda\)</span>: their pairwise differences are <span class="arithmatex">\((1 - \omega)\beta = \lambda\beta\)</span> and <span class="arithmatex">\((1 - \omega^2)\beta\)</span>, so <span class="arithmatex">\(\lambda\)</span> is the only common factor. After careful analysis of the <span class="arithmatex">\(\lambda\)</span>-valuation, one can show that exactly one of the three factors is divisible by <span class="arithmatex">\(\lambda^{3n-2}\)</span> and the other two are not divisible by <span class="arithmatex">\(\lambda\)</span>.</p>
+<p><strong>Step 3: Force cubic structure.</strong> Since <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> is a PID and the three factors (up to <span class="arithmatex">\(\lambda\)</span>-parts) are coprime, each factor (up to units and powers of <span class="arithmatex">\(\lambda\)</span>) must be a cube. In particular, there exist <span class="arithmatex">\(\alpha_1, \beta_1, \gamma_1 \in \mathbb{Z}[\omega]\)</span> with:</p>
+<div class="arithmatex">\[
+\alpha + \beta = \varepsilon_1 \lambda^{3n-2} \gamma_1^3, \quad \alpha + \omega\beta = \varepsilon_2 \alpha_1^3, \quad \alpha + \omega^2\beta = \varepsilon_3 \beta_1^3
+\]</div>
+<p>where <span class="arithmatex">\(\varepsilon_1, \varepsilon_2, \varepsilon_3\)</span> are units.</p>
+<p><strong>Step 4: Derive a new equation.</strong> From the three <abbr title="Statements of the form term₁ = term₂, solvable by equivalent transformations. → Prerequisites: Equations">equations</abbr>, one can (by skilful combination) derive an equation of the form</p>
+<div class="arithmatex">\[
+\alpha_1^3 + \beta_1^3 + \varepsilon \lambda^{n'} \gamma_1^3 = 0
+\]</div>
+<p>where <span class="arithmatex">\(n' &lt; n\)</span>. The unit <span class="arithmatex">\(\varepsilon\)</span> can be absorbed by choosing suitable associates.</p>
+<p><strong>Step 5: Contradiction.</strong> We have found a solution with <span class="arithmatex">\(\lambda\)</span>-valuation <span class="arithmatex">\(n' &lt; n\)</span>. Since <span class="arithmatex">\(n\)</span> was minimal, this is a contradiction. <span class="arithmatex">\(\blacksquare\)</span></p>
+<h2 id="5-the-gap-in-eulers-original">5. The Gap in Euler's Original<a class="headerlink" href="#5-the-gap-in-eulers-original" title="Permanent link">&para;</a></h2>
+<p>Euler's proof, as it appeared in his 1770 <em>Algebra</em>, contained a subtle gap. In the decisive step of the descent, he used the fact that certain elements in <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> must be cubes – and thereby implicitly assumed <strong>unique prime factorisation</strong> in <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span>.</p>
+<p>This assumption happens to be correct: <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> is indeed a PID. But Euler did not <em>prove</em> this; he took it for granted. The fact that UPF holds in <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> was rigorously established only later – among others by Gauss.</p>
+<p>The gap is repairable: one can make Euler's proof completely correct by establishing the PID property of <span class="arithmatex">\(\mathbb{Z}[\omega]\)</span> first. But the gap reveals a deep conceptual problem: for general <span class="arithmatex">\(p\)</span>, <span class="arithmatex">\(\mathbb{Z}[\zeta_p]\)</span> is not a PID, and Euler's strategy breaks down.</p>
+<h2 id="6-a-taste-of-where-the-method-fails">6. A Taste of Where the Method Fails<a class="headerlink" href="#6-a-taste-of-where-the-method-fails" title="Permanent link">&para;</a></h2>
+<p>For <span class="arithmatex">\(p = 5\)</span>, we consider <span class="arithmatex">\(\mathbb{Z}[\zeta_5]\)</span> with <span class="arithmatex">\(\zeta_5 = e^{2\pi i/5}\)</span>. Here UPF still holds – the proof for <span class="arithmatex">\(n = 5\)</span> (Dirichlet/Legendre, 1825) uses this, albeit with considerably more effort.</p>
+<p>For <span class="arithmatex">\(p = 23\)</span>, the situation is dramatically different: <span class="arithmatex">\(\mathbb{Z}[\zeta_{23}]\)</span> has class number <span class="arithmatex">\(h_{23} = 3 \neq 1\)</span>. UPF fails, and a naïve factorisation approach yields false results. This is precisely where Kummer's ideal theory stepped in, as we shall explore further in the <a href="../../../werkzeuge/ringe-koerper/">article on rings and fields</a>.</p>
+<p>The moral: <strong>The proof for <span class="arithmatex">\(n = 3\)</span> works because we are lucky.</strong> The Eisenstein integers are "good enough" – they have unique factorisation. For general <span class="arithmatex">\(p\)</span>, an entirely different approach is needed.</p>
+<h2 id="7-from-euler-to-kummer-and-beyond">7. From Euler to Kummer – and Beyond<a class="headerlink" href="#7-from-euler-to-kummer-and-beyond" title="Permanent link">&para;</a></h2>
+<p>The proof for <span class="arithmatex">\(n = 3\)</span> marks a turning point in the history of FLT:</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th><span class="arithmatex">\(n = 4\)</span> (Fermat)</th>
+<th><span class="arithmatex">\(n = 3\)</span> (Euler)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number domain</td>
+<td><span class="arithmatex">\(\mathbb{Z}\)</span></td>
+<td><span class="arithmatex">\(\mathbb{Z}[\omega]\)</span></td>
+</tr>
+<tr>
+<td>Factorisation</td>
+<td><abbr title="Integer solutions (a, b, c) of a² + b² = c². → Prerequisites: Pythagoras">Pythagorean triples</abbr></td>
+<td>cubic factorisation</td>
+</tr>
+<tr>
+<td>Descent via</td>
+<td>size of <span class="arithmatex">\(z\)</span></td>
+<td><span class="arithmatex">\(\lambda\)</span>-valuation</td>
+</tr>
+<tr>
+<td>New mathematics</td>
+<td>Infinite Descent</td>
+<td>Algebraic Number Theory</td>
+</tr>
+</tbody>
+</table>
+<p>From here the path branches:</p>
+<ol>
+<li><strong>Foundational tools</strong>: To understand the proof for general <span class="arithmatex">\(p\)</span>, we need groups, rings, fields, Galois theory – the "language" of modern algebra.</li>
+<li><strong>Specialised tools</strong>: Elliptic curves and modular forms – the objects that Wiles' proof connects.</li>
+<li><strong>The proof itself</strong>: Galois representations, deformation theory, the <span class="arithmatex">\(R = T\)</span> theorem – the heart of the matter.</li>
+</ol>
+<p>In the following tool topics, we build these foundations piece by piece.</p>
+<hr />
+<h2 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Nigel Boston</strong>: <em>The Proof of Fermat's Last Theorem</em>, Ch. 2</li>
+<li><strong>Harold Edwards</strong>: <em>Fermat's Last Theorem</em>, Ch. 3 – the most detailed account of Euler's proof</li>
+<li><strong>Kenneth Ireland, Michael Rosen</strong>: <em>A Classical Introduction to Modern Number Theory</em> – the Eisenstein integers in context</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../03-primzahlen-reduktion/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Primes and Why They Suffice">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Primes and Why They Suffice
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../fermat-wiles/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.highlight", "content.code.copy", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

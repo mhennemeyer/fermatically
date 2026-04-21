@@ -1,0 +1,3168 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="From elementary school mathematics to the great proofs: Fermat, Poincaré and more.">
+      
+      
+      
+        <link rel="canonical" href="https://fermatically.com/fermat-wiles/04-deformationstheorie/">
+      
+      
+        <link rel="prev" href="../03-galois-darstellungen/">
+      
+      
+        <link rel="next" href="../05-r-gleich-t/">
+      
+      
+        
+          <link rel="alternate" href="../../de/fermat-wiles/04-deformationstheorie/" hreflang="de">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Deformation Theory - fermatically</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deformation-theory" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="fermatically" class="md-header__button md-logo" aria-label="fermatically" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            fermatically
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deformation Theory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Dunkles Design"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dunkles Design" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Helles Design"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Helles Design" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            
+            
+            <a href="../../de/fermat-wiles/04-deformationstheorie/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            
+            
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mhennemeyer/fermatically" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mhennemeyer/fermatically
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="fermatically" class="md-nav__button md-logo" aria-label="fermatically" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    fermatically
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mhennemeyer/fermatically" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mhennemeyer/fermatically
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fermat's Last Theorem
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fermat's Last Theorem
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flt-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elementary Number Theory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Elementary Number Theory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grundlagen/elementare-zahlentheorie/01-was-ist-flt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is Fermat's Last Theorem?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grundlagen/elementare-zahlentheorie/02-beweis-n4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Proof for n=4
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grundlagen/elementare-zahlentheorie/03-primzahlen-reduktion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primes and Why They Suffice
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grundlagen/elementare-zahlentheorie/04-beweis-n3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Proof for n=3
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Proof
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Proof
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-taniyama-shimura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Taniyama-Shimura Conjecture
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-frey-ribet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frey's Idea and Ribet's Theorem
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-galois-darstellungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Galois Representations
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deformation Theory
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deformation Theory
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-starting-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Starting Point
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. The Starting Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-we-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we have
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want-to-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want to show
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-lifting-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The lifting question
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-a-deformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What Is a Deformation?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. What Is a Deformation?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-rings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local rings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deformations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-universal-deformation-ring-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Universal Deformation Ring \(R\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The Universal Deformation Ring \(R\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mazurs-representability-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mazur's representability theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-does-this-mean-concretely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What does this mean concretely?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analogy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-deformation-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Deformation Conditions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Deformation Conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-conditions-are-necessary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why conditions are necessary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-conditions-at-q-neq-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local conditions at \(q \neq p\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-conditions-at-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local conditions at \(p\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-restricted-deformation-ring-r_mathcald" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The restricted deformation ring \(R_{\mathcal{D}}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-hecke-ring-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. The Hecke Ring \(T\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. The Hecke Ring \(T\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modular-deformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modular deformations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-hecke-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hecke algebra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-modular-deformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The modular deformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-natural-surjection-r-twoheadrightarrow-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. The Natural Surjection \(R \twoheadrightarrow T\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. The Natural Surjection \(R \twoheadrightarrow T\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-a-surjection-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why a surjection exists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-surjection-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the surjection means
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-wiles-goal-r-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Wiles' Goal: \(R = T\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Wiles&#39; Goal: \(R = T\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-r-t-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What \(R = T\) means
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-proof-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The proof structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-r-t-is-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why \(R = T\) is hard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview-of-the-proof-machinery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview of the proof machinery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outlook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-r-gleich-t/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R = T – The Heart of the Proof
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-taylor-wiles-trick/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Taylor-Wiles Trick
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-3-5-switch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The 3-5 Switch and the Conclusion
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-was-danach-kam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Came After
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/gruppen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Groups – Symmetry as Language
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/ringe-koerper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rings and Fields
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/galois-theorie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Galois Theory
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/p-adische-zahlen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    p-adic Numbers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/elliptische-kurven/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elliptic Curves
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/modulformen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modular Forms
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prerequisites
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic and Proof Techniques
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Logic and Proof Techniques
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/aussagenlogik/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propositional Logic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/implikation-aequivalenz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implication and Equivalence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/beweisarten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types of Proof
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/was-ist-ein-beweis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is a Proof?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic and Numbers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetic and Numbers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/bruchrechnung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fractions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/gleichungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equations and Equivalent Transformations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/ungleichungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inequalities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/teilbarkeit-ggt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divisibility and GCD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/primfaktorzerlegung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prime Factorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/modulare-arithmetik/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modular Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/komplexe-zahlen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sets and Structures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sets and Structures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/mengen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sets and Set Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/abbildungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mappings (Functions)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/relationen-aequivalenzklassen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relations and Equivalence Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/zahlenbereiche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Number Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geometry
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Geometry
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/pythagoras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pythagoras and Pythagorean Triples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/koordinatengeometrie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coordinate Geometry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algebra
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Algebra
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/potenzen-polynome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Powers and Polynomials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/binomische-formeln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Binomial Formulas and Factoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/summen-produktnotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summation and Product Notation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/kombinatorik/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinatorics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/grenzwerte-konvergenz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limits and Convergence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quellen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="deformation-theory">Deformation Theory<a class="headerlink" href="#deformation-theory" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Summary</p>
+<p>Mazur's deformation theory asks: given a residual Galois representation
+<span class="arithmatex">\(\bar{\rho}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p)\)</span>, which "lifts"
+to <span class="arithmatex">\(\text{GL}_2(A)\)</span> for local rings <span class="arithmatex">\(A\)</span> exist? The universal
+deformation ring <span class="arithmatex">\(R\)</span> parametrises all admissible lifts, the Hecke algebra
+<span class="arithmatex">\(T\)</span> the modular ones. Wiles' goal: <span class="arithmatex">\(R = T\)</span>.</p>
+</div>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../03-galois-darstellungen/">Galois Representations</a> – residual and <span class="arithmatex">\(p\)</span>-adic representations, modularity</li>
+<li><a href="../../werkzeuge/p-adische-zahlen/">p-adic Numbers</a> – local rings, <span class="arithmatex">\(\mathbb{Z}_p\)</span>, <span class="arithmatex">\(p\)</span>-adic topology</li>
+</ul>
+<hr />
+<h2 id="1-the-starting-point">1. The Starting Point<a class="headerlink" href="#1-the-starting-point" title="Permanent link">&para;</a></h2>
+<h3 id="what-we-have">What we have<a class="headerlink" href="#what-we-have" title="Permanent link">&para;</a></h3>
+<p>From the results of Langlands–Tunnell (for <span class="arithmatex">\(p = 3\)</span>) or via the 3-5 switch (for <span class="arithmatex">\(p = 5\)</span>), we know: for a semistable elliptic curve <span class="arithmatex">\(E/\mathbb{Q}\)</span>, the <strong>residual representation</strong></p>
+<div class="arithmatex">\[
+\bar{\rho} = \bar{\rho}_{E,p}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p)
+\]</div>
+<p>is <strong>modular</strong> – it comes from a newform.</p>
+<h3 id="what-we-want-to-show">What we want to show<a class="headerlink" href="#what-we-want-to-show" title="Permanent link">&para;</a></h3>
+<p>We must prove that the <strong>full <span class="arithmatex">\(p\)</span>-adic representation</strong></p>
+<div class="arithmatex">\[
+\rho = \rho_{E,p}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_p)
+\]</div>
+<p>is also modular. The residual representation is the reduction modulo <span class="arithmatex">\(p\)</span>: <span class="arithmatex">\(\rho \bmod p = \bar{\rho}\)</span>.</p>
+<h3 id="the-lifting-question">The lifting question<a class="headerlink" href="#the-lifting-question" title="Permanent link">&para;</a></h3>
+<p>The problem can be formulated as follows: among all representations <span class="arithmatex">\(\rho: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{Z}_p)\)</span> that reduce modulo <span class="arithmatex">\(p\)</span> to the given <span class="arithmatex">\(\bar{\rho}\)</span>, which are modular? <strong>Wiles' answer: all of them (under suitable conditions).</strong></p>
+<p>For this, one needs a systematic tool to describe the "space of all lifts" – and that is precisely what Mazur's deformation theory provides.</p>
+<hr />
+<h2 id="2-what-is-a-deformation">2. What Is a Deformation?<a class="headerlink" href="#2-what-is-a-deformation" title="Permanent link">&para;</a></h2>
+<h3 id="local-rings">Local rings<a class="headerlink" href="#local-rings" title="Permanent link">&para;</a></h3>
+<p>A <strong>complete local Noetherian ring</strong> <span class="arithmatex">\(A\)</span> with residue field <span class="arithmatex">\(\mathbb{F}_p\)</span> is a ring of the form</p>
+<div class="arithmatex">\[
+A = \varprojlim A/\mathfrak{m}^n,
+\]</div>
+<p>where <span class="arithmatex">\(\mathfrak{m}\)</span> is the maximal ideal and <span class="arithmatex">\(A/\mathfrak{m} \cong \mathbb{F}_p\)</span>. Examples:</p>
+<ul>
+<li><span class="arithmatex">\(A = \mathbb{F}_p\)</span> (trivial lift – only the residual representation)</li>
+<li><span class="arithmatex">\(A = \mathbb{Z}_p\)</span> (the <span class="arithmatex">\(p\)</span>-adic integers)</li>
+<li><span class="arithmatex">\(A = \mathbb{Z}_p[[x_1, \ldots, x_n]]\)</span> (formal power series rings)</li>
+<li><span class="arithmatex">\(A = \mathbb{Z}_p[x]/(x^2)\)</span> (dual numbers – for infinitesimal deformations)</li>
+</ul>
+<h3 id="lifts">Lifts<a class="headerlink" href="#lifts" title="Permanent link">&para;</a></h3>
+<p>A <strong>lift</strong> of <span class="arithmatex">\(\bar{\rho}\)</span> to <span class="arithmatex">\(A\)</span> is a continuous homomorphism</p>
+<div class="arithmatex">\[
+\rho_A: G_{\mathbb{Q}} \to \text{GL}_2(A),
+\]</div>
+<p>that reduces modulo <span class="arithmatex">\(\mathfrak{m}\)</span> to the given representation <span class="arithmatex">\(\bar{\rho}\)</span>:</p>
+<div class="arithmatex">\[
+\rho_A \pmod{\mathfrak{m}} = \bar{\rho}.
+\]</div>
+<h3 id="deformations">Deformations<a class="headerlink" href="#deformations" title="Permanent link">&para;</a></h3>
+<p>Two lifts <span class="arithmatex">\(\rho_A\)</span> and <span class="arithmatex">\(\rho_A'\)</span> are called <strong>equivalent</strong> if they can be conjugated into each other by a matrix <span class="arithmatex">\(M \in \ker(\text{GL}_2(A) \to \text{GL}_2(\mathbb{F}_p))\)</span>:</p>
+<div class="arithmatex">\[
+\rho_A' = M \rho_A M^{-1}, \qquad M \equiv I_2 \pmod{\mathfrak{m}}.
+\]</div>
+<p>A <strong>deformation</strong> is an <abbr title="Logical biconditional &quot;A if and only if B&quot; (A ⇔ B). → Prerequisites: Implication and Equivalence">equivalence</abbr> class of lifts. The passage from lifts to deformations eliminates the "inessential" degrees of freedom from the choice of basis.</p>
+<hr />
+<h2 id="3-the-universal-deformation-ring-r">3. The Universal Deformation Ring <span class="arithmatex">\(R\)</span><a class="headerlink" href="#3-the-universal-deformation-ring-r" title="Permanent link">&para;</a></h2>
+<h3 id="mazurs-representability-theorem">Mazur's representability theorem<a class="headerlink" href="#mazurs-representability-theorem" title="Permanent link">&para;</a></h3>
+<p>The central result of <strong>Barry Mazur</strong> (1989) is:</p>
+<div class="admonition note">
+<p class="admonition-title">Theorem (Mazur, 1989)</p>
+<p>Let <span class="arithmatex">\(\bar{\rho}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_p)\)</span> be a continuous,
+irreducible representation. Then there exists a <strong>universal deformation ring</strong>
+<span class="arithmatex">\(R\)</span> (a complete local Noetherian ring with residue field <span class="arithmatex">\(\mathbb{F}_p\)</span>)
+and a <strong>universal deformation</strong>
+$$
+\rho^{\text{univ}}: G_{\mathbb{Q}} \to \text{GL}_2(R),
+$$
+such that every deformation of <span class="arithmatex">\(\bar{\rho}\)</span> to a ring <span class="arithmatex">\(A\)</span> <strong>uniquely</strong> factors
+through a local ring homomorphism <span class="arithmatex">\(R \to A\)</span>.</p>
+</div>
+<p>In the language of category theory: the functor "deformations of <span class="arithmatex">\(\bar{\rho}\)</span>" is <strong>representable</strong>, and <span class="arithmatex">\(R\)</span> is the representing object.</p>
+<h3 id="what-does-this-mean-concretely">What does this mean concretely?<a class="headerlink" href="#what-does-this-mean-concretely" title="Permanent link">&para;</a></h3>
+<p>The universal deformation ring <span class="arithmatex">\(R\)</span> is the "largest possible" lift:</p>
+<ul>
+<li>Every deformation of <span class="arithmatex">\(\bar{\rho}\)</span> to <span class="arithmatex">\(\mathbb{Z}_p\)</span> arises via a ring homomorphism <span class="arithmatex">\(R \to \mathbb{Z}_p\)</span> (specialisation of the universal deformation).</li>
+<li>The structure of <span class="arithmatex">\(R\)</span> encodes all information about all possible lifts simultaneously.</li>
+<li><span class="arithmatex">\(R\)</span> can be written as a <span class="arithmatex">\(\mathbb{Z}_p\)</span>-algebra: <span class="arithmatex">\(R \cong \mathbb{Z}_p[[x_1, \ldots, x_r]] / (f_1, \ldots, f_s)\)</span> for suitable <span class="arithmatex">\(r\)</span> and relations <span class="arithmatex">\(f_i\)</span>.</li>
+</ul>
+<h3 id="analogy">Analogy<a class="headerlink" href="#analogy" title="Permanent link">&para;</a></h3>
+<p>One can think of <span class="arithmatex">\(R\)</span> as the <strong>coordinate ring of a moduli variety</strong>: points of <span class="arithmatex">\(\text{Spec}(R)\)</span> (more precisely: <span class="arithmatex">\(\mathbb{Z}_p\)</span>-valued points) correspond to deformations of <span class="arithmatex">\(\bar{\rho}\)</span>. The geometry of <span class="arithmatex">\(\text{Spec}(R)\)</span> reflects the structure of the space of all deformations.</p>
+<hr />
+<h2 id="4-deformation-conditions">4. Deformation Conditions<a class="headerlink" href="#4-deformation-conditions" title="Permanent link">&para;</a></h2>
+<h3 id="why-conditions-are-necessary">Why conditions are necessary<a class="headerlink" href="#why-conditions-are-necessary" title="Permanent link">&para;</a></h3>
+<p>The "bare" universal deformation ring <span class="arithmatex">\(R\)</span> parametrises <strong>all</strong> deformations of <span class="arithmatex">\(\bar{\rho}\)</span> – without any restriction. For Wiles' proof, this is too much: one needs deformations satisfying additional <strong>local conditions</strong>.</p>
+<h3 id="local-conditions-at-q-neq-p">Local conditions at <span class="arithmatex">\(q \neq p\)</span><a class="headerlink" href="#local-conditions-at-q-neq-p" title="Permanent link">&para;</a></h3>
+<p>For every prime <span class="arithmatex">\(q \neq p\)</span>, one can require the deformation at <span class="arithmatex">\(q\)</span> to have a particular form. The most important conditions:</p>
+<ul>
+<li><strong>Unramified</strong>: The inertia group <span class="arithmatex">\(I_q\)</span> acts trivially. This is imposed at places of good reduction.</li>
+<li><strong>Steinberg</strong>: The representation at <span class="arithmatex">\(q\)</span> has a special form corresponding to multiplicative reduction.</li>
+<li><strong>Minimal condition</strong>: The representation at <span class="arithmatex">\(q\)</span> has the same type as <span class="arithmatex">\(\bar{\rho}\)</span> – no additional ramification allowed.</li>
+</ul>
+<h3 id="local-conditions-at-p">Local conditions at <span class="arithmatex">\(p\)</span><a class="headerlink" href="#local-conditions-at-p" title="Permanent link">&para;</a></h3>
+<p>At the prime <span class="arithmatex">\(p\)</span> itself, there are particularly important conditions:</p>
+<ul>
+<li><strong>Flat</strong>: The representation comes from a flat group scheme over <span class="arithmatex">\(\mathbb{Z}_p\)</span>. This is the strongest condition and corresponds to good reduction.</li>
+<li><strong>Ordinary</strong>: The representation at <span class="arithmatex">\(p\)</span> has an upper triangular form with unramified quotient.</li>
+<li><strong>Semistable</strong>: A generalisation that allows multiplicative reduction.</li>
+</ul>
+<h3 id="the-restricted-deformation-ring-r_mathcald">The restricted deformation ring <span class="arithmatex">\(R_{\mathcal{D}}\)</span><a class="headerlink" href="#the-restricted-deformation-ring-r_mathcald" title="Permanent link">&para;</a></h3>
+<p>Combining a set <span class="arithmatex">\(\mathcal{D}\)</span> of local conditions, one obtains a <strong>quotient</strong> of the universal deformation ring:</p>
+<div class="arithmatex">\[
+R \twoheadrightarrow R_{\mathcal{D}},
+\]</div>
+<p>parametrising only those deformations that satisfy the conditions <span class="arithmatex">\(\mathcal{D}\)</span>. In what follows, we simply write <span class="arithmatex">\(R\)</span> for the restricted ring <span class="arithmatex">\(R_{\mathcal{D}}\)</span>.</p>
+<hr />
+<h2 id="5-the-hecke-ring-t">5. The Hecke Ring <span class="arithmatex">\(T\)</span><a class="headerlink" href="#5-the-hecke-ring-t" title="Permanent link">&para;</a></h2>
+<h3 id="modular-deformations">Modular deformations<a class="headerlink" href="#modular-deformations" title="Permanent link">&para;</a></h3>
+<p>Among all deformations of <span class="arithmatex">\(\bar{\rho}\)</span>, there is a special subset: the <strong>modular deformations</strong> – those coming from newforms.</p>
+<p>For every newform <span class="arithmatex">\(f\)</span> of weight 2 and level <span class="arithmatex">\(N\)</span>, there exists (by Eichler–Shimura) a Galois representation <span class="arithmatex">\(\rho_f: G_{\mathbb{Q}} \to \text{GL}_2(\mathcal{O}_f)\)</span>, where <span class="arithmatex">\(\mathcal{O}_f\)</span> is the coefficient ring of <span class="arithmatex">\(f\)</span>. If <span class="arithmatex">\(\bar{\rho}_f \cong \bar{\rho}\)</span>, then <span class="arithmatex">\(\rho_f\)</span> is a deformation of <span class="arithmatex">\(\bar{\rho}\)</span>.</p>
+<h3 id="the-hecke-algebra">The Hecke algebra<a class="headerlink" href="#the-hecke-algebra" title="Permanent link">&para;</a></h3>
+<p>The <strong>Hecke algebra</strong> <span class="arithmatex">\(\mathbb{T}\)</span> is generated by the Hecke operators <span class="arithmatex">\(T_q\)</span> (for primes <span class="arithmatex">\(q \nmid N\)</span>) and <span class="arithmatex">\(U_q\)</span> (for <span class="arithmatex">\(q \mid N\)</span>), acting on the space of cusp forms <span class="arithmatex">\(S_2(\Gamma_0(N))\)</span>.</p>
+<p>The <strong>localised Hecke ring</strong> <span class="arithmatex">\(T\)</span> is the quotient of <span class="arithmatex">\(\mathbb{T}\)</span> parametrising the modular deformations of <span class="arithmatex">\(\bar{\rho}\)</span>:</p>
+<div class="arithmatex">\[
+T = \mathbb{T}_{\mathfrak{m}},
+\]</div>
+<p>localised at the maximal ideal <span class="arithmatex">\(\mathfrak{m}\)</span> determined by <span class="arithmatex">\(\bar{\rho}\)</span> (concretely: <span class="arithmatex">\(T_q - \text{tr}(\bar{\rho}(\text{Frob}_q)) \in \mathfrak{m}\)</span> for all <span class="arithmatex">\(q\)</span>).</p>
+<h3 id="the-modular-deformation">The modular deformation<a class="headerlink" href="#the-modular-deformation" title="Permanent link">&para;</a></h3>
+<p>The Hecke algebra <span class="arithmatex">\(T\)</span> carries a <strong>universal modular deformation</strong>:</p>
+<div class="arithmatex">\[
+\rho^{\text{mod}}: G_{\mathbb{Q}} \to \text{GL}_2(T),
+\]</div>
+<p>capturing all modular deformations simultaneously.</p>
+<hr />
+<h2 id="6-the-natural-surjection-r-twoheadrightarrow-t">6. The Natural Surjection <span class="arithmatex">\(R \twoheadrightarrow T\)</span><a class="headerlink" href="#6-the-natural-surjection-r-twoheadrightarrow-t" title="Permanent link">&para;</a></h2>
+<h3 id="why-a-surjection-exists">Why a surjection exists<a class="headerlink" href="#why-a-surjection-exists" title="Permanent link">&para;</a></h3>
+<p>Since every modular deformation is in particular a deformation, there exists (by the universal property of <span class="arithmatex">\(R\)</span>) a <strong>natural ring homomorphism</strong>:</p>
+<div class="arithmatex">\[
+\varphi: R \twoheadrightarrow T.
+\]</div>
+<p>This homomorphism is <strong><abbr title="A mapping f is surjective if every element of the codomain is hit. → Prerequisites: Mappings">surjective</abbr></strong>: the Hecke algebra <span class="arithmatex">\(T\)</span> is generated by the traces <span class="arithmatex">\(\text{tr}(\rho^{\text{mod}}(\text{Frob}_q))\)</span>, and these are images of the corresponding traces of the universal deformation.</p>
+<h3 id="what-the-surjection-means">What the surjection means<a class="headerlink" href="#what-the-surjection-means" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+R \twoheadrightarrow T
+\]</div>
+<p>means: <span class="arithmatex">\(T\)</span> is a quotient of <span class="arithmatex">\(R\)</span>. Or geometrically: the "modular points" form a <strong>closed subset</strong> of the deformation space.</p>
+<p>The decisive question is: <strong>is <span class="arithmatex">\(\varphi\)</span> an isomorphism?</strong> That is: <span class="arithmatex">\(R = T\)</span>?</p>
+<hr />
+<h2 id="7-wiles-goal-r-t">7. Wiles' Goal: <span class="arithmatex">\(R = T\)</span><a class="headerlink" href="#7-wiles-goal-r-t" title="Permanent link">&para;</a></h2>
+<h3 id="what-r-t-means">What <span class="arithmatex">\(R = T\)</span> means<a class="headerlink" href="#what-r-t-means" title="Permanent link">&para;</a></h3>
+<p>If <span class="arithmatex">\(R \cong T\)</span> (as rings), then every admissible deformation of <span class="arithmatex">\(\bar{\rho}\)</span> is automatically modular:</p>
+<div class="arithmatex">\[
+R = T \implies \text{every deformation of } \bar{\rho} \text{ with the given conditions is modular.}
+\]</div>
+<p>In particular: the representation <span class="arithmatex">\(\rho_{E,p}\)</span> of the elliptic curve <span class="arithmatex">\(E\)</span> is a deformation of <span class="arithmatex">\(\bar{\rho}\)</span> with the right local conditions (because <span class="arithmatex">\(E\)</span> is semistable). If <span class="arithmatex">\(R = T\)</span>, then <span class="arithmatex">\(\rho_{E,p}\)</span> is modular – and hence <span class="arithmatex">\(E\)</span> is modular.</p>
+<h3 id="the-proof-structure">The proof structure<a class="headerlink" href="#the-proof-structure" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\bar{\rho} \text{ modular}} \xrightarrow{R = T} \boxed{\rho_{E,p} \text{ modular}} \implies \boxed{E \text{ modular}} \implies \boxed{\text{FLT}}
+\]</div>
+<h3 id="why-r-t-is-hard">Why <span class="arithmatex">\(R = T\)</span> is hard<a class="headerlink" href="#why-r-t-is-hard" title="Permanent link">&para;</a></h3>
+<p>The surjection <span class="arithmatex">\(R \twoheadrightarrow T\)</span> is "for free" – it follows from the universal property. The injectivity is the hard part: one must show that the kernel is trivial, i.e., that there are <strong>no</strong> non-modular deformations.</p>
+<p>Wiles' great breakthrough was the development of a <strong>numerical criterion</strong> – a purely algebraic condition implying <span class="arithmatex">\(R = T\)</span>. This criterion and its proof are the subject of the <a href="../05-r-gleich-t/">next article</a>.</p>
+<h3 id="overview-of-the-proof-machinery">Overview of the proof machinery<a class="headerlink" href="#overview-of-the-proof-machinery" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Description</th>
+<th>Parametrises</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\bar{\rho}\)</span></td>
+<td>Residual representation</td>
+<td>Starting point</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(R\)</span></td>
+<td>Universal deformation ring</td>
+<td>All admissible deformations</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(T\)</span></td>
+<td>Hecke algebra</td>
+<td>Modular deformations</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(R \twoheadrightarrow T\)</span></td>
+<td>Natural surjection</td>
+<td>Modular ⊂ All</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(R = T\)</span></td>
+<td>Isomorphism</td>
+<td>All = Modular</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="outlook">Outlook<a class="headerlink" href="#outlook" title="Permanent link">&para;</a></h2>
+<p>Deformation theory provides the conceptual framework for Wiles' proof. But the heart of the matter is the proof of <span class="arithmatex">\(R = T\)</span> – a deep algebraic statement developed in the next article:</p>
+<table>
+<thead>
+<tr>
+<th>Article</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../05-r-gleich-t/">05 – R = T</a></td>
+<td>The numerical criterion, Selmer groups, and the proof</td>
+</tr>
+<tr>
+<td><a href="../06-taylor-wiles-trick/">06 – The Taylor–Wiles Trick</a></td>
+<td>The patching argument that closed the gap</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Andrew Wiles</strong>: <em>Modular elliptic curves and Fermat's Last Theorem</em>, Annals of Mathematics 141 (1995), §1.2–1.6</li>
+<li><strong>Barry Mazur</strong>: <em>Deforming Galois representations</em>, in: Galois Groups over <span class="arithmatex">\(\mathbb{Q}\)</span>, MSRI Publications 16 (1989) – The foundation of deformation theory</li>
+<li><strong>Nigel Boston</strong>: <em>The Proof of Fermat's Last Theorem</em> (2003), Chapter 11 – Deformation rings and Hecke algebras</li>
+<li><strong>Gebhard Böckle</strong>: <em>Deformations of Galois representations</em>, in: Clay Mathematics Proceedings 4 (2005) – Modern exposition</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../03-galois-darstellungen/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Galois Representations">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Galois Representations
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-r-gleich-t/" class="md-footer__link md-footer__link--next" aria-label="Next: R = T – The Heart of the Proof">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                R = T – The Heart of the Proof
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.highlight", "content.code.copy", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3198 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Von elementarer Schulmathematik bis zu den großen Beweisen: Fermat, Poincaré und mehr.">
+      
+      
+      
+        <link rel="canonical" href="https://fermatically.com/de/fermat-wiles/07-3-5-switch/">
+      
+      
+        <link rel="prev" href="../06-taylor-wiles-trick/">
+      
+      
+        <link rel="next" href="../08-was-danach-kam/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="de">
+        
+          <link rel="alternate" href="../../../fermat-wiles/07-3-5-switch/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Der 3-5-Switch und der Abschluss - fermatically</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#der-3-5-switch-und-der-abschluss" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../../" title="fermatically" class="md-header__button md-logo" aria-label="fermatically" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            fermatically
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Der 3-5-Switch und der Abschluss
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Dunkles Design"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dunkles Design" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Helles Design"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Helles Design" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            
+            
+            <a href="./" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            
+            
+            <a href="../../../fermat-wiles/07-3-5-switch/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mhennemeyer/fermatically" title="Zum Repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mhennemeyer/fermatically
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="fermatically" class="md-nav__button md-logo" aria-label="fermatically" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    fermatically
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mhennemeyer/fermatically" title="Zum Repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mhennemeyer/fermatically
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Startseite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Über das Projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fermats letzter Satz
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fermats letzter Satz
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flt-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Überblick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elementare Zahlentheorie
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Elementare Zahlentheorie
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grundlagen/elementare-zahlentheorie/01-was-ist-flt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Was ist Fermats letzter Satz?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grundlagen/elementare-zahlentheorie/02-beweis-n4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Der Beweis für n=4
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grundlagen/elementare-zahlentheorie/03-primzahlen-reduktion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primzahlen und warum sie reichen
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grundlagen/elementare-zahlentheorie/04-beweis-n3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Der Beweis für n=3
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Der Beweis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Der Beweis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Überblick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-taniyama-shimura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Die Taniyama-Shimura-Vermutung
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-frey-ribet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Freys Idee und Ribets Theorem
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-galois-darstellungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Galois-Darstellungen
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-deformationstheorie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deformationstheorie
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-r-gleich-t/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R = T – Das Herz des Beweises
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-taylor-wiles-trick/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Der Taylor-Wiles-Trick
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Der 3-5-Switch und der Abschluss
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Der 3-5-Switch und der Abschluss
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#voraussetzungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voraussetzungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-das-problem-mit-p-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Das Problem mit \(p = 3\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Das Problem mit \(p = 3\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#erinnerung-die-beweisstrategie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Erinnerung: Die Beweisstrategie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langlands-tunnell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Langlands-Tunnell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vom-gewicht-1-zum-gewicht-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vom Gewicht 1 zum Gewicht 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-warum-reicht-p-3-nicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Warum reicht \(p = 3\) nicht?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Warum reicht \(p = 3\) nicht?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-irreduzibilitatsbedingung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die Irreduzibilitätsbedingung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wann-ist-barrho_e3-reduzibel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wann ist \(\bar{\rho}_{E,3}\) reduzibel?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-situation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die Situation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-der-switch-zu-p-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Der Switch zu \(p = 5\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Der Switch zu \(p = 5\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-idee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die Idee
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#irreduzibilitat-von-barrho_e5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Irreduzibilität von \(\bar{\rho}_{E,5}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#das-neue-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Das neue Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-eine-hilfs-kurve-konstruieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Eine Hilfs-Kurve konstruieren
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Eine Hilfs-Kurve konstruieren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-strategie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die Strategie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warum-eine-solche-kurve-existiert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warum eine solche Kurve existiert
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-konstruktion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die Konstruktion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-die-kette-schlieen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Die Kette schließen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Die Kette schließen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schritt-1-e-ist-modular-via-p-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schritt 1: \(E'\) ist modular (via \(p = 3\))
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schritt-2-e5-ist-modular" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schritt 2: \(E[5]\) ist modular
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schritt-3-e-ist-modular-via-p-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schritt 3: \(E\) ist modular (via \(p = 5\))
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-gesamte-kette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die gesamte Kette
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-flt-ist-bewiesen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. FLT ist bewiesen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. FLT ist bewiesen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-fallunterscheidung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die Fallunterscheidung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#das-vollstandige-beweisdiagramm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Das vollständige Beweisdiagramm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ruckblick-die-gesamte-beweisstruktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Rückblick: Die gesamte Beweisstruktur
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Rückblick: Die gesamte Beweisstruktur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#von-fermat-zu-wiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Von Fermat zu Wiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-logische-struktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die logische Struktur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#was-den-beweis-so-bemerkenswert-macht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was den Beweis so bemerkenswert macht
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ausblick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ausblick
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quellen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-was-danach-kam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Was danach kam
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkzeuge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Werkzeuge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Überblick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/gruppen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gruppen – Symmetrie als Sprache
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/ringe-koerper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ringe und Körper
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/galois-theorie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Galois-Theorie
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/p-adische-zahlen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    p-adische Zahlen
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/elliptische-kurven/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elliptische Kurven
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../werkzeuge/modulformen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modulformen
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vorwissen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vorwissen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Übersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logik und Beweistechniken
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Logik und Beweistechniken
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/aussagenlogik/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aussagenlogik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/implikation-aequivalenz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implikation und Äquivalenz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/beweisarten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beweisarten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/was-ist-ein-beweis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Was ist ein Beweis?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetik und Zahlen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetik und Zahlen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/bruchrechnung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bruchrechnung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/gleichungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gleichungen und äquivalente Umformungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/ungleichungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ungleichungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/teilbarkeit-ggt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teilbarkeit und ggT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/primfaktorzerlegung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primfaktorzerlegung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/modulare-arithmetik/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modulare Arithmetik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/komplexe-zahlen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komplexe Zahlen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mengen und Strukturen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mengen und Strukturen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/mengen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mengen und Mengenoperationen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/abbildungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abbildungen (Funktionen)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/relationen-aequivalenzklassen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationen und Äquivalenzklassen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/zahlenbereiche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zahlenbereiche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geometrie
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Geometrie
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/pythagoras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pythagoras und pythagoräische Tripel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/koordinatengeometrie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koordinatengeometrie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algebra
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Algebra
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/potenzen-polynome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Potenzen und Polynome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/binomische-formeln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Binomische Formeln und Faktorisierung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/summen-produktnotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summen- und Produktnotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/kombinatorik/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kombinatorik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorwissen/grenzwerte-konvergenz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grenzwerte und Konvergenz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quellen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quellen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="der-3-5-switch-und-der-abschluss">Der 3-5-Switch und der Abschluss<a class="headerlink" href="#der-3-5-switch-und-der-abschluss" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Zusammenfassung</p>
+<p>Der 3-5-Switch ist der elegante letzte Baustein in Wiles' Beweis.
+Das Theorem von Langlands-Tunnell liefert die residuale Modularität
+für <span class="arithmatex">\(p = 3\)</span>. Wenn die 3-Darstellung reduzibel ist, wechselt Wiles
+zu <span class="arithmatex">\(p = 5\)</span> und konstruiert eine Hilfs-Kurve, die den Einstieg
+ermöglicht. So wird jede semistabile elliptische Kurve als modular
+erkannt – und Fermats letzter Satz ist bewiesen.</p>
+</div>
+<h2 id="voraussetzungen">Voraussetzungen<a class="headerlink" href="#voraussetzungen" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../06-taylor-wiles-trick/">Der Taylor-Wiles-Trick</a> – Patching-Argument und <span class="arithmatex">\(R = T\)</span></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Thema</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../vorwissen/beweisarten/">Beweisarten</a></td>
+<td>Direkter Beweis, Widerspruch, Induktion, Abstieg</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-das-problem-mit-p-3">1. Das Problem mit <span class="arithmatex">\(p = 3\)</span><a class="headerlink" href="#1-das-problem-mit-p-3" title="Permanent link">&para;</a></h2>
+<h3 id="erinnerung-die-beweisstrategie">Erinnerung: Die Beweisstrategie<a class="headerlink" href="#erinnerung-die-beweisstrategie" title="Permanent link">&para;</a></h3>
+<p>Wiles' Beweis der Modularität semistabiler Kurven hat zwei Stufen:</p>
+<ol>
+<li><strong>Residuale Modularität</strong>: Zeige, dass <span class="arithmatex">\(\bar{\rho}_{E,p}\)</span> modular ist.</li>
+<li><strong>Liftung</strong>: Beweise <span class="arithmatex">\(R = T\)</span>, um von residualer zu voller Modularität zu gelangen.</li>
+</ol>
+<p>Stufe 2 ist erledigt (Taylor-Wiles-Trick). Bleibt Stufe 1: Woher kommt die residuale Modularität?</p>
+<h3 id="langlands-tunnell">Langlands-Tunnell<a class="headerlink" href="#langlands-tunnell" title="Permanent link">&para;</a></h3>
+<p>Für <span class="arithmatex">\(p = 3\)</span> gibt es ein mächtiges Ergebnis:</p>
+<div class="admonition note">
+<p class="admonition-title">Theorem (Langlands-Tunnell)</p>
+<p>Sei <span class="arithmatex">\(\bar{\rho}: G_{\mathbb{Q}} \to \text{GL}_2(\mathbb{F}_3)\)</span> eine stetige,
+ungerade Darstellung. Dann ist <span class="arithmatex">\(\bar{\rho}\)</span> modular – es existiert eine
+Modulform <span class="arithmatex">\(f\)</span> vom Gewicht 1 mit <span class="arithmatex">\(\bar{\rho} \cong \bar{\rho}_f\)</span>.</p>
+</div>
+<p>Der Beweis nutzt eine besondere Eigenschaft von <span class="arithmatex">\(\text{GL}_2(\mathbb{F}_3)\)</span>: Diese Gruppe ist <strong>auflösbar</strong> (sie hat Ordnung 48 und ist isomorph zu einer Erweiterung von <span class="arithmatex">\(S_3\)</span> durch <span class="arithmatex">\(\mathbb{Z}/2\mathbb{Z}\)</span>). Für auflösbare Gruppen stehen die Werkzeuge des <strong>Langlands-Programms</strong> zur Verfügung – insbesondere der Basiswechsel (base change) für <span class="arithmatex">\(\text{GL}_2\)</span>.</p>
+<p>Langlands bewies 1980 die Modulformen-Korrespondenz für auflösbare Galois-Darstellungen, und Tunnell verfeinerte das Ergebnis 1981.</p>
+<h3 id="vom-gewicht-1-zum-gewicht-2">Vom Gewicht 1 zum Gewicht 2<a class="headerlink" href="#vom-gewicht-1-zum-gewicht-2" title="Permanent link">&para;</a></h3>
+<p>Langlands-Tunnell liefert eine Modulform vom <strong>Gewicht 1</strong>, benötigt wird aber Gewicht 2 (für den Zusammenhang mit elliptischen Kurven). Wiles löst das durch ein Liftungsargument:</p>
+<p>Aus der Gewicht-1-Form <span class="arithmatex">\(f\)</span> konstruiert man eine Gewicht-2-Form <span class="arithmatex">\(g\)</span> mit <span class="arithmatex">\(\bar{\rho}_g \cong \bar{\rho}_{E,3}\)</span>. Dies nutzt Hidas Theorie ordinärer <span class="arithmatex">\(p\)</span>-adischer Modulformen.</p>
+<hr />
+<h2 id="2-warum-reicht-p-3-nicht">2. Warum reicht <span class="arithmatex">\(p = 3\)</span> nicht?<a class="headerlink" href="#2-warum-reicht-p-3-nicht" title="Permanent link">&para;</a></h2>
+<h3 id="die-irreduzibilitatsbedingung">Die Irreduzibilitätsbedingung<a class="headerlink" href="#die-irreduzibilitatsbedingung" title="Permanent link">&para;</a></h3>
+<p>Wiles' Beweis von <span class="arithmatex">\(R = T\)</span> (und das Taylor-Wiles-Patching) erfordert, dass <span class="arithmatex">\(\bar{\rho}_{E,p}\)</span> <strong>irreduzibel</strong> ist. Für die Frey-Kurve ist das für <span class="arithmatex">\(p \geq 5\)</span> automatisch erfüllt (nach Mazur). Aber für eine allgemeine semistabile Kurve <span class="arithmatex">\(E\)</span> kann <span class="arithmatex">\(\bar{\rho}_{E,3}\)</span> <strong>reduzibel</strong> sein.</p>
+<h3 id="wann-ist-barrho_e3-reduzibel">Wann ist <span class="arithmatex">\(\bar{\rho}_{E,3}\)</span> reduzibel?<a class="headerlink" href="#wann-ist-barrho_e3-reduzibel" title="Permanent link">&para;</a></h3>
+<p>Die Darstellung <span class="arithmatex">\(\bar{\rho}_{E,3}\)</span> ist reduzibel genau dann, wenn <span class="arithmatex">\(E\)</span> einen rationalen <strong>3-Isogenie-Kern</strong> hat – einen <span class="arithmatex">\(G_{\mathbb{Q}}\)</span>-stabilen Untervektorraum von <span class="arithmatex">\(E[3]\)</span> der Dimension 1 über <span class="arithmatex">\(\mathbb{F}_3\)</span>. Geometrisch bedeutet das: Es gibt eine Isogenie <span class="arithmatex">\(E \to E'\)</span> vom Grad 3 mit rationalem Kern.</p>
+<p>Dies kommt durchaus vor – es gibt unendlich viele solcher Kurven. Für diese Kurven scheitert der Beweis mit <span class="arithmatex">\(p = 3\)</span>.</p>
+<h3 id="die-situation">Die Situation<a class="headerlink" href="#die-situation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(\bar{\rho}_{E,3}\)</span></th>
+<th>Modular?</th>
+<th>Irreduzibel?</th>
+<th><span class="arithmatex">\(R = T\)</span> möglich?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>irreduzibel</td>
+<td>Ja (Langlands-Tunnell)</td>
+<td>Ja</td>
+<td>✓ Beweis funktioniert</td>
+</tr>
+<tr>
+<td>reduzibel</td>
+<td>Ja (Langlands-Tunnell)</td>
+<td><strong>Nein</strong></td>
+<td>✗ Irreduzibilität fehlt</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-der-switch-zu-p-5">3. Der Switch zu <span class="arithmatex">\(p = 5\)</span><a class="headerlink" href="#3-der-switch-zu-p-5" title="Permanent link">&para;</a></h2>
+<h3 id="die-idee">Die Idee<a class="headerlink" href="#die-idee" title="Permanent link">&para;</a></h3>
+<p>Wenn <span class="arithmatex">\(\bar{\rho}_{E,3}\)</span> reduzibel ist, betrachte stattdessen <span class="arithmatex">\(\bar{\rho}_{E,5}\)</span>. Die 5-Darstellung hat gute Chancen, irreduzibel zu sein – denn eine Kurve, die sowohl einen 3-Isogenie-Kern als auch einen 5-Isogenie-Kern hat, wäre sehr speziell.</p>
+<h3 id="irreduzibilitat-von-barrho_e5">Irreduzibilität von <span class="arithmatex">\(\bar{\rho}_{E,5}\)</span><a class="headerlink" href="#irreduzibilitat-von-barrho_e5" title="Permanent link">&para;</a></h3>
+<p>Wiles zeigt: Wenn <span class="arithmatex">\(E\)</span> semistabil ist und <span class="arithmatex">\(\bar{\rho}_{E,3}\)</span> reduzibel, dann ist <span class="arithmatex">\(\bar{\rho}_{E,5}\)</span> <strong>irreduzibel</strong>. Dies folgt aus Mazurs Klassifikation der möglichen Torsionsstrukturen rationaler elliptischer Kurven:</p>
+<div class="admonition note">
+<p class="admonition-title">Theorem (Mazur, 1978)</p>
+<p>Sei <span class="arithmatex">\(E/\mathbb{Q}\)</span> eine elliptische Kurve. Wenn <span class="arithmatex">\(E\)</span> eine rationale Isogenie
+vom Grad <span class="arithmatex">\(\ell\)</span> hat (für eine Primzahl <span class="arithmatex">\(\ell\)</span>), dann <span class="arithmatex">\(\ell \leq 19\)</span> oder
+<span class="arithmatex">\(\ell \in \{37, 43, 67, 163\}\)</span>.</p>
+</div>
+<p>Für eine <strong>semistabile</strong> Kurve kann man die Möglichkeiten weiter einschränken. Insbesondere gibt es keine semistabile Kurve mit gleichzeitig rationalem 3- und 5-Isogenie-Kern (dies würde eine rationale 15-Isogenie implizieren, die Mazur ausschließt).</p>
+<h3 id="das-neue-problem">Das neue Problem<a class="headerlink" href="#das-neue-problem" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(\bar{\rho}_{E,5}\)</span> ist nun irreduzibel – aber woher kommt die <strong>residuale Modularität</strong>? Langlands-Tunnell funktioniert nur für <span class="arithmatex">\(p = 3\)</span>, nicht für <span class="arithmatex">\(p = 5\)</span> (denn <span class="arithmatex">\(\text{GL}_2(\mathbb{F}_5)\)</span> ist <strong>nicht auflösbar</strong>).</p>
+<p>Hier kommt der geniale Trick.</p>
+<hr />
+<h2 id="4-eine-hilfs-kurve-konstruieren">4. Eine Hilfs-Kurve konstruieren<a class="headerlink" href="#4-eine-hilfs-kurve-konstruieren" title="Permanent link">&para;</a></h2>
+<h3 id="die-strategie">Die Strategie<a class="headerlink" href="#die-strategie" title="Permanent link">&para;</a></h3>
+<p>Wiles sucht eine <strong>zweite elliptische Kurve</strong> <span class="arithmatex">\(E'\)</span> mit folgenden Eigenschaften:</p>
+<ol>
+<li><span class="arithmatex">\(E'[5] \cong E[5]\)</span> als Galois-Modul (die 5-Torsion stimmt überein)</li>
+<li><span class="arithmatex">\(\bar{\rho}_{E',3}\)</span> ist <strong>irreduzibel</strong> (damit <span class="arithmatex">\(p = 3\)</span> für <span class="arithmatex">\(E'\)</span> funktioniert)</li>
+<li><span class="arithmatex">\(E'\)</span> ist semistabil</li>
+</ol>
+<h3 id="warum-eine-solche-kurve-existiert">Warum eine solche Kurve existiert<a class="headerlink" href="#warum-eine-solche-kurve-existiert" title="Permanent link">&para;</a></h3>
+<p>Die Menge der elliptischen Kurven <span class="arithmatex">\(E'\)</span> mit <span class="arithmatex">\(E'[5] \cong E[5]\)</span> wird durch eine <strong>modulare Kurve</strong> <span class="arithmatex">\(X(5)\)</span> parametrisiert – eine Kurve vom Geschlecht 0 (also rational!). Es gibt daher unendlich viele solche Kurven <span class="arithmatex">\(E'\)</span>.</p>
+<p>Unter diesen unendlich vielen Kandidaten muss Wiles eine finden, die:
+- semistabil ist (an allen Primzahlen), und
+- <span class="arithmatex">\(\bar{\rho}_{E',3}\)</span> irreduzibel hat.</p>
+<p>Da die Bedingung „<span class="arithmatex">\(\bar{\rho}_{E',3}\)</span> reduzibel" eine echte Teilmenge ausschließt und die Parametrisierung über eine rationale Kurve verläuft, existiert eine solche Kurve <span class="arithmatex">\(E'\)</span>.</p>
+<h3 id="die-konstruktion">Die Konstruktion<a class="headerlink" href="#die-konstruktion" title="Permanent link">&para;</a></h3>
+<p>Konkret: Über dem Funktionenkörper <span class="arithmatex">\(\mathbb{Q}(t)\)</span> gibt es eine „universelle" Kurve mit der richtigen 5-Torsion. Durch Spezialisierung bei geeigneten rationalen Werten <span class="arithmatex">\(t = t_0\)</span> erhält man die gewünschte Hilfs-Kurve <span class="arithmatex">\(E'\)</span>.</p>
+<hr />
+<h2 id="5-die-kette-schlieen">5. Die Kette schließen<a class="headerlink" href="#5-die-kette-schlieen" title="Permanent link">&para;</a></h2>
+<h3 id="schritt-1-e-ist-modular-via-p-3">Schritt 1: <span class="arithmatex">\(E'\)</span> ist modular (via <span class="arithmatex">\(p = 3\)</span>)<a class="headerlink" href="#schritt-1-e-ist-modular-via-p-3" title="Permanent link">&para;</a></h3>
+<p>Da <span class="arithmatex">\(\bar{\rho}_{E',3}\)</span> irreduzibel ist, lässt sich der gesamte Beweisapparat für <span class="arithmatex">\(p = 3\)</span> anwenden:</p>
+<div class="arithmatex">\[
+\bar{\rho}_{E',3} \text{ irreduzibel} \xrightarrow{\text{Langlands-Tunnell}} \bar{\rho}_{E',3} \text{ modular} \xrightarrow{R = T} \rho_{E',3} \text{ modular} \implies E' \text{ modular.}
+\]</div>
+<h3 id="schritt-2-e5-ist-modular">Schritt 2: <span class="arithmatex">\(E[5]\)</span> ist modular<a class="headerlink" href="#schritt-2-e5-ist-modular" title="Permanent link">&para;</a></h3>
+<p>Da <span class="arithmatex">\(E'\)</span> modular ist, gilt insbesondere: <span class="arithmatex">\(\bar{\rho}_{E',5}\)</span> ist modular (die 5-residuale Darstellung kommt von einer Modulform). Da <span class="arithmatex">\(E'[5] \cong E[5]\)</span>, folgt:</p>
+<div class="arithmatex">\[
+\bar{\rho}_{E,5} \cong \bar{\rho}_{E',5} \quad \text{ist modular.}
+\]</div>
+<h3 id="schritt-3-e-ist-modular-via-p-5">Schritt 3: <span class="arithmatex">\(E\)</span> ist modular (via <span class="arithmatex">\(p = 5\)</span>)<a class="headerlink" href="#schritt-3-e-ist-modular-via-p-5" title="Permanent link">&para;</a></h3>
+<p>Damit ist der Einstieg für <span class="arithmatex">\(p = 5\)</span> gesichert: <span class="arithmatex">\(\bar{\rho}_{E,5}\)</span> ist modular und irreduzibel. Der Taylor-Wiles-Trick liefert <span class="arithmatex">\(R = T\)</span> für <span class="arithmatex">\(p = 5\)</span>:</p>
+<div class="arithmatex">\[
+\bar{\rho}_{E,5} \text{ modular + irreduzibel} \xrightarrow{R = T} \rho_{E,5} \text{ modular} \implies E \text{ modular.}
+\]</div>
+<h3 id="die-gesamte-kette">Die gesamte Kette<a class="headerlink" href="#die-gesamte-kette" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{E'[5] \cong E[5]} \quad + \quad \boxed{E' \text{ modular (via } p=3\text{)}} \implies \boxed{\bar{\rho}_{E,5} \text{ modular}} \xrightarrow{R=T} \boxed{E \text{ modular}}
+\]</div>
+<hr />
+<h2 id="6-flt-ist-bewiesen">6. FLT ist bewiesen<a class="headerlink" href="#6-flt-ist-bewiesen" title="Permanent link">&para;</a></h2>
+<h3 id="die-fallunterscheidung">Die Fallunterscheidung<a class="headerlink" href="#die-fallunterscheidung" title="Permanent link">&para;</a></h3>
+<p>Für jede semistabile elliptische Kurve <span class="arithmatex">\(E/\mathbb{Q}\)</span>:</p>
+<p><strong>Fall 1: <span class="arithmatex">\(\bar{\rho}_{E,3}\)</span> irreduzibel.</strong> Langlands-Tunnell + Taylor-Wiles (<span class="arithmatex">\(p = 3\)</span>) → <span class="arithmatex">\(E\)</span> modular. ✓</p>
+<p><strong>Fall 2: <span class="arithmatex">\(\bar{\rho}_{E,3}\)</span> reduzibel.</strong> Dann <span class="arithmatex">\(\bar{\rho}_{E,5}\)</span> irreduzibel. Konstruiere Hilfs-Kurve <span class="arithmatex">\(E'\)</span> mit <span class="arithmatex">\(E'[5] \cong E[5]\)</span> und <span class="arithmatex">\(\bar{\rho}_{E',3}\)</span> irreduzibel. Dann: <span class="arithmatex">\(E'\)</span> modular (Fall 1) → <span class="arithmatex">\(\bar{\rho}_{E,5}\)</span> modular → Taylor-Wiles (<span class="arithmatex">\(p = 5\)</span>) → <span class="arithmatex">\(E\)</span> modular. ✓</p>
+<p><strong>In beiden Fällen ist <span class="arithmatex">\(E\)</span> modular.</strong> Da die Frey-Kurve semistabil ist, folgt Fermats letzter Satz.</p>
+<h3 id="das-vollstandige-beweisdiagramm">Das vollständige Beweisdiagramm<a class="headerlink" href="#das-vollstandige-beweisdiagramm" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\text{FLT-Lösung} \xrightarrow{\text{Frey}} E_{\text{Frey}} \xrightarrow{\text{Wiles (3 oder 3-5)}} \text{modular} \xrightarrow{\text{Ribet}} \text{Widerspruch}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Theorem (Wiles, Taylor-Wiles, 1995)</p>
+<p>Jede semistabile elliptische Kurve über <span class="arithmatex">\(\mathbb{Q}\)</span> ist modular.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Korollar (Fermats letzter Satz)</p>
+<p>Die Gleichung <span class="arithmatex">\(x^n + y^n = z^n\)</span> hat für <span class="arithmatex">\(n \geq 3\)</span> keine Lösung in positiven ganzen Zahlen.</p>
+</div>
+<hr />
+<h2 id="7-ruckblick-die-gesamte-beweisstruktur">7. Rückblick: Die gesamte Beweisstruktur<a class="headerlink" href="#7-ruckblick-die-gesamte-beweisstruktur" title="Permanent link">&para;</a></h2>
+<h3 id="von-fermat-zu-wiles">Von Fermat zu Wiles<a class="headerlink" href="#von-fermat-zu-wiles" title="Permanent link">&para;</a></h3>
+<p>Der vollständige Beweis verbindet Ideen aus über vier Jahrhunderten Mathematik:</p>
+<table>
+<thead>
+<tr>
+<th>Jahr</th>
+<th>Mathematiker</th>
+<th>Beitrag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1637</td>
+<td>Fermat</td>
+<td>Die Vermutung</td>
+</tr>
+<tr>
+<td>1640</td>
+<td>Fermat</td>
+<td>Beweis für <span class="arithmatex">\(n = 4\)</span> (Infinite Descent)</td>
+</tr>
+<tr>
+<td>1770</td>
+<td>Euler</td>
+<td>Beweis für <span class="arithmatex">\(n = 3\)</span></td>
+</tr>
+<tr>
+<td>1955</td>
+<td>Taniyama, Shimura</td>
+<td>TSV: Elliptische Kurven ↔ Modulformen</td>
+</tr>
+<tr>
+<td>1980</td>
+<td>Langlands, Tunnell</td>
+<td>Modularität auflösbarer Darstellungen</td>
+</tr>
+<tr>
+<td>1985</td>
+<td>Frey</td>
+<td>FLT-Lösung → „unmögliche" elliptische Kurve</td>
+</tr>
+<tr>
+<td>1986</td>
+<td>Ribet</td>
+<td>Level-Lowering: TSV ⟹ FLT</td>
+</tr>
+<tr>
+<td>1989</td>
+<td>Mazur</td>
+<td>Universelle Deformationsringe</td>
+</tr>
+<tr>
+<td>1995</td>
+<td>Wiles</td>
+<td><span class="arithmatex">\(R = T\)</span> für semistabile Kurven</td>
+</tr>
+<tr>
+<td>1995</td>
+<td>Taylor-Wiles</td>
+<td>Patching-Argument (Lückenschluss)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="die-logische-struktur">Die logische Struktur<a class="headerlink" href="#die-logische-struktur" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>FLT-Lösung (hypothetisch)
+  ↓  [Frey 1985]
+Frey-Kurve E (semistabil, extreme Diskriminante)
+  ↓  [Wiles 1995: 3-5-Switch + R=T + Taylor-Wiles]
+E ist modular
+  ↓  [Ribet 1986: Level-Lowering]
+ρ̄(E,p) kommt von Neuform der Stufe 2
+  ↓  [S₂(Γ₀(2)) = 0]
+Widerspruch → FLT-Lösung existiert nicht   □
+</code></pre></div>
+<h3 id="was-den-beweis-so-bemerkenswert-macht">Was den Beweis so bemerkenswert macht<a class="headerlink" href="#was-den-beweis-so-bemerkenswert-macht" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Indirektheit</strong>: FLT wird nicht direkt bewiesen, sondern durch Widerspruch – über den Umweg elliptischer Kurven, Modulformen und Galois-Darstellungen.</li>
+<li><strong>Vereinigung</strong>: Der Beweis vereint Zahlentheorie, algebraische Geometrie, komplexe Analysis und Darstellungstheorie.</li>
+<li><strong>Tiefe</strong>: Die Methoden (Deformationstheorie, Patching) sind nicht speziell für FLT, sondern Werkzeuge von allgemeiner Bedeutung.</li>
+<li><strong>Menschlichkeit</strong>: Die Geschichte von Wiles' siebenjährigem Geheimprojekt, der Lücke und ihrer Schließung ist einzigartig in der Mathematikgeschichte.</li>
+</ol>
+<hr />
+<h2 id="ausblick">Ausblick<a class="headerlink" href="#ausblick" title="Permanent link">&para;</a></h2>
+<p>Der nächste und letzte Artikel blickt über Wiles' Beweis hinaus:</p>
+<table>
+<thead>
+<tr>
+<th>Artikel</th>
+<th>Thema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../08-was-danach-kam/">08 – Was danach kam</a></td>
+<td>BCDT, Serres Vermutung, Langlands-Programm</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quellen">Quellen<a class="headerlink" href="#quellen" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Andrew Wiles</strong>: <em>Modular elliptic curves and Fermat's Last Theorem</em>, Annals of Mathematics 141 (1995), §5</li>
+<li><strong>Robert Langlands</strong>: <em>Base change for GL(2)</em>, Annals of Mathematics Studies 96 (1980)</li>
+<li><strong>Jerrold Tunnell</strong>: <em>Artin's conjecture for representations of octahedral type</em>, Bulletin of the AMS 5 (1981)</li>
+<li><strong>Barry Mazur</strong>: <em>Rational isogenies of prime degree</em>, Inventiones Mathematicae 44 (1978)</li>
+<li><strong>Gary Cornell, Joseph Silverman, Glenn Stevens</strong> (Hrsg.): <em>Modular Forms and Fermat's Last Theorem</em>, Springer (1997), Kapitel XV–XVI</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Fußzeile" >
+        
+          
+          <a href="../06-taylor-wiles-trick/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Der Taylor-Wiles-Trick">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              <div class="md-ellipsis">
+                Der Taylor-Wiles-Trick
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../08-was-danach-kam/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Was danach kam">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              <div class="md-ellipsis">
+                Was danach kam
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.highlight", "content.code.copy", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

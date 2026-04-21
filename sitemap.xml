@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://fermatically.com/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/about/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/about/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/about/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/flt-overview/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/flt-overview/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/flt-overview/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/quellen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/quellen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/quellen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/fermat-wiles/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/fermat-wiles/01-taniyama-shimura/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/01-taniyama-shimura/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/01-taniyama-shimura/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/fermat-wiles/02-frey-ribet/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/02-frey-ribet/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/02-frey-ribet/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/fermat-wiles/03-galois-darstellungen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/03-galois-darstellungen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/03-galois-darstellungen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/fermat-wiles/04-deformationstheorie/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/04-deformationstheorie/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/04-deformationstheorie/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/fermat-wiles/05-r-gleich-t/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/05-r-gleich-t/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/05-r-gleich-t/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/fermat-wiles/06-taylor-wiles-trick/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/06-taylor-wiles-trick/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/06-taylor-wiles-trick/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/fermat-wiles/07-3-5-switch/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/07-3-5-switch/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/07-3-5-switch/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/fermat-wiles/08-was-danach-kam/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/08-was-danach-kam/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/08-was-danach-kam/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/grundlagen/elementare-zahlentheorie/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/grundlagen/elementare-zahlentheorie/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/grundlagen/elementare-zahlentheorie/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/grundlagen/elementare-zahlentheorie/01-was-ist-flt/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/grundlagen/elementare-zahlentheorie/01-was-ist-flt/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/grundlagen/elementare-zahlentheorie/01-was-ist-flt/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/grundlagen/elementare-zahlentheorie/02-beweis-n4/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/grundlagen/elementare-zahlentheorie/02-beweis-n4/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/grundlagen/elementare-zahlentheorie/02-beweis-n4/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/grundlagen/elementare-zahlentheorie/03-primzahlen-reduktion/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/grundlagen/elementare-zahlentheorie/03-primzahlen-reduktion/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/grundlagen/elementare-zahlentheorie/03-primzahlen-reduktion/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/grundlagen/elementare-zahlentheorie/04-beweis-n3/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/grundlagen/elementare-zahlentheorie/04-beweis-n3/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/grundlagen/elementare-zahlentheorie/04-beweis-n3/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/includes/glossary/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/includes/glossary/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/includes/glossary/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/abbildungen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/abbildungen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/abbildungen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/aussagenlogik/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/aussagenlogik/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/aussagenlogik/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/beweisarten/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/beweisarten/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/beweisarten/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/binomische-formeln/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/binomische-formeln/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/binomische-formeln/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/bruchrechnung/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/bruchrechnung/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/bruchrechnung/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/gleichungen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/gleichungen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/gleichungen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/grenzwerte-konvergenz/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/grenzwerte-konvergenz/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/grenzwerte-konvergenz/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/implikation-aequivalenz/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/implikation-aequivalenz/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/implikation-aequivalenz/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/kombinatorik/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/kombinatorik/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/kombinatorik/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/komplexe-zahlen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/komplexe-zahlen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/komplexe-zahlen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/koordinatengeometrie/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/koordinatengeometrie/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/koordinatengeometrie/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/mengen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/mengen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/mengen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/modulare-arithmetik/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/modulare-arithmetik/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/modulare-arithmetik/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/potenzen-polynome/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/potenzen-polynome/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/potenzen-polynome/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/primfaktorzerlegung/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/primfaktorzerlegung/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/primfaktorzerlegung/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/pythagoras/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/pythagoras/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/pythagoras/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/relationen-aequivalenzklassen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/relationen-aequivalenzklassen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/relationen-aequivalenzklassen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/summen-produktnotation/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/summen-produktnotation/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/summen-produktnotation/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/teilbarkeit-ggt/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/teilbarkeit-ggt/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/teilbarkeit-ggt/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/ungleichungen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/ungleichungen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/ungleichungen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/was-ist-ein-beweis/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/was-ist-ein-beweis/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/was-ist-ein-beweis/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/vorwissen/zahlenbereiche/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/zahlenbereiche/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/zahlenbereiche/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/werkzeuge/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/werkzeuge/elliptische-kurven/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/elliptische-kurven/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/elliptische-kurven/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/werkzeuge/galois-theorie/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/galois-theorie/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/galois-theorie/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/werkzeuge/gruppen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/gruppen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/gruppen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/werkzeuge/modulformen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/modulformen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/modulformen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/werkzeuge/p-adische-zahlen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/p-adische-zahlen/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/p-adische-zahlen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/werkzeuge/ringe-koerper/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/ringe-koerper/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/ringe-koerper/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/about/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/about/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/flt-overview/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/flt-overview/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/flt-overview/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/quellen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/quellen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/quellen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/fermat-wiles/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/fermat-wiles/01-taniyama-shimura/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/01-taniyama-shimura/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/01-taniyama-shimura/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/fermat-wiles/02-frey-ribet/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/02-frey-ribet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/02-frey-ribet/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/fermat-wiles/03-galois-darstellungen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/03-galois-darstellungen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/03-galois-darstellungen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/fermat-wiles/04-deformationstheorie/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/04-deformationstheorie/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/04-deformationstheorie/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/fermat-wiles/05-r-gleich-t/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/05-r-gleich-t/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/05-r-gleich-t/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/fermat-wiles/06-taylor-wiles-trick/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/06-taylor-wiles-trick/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/06-taylor-wiles-trick/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/fermat-wiles/07-3-5-switch/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/07-3-5-switch/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/07-3-5-switch/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/fermat-wiles/08-was-danach-kam/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/fermat-wiles/08-was-danach-kam/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/fermat-wiles/08-was-danach-kam/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/grundlagen/elementare-zahlentheorie/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/grundlagen/elementare-zahlentheorie/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/grundlagen/elementare-zahlentheorie/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/grundlagen/elementare-zahlentheorie/01-was-ist-flt/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/grundlagen/elementare-zahlentheorie/01-was-ist-flt/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/grundlagen/elementare-zahlentheorie/01-was-ist-flt/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/grundlagen/elementare-zahlentheorie/02-beweis-n4/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/grundlagen/elementare-zahlentheorie/02-beweis-n4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/grundlagen/elementare-zahlentheorie/02-beweis-n4/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/grundlagen/elementare-zahlentheorie/03-primzahlen-reduktion/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/grundlagen/elementare-zahlentheorie/03-primzahlen-reduktion/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/grundlagen/elementare-zahlentheorie/03-primzahlen-reduktion/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/grundlagen/elementare-zahlentheorie/04-beweis-n3/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/grundlagen/elementare-zahlentheorie/04-beweis-n3/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/grundlagen/elementare-zahlentheorie/04-beweis-n3/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/includes/glossary/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/includes/glossary/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/includes/glossary/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/abbildungen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/abbildungen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/abbildungen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/aussagenlogik/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/aussagenlogik/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/aussagenlogik/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/beweisarten/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/beweisarten/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/beweisarten/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/binomische-formeln/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/binomische-formeln/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/binomische-formeln/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/bruchrechnung/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/bruchrechnung/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/bruchrechnung/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/gleichungen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/gleichungen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/gleichungen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/grenzwerte-konvergenz/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/grenzwerte-konvergenz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/grenzwerte-konvergenz/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/implikation-aequivalenz/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/implikation-aequivalenz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/implikation-aequivalenz/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/kombinatorik/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/kombinatorik/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/kombinatorik/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/komplexe-zahlen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/komplexe-zahlen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/komplexe-zahlen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/koordinatengeometrie/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/koordinatengeometrie/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/koordinatengeometrie/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/mengen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/mengen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/mengen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/modulare-arithmetik/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/modulare-arithmetik/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/modulare-arithmetik/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/potenzen-polynome/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/potenzen-polynome/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/potenzen-polynome/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/primfaktorzerlegung/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/primfaktorzerlegung/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/primfaktorzerlegung/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/pythagoras/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/pythagoras/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/pythagoras/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/relationen-aequivalenzklassen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/relationen-aequivalenzklassen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/relationen-aequivalenzklassen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/summen-produktnotation/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/summen-produktnotation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/summen-produktnotation/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/teilbarkeit-ggt/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/teilbarkeit-ggt/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/teilbarkeit-ggt/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/ungleichungen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/ungleichungen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/ungleichungen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/was-ist-ein-beweis/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/was-ist-ein-beweis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/was-ist-ein-beweis/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/vorwissen/zahlenbereiche/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/vorwissen/zahlenbereiche/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/vorwissen/zahlenbereiche/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/werkzeuge/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/werkzeuge/elliptische-kurven/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/elliptische-kurven/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/elliptische-kurven/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/werkzeuge/galois-theorie/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/galois-theorie/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/galois-theorie/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/werkzeuge/gruppen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/gruppen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/gruppen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/werkzeuge/modulformen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/modulformen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/modulformen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/werkzeuge/p-adische-zahlen/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/p-adische-zahlen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/p-adische-zahlen/"/>
+    </url>
+    <url>
+        <loc>https://fermatically.com/de/werkzeuge/ringe-koerper/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://fermatically.com/de/werkzeuge/ringe-koerper/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fermatically.com/werkzeuge/ringe-koerper/"/>
+    </url>
+</urlset>
