@@ -113,3 +113,15 @@
 ### Nächste Schritte
 - Akt 2 fortsetzen: `04-singularitaeten-blowup`, `05-perelman-entropie`, `06-kappa-nichtkollaps`, `07-reduzierte-laenge` und `ricci-fluss/index.md` (DE+EN). Diese sind technisch anspruchsvoller; die letzten drei Artikel folgen direkt Perelman 0211159.
 - Spätestens für Artikel 06–07 sinnvoll: Vorwissen „Geometrie und Analysis (Aufbau)" inhaltlich auffüllen, damit auf saubere Grundlagen verlinkt werden kann.
+
+## 2026-04-27 – Akt 2 fortgesetzt: Artikel 04 + 05 (Plan-Schritt 10, Teil 2)
+### Erledigt
+- `docs/poincare/ricci-fluss/04-singularitaeten-blowup.{de.,}md` von Stub auf vollständigen Artikel ausgebaut (~177/174 Zeilen): 9 Abschnitte (Krümmungs-Blow-up-Charakterisierung des Endzeitpunkts, Hamilton-Klassifikation Typ I/II/III mit Tabelle, Neckpinch als Modellsingularität, parabolisches Reskalieren, Hamilton-Kompaktheitssatz, Kollaps als Versagensgrund, antike $\kappa$-Lösungen mit Perelman-Klassifikation in Dim 3, Ricci-Solitonen $\lambda \in \{-1, 0, +1\}$, Roadmap zur Surgery). Quellen: Hamilton 1982/1995, Angenent–Knopf 2004, Perelman 0211159 §11, Morgan–Tian §§9–12, Kleiner–Lott §§37–43.
+- `docs/poincare/ricci-fluss/05-perelman-entropie.{de.,}md` von Stub auf vollständigen Artikel ausgebaut (~181/173 Zeilen): 9 Abschnitte ($\mathcal{F}$-Funktional als Gradientenfluss für Steady Solitons, $\lambda$-Funktional als kleinster Eigenwert von $-4\Delta + R$, $\mathcal{W}$-Funktional mit Skalierungsinvarianz, Monotonieformel mit Shrinking-Soliton-Identität, $\mu$- und $\nu$-Funktionale als log-Sobolev-Konstanten, drei Ausschluss-Konsequenzen für Akt 3, konjugierte Wärmegleichung $\Box^* u = 0$ als Brücke zu reduzierter Länge, historische Einordnung gegenüber Hamilton 1982). Quellen: Perelman 0211159 §§1–4, Morgan–Tian §§5–6, Kleiner–Lott §§4–9, Cao–Zhu §§3–4, Topping 2006 Kap. 6.
+- Querverweis auf Akt 3: `04-singularitaeten-blowup` verweist korrekt auf `../beweis/03-chirurgie.md` (existierender Stub-Pfad).
+- Frontmatter-Status `stub` → `draft` in allen vier Dateien.
+- `.venv/bin/mkdocs build --strict`: 0 Warnings, 2.56 s; DE+EN gebaut, 90 Nav-Elemente übersetzt.
+- `.agent/plans/poincare-perelman-plan.md`: Schritt 10 von 3/7 auf 5/7 fortgeschrieben.
+### Nächste Schritte
+- Akt 2 abschließen: `06-kappa-nichtkollaps` (Nichtkollaps-Theorem als direkte Folge von $\mathcal{W}$-Monotonie + kanonische Nachbarschaften), `07-reduzierte-laenge` (Perelman 0211159 §7: $\ell$-Funktion, reduziertes Volumen $\tilde V$, Anwendung auf Asymptotik antiker $\kappa$-Lösungen) und `ricci-fluss/index.md` (Akt-2-Übersicht).
+- Anschließend Akt 3 (Plan-Schritt 11) und Vorwissen-Befüllung (Plan-Schritt 12).
