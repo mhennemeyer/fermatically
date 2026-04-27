@@ -105,6 +105,33 @@ plugins:
             "Der Taylor-Wiles-Trick": "The Taylor-Wiles Trick"
             "Der 3-5-Switch und der Abschluss": "The 3-5 Switch and the Conclusion"
             "Was danach kam": "What Came After"
+            "Poincaré-Vermutung": "Poincaré Conjecture"
+            "Topologie und die Vermutung": "Topology and the Conjecture"
+            "Werkzeuge: Ricci-Fluss": "Tools: Ricci Flow"
+            "Was ist Topologie?": "What Is Topology?"
+            "Mannigfaltigkeiten": "Manifolds"
+            "Die Sphäre und einfacher Zusammenhang": "The Sphere and Simple Connectedness"
+            "Was ist die Poincaré-Vermutung?": "What Is the Poincaré Conjecture?"
+            "Die Geometrisierungs-Vermutung von Thurston": "Thurston's Geometrization Conjecture"
+            "Riemannsche Metrik": "Riemannian Metric"
+            "Krümmung und Ricci-Tensor": "Curvature and the Ricci Tensor"
+            "Hamiltons Ricci-Fluss": "Hamilton's Ricci Flow"
+            "Singularitäten und Blow-up-Limits": "Singularities and Blow-up Limits"
+            "Perelmans Entropie-Funktionale": "Perelman's Entropy Functionals"
+            "κ-Nichtkollaps und kanonische Nachbarschaften": "κ-Non-collapsing and Canonical Neighborhoods"
+            "Reduzierte Länge und reduziertes Volumen": "Reduced Length and Reduced Volume"
+            "Hamiltons Programm und seine Hindernisse": "Hamilton's Program and Its Obstacles"
+            "Singularitätsanalyse in Dimension 3": "Singularity Analysis in Dimension 3"
+            "Ricci-Fluss mit Chirurgie": "Ricci Flow with Surgery"
+            "Long-time-Verhalten und dünn-dick-Zerlegung": "Long-time Behavior and Thin–Thick Decomposition"
+            "Endliche Auslöschungszeit": "Finite Extinction Time"
+            "Geometrisierung impliziert Poincaré": "Geometrization Implies Poincaré"
+            "Geometrie und Analysis (Aufbau)": "Geometry and Analysis (Advanced)"
+            "Vektoranalysis kompakt": "Vector Calculus in Brief"
+            "Wärmeleitungsgleichung – Intuition": "Heat Equation – Intuition"
+            "Mannigfaltigkeit anschaulich": "Manifolds – an Intuitive View"
+            "Tangentialraum und Tensoren": "Tangent Space and Tensors"
+            "Krümmung von Flächen (Gauß)": "Curvature of Surfaces (Gauss)"
             Quellen: Sources
 
 markdown_extensions:
@@ -159,6 +186,32 @@ nav:
     - "p-adische Zahlen": werkzeuge/p-adische-zahlen.md
     - "Elliptische Kurven": werkzeuge/elliptische-kurven.md
     - "Modulformen": werkzeuge/modulformen.md
+  - Poincaré-Vermutung:
+    - Überblick: poincare/index.md
+    - Topologie und die Vermutung:
+      - Übersicht: poincare/topologie/index.md
+      - "Was ist Topologie?": poincare/topologie/01-was-ist-topologie.md
+      - "Mannigfaltigkeiten": poincare/topologie/02-mannigfaltigkeiten.md
+      - "Die Sphäre und einfacher Zusammenhang": poincare/topologie/03-sphaere-einfacher-zusammenhang.md
+      - "Was ist die Poincaré-Vermutung?": poincare/topologie/04-was-ist-poincare-vermutung.md
+      - "Die Geometrisierungs-Vermutung von Thurston": poincare/topologie/05-geometrisierungs-vermutung.md
+    - "Werkzeuge: Ricci-Fluss":
+      - Übersicht: poincare/ricci-fluss/index.md
+      - "Riemannsche Metrik": poincare/ricci-fluss/01-riemannsche-metrik.md
+      - "Krümmung und Ricci-Tensor": poincare/ricci-fluss/02-kruemmung-ricci-tensor.md
+      - "Hamiltons Ricci-Fluss": poincare/ricci-fluss/03-hamiltons-ricci-fluss.md
+      - "Singularitäten und Blow-up-Limits": poincare/ricci-fluss/04-singularitaeten-blowup.md
+      - "Perelmans Entropie-Funktionale": poincare/ricci-fluss/05-perelman-entropie.md
+      - "κ-Nichtkollaps und kanonische Nachbarschaften": poincare/ricci-fluss/06-kappa-nichtkollaps.md
+      - "Reduzierte Länge und reduziertes Volumen": poincare/ricci-fluss/07-reduzierte-laenge.md
+    - Der Beweis:
+      - Übersicht: poincare/beweis/index.md
+      - "Hamiltons Programm und seine Hindernisse": poincare/beweis/01-hamiltons-programm.md
+      - "Singularitätsanalyse in Dimension 3": poincare/beweis/02-singularitaeten-dim3.md
+      - "Ricci-Fluss mit Chirurgie": poincare/beweis/03-chirurgie.md
+      - "Long-time-Verhalten und dünn-dick-Zerlegung": poincare/beweis/04-long-time-verhalten.md
+      - "Endliche Auslöschungszeit": poincare/beweis/05-endliche-extinktion.md
+      - "Geometrisierung impliziert Poincaré": poincare/beweis/06-poincare-aus-geometrisierung.md
   - Vorwissen:
     - Übersicht: vorwissen/index.md
     - Logik und Beweistechniken:
@@ -189,4 +242,10 @@ nav:
       - "Kombinatorik": vorwissen/kombinatorik.md
     - Analysis:
       - "Grenzwerte und Konvergenz": vorwissen/grenzwerte-konvergenz.md
+    - Geometrie und Analysis (Aufbau):
+      - "Vektoranalysis kompakt": vorwissen/geometrie-analysis/vektoranalysis.md
+      - "Wärmeleitungsgleichung – Intuition": vorwissen/geometrie-analysis/waermeleitung.md
+      - "Mannigfaltigkeit anschaulich": vorwissen/geometrie-analysis/mannigfaltigkeit-anschaulich.md
+      - "Tangentialraum und Tensoren": vorwissen/geometrie-analysis/tangentialraum-tensoren.md
+      - "Krümmung von Flächen (Gauß)": vorwissen/geometrie-analysis/kruemmung-flaechen-gauss.md
   - Quellen: quellen.md

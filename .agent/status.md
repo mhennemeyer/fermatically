@@ -3,7 +3,7 @@
 - **Typ:** Content / Mathematik-Plattform
 - **Phase:** Phase 5 weitgehend abgeschlossen (Website live, Deployment komplett). Offen: Navigation aus `requires`-Frontmatter.
 - **Priorität:** Mittel
-- **Zuletzt aktualisiert:** 2026-04-16
+- **Zuletzt aktualisiert:** 2026-04-27
 ## Beschreibung
 Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elementarer Zahlentheorie bis zu Wiles' Beweis von Fermats letztem Satz. 18 Artikel in 3 Kategorien (Grundlagen, Werkzeuge, Beweis). Detaillierter Plan: `.agent/plans/artikelserie-plan.md`.
 ## Aktueller Stand
@@ -42,5 +42,8 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 - [x] Statisches Deployment eingerichtet → GitHub Pages live (Plan: `.agent/plans/deployment-plan.md`)
 - [x] Zweisprachige Seite (DE/EN) mit Sprachumschalter eingerichtet (mkdocs-static-i18n)
 - [x] Pläne-Review und Aktualisierung (2026-04-16)
+- [x] Pläne-Review 2026-04-26: deployment-plan, sidebar-restructuring, playwright-ui-tests-plan ins Archiv verschoben
+- [x] Poincaré-Überblicksseite (DE+EN) ausformuliert (Plan-Schritt 8, 2026-04-26): Drei-Akt-Roadmap, Quellen, FLT-Querverweis, mkdocs build --strict grün
+- [x] Poincaré Akt 1, Artikel 01 (Was ist Topologie?) + 02 (Mannigfaltigkeiten) DE+EN ausformuliert (Plan-Schritt 9 in Arbeit, 2026-04-27): je ~165–195 Zeilen, Quellen, Querverweise; build --strict grün
 ## Blocker
 - Keine
