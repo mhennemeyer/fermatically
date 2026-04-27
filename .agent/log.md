@@ -99,3 +99,17 @@
 ### Nächste Schritte
 - Akt 1 fortsetzen: `03-sphaere-einfacher-zusammenhang`, `04-was-ist-poincare-vermutung`, `05-geometrisierungs-vermutung` und `topologie/index.md` (DE+EN)
 - Anschließend Akt 2 (Ricci-Fluss) – dort spätestens lohnt sich auch die inhaltliche Befüllung von Vorwissen „Geometrie und Analysis (Aufbau)"
+
+## 2026-04-27 – Akt 2 angefangen: Artikel 01–03 (Plan-Schritt 10, Teil 1)
+
+### Erledigt
+- `docs/poincare/ricci-fluss/01-riemannsche-metrik.{de.,}md` von Stub auf vollständigen Artikel ausgebaut (~182/178 Zeilen): 8 Abschnitte (Topologie→Geometrie, Definition, was die Metrik leistet, Beispiele $\mathbb{R}^n/S^n/\mathbb{H}^n$, Existenz, Levi-Civita, Geodäten, Ausblick auf den Fluss). Quellen: Lee 2018, do Carmo, Petersen.
+- `docs/poincare/ricci-fluss/02-kruemmung-ricci-tensor.{de.,}md` von Stub auf vollständigen Artikel ausgebaut (~178/173 Zeilen): 9 Abschnitte mit Riemann-Tensor + Symmetrien/Bianchi, Schnittkrümmung + 3 Modellgeometrien, Ricci, Skalarkrümmung, Spezialfall Dim 3 (Ricci ⇔ voller Krümmungstensor), Bonnet–Myers/Bishop–Gromov/Splitting, Einstein-Mannigfaltigkeiten. Quellen: Lee 2018, do Carmo, Morgan-Tian, Petersen.
+- `docs/poincare/ricci-fluss/03-hamiltons-ricci-fluss.{de.,}md` von Stub auf vollständigen Artikel ausgebaut (~176/170 Zeilen): Gleichung $\partial_t g = -2\,\mathrm{Ric}$, Heat-Equation-Heuristik, Hamilton 1982-Originalsatz für $\mathrm{Ric}>0$ in Dim 3, DeTurck-Kurzzeitexistenz, Skalierungsverhalten, Beispiele (Sphäre/Torus/Hyperbol/Zylinder mit Neckpinch-Hinweis), Evolutionsgleichungen für $R$ und $\mathrm{Ric}$, offene Probleme (Singularitäten, Kollaps, Surgery).
+- Frontmatter-Status `stub` → `draft` in allen sechs Dateien.
+- `.venv/bin/mkdocs build --strict`: 0 Warnings, 2.58 s; DE+EN gebaut, 90 Nav-Elemente übersetzt.
+- `.agent/plans/poincare-perelman-plan.md`: Schritt 10 als „in Arbeit" markiert (3/7 Ricci-Fluss-Artikel fertig).
+
+### Nächste Schritte
+- Akt 2 fortsetzen: `04-singularitaeten-blowup`, `05-perelman-entropie`, `06-kappa-nichtkollaps`, `07-reduzierte-laenge` und `ricci-fluss/index.md` (DE+EN). Diese sind technisch anspruchsvoller; die letzten drei Artikel folgen direkt Perelman 0211159.
+- Spätestens für Artikel 06–07 sinnvoll: Vorwissen „Geometrie und Analysis (Aufbau)" inhaltlich auffüllen, damit auf saubere Grundlagen verlinkt werden kann.

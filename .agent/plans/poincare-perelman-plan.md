@@ -215,7 +215,7 @@ diese Alternative – konsistent mit FLT, hält Vorwissen schlank.
 7. [x] Lokalen Build (`mkdocs build --strict`) erfolgreich getestet – keine neuen Warnungen
 8. [x] Überblicksseite `docs/poincare/index.md` + `index.de.md` ausformuliert (Drei-Akt-Roadmap, Tabellen, Vorwissen- und FLT-Querverweise, Quellen mit arXiv-Links; mkdocs build --strict grün, 0 Warnings) – 2026-04-26
 9. [x] Akt 1 schreiben (Topologie + Vermutung) – alle 5 Artikel + Akt-Index DE+EN ausformuliert (Stand 2026-04-27): 01 Was ist Topologie?, 02 Mannigfaltigkeiten, 03 Sphäre & einfacher Zusammenhang, 04 Was ist die Poincaré-Vermutung?, 05 Geometrisierungs-Vermutung von Thurston, `topologie/index.md` als Akt-1-Übersicht. Quellen, Querverweise, mkdocs build --strict grün (0 Warnings).
-10. [ ] Akt 2 schreiben (Ricci-Fluss-Werkzeuge)
+10. [~] Akt 2 schreiben (Ricci-Fluss-Werkzeuge) – 3/7 Artikel ausformuliert (Stand 2026-04-27): 01 Riemannsche Metrik, 02 Krümmung und Ricci-Tensor, 03 Hamiltons Ricci-Fluss (DE+EN). Offen: 04 Singularitäten/Blow-up, 05 Perelman-Entropie, 06 κ-Nichtkollaps, 07 Reduzierte Länge sowie `ricci-fluss/index.md`. Quellen Lee 2018, Morgan-Tian 2007, Hamilton 1982, Chow-Knopf 2004; mkdocs build --strict grün (0 Warnings).
 11. [ ] Akt 3 schreiben (Der Beweis)
 12. [ ] Vorwissen „Geometrie und Analysis (Aufbau)" inhaltlich füllen
 13. [ ] Querverweise zu/von FLT und Vorwissen ergänzen
