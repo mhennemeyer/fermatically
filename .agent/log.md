@@ -139,3 +139,17 @@
 ### Nächste Schritte
 - Akt 3 schreiben (Plan-Schritt 11): `01-ricci-fluss-mit-surgery`, `02-finite-extinction-time`, `03-chirurgie`, `04-vom-fluss-zur-topologie`, `05-poincare-vermutung-bewiesen`, `06-geometrisierung-bewiesen` und `beweis/index.md` (DE+EN). Vorbild ist die FLT-Beweis-Sektion.
 - Parallel sinnvoll: Vorwissen „Geometrie und Analysis (Aufbau)" inhaltlich füllen (Plan-Schritt 12), insbesondere die Stubs unter `docs/vorwissen/geometrie-analysis/`.
+
+## 2026-04-27 – Akt 3 angefangen: Artikel 01 + 02 (Plan-Schritt 11, Teil 1)
+
+### Erledigt
+- `docs/poincare/beweis/01-hamiltons-programm.{de.,}md` von Stub auf vollständigen Artikel ausgebaut (~223/217 Zeilen): 7 Abschnitte (Hamiltons Vision 1982 mit Originalsatz für $\mathrm{Ric}>0$, Vier-Schritte-Programm, Werkzeug-Tabelle bis 2002 mit DeTurck/Maximumsprinzip/Differential-Harnack/Kompaktheitssatz/Hamilton–Ivey/2D-Klassifikation/Surgery in Dim 4, fünf Hindernisse H1–H5 in DE bzw. O1–O5 in EN, Mapping zu Perelmans Werkzeugen aus Akt 2 mit Tabelle, was Hamilton selbst vorhergesehen hatte, Roadmap für die folgenden 5 Artikel von Akt 3). Quellen: Hamilton 1982/1993/1995/1997, Perelman 0211159/0303109/0307245, Morgan–Tian, Kleiner–Lott, Cao–Zhu.
+- `docs/poincare/beweis/02-singularitaeten-dim3.{de.,}md` von Stub auf vollständigen Artikel ausgebaut (~200/193 Zeilen): 7 Abschnitte (Hamilton–Ivey-Pinching $\lambda_1 \geq -\phi(\lambda_3)$ mit logarithmischer Funktion $\phi$, Definition antike $\kappa$-Lösung, Klassifikation in Dim 3 nach Perelman 0211159 §11 in 3 Modelle (Zylinder $S^2 \times \mathbb{R}$, sphärisches Quotient $S^3/\Gamma$, Bryant-artiges nichtkompaktes Modell), Modell-Tabelle Hals/Kappe/Raumform mit Skalen, kanonischer Nachbarschaftssatz §12.1 mit 4-Schritt-Beweisskizze (Widerspruch + Hamilton-Kompaktheit + $\mathcal{L}$-Geometrie), strukturelle Zerlegung der Hochkrümmungsregion + Volumenkontrolle, lokaler Schnittplan für Surgery, Hindernis→Lösung-Tabelle). Quellen: Perelman 0211159 §§11–12, Hamilton 1995, Ivey 1993, Morgan–Tian Kap. 9–10, Kleiner–Lott §§40–53, Cao–Zhu §§5–6, Chow–Lu–Ni 2006.
+- Querverweise gesetzt: nach `../topologie/05-geometrisierungs-vermutung`, `../ricci-fluss/03-hamiltons-ricci-fluss`, `../ricci-fluss/04-singularitaeten-blowup`, `../ricci-fluss/05-perelman-entropie`, `../ricci-fluss/06-kappa-nichtkollaps`, `../ricci-fluss/07-reduzierte-laenge` sowie nach `03-chirurgie` und den Folgeartikeln 04/05/06.
+- Frontmatter-Status `stub` → `draft` in allen vier Dateien.
+- `.venv/bin/mkdocs build --strict`: 0 Warnings, 2.73 s; DE+EN gebaut, 90 Nav-Elemente übersetzt.
+- `.agent/plans/poincare-perelman-plan.md`: Schritt 11 als „in Arbeit" markiert (2/6 Beweis-Artikel fertig).
+
+### Nächste Schritte
+- Akt 3 fortsetzen: `03-chirurgie` (Standardlösung, $\delta$-Hälse, Konstantenwahl $r,\delta,h$, Erhaltung von $\kappa$-Nichtkollaps + Pinching nach Surgery; folgt Perelman 0303109 §§3–5), `04-long-time-verhalten` (thin–thick-Zerlegung, kein Häufen der Surgery-Zeiten, Konvergenz gegen Geometrisierung; 0303109 §§6–7), `05-endliche-extinktion` (finite extinction time für $\pi_1=0$ via Colding–Minicozzi-Variante; 0307245), `06-poincare-aus-geometrisierung` (Poincaré als Korollar via $\pi_1$-Argument), `beweis/index.md` als Akt-3-Übersicht.
+- Vorwissen „Geometrie und Analysis (Aufbau)" (Plan-Schritt 12) bleibt parallel sinnvoll, insbesondere bevor 03 + 04 geschrieben werden.
