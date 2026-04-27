@@ -3,7 +3,7 @@
 - **Typ:** Content / Mathematik-Plattform
 - **Phase:** Phase 5 weitgehend abgeschlossen (Website live, Deployment komplett). Offen: Navigation aus `requires`-Frontmatter.
 - **Priorität:** Mittel
-- **Zuletzt aktualisiert:** 2026-04-27
+- **Zuletzt aktualisiert:** 2026-04-27 (Akt 1 der Poincaré-Storyline vollständig)
 ## Beschreibung
 Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elementarer Zahlentheorie bis zu Wiles' Beweis von Fermats letztem Satz. 18 Artikel in 3 Kategorien (Grundlagen, Werkzeuge, Beweis). Detaillierter Plan: `.agent/plans/artikelserie-plan.md`.
 ## Aktueller Stand
@@ -45,5 +45,6 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 - [x] Pläne-Review 2026-04-26: deployment-plan, sidebar-restructuring, playwright-ui-tests-plan ins Archiv verschoben
 - [x] Poincaré-Überblicksseite (DE+EN) ausformuliert (Plan-Schritt 8, 2026-04-26): Drei-Akt-Roadmap, Quellen, FLT-Querverweis, mkdocs build --strict grün
 - [x] Poincaré Akt 1, Artikel 01 (Was ist Topologie?) + 02 (Mannigfaltigkeiten) DE+EN ausformuliert (Plan-Schritt 9 in Arbeit, 2026-04-27): je ~165–195 Zeilen, Quellen, Querverweise; build --strict grün
+- [x] Poincaré Akt 1 vollständig: Artikel 03 (Sphäre & einfacher Zusammenhang), 04 (Was ist die Poincaré-Vermutung?), 05 (Geometrisierungs-Vermutung von Thurston) und Akt-Index `topologie/index.md` DE+EN ausformuliert (Plan-Schritt 9 ✅, 2026-04-27): je ~195–210 Zeilen, Quellen (Thurston, Hatcher, Lee, Smale, Freedman, Hamilton, Morgan-Tian, Scott, Kneser); build --strict grün, 0 Warnings
 ## Blocker
 - Keine

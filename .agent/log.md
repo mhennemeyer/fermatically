@@ -67,6 +67,21 @@
 - Optional: `vorwissen/geometrie-analysis/index.md` anlegen, damit aus dem Vorwissen-Block direkt verlinkt werden kann
 - Mobile-CSS-Fix für MathJax-Overflow als Beifang
 
+## 2026-04-27 – Akt 1 vollständig (Plan-Schritt 9 abgeschlossen)
+
+### Erledigt
+- `docs/poincare/topologie/03-sphaere-einfacher-zusammenhang.{de.,}md` von Stub auf vollständigen Artikel ausgebaut (~210/202 Zeilen): $S^n$, Schleifen/Wege, Homotopie, Fundamentalgruppe, einfacher Zusammenhang, $\pi_1$-Beispiele ($S^n, S^1, T^2, T^3, L(p,q)$), höhere Homotopiegruppen, Bezug zur Vermutung. Quellen: Hatcher, Lee, Morgan-Tian, Poincaré 1904.
+- `docs/poincare/topologie/04-was-ist-poincare-vermutung.{de.,}md` ausgebaut (~209/202 Zeilen): Originalformulierung 1904 mit Originalzitat aus *Cinquième complément*, Homologie-Sphäre, Schwierigkeit der Dimension 3, höhere Dimensionen mit Tabelle Smale (1961) / Stallings-Zeeman / Freedman (1982) / Perelman (2002–2003), Clay-Millennium-Preis, Hamilton-Programm + Perelmans Werkzeuge.
+- `docs/poincare/topologie/05-geometrisierungs-vermutung.{de.,}md` ausgebaut (~205/195 Zeilen): Uniformisierung in Dim 2, Tabelle der 8 Thurston-Geometrien, Vermutungs-Statement mit Prim- und JSJ-Zerlegung, Poincaré als Korollar via $\pi_1$-Argument, Hyperbolisierungs-Theorem, Perelmans 5-Schritt-Strategie, finite extinction time als Kurzweg.
+- `docs/poincare/topologie/index.{de.,}md` von Mini-Stub auf vollständige Akt-1-Übersicht (~61/59 Zeilen): Tabelle der 5 Artikel mit Themen, Roter-Faden-Absatz, Verweise auf Akt 2 + 3, Vorwissen-Tipp.
+- Frontmatter-Status `stub` → `draft` (Artikel) bzw. `active` (Akt-Index) in allen 10 Dateien.
+- `.venv/bin/mkdocs build --strict`: 0 Warnings, 2.50 s; DE+EN gebaut, 90 Nav-Elemente übersetzt.
+- `.agent/plans/poincare-perelman-plan.md`: Schritt 9 als abgeschlossen markiert.
+
+### Nächste Schritte
+- Plan-Schritt 10: Akt 2 (Ricci-Fluss-Werkzeuge) beginnen, voraussichtlich mit `ricci-fluss/01-riemannsche-metrik` und `02-kruemmung-ricci-tensor`. Spätestens hier lohnt sich auch das inhaltliche Befüllen von Vorwissen „Geometrie und Analysis (Aufbau)" parallel.
+- Plan-Schritt 13 (Querverweise zu/von FLT und Vorwissen) als Beifang im Blick behalten.
+
 ## 2026-04-27 – Akt 1, Artikel 01 + 02 (Plan-Schritt 9, Teil 1)
 
 ### Erledigt

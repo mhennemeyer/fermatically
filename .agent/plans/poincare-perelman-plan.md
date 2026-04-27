@@ -214,7 +214,7 @@ diese Alternative – konsistent mit FLT, hält Vorwissen schlank.
 6. [x] `mkdocs.yml` Nav + nav_translations erweitern
 7. [x] Lokalen Build (`mkdocs build --strict`) erfolgreich getestet – keine neuen Warnungen
 8. [x] Überblicksseite `docs/poincare/index.md` + `index.de.md` ausformuliert (Drei-Akt-Roadmap, Tabellen, Vorwissen- und FLT-Querverweise, Quellen mit arXiv-Links; mkdocs build --strict grün, 0 Warnings) – 2026-04-26
-9. [~] Akt 1 schreiben (Topologie + Vermutung) – Artikel 01 (Was ist Topologie?) und 02 (Mannigfaltigkeiten) DE+EN ausformuliert (2026-04-27, je ~165–195 Zeilen, Quellen, Querverweise; build --strict grün). Offen: 03 Sphäre/einfacher Zusammenhang, 04 Poincaré-Vermutung, 05 Geometrisierungs-Vermutung, `topologie/index.md`
+9. [x] Akt 1 schreiben (Topologie + Vermutung) – alle 5 Artikel + Akt-Index DE+EN ausformuliert (Stand 2026-04-27): 01 Was ist Topologie?, 02 Mannigfaltigkeiten, 03 Sphäre & einfacher Zusammenhang, 04 Was ist die Poincaré-Vermutung?, 05 Geometrisierungs-Vermutung von Thurston, `topologie/index.md` als Akt-1-Übersicht. Quellen, Querverweise, mkdocs build --strict grün (0 Warnings).
 10. [ ] Akt 2 schreiben (Ricci-Fluss-Werkzeuge)
 11. [ ] Akt 3 schreiben (Der Beweis)
 12. [ ] Vorwissen „Geometrie und Analysis (Aufbau)" inhaltlich füllen
