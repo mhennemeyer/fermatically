@@ -125,3 +125,17 @@
 ### Nächste Schritte
 - Akt 2 abschließen: `06-kappa-nichtkollaps` (Nichtkollaps-Theorem als direkte Folge von $\mathcal{W}$-Monotonie + kanonische Nachbarschaften), `07-reduzierte-laenge` (Perelman 0211159 §7: $\ell$-Funktion, reduziertes Volumen $\tilde V$, Anwendung auf Asymptotik antiker $\kappa$-Lösungen) und `ricci-fluss/index.md` (Akt-2-Übersicht).
 - Anschließend Akt 3 (Plan-Schritt 11) und Vorwissen-Befüllung (Plan-Schritt 12).
+
+## 2026-04-27 – Akt 2 abgeschlossen: Artikel 06 + 07 + Akt-Index (Plan-Schritt 10 ✅)
+
+### Erledigt
+- `docs/poincare/ricci-fluss/06-kappa-nichtkollaps.{de.,}md` von Stub auf vollständigen Artikel ausgebaut (~201/207 Zeilen): 9 Abschnitte (Kollapsproblem, Definition $\kappa$-Nichtkollaps, Perelman-Theorem 2002 §4, Beweisstrategie über $\mathcal{W}$-Monotonie + log-Sobolev-Konstante $\mu$, lokale antike Variante, Klassifikation antiker $\kappa$-Lösungen in Dim 3 mit fünf Modellen, kanonische Nachbarschaften $\varepsilon$-Hals/$\varepsilon$-Kappe/sphärische Raumform mit Tabelle, Bedeutung für Surgery, Vergleich Entropie vs. reduzierte Länge). Quellen: Perelman 0211159 §§4/7/11–12, 0303109 §§5–7, Morgan–Tian §§8/9/11, Kleiner–Lott §§13/25–28/41–48, Cao–Zhu §§4/6, Topping Kap. 8.
+- `docs/poincare/ricci-fluss/07-reduzierte-laenge.{de.,}md` von Stub auf vollständigen Artikel ausgebaut (~218/224 Zeilen): 10 Abschnitte ($\tau$-Rückwärts-Ricci-Fluss, $\mathcal{L}$-Funktional mit $\sqrt{\tau}$-Gewichtung, $\mathcal{L}$-Geodäten + $\mathcal{L}$-Exponentialabbildung, reduzierte Länge $\ell(q,\tau) = L/(2\sqrt{\tau})$ mit Differentialungleichung, reduziertes Volumen $\tilde V$, Monotonie-Theorem 2002 §7 mit Soliton-Gleichheit, zweiter $\kappa$-Nichtkollaps-Beweis, Anwendung auf Blow-up-Konvergenz im Cheeger-Gromov-Sinn, Asymptotisches-Soliton-Theorem 0211159 §11, Vergleichstabelle $\mathcal{W}$ vs. $\tilde V$, Übergang zu Akt 3). Quellen: Perelman 0211159 §§7–8/11, 0303109 §§5–6, Morgan–Tian §§6–7, Kleiner–Lott §§14–24, Cao–Zhu §3, Topping Kap. 7, Chow et al. Kap. 7.
+- `docs/poincare/ricci-fluss/index.{de.,}md` als Akt-2-Übersicht ausformuliert (~106/111 Zeilen): „Idee in einem Satz" ($\partial_t g = -2\,\mathrm{Ric}$ als geometrische Wärmegleichung), Tabelle der 7 Artikel mit Kurzbeschreibung, ASCII-Logikdiagramm der Abhängigkeiten (01 → 02 → 03 → 04 → {05, 06, 07} → Akt 3), Vorwissen-Hinweise mit Verweis auf `vorwissen/index.md`, Übergang zu Akt 3 mit Verlinkung auf Poincaré- und Geometrisierungs-Vermutung. Frontmatter `stub` → `active`.
+- Frontmatter-Status `stub` → `draft` in 06/07-Dateien (4 Dateien).
+- `.venv/bin/mkdocs build --strict`: 0 Warnings, 2.67 s; DE+EN gebaut, 90 Nav-Elemente übersetzt.
+- `.agent/plans/poincare-perelman-plan.md`: Schritt 10 als abgeschlossen ✅ markiert (7/7 Artikel + Akt-Index).
+
+### Nächste Schritte
+- Akt 3 schreiben (Plan-Schritt 11): `01-ricci-fluss-mit-surgery`, `02-finite-extinction-time`, `03-chirurgie`, `04-vom-fluss-zur-topologie`, `05-poincare-vermutung-bewiesen`, `06-geometrisierung-bewiesen` und `beweis/index.md` (DE+EN). Vorbild ist die FLT-Beweis-Sektion.
+- Parallel sinnvoll: Vorwissen „Geometrie und Analysis (Aufbau)" inhaltlich füllen (Plan-Schritt 12), insbesondere die Stubs unter `docs/vorwissen/geometrie-analysis/`.
