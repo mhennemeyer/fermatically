@@ -46,3 +46,17 @@ This reference contains fundamental mathematical concepts assumed in the main ar
 |-------|---------|
 | [Powers and Polynomials](potenzen-polynome.md) | Laws of exponents, polynomial expressions, degree of a polynomial |
 | [Binomial Formulas and Factoring](binomische-formeln.md) | (a+b)², (a-b)², a²-b², binomial theorem |
+
+## F. Geometry and Analysis (Advanced)
+
+In-depth concepts for the differential geometry behind the
+[Poincaré conjecture](../poincare/index.md) – manifolds, curvature,
+vector calculus, and parabolic differential equations.
+
+| Topic | Content |
+|-------|---------|
+| [Manifolds – an Intuitive View](geometrie-analysis/mannigfaltigkeit-anschaulich.md) | charts, atlas, smooth structures, examples $S^n$, $T^n$, $\mathbb{RP}^n$ |
+| [Tangent Space and Tensors](geometrie-analysis/tangentialraum-tensoren.md) | $T_p M$, vector fields, tensor fields, Riemannian metric |
+| [Curvature of Surfaces (Gauss)](geometrie-analysis/kruemmung-flaechen-gauss.md) | principal curvatures, Theorema Egregium, Gauss–Bonnet |
+| [Vector Calculus in a Nutshell](geometrie-analysis/vektoranalysis.md) | gradient, divergence, Laplace–Beltrami, integral theorems |
+| [The Heat Equation – Intuition](geometrie-analysis/waermeleitung.md) | $\partial_t u = \Delta u$, smoothing, maximum principle, heat kernel |

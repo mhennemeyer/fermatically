@@ -1,9 +1,9 @@
 # Projektstatus: fermatically
 ## Meta
 - **Typ:** Content / Mathematik-Plattform
-- **Phase:** Phase 5 weitgehend abgeschlossen (Website live). Poincaré-Artikelserie inhaltlich vollständig (Akte 1–3, alle 18 Artikel + 3 Akt-Indizes DE+EN). Offen: Vorwissen „Geometrie & Analysis (Aufbau)" füllen, Querverweise FLT/Vorwissen, Navigation aus `requires`-Frontmatter.
+- **Phase:** Phase 5 weitgehend abgeschlossen (Website live). Poincaré-Artikelserie inhaltlich **vollständig**: Akte 1–3 (18 Artikel + 3 Akt-Indizes DE+EN) und Vorwissen-Sektion „Geometrie und Analysis (Aufbau)" (5 Artikel DE+EN) ausformuliert; Vorwissen-Index ergänzt. Plan `.agent/plans/poincare-perelman-plan.md` Schritte 1–14 ✓. Offen (Folge-Phasen): Navigation aus `requires`-Frontmatter, Mobile-CSS, Medium.com-Sync.
 - **Priorität:** Mittel
-- **Zuletzt aktualisiert:** 2026-04-28 (Akt 3 der Poincaré-Storyline abgeschlossen, 6/6 Artikel + Akt-Index)
+- **Zuletzt aktualisiert:** 2026-04-28 (Poincaré-Plan komplett abgeschlossen: Schritte 12–14, 5 Vorwissen-Artikel DE+EN + Index-Erweiterung)
 ## Beschreibung
 Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elementarer Zahlentheorie bis zu Wiles' Beweis von Fermats letztem Satz. 18 Artikel in 3 Kategorien (Grundlagen, Werkzeuge, Beweis). Detaillierter Plan: `.agent/plans/artikelserie-plan.md`.
 ## Aktueller Stand
@@ -43,6 +43,7 @@ Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elemen
 - [x] Zweisprachige Seite (DE/EN) mit Sprachumschalter eingerichtet (mkdocs-static-i18n)
 - [x] Pläne-Review und Aktualisierung (2026-04-16)
 - [x] Pläne-Review 2026-04-26: deployment-plan, sidebar-restructuring, playwright-ui-tests-plan ins Archiv verschoben
+- [x] Poincaré-Plan vollständig abgeschlossen ✅ (2026-04-28, Schritte 12–14): Vorwissen-Sektion „Geometrie und Analysis (Aufbau)" inhaltlich gefüllt – 5 Artikel × DE+EN (10 Dateien, je ~110–135 Zeilen): `mannigfaltigkeit-anschaulich` (Karten/Atlas/glatte Strukturen, Beispiele $S^n,T^n,\mathbb{RP}^n$), `tangentialraum-tensoren` ($T_pM$, Vektorfelder/Kotangentialraum/Tensorfelder, Riemannsche Metrik), `kruemmung-flaechen-gauss` (Hauptkrümmungen, erste/zweite Fundamentalform, Theorema Egregium, Gauß-Bonnet), `vektoranalysis` (Gradient/Divergenz/Laplace-Beltrami, Divergenzsatz/Green/Stokes, Identitäten-Tabelle inkl. Ricci-Fluss-Variante), `waermeleitung` ($\partial_t u=\Delta u$, Glättung/Max-Prinzip/Energie-Abnahme, Wärmekern, parabolische Skalierung, Linearisierung des Ricci-Flusses, konjugierte Wärmeleitung). Vorwissen-Index DE+EN um Sektion „F. Geometrie und Analysis (Aufbau)" mit 5-Zeilen-Tabelle erweitert. Alle internen Pfade verifiziert (Korrekturen `04-was-ist-poincare-vermutung`, `02-singularitaeten-dim3`). Quellen Lee 2018, do Carmo, Tu, Spivak, Petersen, Forster, Marsden–Tromba, Evans, John, Grigor'yan, Topping, Gauß 1827. mkdocs build --strict grün (0 Warnings, 2.74 s)
 - [x] Poincaré-Überblicksseite (DE+EN) ausformuliert (Plan-Schritt 8, 2026-04-26): Drei-Akt-Roadmap, Quellen, FLT-Querverweis, mkdocs build --strict grün
 - [x] Poincaré Akt 1, Artikel 01 (Was ist Topologie?) + 02 (Mannigfaltigkeiten) DE+EN ausformuliert (Plan-Schritt 9 in Arbeit, 2026-04-27): je ~165–195 Zeilen, Quellen, Querverweise; build --strict grün
 - [x] Poincaré Akt 1 vollständig: Artikel 03 (Sphäre & einfacher Zusammenhang), 04 (Was ist die Poincaré-Vermutung?), 05 (Geometrisierungs-Vermutung von Thurston) und Akt-Index `topologie/index.md` DE+EN ausformuliert (Plan-Schritt 9 ✅, 2026-04-27): je ~195–210 Zeilen, Quellen (Thurston, Hatcher, Lee, Smale, Freedman, Hamilton, Morgan-Tian, Scott, Kneser); build --strict grün, 0 Warnings

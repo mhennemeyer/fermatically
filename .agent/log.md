@@ -179,3 +179,40 @@
 - Plan-Schritt 12: Vorwissen „Geometrie und Analysis (Aufbau)" inhaltlich füllen (5 Stubs DE+EN).
 - Plan-Schritt 13: Querverweise zu/von FLT-Akt und Vorwissen-Bereich systematisch ergänzen.
 - Plan-Schritt 14: Review, Stilabgleich gegen guideline.md (keine „Wir"-Formulierungen, Zitate verifizieren), Deployment via GitHub Actions.
+
+---
+
+## 2026-04-28 (Folge-Session) — Plan-Schritte 12–14 abgeschlossen ✅
+
+### Schritt 12: Vorwissen „Geometrie und Analysis (Aufbau)" inhaltlich gefüllt
+- 5 Artikel × DE+EN (10 Dateien, je ~110–135 Zeilen) aus Stubs zu Volltexten ausformuliert; Stilreferenz `docs/vorwissen/komplexe-zahlen.de.md` (KaTeX, knappe Definitionen, Beispiel-Tabellen, Quellen, status: ready).
+- `mannigfaltigkeit-anschaulich.{de.,}md` (113/112): Karten/Atlas, Kartenwechsel/glatte Strukturen, Beispiele $S^n$, $T^n$, $\mathbb{RP}^n$, Möbius-Band, Orientierbarkeit/Rand/Kompaktheit, Gegenbeispiele Doppelkegel/Würfel, Übergang zu Riemannscher Metrik.
+- `tangentialraum-tensoren.{de.,}md` (137/134): $T_pM$ via Kurvenäquivalenzklassen, Basis $\partial_i$, Vektorfelder, Kotangentialraum $T_p^*M$ und 1-Formen $\mathrm{d}x^i$, $(r,s)$-Tensorfelder, Riemannsche Metrik $g_{ij}$ mit Längen/Volumen, Index-Mechanik.
+- `kruemmung-flaechen-gauss.{de.,}md` (135/133): Hauptkrümmungen Euler/Meusnier, Gauß-Krümmung $K = \kappa_1\kappa_2$, mittlere Krümmung, erste/zweite Fundamentalform, Theorema Egregium, Gauß-Bonnet $\int_\Sigma K\,\mathrm{d}A = 2\pi\chi(\Sigma)$, Übergang zu Schnitt-/Ricci-/Skalar-Krümmung.
+- `vektoranalysis.{de.,}md` (129/127): Gradient/Divergenz/Laplace-Beltrami auf $(M,g)$, Divergenzsatz, Greensche Identität, Stokes; Identitäten-Tabelle inkl. Ricci-Fluss-Variante $\partial_t \log\sqrt{\det g} = -R$.
+- `waermeleitung.{de.,}md` (124/123): $\partial_t u=\Delta u$, Glättung/Maximum-Prinzip/Energie-Abnahme, Wärmekern $K(t,x,y) = (4\pi t)^{-n/2}\exp(-|x-y|^2/4t)$, parabolische Skalierung $x\sim\sqrt t$, Linearisierung des Ricci-Flusses (DeTurck), konjugierte Wärmeleitung $\partial_\tau u = -\Delta_g u + Ru$.
+- Quellen je nach Artikel: Lee 2013/2018, Tu 2011, Spivak 1999, do Carmo 1976/1992, Petersen 2016, Forster, Marsden–Tromba, Evans 2010, John 1991, Grigor'yan 2009, Topping 2006, Gauß 1827.
+
+### Schritt 13: Querverweise ergänzt
+- `docs/vorwissen/index.{de.,}md` um Sektion „F. Geometrie und Analysis (Aufbau)" mit 5-Zeilen-Tabelle und Verweis auf `poincare/index.md` erweitert.
+- Poincaré-Übersichtsseite verweist bereits per Tip-Box auf den neuen Vorwissen-Block (DE+EN, Zeilen 81–82).
+- Alle 10 neuen Vorwissen-Artikel verlinken konkret auf passende Akt-1/2/3-Artikel (Mannigfaltigkeiten, Riemannsche Metrik, Krümmung-Ricci-Tensor, Hamiltons Ricci-Fluss, Singularitäten/Blow-up, Perelman-Entropie, Reduzierte Länge, Endliche Extinktion).
+
+### Schritt 14: Review & Build
+- Pfadkorrekturen nach mkdocs-Warnungen: `02-singularitaetsanalyse.md` → `02-singularitaeten-dim3.md` (DE+EN), Pfad `04-poincare-vermutung.md` → `04-was-ist-poincare-vermutung.md` (DE+EN). Restliche Pfade gegen tatsächliche Dateinamen verifiziert.
+- `.venv/bin/mkdocs build --strict`: 0 Warnings, 2.74 s, DE+EN gebaut, 90 Nav-Elemente übersetzt.
+- Plan, status.md und log.md aktualisiert. Plan `.agent/plans/poincare-perelman-plan.md` Schritte 1–14 alle ✅; finaler Status-Block „Inhaltliche Phase abgeschlossen (2026-04-28)" hinzugefügt.
+
+### Bilanz Poincaré-Plan (kumulativ)
+- Akt 1 (Topologie): 5 Artikel + Akt-Index, DE+EN
+- Akt 2 (Ricci-Fluss): 7 Artikel + Akt-Index, DE+EN
+- Akt 3 (Beweis): 6 Artikel + Akt-Index, DE+EN
+- Vorwissen „Geometrie und Analysis (Aufbau)": 5 Artikel, DE+EN
+- Vorwissen-Index: F-Sektion ergänzt, DE+EN
+- Total: 39 Artikel/Index-Seiten × 2 Sprachen + 2 Index-Erweiterungen = 80 Dateien neu/inhaltlich gefüllt
+
+### Offen (Folge-Session, nicht mehr Teil des Poincaré-Plans)
+- Navigation aus `requires`-Frontmatter automatisch generieren (artikelserie-plan.md Phase 5)
+- Wiles-Transkription in KB aufnehmen
+- Medium.com-Synchronisation evaluieren
+- Mobile-CSS-Fix für MathJax-Overflow

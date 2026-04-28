@@ -46,3 +46,17 @@ Dieses Nachschlagewerk enthält grundlegende mathematische Konzepte, die in den 
 |-------|--------|
 | [Potenzen und Polynome](potenzen-polynome.md) | Potenzgesetze, Polynomausdruck, Grad eines Polynoms |
 | [Binomische Formeln und Faktorisierung](binomische-formeln.md) | (a+b)², (a-b)², a²-b², Binomischer Satz |
+
+## F. Geometrie und Analysis (Aufbau)
+
+Vertiefende Konzepte für die Differentialgeometrie der
+[Poincaré-Vermutung](../poincare/index.md) – Mannigfaltigkeiten, Krümmung,
+Vektoranalysis und parabolische Differentialgleichungen.
+
+| Thema | Inhalt |
+|-------|--------|
+| [Mannigfaltigkeit anschaulich](geometrie-analysis/mannigfaltigkeit-anschaulich.md) | Karten, Atlas, glatte Strukturen, Beispiele $S^n$, $T^n$, $\mathbb{RP}^n$ |
+| [Tangentialraum und Tensoren](geometrie-analysis/tangentialraum-tensoren.md) | $T_p M$, Vektorfelder, Tensorfelder, Riemannsche Metrik |
+| [Krümmung von Flächen (Gauß)](geometrie-analysis/kruemmung-flaechen-gauss.md) | Hauptkrümmungen, Theorema Egregium, Gauß–Bonnet |
+| [Vektoranalysis kompakt](geometrie-analysis/vektoranalysis.md) | Gradient, Divergenz, Laplace-Beltrami, Integralsätze |
+| [Wärmeleitungsgleichung – Intuition](geometrie-analysis/waermeleitung.md) | $\partial_t u = \Delta u$, Glättung, Maximum-Prinzip, Wärmekern |
