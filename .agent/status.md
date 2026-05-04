@@ -1,9 +1,9 @@
 # Projektstatus: fermatically
 ## Meta
 - **Typ:** Content / Mathematik-Plattform
-- **Phase:** Phase 5 weitgehend abgeschlossen (Website live). Poincaré-Artikelserie inhaltlich **vollständig**: Akte 1–3 (18 Artikel + 3 Akt-Indizes DE+EN) und Vorwissen-Sektion „Geometrie und Analysis (Aufbau)" (5 Artikel DE+EN) ausformuliert; Vorwissen-Index ergänzt. Plan `.agent/plans/poincare-perelman-plan.md` Schritte 1–14 ✓. Offen (Folge-Phasen): Navigation aus `requires`-Frontmatter, Mobile-CSS, Medium.com-Sync.
+- **Phase:** Phase 5 weitgehend abgeschlossen (Website live). Poincaré-Artikelserie inhaltlich **vollständig**: Akte 1–3 (18 Artikel + 3 Akt-Indizes DE+EN) und Vorwissen-Sektion „Geometrie und Analysis (Aufbau)" (5 Artikel DE+EN) ausformuliert; Vorwissen-Index ergänzt. Poincaré-Plan archiviert unter `.agent/plans/archive/poincare-perelman-plan.md` (alle 14 Schritte ✓). `.agent/plans/` aufgeräumt: aktive vs. archivierte Pläne getrennt, README-Übersichten in `plans/` und `plans/archive/`. Offen (Folge-Phasen): Navigation aus `requires`-Frontmatter, Mobile-CSS, Medium.com-Sync.
 - **Priorität:** Mittel
-- **Zuletzt aktualisiert:** 2026-04-28 (Poincaré-Plan komplett abgeschlossen: Schritte 12–14, 5 Vorwissen-Artikel DE+EN + Index-Erweiterung)
+- **Zuletzt aktualisiert:** 2026-04-28 (Plan-Ordner aufgeräumt: Poincaré-Plan ins Archiv, leerer `next/`-Ordner entfernt, README in `plans/` + `plans/archive/`, `artikelserie-plan.md` Statuszeile + Phase 7.21 aktualisiert)
 ## Beschreibung
 Mathematik-Plattform mit eigenständigen, querverweisbaren Topics – von elementarer Zahlentheorie bis zu Wiles' Beweis von Fermats letztem Satz. 18 Artikel in 3 Kategorien (Grundlagen, Werkzeuge, Beweis). Detaillierter Plan: `.agent/plans/artikelserie-plan.md`.
 ## Aktueller Stand

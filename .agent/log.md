@@ -216,3 +216,20 @@
 - Wiles-Transkription in KB aufnehmen
 - Medium.com-Synchronisation evaluieren
 - Mobile-CSS-Fix für MathJax-Overflow
+
+## 2026-04-28 – Plan-Ordner aufgeräumt
+- Poincaré-Plan vollständig erledigt → `.agent/plans/poincare-perelman-plan.md` nach `.agent/plans/archive/` verschoben, Status-Header auf „✅ Abgeschlossen (2026-04-28)" gesetzt.
+- Leeren `.agent/plans/next/`-Ordner entfernt.
+- `.agent/plans/README.md` neu angelegt: Tabelle aktiver Pläne (`artikelserie-plan.md` aktiv, `vor-vorwissen-plan.md` geparkt) + Konventionen (Slug, Statuszeile, Archivierungs-Workflow).
+- `.agent/plans/archive/README.md` neu angelegt: tabellarische Übersicht aller 9 archivierten Pläne mit Abschlussdatum + Konvention für künftige Archivierungen.
+- `artikelserie-plan.md` aktualisiert: Datum 2026-04-28, Statuszeile spiegelt Poincaré-Topic ✅, Phase 7.21 von `[ ]` auf `[x]` mit Verweis auf archivierten Detailplan, Strukturblock zeigt Topologie/Ricci-Fluss/Beweis als live.
+- `vor-vorwissen-plan.md` unverändert (Status weiterhin „Geparkt" – Trigger: nach Bedarf).
+- `.agent/status.md` Meta-Block angepasst (neuer Pfad zum archivierten Poincaré-Plan, Vermerk zum Aufräumen).
+
+## 2026-04-28 – i18n-404 untersucht (staler site-Output)
+- User-Report: 404 unter `http://localhost:63343/fermatically/site/de/poincare/topologie/01-was-ist-topologie` nach Sprachumschaltung EN→DE.
+- Reproduktion: `ls site/de/poincare/topologie/` zeigte nur `index.html`; die fünf DE-Artikel fehlten im Output, obwohl `docs/poincare/topologie/*.de.md` korrekt vorhanden sind und `lang: de` im Frontmatter tragen.
+- Ursache: stale `site/`-Verzeichnis (älterer Inkrement-Build vor der Akt-1-Befüllung). Kein i18n-Konfigurationsfehler – `mkdocs.yml` ist sauber (suffix-Schema, default `en`, build `de` aktiv).
+- Fix: `rm -rf site && .venv/bin/mkdocs build --strict` → 0 Warnings, 3.19 s; alle 5 DE-Topologie-Artikel sind jetzt unter `site/de/poincare/topologie/<slug>/index.html` verfügbar.
+- Sprachumschalter im EN-Artikel verlinkt korrekt auf `../../../de/poincare/topologie/01-was-ist-topologie/` (kanonisch mit trailing slash). IntelliJ-Builtin-Server (Port 63343) liefert ohne trailing slash u.U. 404 – User sollte die URL mit Slash oder via `mkdocs serve` (Port 8000) testen.
+- Empfehlung für Folge-Sessions: bei strukturellen Änderungen stets `rm -rf site` vor `mkdocs build`, oder `mkdocs serve` verwenden, das automatisch sauber neu baut.

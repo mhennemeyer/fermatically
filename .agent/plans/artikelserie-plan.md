@@ -1,8 +1,8 @@
 # Plan: Mathematik-Plattform – Große Beweise verstehen
 
 Erstellt: 2026-03-30
-Aktualisiert: 2026-04-16
-Status: Phase 1–5 abgeschlossen. Deployment live unter https://fermatically.com (GitHub Pages). Stilüberarbeitung aller 18 Artikel abgeschlossen. Vorwissen-Bereich (22 Themen DE+EN) fertiggestellt. Zweisprachig (DE/EN) mit mkdocs-static-i18n. Offen: Automatische Navigation aus `requires`-Frontmatter (Phase 5), Medium-Synchronisation (Phase 6), Plattform-Erweiterung (Phase 7).
+Aktualisiert: 2026-04-28
+Status: Phase 1–5 abgeschlossen. Deployment live unter https://fermatically.com (GitHub Pages). Stilüberarbeitung aller 18 Fermat-Artikel abgeschlossen, Vorwissen-Bereich (22 Themen + Sektion „Geometrie und Analysis (Aufbau)" mit 5 Themen, jeweils DE+EN) fertiggestellt. Beweis-Topic **Poincaré–Perelman** inhaltlich vollständig (Akte 1–3, 18 Artikel DE+EN, eigener Plan: `archive/poincare-perelman-plan.md`). Zweisprachig (DE/EN) mit mkdocs-static-i18n. Offen: Automatische Navigation aus `requires`-Frontmatter (Phase 5.16), Medium-Synchronisation (Phase 6), Plattform-Erweiterung um weitere Beweise (Phase 7).
 
 ## Vision
 
@@ -101,8 +101,10 @@ fermatically/
 │   │   ├── 02-formale-verifikation/        ← Lean, Coq, Agda
 │   │   └── 03-alternative-beweise/         ← Können moderne Methoden FLT vereinfachen?
 │   │
-│   └── poincare-perelman/                  ← (Zukunft)
-│       └── ...
+│   └── poincare-perelman/                  ← ✅ live (Akte 1–3, 18 Artikel DE+EN)
+│       ├── topologie/                      ← Was ist Topologie, Mannigfaltigkeiten, …
+│       ├── ricci-fluss/                    ← Riemannsche Metrik, Hamiltons Ricci-Fluss, Perelman-Entropie
+│       └── beweis/                         ← Hamiltons Programm, Singularitäten, Chirurgie, finite Extinktion
 │
 ├── categories/                             ← Themen-Kategorien
 │   ├── zahlentheorie/
@@ -213,8 +215,8 @@ So wird klar, welche Grundlagen-Topics gelesen werden sollten, bevor man in den 
 
 ### Phase 7: Plattform erweitern (Zukunft)
 20. [ ] `moderne-beweismethoden` Topic (HoTT, Lean/Coq, alternative Beweise)
-21. [ ] `poincare-perelman` Topic
-22. [ ] Weitere große Beweise
+21. [x] `poincare-perelman` Topic – Akte 1–3 inhaltlich vollständig (DE+EN), siehe `archive/poincare-perelman-plan.md`
+22. [ ] Weitere große Beweise (Vier-Farben-Satz, Keplersche Vermutung, …)
 
 ## Entscheidungen
 

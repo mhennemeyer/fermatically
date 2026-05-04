@@ -1,7 +1,8 @@
 # Plan: Poincaré-Vermutung – Der Beweis von Perelman
 
 Erstellt: 2026-04-25
-Status: Freigegeben (2026-04-25) – Umsetzung läuft
+Aktualisiert: 2026-04-28
+Status: ✅ Abgeschlossen (2026-04-28) – alle 14 Schritte erledigt, archiviert.
 
 ## Ausgangslage
 
